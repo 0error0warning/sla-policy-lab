@@ -1,0 +1,21 @@
+{
+  ".gitignore": "98a9efc4f6acfc6551a0c037bd57b7263621ecfa8544640df74112acbd2e9f82",
+  "README.md": "78c31257a8dd877b1dd10b42716a42e6cfc4730fc50dc00716834e83b0409e41",
+  "artifacts/VALIDATION.md": "d203e82a3093a20550426dc20c8e7effd9703f6bfda00d6a7102d0e6590f9ca7",
+  "artifacts/example-balanced.json": "3e463141c1dd007b1b3f3fe5f2884792fc90c76249b3aacb88dbfa6efbbfbea7",
+  "artifacts/example-summary.txt": "c5cc397f0332ae2b51ab1ac7adb5ab3a4fa7cd06915c60af597eca469035bcd7",
+  "artifacts/tests.txt": "bf82f3f93d3172db0d58b9697a2379d7543f7a89ca8f5ff963cf5781e3f133a7",
+  "evaluate.py": "935199bc4f94dc70712a97479d7ced2fd452afc55a185c1852e0bee807811ede",
+  "requirements.txt": "105a25c9a24a53a42b52ccc93f930e1ea4a88b42372d440ae7c1b82c3a8b2c64",
+  "run.py": "3b87a2271a4335a831e8f696cec2056da844cb8ea9e835a91310aedbaa29c590",
+  "sla_demo/__init__.py": "53b07614586ff1c08232ce6b490dbc75879831b066f68a8ddf87d8c6b9c6160b",
+  "sla_demo/environment.py": "03a147509738acea0d5800c785c0e6204ffe7800c7d047c002b000ddecab3057",
+  "sla_demo/experiment.py": "cdd957ab78e69ed86b412caea2113305c662fe97caa3e09c6fbab09007cb12b7",
+  "sla_demo/models.py": "2257b480336bbbbdd29ea2d722e9cd65c2fd5c21b4ae95ced4004c4da1f4e755",
+  "sla_demo/server.py": "decea4d6b29b3e4753fec89e387de6c12429d6ae1415ff10f6b0c95121b0ea69",
+  "tests/test_lab.py": "3e5058be4ceb0bc876a6ebf31e9f33a1f8366013756ec6779db36d963daa2a99",
+  "tests/ui_smoke.py": "542fd579aff8cbd2d45beb3f2fa360f81740895d6e70646f5a8310bffd38d735",
+  "web/app.js": "5fb6d6ecb324136388537a6729a28fdee1c2238ef4d5170a6da5a3cc5cc827d0",
+  "web/index.html": "21b8e240e84092d626485db2cb78d52928aa711d29e739b2bbe2b2befb6a7508",
+  "web/style.css": "adbed32e0cbe88e4b1760b15e5566ddd9f5933297f182f3d3c5dba8fca584144"
+}

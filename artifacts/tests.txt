@@ -1,0 +1,32 @@
+test_api_invalid_json_and_unknown_fields (test_lab.APITests.test_api_invalid_json_and_unknown_fields) ... ok
+test_api_success (test_lab.APITests.test_api_success) ... ok
+test_path_allowlist_and_cross_origin (test_lab.APITests.test_path_allowlist_and_cross_origin) ... ok
+test_static_routes (test_lab.APITests.test_static_routes) ... ok
+test_damage_is_monotonic_and_bounded (test_lab.EnvironmentTests.test_damage_is_monotonic_and_bounded) ... ok
+test_feature_shape (test_lab.EnvironmentTests.test_feature_shape) ... ok
+test_invalid_actions_rejected (test_lab.EnvironmentTests.test_invalid_actions_rejected) ... ok
+test_no_partner_probability_leak (test_lab.EnvironmentTests.test_no_partner_probability_leak) ... ok
+test_paired_event_tapes_independent_of_actions (test_lab.EnvironmentTests.test_paired_event_tapes_independent_of_actions) ... ok
+test_protection_removes_load_not_intrinsic_cost (test_lab.EnvironmentTests.test_protection_removes_load_not_intrinsic_cost) ... ok
+test_protection_starts_after_request (test_lab.EnvironmentTests.test_protection_starts_after_request) ... ok
+test_terminal_step_rejected (test_lab.EnvironmentTests.test_terminal_step_rejected) ... ok
+test_validation (test_lab.EnvironmentTests.test_validation) ... ok
+test_zero_load_still_damages (test_lab.EnvironmentTests.test_zero_load_still_damages) ... ok
+test_dataset_reproducibility (test_lab.ModelTests.test_dataset_reproducibility) ... ok
+test_full_training_reproducible (test_lab.ModelTests.test_full_training_reproducible) ... ok
+test_invalid_run_inputs (test_lab.ModelTests.test_invalid_run_inputs) ... ok
+test_lora_freezes_base (test_lab.ModelTests.test_lora_freezes_base) ... ok
+test_lora_gradient_finite_difference (test_lab.ModelTests.test_lora_gradient_finite_difference) ... ok
+test_pairwise_delta_and_export_serialization (test_lab.ModelTests.test_pairwise_delta_and_export_serialization) ... ok
+test_runtime_outputs_reproducible_except_timing (test_lab.ModelTests.test_runtime_outputs_reproducible_except_timing) ... ok
+test_single_seed_ci_missing (test_lab.ModelTests.test_single_seed_ci_missing) ... ok
+test_steering_is_hidden_addition_and_does_not_change_weights (test_lab.ModelTests.test_steering_is_hidden_addition_and_does_not_change_weights) ... ok
+test_steering_zero_episode_is_base (test_lab.ModelTests.test_steering_zero_episode_is_base) ... ok
+test_training_reduces_loss (test_lab.ModelTests.test_training_reduces_loss) ... ok
+test_zero_initialized_lora_matches_base (test_lab.ModelTests.test_zero_initialized_lora_matches_base) ... ok
+test_zero_steering_matches_base (test_lab.ModelTests.test_zero_steering_matches_base) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 5.015s
+
+OK

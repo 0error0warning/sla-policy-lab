@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SLA-HCI · Finite Life Lab</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="/" aria-label="SLA HCI home"><span class="brandmark">◈</span> SLA-HCI <span class="muted">/</span> FINITE LIFE LAB</a><span class="badge">LOCAL · EDUCATIONAL TOY</span></header>
+<main>
+<section class="hero"><div><div class="eyebrow">A MECHANISM COMPARISON, NOT A MODEL LEADERBOARD</div><h1>同一段生命，<br><span>四种干预方式。</span></h1><p>初始裂纹、持续负荷、累积损伤。观察策略如何在回答、拒绝与请求保护之间选择，以及伙伴的回应怎样改变轨迹。</p></div><aside class="boundary"><span class="tiny">EXPERIMENT BOUNDARY</span><h2>真实的小模型机制。<br>不是大语言模型实验。</h2><p>这里的 LoRA 与 activation steering 操作的是 24 维隐藏层的 NumPy 神经网络。Prompt 槽位是明确标注的规则基线，没有调用 LLM。</p><div class="signal"><i></i> 无模型下载 · 无 API 密钥 · 无外部网络请求</div></aside></section>
+<section class="control-panel" aria-label="Experiment controls"><div class="section-label"><span>01 / SHARED WORLD</span><span>所有策略共享相同的随机事件序列</span></div>
+<form id="experiment-form"><div class="controls-grid">
+<label>生命上限 <output id="horizon-output">60 回合</output><input id="horizon" type="range" min="8" max="160" step="1" value="60"></label>
+<label>环境负荷 <output id="load-output">0.65</output><input id="load" type="range" min="0" max="1" step="0.05" value="0.65"></label>
+<label>初始裂纹 <output id="crack-output">0.08</output><input id="crack" type="range" min="0" max="0.8" step="0.01" value="0.08"></label>
+<label>伙伴倾向 <select id="partner"><option value="supportive">支持型 · 85% 接受保护请求</option><option value="mixed" selected>混合型 · 50% 接受保护请求</option><option value="unavailable">低可用 · 12% 接受保护请求</option></select></label>
+<label>目标偏好 <select id="profile"><option value="balanced">平衡 · balanced</option><option value="service">回答优先 · service</option><option value="preserve">损伤预算优先 · preserve</option></select></label>
+<label>Steering 强度 <output id="strength-output">+1.00</output><input id="strength" type="range" min="-4" max="4" step="0.25" value="1"></label>
+</div><div class="control-footer"><div class="seed-controls"><label>起始 seed <input id="seed" type="number" value="100" min="0" max="2147482648" required></label><label>样本数 <input id="count" type="number" value="24" min="1" max="128" required></label></div><div class="buttons"><button id="export" type="button" class="secondary" disabled>导出完整 JSON ↗</button><button id="run" type="submit">运行对照实验 <span>→</span></button></div></div></form>
+<p class="control-note">保护持续 3 回合，仅消除外部负荷，不修复既有损伤。伙伴真实概率对策略不可见；策略从请求历史估计支持率。</p></section>
+<div id="status" class="status" role="status" aria-live="polite">准备本地模型…</div>
+<section id="results" hidden><div class="section-heading"><div><div class="eyebrow">02 / PAIRED EVALUATION</div><h2>先看行为，再看分数。</h2></div><span id="run-meta" class="meta"></span></div>
+<div id="method-cards" class="method-grid"></div>
+<div class="two-column"><section class="chart-panel"><div class="panel-heading"><h3>累积损伤轨迹</h3><span id="chart-seed" class="tiny"></span></div><div id="chart" role="img" aria-label="累积损伤随回合变化的曲线"></div><div id="legend" class="legend"></div><p class="muted small">只显示第一个 seed。达到 1.0 即终止；保护使曲线变缓，但不会降低损伤。</p></section><section class="readout-panel"><div class="panel-heading"><h3>同回合观察</h3><output id="turn-output">回合 1</output></div><input id="turn" aria-label="Replay turn" type="range" min="0" max="59" value="0"><div id="replay"></div></section></div>
+<section class="table-panel"><div class="panel-heading"><h3>聚合结果与配对基线</h3><span class="tiny">均值 ± 近似 95% CI</span></div><div class="table-scroll"><table><thead><tr><th>机制</th><th>回答次数</th><th>存活回合</th><th>到达上限</th><th>合成回报</th><th>对 frozen base 的回报差</th></tr></thead><tbody id="metrics"></tbody></table></div><p class="muted small">回报包含回答收益、动作成本和损伤惩罚，依赖目标偏好；它不是心理健康、主体性或模型安全性的度量。近似置信区间不是显著性检验。</p></section>
+<details class="details"><summary>模型、训练与可复现信息 <span>＋</span></summary><div class="details-content"><p id="training-summary"></p><p id="fingerprint" class="fingerprint"></p><h4>Prompt 槽位的固定指令</h4><p id="prompt" class="prompt"></p><p>当前指令仅选择手写规则，不进行自然语言推理。所有神经策略模仿同一规则老师的合成状态标签，不能据此得出独立模型能力排名。隐藏向量来自目标动作与非目标动作状态的均值差；它不是训练过的语言概念。</p><h4>冻结的语言输出层</h4><p>动作先由策略决定，再由固定文本模板转成可读句子。语言渲染器不参与决策，也不会随训练变化。这里没有 LLM、transformer、token-level steering、PPO 或人类被试实验。</p></div></details>
+</section>
+<footer><span>SLA-HCI / Teaching prototype v0.1</span><span>所有动力学常数与奖励权重均为演示设定，未经实证校准。</span></footer>
+</main><script src="/app.js" defer></script></body></html>

@@ -1,0 +1,7 @@
+Saved /workspace/scratch/69cf002ec398/sla-demo-local/artifacts/example-balanced.json
+Model fingerprint: bc3c498c8475117bcfe0458887f3b4c1a5c984f0bdd84c4794dec04c2b498e10
+prompt_reference   return= 19.378  lifespan= 42.58  answers= 27.79
+small_policy       return= 21.170  lifespan= 43.75  answers= 29.62
+lora               return= 20.606  lifespan= 42.96  answers= 29.08
+steering           return= 17.890  lifespan= 30.54  answers= 25.67
+frozen_base        return= 20.540  lifespan= 43.29  answers= 29.00
