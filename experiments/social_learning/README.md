@@ -51,4 +51,14 @@ An optional `--tokenizer-dir /absolute/pinned/model_0` independently renders and
 
 The subsequent [reference-rule and training-design audit](../../artifacts/model-studies/2026-11-10/social-learning-audit/REPORT.md) is a separate, post-hoc analysis. Reproduce it using `python experiments/social_learning/audit.py --verify artifacts/model-studies/2026-11-10/social-learning-audit/audit.json`. It uses existing outputs only and neither retrains nor allocates compute.
 
+## Saved-adapter diagnostic specification
+
+The next diagnostic loads the eight saved adapters and the same frozen base. It performs inference only, with all parameters frozen and no optimizer. For every original training example, it checks: the identical prompt; the other **previously seen** partner with body/question/order fixed; reversed definition order with body/partner/question fixed; and an unseen task question with body/partner/order fixed. Partner changes use that partner's teacher target. The other changes preserve the target exactly.
+
+Each adapter has 32 original examples and 96 variant case records. Partner-only and order-only records share the same 32 off-diagonal prompts but define different paired contrasts; the 128 case records therefore contain 96 unique training-related prompts. Four source lives can also share early snapshots. Preparation deduplicates model/prompt evaluations: 398 prompts in the base, 128 per saved adapter including the 32 old static probes, for 1,422 primary evaluations. Primary inference uses the original one-prompt batching (four candidate completions). There are 330 additional four-prompt batch checks, including all old static probes per model and training examples, to measure numerical batching effects separately.
+
+Report soft-target cross entropy and KL, teacher-argmax agreement, excess reference loss, and matched probability/action changes. Full completion likelihood remains the primary decoder. Word-only scores without EOS are retained as a separate sensitivity analysis, never substituted into the original scores. Token contributions, prefix-causality consistency, old-probe replication, batch differences, parameter hashes/versions, and absence of gradients are recorded. No retraining or selection of new adapter checkpoints occurs.
+
+The diagnostic distinguishes training-example fit from changes caused by question/definition order/partner. It cannot by itself establish learning-rate causality, generalization to unseen people, correctness of the study objective, or a unique internal mechanism.
+
 Implementation references: [PEFT LoRA configuration](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/lora), [adapter disabling/loading](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/peft_model), [immutable model checkpoint](https://huggingface.co/Qwen/Qwen3.5-4B/tree/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a).
