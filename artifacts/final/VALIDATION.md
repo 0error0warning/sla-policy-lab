@@ -1,5 +1,7 @@
 # Integrated CPU demo verification
 
+Update 2026-11-10: a later [manual Chromium review](../browser-review/VALIDATION.md) now records desktop and narrow responsive layout checks, an icon repair and rerun checks. The browser limitation below describes the earlier 2026-11-09 attempt.
+
 Verified 2026-11-09 18:42 UTC. No GPU, A100, Colab, model download, API provider or credentials used.
 
 ## Passed on the integrated code

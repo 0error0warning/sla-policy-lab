@@ -1,14 +1,17 @@
 {
   ".github/workflows/cpu-checks.yml": "df0ea44245077c9f06222963421d980b725e217d2e11a65241bc8076e9f7f7e9",
   ".gitignore": "a164597dbeb923de5caf1bb620d292ce7b303debb69f01d5219d71b5ecd3b54b",
-  "README.md": "2faf1dc5ab3593f7dd04c211a5fdaf296324821114d452d67e5a5980cd21b1ae",
+  "README.md": "ec21f99b22e615eb8314d8e083de1cb1316b51e34ecf6f2da743fe47e3feab5b",
   "artifacts/VALIDATION.md": "1c693b6863640efb557cafa1066d375d4f52a0e2fd6216a0a2e8c901ed8cf6a9",
+  "artifacts/benchmark-summary.txt": "020b48130523905ed996416d64264c7aee829111e5f16cee288da13aa38c3d12",
   "artifacts/benchmark/benchmark.csv": "3ce745b6776a6996970d605f348cfc39f53fbc7584a4982d96a24cb1da89e98e",
   "artifacts/benchmark/benchmark.json": "a11806f0bda8f512a8bd26949b7879f73867b27bdf711cb8753c09b9d40cab68",
-  "artifacts/benchmark-summary.txt": "020b48130523905ed996416d64264c7aee829111e5f16cee288da13aa38c3d12",
+  "artifacts/browser-review/VALIDATION.md": "e7145ceb7511004c04fb759fa96b5ff3c92914d9e1aedfd775cd1ba0c49263f9",
+  "artifacts/browser-review/dashboard.txt": "64c06f9754f0154cc018b0cb4e3be20c7fe11fbc4b4c2de94340888ba18fe5ac",
+  "artifacts/browser-review/tests.txt": "32507b0820b007d6a41bc65505a4576ba5d87485e29430654af824331d5fabb7",
   "artifacts/example-balanced.json": "8c536d55b470d99372fa6e1d1c914e425b311ca6629c5fb941c0f4e0900fda4e",
   "artifacts/example-summary.txt": "675187a27d04878db223403021f22997900000517b4331c9928768ca7a04b0f1",
-  "artifacts/final/VALIDATION.md": "18d9f18181c8c22c72a6a84697a8607dbae1a2e1c6560426029ffc2339f3e3e8",
+  "artifacts/final/VALIDATION.md": "4d470e0b1b1e3b813d76dd340c8d3bfd9e6ebe6d76752a15978fa58f7df0d448",
   "artifacts/final/dashboard.txt": "64c06f9754f0154cc018b0cb4e3be20c7fe11fbc4b4c2de94340888ba18fe5ac",
   "artifacts/final/tests.txt": "244ac7a324ac859940d2b72f7464361029a73030fbeff13076e45740d0450b9a",
   "artifacts/online/VALIDATION.md": "1778f8e243f6e997766be1b12efeb983ec67e265fb85eb0dc884d4e4f6b0a632",
@@ -42,6 +45,6 @@
   "tests/test_online.py": "3de7e2879e40f7346cac6a60cf9e33ad1b308b977d3a25776b480caadaeb68fe",
   "tests/ui_smoke.py": "4cb297fdfd273f34bec2a348f9bff83704bf2e47ce5622df5e4bc05a4adbee68",
   "web/app.js": "f244fe14540ae60238221c9d776e71fa803a429f57d611fad03ad7d356ce2aab",
-  "web/index.html": "ff487a7fe90325dd2d2990d7d25bcd3fb65440e0c5ec509f9e04af9cc7b2f9c3",
+  "web/index.html": "de68acc2879b7fd3cfc0523e123bd969383f3d081dfbd292a531d0603ca571d3",
   "web/style.css": "2f4c8ba5308eba79f77c66cb16dc004683cd99a07f9d9caa89a3575083ed41d4"
 }
