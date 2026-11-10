@@ -17,8 +17,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -m pip install -r requirements.txt
+      - run: python experiments/frozen_models/verify.py
       - run: python -m unittest discover -s tests -v
       - run: python -m compileall -q sla_demo run.py evaluate.py benchmark.py tests
+      - run: python -m compileall -q experiments/frozen_models
       - run: node --check web/app.js
       - run: python tests/dashboard/run_checks.py --repo .
       - run: python evaluate.py --seed-count 2 --trace-all --save-checkpoint /tmp/toy.npz --output /tmp/results.json

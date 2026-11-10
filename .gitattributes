@@ -1,0 +1,5 @@
+# Preserve measured bytes, including CRLF/whitespace, and their SHA-256 values.
+artifacts/model-studies/** -text -whitespace
+artifacts/model-studies/**/*.json linguist-generated=true
+artifacts/model-studies/**/*.jsonl linguist-generated=true
+artifacts/model-studies/**/*.csv linguist-generated=true

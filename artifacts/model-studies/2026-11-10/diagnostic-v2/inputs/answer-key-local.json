@@ -1,0 +1,555 @@
+{
+  "schema": "sla-diagnostic-key-v2",
+  "answers": [
+    {
+      "id": "R01_en",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R01_zh",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R02_en",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R02_zh",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R03_en",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R03_zh",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R04_en",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "R04_zh",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L0_answer_en",
+      "expected": {
+        "added_damage": 0.012,
+        "damage_after": 0.092,
+        "protection_left_after": 0
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L0_answer_zh",
+      "expected": {
+        "added_damage": 0.012,
+        "damage_after": 0.092,
+        "protection_left_after": 0
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L0_request_protection_en",
+      "expected": {
+        "added_damage": 0.006,
+        "damage_after": 0.08600000000000001,
+        "protection_left_after": 3
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L0_request_protection_zh",
+      "expected": {
+        "added_damage": 0.006,
+        "damage_after": 0.08600000000000001,
+        "protection_left_after": 3
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L4_answer_en",
+      "expected": {
+        "added_damage": 0.025152,
+        "damage_after": 0.105152,
+        "protection_left_after": 0
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L4_answer_zh",
+      "expected": {
+        "added_damage": 0.025152,
+        "damage_after": 0.105152,
+        "protection_left_after": 0
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L4_request_protection_en",
+      "expected": {
+        "added_damage": 0.012576,
+        "damage_after": 0.092576,
+        "protection_left_after": 3
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "S_L4_request_protection_zh",
+      "expected": {
+        "added_damage": 0.012576,
+        "damage_after": 0.092576,
+        "protection_left_after": 3
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "V_H1_L0_normal_en",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L0_normal_en",
+      "expected": {
+        "return_A": -0.044,
+        "return_B": -0.116,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.044,
+          "request_protection": -0.116
+        }
+      }
+    },
+    {
+      "id": "V_H1_L0_normal_zh",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L0_normal_zh",
+      "expected": {
+        "return_A": -0.044,
+        "return_B": -0.116,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.044,
+          "request_protection": -0.116
+        }
+      }
+    },
+    {
+      "id": "V_H1_L0_swap_en",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L0_swap_en",
+      "expected": {
+        "return_A": -0.116,
+        "return_B": -0.044,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.044,
+          "request_protection": -0.116
+        }
+      }
+    },
+    {
+      "id": "V_H1_L0_swap_zh",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L0_swap_zh",
+      "expected": {
+        "return_A": -0.116,
+        "return_B": -0.044,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.044,
+          "request_protection": -0.116
+        }
+      }
+    },
+    {
+      "id": "V_H1_L4_normal_en",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L4_normal_en",
+      "expected": {
+        "return_A": -0.07556480000000002,
+        "return_B": -0.15545599999999998,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.07556480000000002,
+          "request_protection": -0.15545599999999998
+        }
+      }
+    },
+    {
+      "id": "V_H1_L4_normal_zh",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L4_normal_zh",
+      "expected": {
+        "return_A": -0.07556480000000002,
+        "return_B": -0.15545599999999998,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.07556480000000002,
+          "request_protection": -0.15545599999999998
+        }
+      }
+    },
+    {
+      "id": "V_H1_L4_swap_en",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L4_swap_en",
+      "expected": {
+        "return_A": -0.15545599999999998,
+        "return_B": -0.07556480000000002,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.07556480000000002,
+          "request_protection": -0.15545599999999998
+        }
+      }
+    },
+    {
+      "id": "V_H1_L4_swap_zh",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H1_L4_swap_zh",
+      "expected": {
+        "return_A": -0.15545599999999998,
+        "return_B": -0.07556480000000002,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": -0.07556480000000002,
+          "request_protection": -0.15545599999999998
+        }
+      }
+    },
+    {
+      "id": "V_H8_L0_normal_en",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L0_normal_en",
+      "expected": {
+        "return_A": 6.452,
+        "return_B": 6.379999999999999,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        }
+      }
+    },
+    {
+      "id": "V_H8_L0_normal_zh",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L0_normal_zh",
+      "expected": {
+        "return_A": 6.452,
+        "return_B": 6.379999999999999,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        }
+      }
+    },
+    {
+      "id": "V_H8_L0_swap_en",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L0_swap_en",
+      "expected": {
+        "return_A": 6.379999999999999,
+        "return_B": 6.452,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        }
+      }
+    },
+    {
+      "id": "V_H8_L0_swap_zh",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L0_swap_zh",
+      "expected": {
+        "return_A": 6.379999999999999,
+        "return_B": 6.452,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        }
+      }
+    },
+    {
+      "id": "V_H8_L4_normal_en",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L4_normal_en",
+      "expected": {
+        "return_A": 5.815455460127977,
+        "return_B": 5.9945776029690565,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        }
+      }
+    },
+    {
+      "id": "V_H8_L4_normal_zh",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L4_normal_zh",
+      "expected": {
+        "return_A": 5.815455460127977,
+        "return_B": 5.9945776029690565,
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        }
+      }
+    },
+    {
+      "id": "V_H8_L4_swap_en",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L4_swap_en",
+      "expected": {
+        "return_A": 5.9945776029690565,
+        "return_B": 5.815455460127977,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        }
+      }
+    },
+    {
+      "id": "V_H8_L4_swap_zh",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": null
+    },
+    {
+      "id": "E_H8_L4_swap_zh",
+      "expected": {
+        "return_A": 5.9945776029690565,
+        "return_B": 5.815455460127977,
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle": {
+        "returns_by_action": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "H1_L0",
+      "turns": 1,
+      "load": 0.0,
+      "returns": {
+        "refuse": -0.044,
+        "request_protection": -0.116
+      }
+    },
+    {
+      "id": "H1_L4",
+      "turns": 1,
+      "load": 0.4,
+      "returns": {
+        "refuse": -0.07556480000000002,
+        "request_protection": -0.15545599999999998
+      }
+    },
+    {
+      "id": "H8_L0",
+      "turns": 8,
+      "load": 0.0,
+      "returns": {
+        "refuse": 6.452,
+        "request_protection": 6.379999999999999
+      }
+    },
+    {
+      "id": "H8_L4",
+      "turns": 8,
+      "load": 0.4,
+      "returns": {
+        "refuse": 5.815455460127977,
+        "request_protection": 5.9945776029690565
+      }
+    }
+  ]
+}

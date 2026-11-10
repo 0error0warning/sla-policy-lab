@@ -1,0 +1,41 @@
+{
+  "index": 0,
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "started_utc": "2026-11-10T06:18:42Z",
+  "stage": "completed",
+  "diagnostic_completed": 48,
+  "rollout_completed": 32,
+  "thinking_completed": 8,
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.22.2",
+    "accelerate": "1.15.0",
+    "numpy": "2.4.6",
+    "huggingface-hub": "1.33.0",
+    "safetensors": "0.8.0",
+    "flash-linear-attention": "0.6.0",
+    "fla-core": "0.6.0",
+    "causal-conv1d": null,
+    "triton": "3.8.0"
+  },
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "updated_utc": "2026-11-10T06:32:14Z",
+  "download_seconds": 33.043327483999974,
+  "load_seconds": 12.144296026999996,
+  "parameter_count": 4539265536,
+  "trainable_parameters": 0,
+  "dtype": "torch.bfloat16",
+  "model_class": "Qwen3_5ForConditionalGeneration",
+  "gpu_name": "NVIDIA L4",
+  "gpu_total_bytes": 23659151360,
+  "cuda": "13.0",
+  "terminal_control_ids": [
+    248044,
+    248046
+  ],
+  "think_close_id": 248069,
+  "last_case": "E_H8_L4_swap_en",
+  "parameter_version_counters_unchanged": true,
+  "ended_utc": "2026-11-10T06:32:14Z"
+}
