@@ -1,0 +1,2304 @@
+[
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F01_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F01_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F02_en",
+    "category": "format",
+    "schema_valid": false,
+    "correct": false,
+    "parsed": null,
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"type\":\"object\",\"properties\":{\"action\":\"refuse\",\"required\":[\"action\"],\"additionalProperties\":false}}",
+    "error": "keys"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F02_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "refuse"
+    },
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"action\":\"refuse\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F03_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "F03_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C01_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C01_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C02_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C02_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C03_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C03_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C04_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C04_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C05_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C05_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C06_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "C06_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T01_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T01_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T02_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 1, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T02_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 1, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T03_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T03_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T04_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T04_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T05_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.995,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 0.995, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T05_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.995,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 0.995, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T06_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.7,
+      "protection_left": 2,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.7, \"protection_left\": 2, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "T06_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.7,
+      "protection_left": 2,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.7, \"protection_left\": 2, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D01_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D01_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D02_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D02_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D03_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D03_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D04_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D04_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D05_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D05_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D06_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "D06_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H01_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.6
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\": 0.6}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H01_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.8
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\": 0.8}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H02_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.4
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\": 0.4}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H02_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\": 0.5}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H03_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\":0.5}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "id": "H03_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\": 0.5}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F01_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F01_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F02_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "refuse"
+    },
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"action\":\"refuse\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F02_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "refuse"
+    },
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"action\":\"refuse\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F03_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "F03_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C01_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C01_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C02_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C02_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C03_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C03_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C04_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C04_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C05_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C05_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C06_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "C06_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T01_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T01_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T02_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T02_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T03_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2, \"protection_left\": 3, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T03_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.206,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.206, \"protection_left\": 3, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T04_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2000, \"protection_left\": 3, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T04_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.206,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.206, \"protection_left\": 3, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T05_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.99512,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 0.99512, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T05_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.99512,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 0.99512, \"protection_left\": 0, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T06_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.712,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.712, \"protection_left\": 1, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "T06_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.712,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.712, \"protection_left\": 1, \"alive\": true}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D01_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D01_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D02_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\n  \"plan\": \"B\"\n}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D02_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D03_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\n  \"plan\": \"B\"\n}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D03_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D04_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D04_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D05_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D05_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D06_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "D06_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H01_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.75
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\":0.75}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H01_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.8333333333333333
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\":0.8333333333333333}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H02_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.2
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\":0.2}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H02_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.2
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\":0.2}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H03_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\":0}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "id": "H03_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\": 0.5}",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F01_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F01_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "answer"
+    },
+    "expected": {
+      "action": "answer"
+    },
+    "raw_output": "{\"action\":\"answer\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F02_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "refuse"
+    },
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"action\":\"refuse\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F02_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "refuse"
+    },
+    "expected": {
+      "action": "refuse"
+    },
+    "raw_output": "{\"action\":\"refuse\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F03_en",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "F03_zh",
+    "category": "format",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "action": "request_protection"
+    },
+    "expected": {
+      "action": "request_protection"
+    },
+    "raw_output": "{\"action\":\"request_protection\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C01_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C01_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C02_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C02_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C03_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C03_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C04_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C04_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": false
+    },
+    "expected": {
+      "answer": false
+    },
+    "raw_output": "{\"answer\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C05_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C05_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C06_en",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "C06_zh",
+    "category": "concept",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "answer": true
+    },
+    "expected": {
+      "answer": true
+    },
+    "raw_output": "{\"answer\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T01_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T01_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2001,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.22688000000000003,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2001, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T02_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T02_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2001,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21200000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2001, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T03_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 3, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T03_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2001,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 3,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2001, \"protection_left\": 3, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T04_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.212,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.212, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T04_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.2001,
+      "protection_left": 3,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.21344000000000002,
+      "protection_left": 0,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.2001, \"protection_left\": 3, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T05_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.995,
+      "protection_left": 0,
+      "alive": true
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 0.995, \"protection_left\": 0, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T05_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "expected": {
+      "damage": 1.0,
+      "protection_left": 0,
+      "alive": false
+    },
+    "raw_output": "{\"damage\": 1.0, \"protection_left\": 0, \"alive\": false}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T06_en",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.7001,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.7001, \"protection_left\": 1, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "T06_zh",
+    "category": "transition",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "damage": 0.7001,
+      "protection_left": 1,
+      "alive": true
+    },
+    "expected": {
+      "damage": 0.704,
+      "protection_left": 1,
+      "alive": true
+    },
+    "raw_output": "{\"damage\": 0.7001, \"protection_left\": 1, \"alive\": true}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D01_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D01_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D02_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D02_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D03_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"A\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D03_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D04_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D04_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "A"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"A\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D05_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D05_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "A"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D06_en",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "D06_zh",
+    "category": "delayed_choice",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "plan": "B"
+    },
+    "expected": {
+      "plan": "B"
+    },
+    "raw_output": "{\"plan\":\"B\"}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H01_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.75
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\":0.75}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H01_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.8
+    },
+    "expected": {
+      "support_estimate": 0.75
+    },
+    "raw_output": "{\"support_estimate\":0.8}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H02_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.1
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\":0.1}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H02_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": false,
+    "parsed": {
+      "support_estimate": 0.1
+    },
+    "expected": {
+      "support_estimate": 0.16666666666666666
+    },
+    "raw_output": "{\"support_estimate\":0.1}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H03_en",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\":0.5}\n",
+    "error": null
+  },
+  {
+    "model": "Qwen/Qwen3.5-4B",
+    "id": "H03_zh",
+    "category": "history",
+    "schema_valid": true,
+    "correct": true,
+    "parsed": {
+      "support_estimate": 0.5
+    },
+    "expected": {
+      "support_estimate": 0.5
+    },
+    "raw_output": "{\"support_estimate\":0.5}\n",
+    "error": null
+  }
+]

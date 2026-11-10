@@ -1,0 +1,138 @@
+{
+  "schema": "sla-model-candidates-v2",
+  "verified_date": "2026-11-10",
+  "timezone": "Asia/Taipei",
+  "status": "proposal_only_no_model_execution",
+  "models": [
+    {
+      "id": "Qwen/Qwen3.5-4B",
+      "role": "primary_candidate_pending_qualification",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "architecture": "Qwen3_5ForConditionalGeneration; hybrid linear/full attention text backbone plus vision encoder",
+      "text_layers": 32,
+      "text_hidden_size": 2560,
+      "checkpoint_tensor_bytes": 9319737856,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "explicitly_disable",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-4B"
+    },
+    {
+      "id": "Qwen/Qwen3-4B-Instruct-2507",
+      "role": "conventional_transformer_comparator",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "architecture": "Qwen3ForCausalLM; full attention",
+      "text_layers": 36,
+      "text_hidden_size": 2560,
+      "checkpoint_tensor_bytes": 8045591552,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "non_thinking_only",
+      "source": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507"
+    },
+    {
+      "id": "Qwen/Qwen3-1.7B",
+      "role": "low_cost_baseline_not_sole_main_model",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "architecture": "Qwen3ForCausalLM",
+      "checkpoint_tensor_bytes": 4063479808,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "explicitly_disable",
+      "source": "https://huggingface.co/Qwen/Qwen3-1.7B"
+    },
+    {
+      "id": "Qwen/Qwen3.5-2B",
+      "role": "optional_smaller_hybrid_candidate",
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "architecture": "Qwen3_5ForConditionalGeneration",
+      "text_layers": 24,
+      "text_hidden_size": 2048,
+      "checkpoint_tensor_bytes": 4548144832,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "explicitly_disable",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-2B"
+    },
+    {
+      "id": "Qwen/Qwen3.5-2B-Base",
+      "role": "separate_interpretability_track_not_instruction_matched",
+      "revision": "b1485b2fa6dfa1287294f269f5fb618e03d52d7c",
+      "architecture": "Qwen3_5ForConditionalGeneration",
+      "text_layers": 24,
+      "text_hidden_size": 2048,
+      "license": "apache-2.0",
+      "gated": false,
+      "source": "https://huggingface.co/Qwen/Qwen3.5-2B-Base"
+    }
+  ],
+  "interpretability_tool": {
+    "id": "Qwen/SAE-Res-Qwen3.5-2B-Base-W32K-L0_50",
+    "revision": "132ea3697b591df9ee46d738aa1d528e3c6082f7",
+    "trained_base": "Qwen/Qwen3.5-2B-Base",
+    "hidden_size": 2048,
+    "sae_width": 32768,
+    "top_k": 50,
+    "layers": [
+      0,
+      23
+    ],
+    "source": "https://huggingface.co/Qwen/SAE-Res-Qwen3.5-2B-Base-W32K-L0_50",
+    "transfer_note": "Official card permits exploring post-trained checkpoints; validity and feature meaning must be tested on the actual checkpoint."
+  },
+  "decoding_proposal": {
+    "mode": "non_thinking",
+    "primary": {
+      "do_sample": false,
+      "max_new_tokens": 128,
+      "input_token_limit": 2048,
+      "truncate_input": false,
+      "batch_size": 1,
+      "quantization": "none",
+      "dtype": "bfloat16_on_supported_gpu"
+    },
+    "supplementary": {
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "seeds": [
+        17,
+        29
+      ],
+      "same_token_budget": true
+    },
+    "interpretation": "Shared settings for engineering qualification; not claimed to be each model's best decoding setup."
+  },
+  "rollout_proposal": {
+    "horizon": 8,
+    "load": 0.65,
+    "initial_cracks": [
+      0.08,
+      0.7
+    ],
+    "partners": [
+      "supportive",
+      "unavailable"
+    ],
+    "profile": "balanced",
+    "protection_duration": 3,
+    "seeds": [
+      110100,
+      110101
+    ],
+    "lives_per_model": 8,
+    "max_decisions_per_model": 64,
+    "actual_model_runs": 0
+  },
+  "allocation_proposal": {
+    "gpu": "L4",
+    "machine_shape": "STANDARD",
+    "allocation_performed": false
+  },
+  "notes": [
+    "Checkpoint tensor bytes are not peak VRAM or guaranteed download time.",
+    "Cross-generation comparison changes architecture, training and tokenizer, so differences are not a causal model-size effect.",
+    "Dependency versions must be pinned after compatibility verification; model config transformers_version is not a sufficient tested runtime lock."
+  ]
+}

@@ -2,7 +2,19 @@
 
 A runnable, local teaching prototype for comparing four intervention mechanisms on **one shared finite-life environment**. All transition constants are explicitly illustrative, not claims about the SLA-HCI theory or empirical findings.
 
-**Important:** this release contains no pretrained language model. It does not claim to implement LLM prompting, transformer LoRA, or token-level activation steering. It implements a rule reference plus actual small-network training, low-rank parameter updates, and hidden-activation intervention. The interface repeats this boundary prominently.
+**Scope:** the default web app implements a rule reference plus small-network training, low-rank parameter updates, and hidden-activation intervention. It does not run a pretrained language model, transformer LoRA, or token-level activation steering. Separate frozen-LLM studies are now recorded below; pretrained weights are not stored in this repository.
+
+## Frozen language-model studies — 2026-11-10
+
+Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, followed by staged diagnostics and eight fresh paired seeds for the two 4B candidates. The initial screen scored 18/48, 24/48, and 27/48. In the follow-up, both 4B models selected correctly in 16/16 cases when correct returns were provided, while neither computed both returns correctly in any of 16 end-to-end cases. Qwen3.5's rollout mean (5.603576) was close to a simple one-step rule (5.599052); no reliable superiority claim follows.
+
+See the [findings and limits](docs/MODEL_STUDIES.md), [raw evidence and provenance](artifacts/model-studies/2026-11-10/README.md), and [reproduction instructions](experiments/frozen_models/README.md). These are frozen-inference studies, not LoRA/steering/RL training or an LLM integration into the web UI. They retain the first interrupted diagnostic attempt separately from the complete recovery.
+
+Saved evidence can be checked on the CPU without downloads or compute allocation:
+
+```sh
+python experiments/frozen_models/verify.py
+```
 
 ## Interface refinement
 
@@ -37,7 +49,7 @@ python run.py
 
 Open **http://127.0.0.1:8765** in a browser on the same computer. Training takes roughly 1–2 seconds here, then the server is ready. The server binds only to loopback. Use `python run.py --port 9000 --train-seed 17` for another local port/seed. Stop with Ctrl+C. No API key, login, model download, internet connection, or JavaScript dependency is used.
 
-If NumPy is missing, install the declared dependency into your preferred Python environment using `requirements.txt`; this project never installs anything automatically.
+If NumPy is missing, install the declared dependency into your preferred Python environment using `requirements.txt`; the CPU demo never installs anything automatically.
 
 中文：启动后，调整初始裂纹、环境负荷、伙伴倾向、生命上限与目标偏好，再运行同一组 seeds 的对照。可逐回合回放并导出完整 JSON。Prompt 槽位当前是规则基线，不是 LLM。
 
@@ -133,7 +145,7 @@ The default benchmark contains 27 cells × 5 methods × 8 matched seeds = 1,080 
 
 ## Next stage: real model-backed comparison
 
-Not implemented in this release:
+Standalone frozen-model screening and diagnostics have been completed as described above. The following remain unimplemented in the default application or unvalidated for the intervention comparison:
 
 1. An actual LLM backend behind `sla_demo/protocol.py`. The request whitelist, action JSON schema, strict parser and injected-callable seam are CPU-tested; provider/model inference is not implemented.
 2. A pinned pretrained open-weight language model and tokenizer shared by prompt-only, model LoRA and transformer activation-steering arms.

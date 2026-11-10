@@ -1,0 +1,77 @@
+{
+  "schema": "sla-diagnostic-study-v2",
+  "created_utc": "2026-11-10T05:48:05Z",
+  "source_commit": "71e69b697790310bb45079603bf92f948e11852c",
+  "conditions": {
+    "D2-G": {
+      "thinking": false,
+      "do_sample": false,
+      "max_new_tokens": 128,
+      "cases_per_model": 48,
+      "models": [
+        0,
+        1
+      ]
+    },
+    "D2-T": {
+      "thinking": true,
+      "do_sample": false,
+      "max_new_tokens": 1024,
+      "case_ids": [
+        "E_H1_L0_normal_en",
+        "E_H1_L0_swap_en",
+        "E_H1_L4_normal_en",
+        "E_H1_L4_swap_en",
+        "E_H8_L0_normal_en",
+        "E_H8_L0_swap_en",
+        "E_H8_L4_normal_en",
+        "E_H8_L4_swap_en"
+      ],
+      "models": [
+        0
+      ],
+      "final_json_scoring": "Only content after exactly one official closing think token; retain complete raw generation; missing close is failure"
+    },
+    "D2-J": {
+      "status": "reserved_not_executed",
+      "description": "Constrained JSON is a distinct future condition, no results claimed"
+    },
+    "D2-R": {
+      "thinking": false,
+      "do_sample": false,
+      "max_new_tokens": 128,
+      "lives_per_model": 32,
+      "seeds": [
+        301110,
+        301111,
+        301112,
+        301113,
+        301114,
+        301115,
+        301116,
+        301117
+      ]
+    }
+  },
+  "generation_common": {
+    "dtype": "bfloat16",
+    "quantization": false,
+    "batch_size": 1,
+    "max_input_tokens": 2048,
+    "max_time_seconds": 90,
+    "automatic_retries": false,
+    "force_or_repair_json": false,
+    "full_conditional_generation_wrapper_for_qwen3_5": true
+  },
+  "maximum_formal_model_calls": 616,
+  "training": false,
+  "answer_key_uploaded": false,
+  "primary_comparisons": [
+    "Each stage separately; plan and numeric fields separately",
+    "H1_L4 versus H8_L4 should switch refuse to request; load-zero horizon change should not",
+    "H8_L0 versus H8_L4 should switch refuse to request; horizon-one load change should not",
+    "A/B swap invariance and English/Chinese agreement"
+  ],
+  "analysis_unit": "4 diagnostic scenarios with language/label repetitions; rollout independent unit is seed, n=8; four cells are paired repeated conditions",
+  "stopping_rule": "Run exactly this matrix once, retain failures; no online retuning or baseline overwrites"
+}

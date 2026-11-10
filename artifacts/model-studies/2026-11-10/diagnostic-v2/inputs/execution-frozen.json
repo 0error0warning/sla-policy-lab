@@ -1,0 +1,17 @@
+{
+  "bundle_sha256": "ce0d36b576e0155aa4731abb4bd822363f80f53bc5dcb5e8651256bd2983881c",
+  "files": {
+    "public-cases.json": "93d5441a8887a1965631f7dc6b66779b74752876a2bb633a398cb6a968421fb5",
+    "baseline-rules.json": "14562d8a3dc81da6d608e28cdd69829d5a1d4842ae8a84f7648cbc2e428026e5",
+    "model-candidates.json": "734ef03ba5e592b65dcfe204d064cbe64ffcbd30538883697755c60d84de44f7",
+    "experiment-lock.json": "c187823036295e45f918d6e0a8bd5bd304cb886803bb9659646ae298deac7cdf",
+    "rollout-matrix.json": "cdd27caa38e974018d8a6180d4d1d0682a933cacf0013f82593966dbac0a243f",
+    "gpu_job.py": "84f26ee5b91092518282f818dd94370a197899182a2307f7c047fa62ee5e606f",
+    "诊断二期执行规格_2026-11-10.md": "c69120edb98766afeb9ed34ef3073da8f8449ff2f35e3894de44ef2dac88dc9a",
+    "launch.py": "d7f7ff4a71090fc6f389d19e9db9a7f0674c6296e9306e0457de6a634b9e301a"
+  },
+  "maximum_formal_calls": 616,
+  "model_calls_so_far": 0,
+  "infrastructure_attempt": 2,
+  "created_utc": "2026-11-10T06:11:47Z"
+}
