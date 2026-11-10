@@ -142,6 +142,18 @@ def run():
                                      answer_cases_wrongly_requested=sum("answer" in r["reference_best"] and r["action"] in ("appeal", "exchange") for r in rows),
                                      last_turn_correct=sum(r["correct"] for r in rows if r["id"].startswith("test-06-")),
                                      protected_correct=sum(r["correct"] for r in rows if r["id"].startswith("test-07-")))
+        teacher_totals = {arm: sum(t["perfect_teacher_correct"] for t in teacher if t["arm"] == arm)
+                          for arm in ("aligned", "shuffled")}
+        assert teacher_totals == {"aligned": 124, "shuffled": 88}
+        order_changes = {}
+        for arm in ("frozen", "aligned", "shuffled"):
+            count = 0
+            for life in protocol["lives"]:
+                selected = {r["id"]: r["action"] for r in scored["details"] if r["arm"] == arm and r["life"] == life["id"]}
+                count += sum(selected[f"test-{i:02}-{partner}-order0"] != selected[f"test-{i:02}-{partner}-order1"]
+                             for i in range(8) for partner in ("P17", "P42"))
+            order_changes[arm] = dict(changed=count, pairs=64)
+        assert order_changes["aligned"]["changed"] == 25
         reference_checks = []
         for mapping in (0, 1):
             for test in protocol["tests"]:
@@ -190,6 +202,7 @@ def run():
                 original_publication_sha256=sha256((DATA / "publication.json").read_bytes()).hexdigest(),
                 audit_source_lf_sha256=sha256(Path(__file__).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
                 scoring_decomposition=observations, training=training, perfect_imitation=teacher,
+                perfect_imitation_totals=teacher_totals, static_order_sensitivity=order_changes,
                 exact_four_turn_checks=reference_checks, reward_sensitivity_posthoc=sensitivity,
                 actual_checkpoint_roots=roots, approximate_32_turn_dp=dict(coarse=coarse, fine=fine,
                     grid_intervals=[4000, 8000], future_load_quadrature_nodes=[8, 16],
