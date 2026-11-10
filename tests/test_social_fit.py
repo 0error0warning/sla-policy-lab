@@ -10,6 +10,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments/social_learning"))
 from fit_prepare import build
 from fit_score import aggregate, numeric_returns
+from protocol import canonical
 
 
 class MiniFitDesignTests(unittest.TestCase):
@@ -83,6 +84,7 @@ class MiniFitMetricTests(unittest.TestCase):
         self.assertAlmostEqual(result["mean_kl"], 0., places=12)
         self.assertEqual(result["partner"]["required_switch_pairs"], 2)
         self.assertEqual(result["body"]["required_switch_pairs"], 12)
+        self.assertTrue(canonical(result))
         blind = deepcopy(records)
         for row,record in zip(dataset["train"],blind):
             other = next(r for r in dataset["train"] if r["context"] == row["context"] and r["partner"] == "P17" and r["order"] == row["order"])
@@ -101,6 +103,10 @@ class MiniFitMetricTests(unittest.TestCase):
             scored = numeric_returns([row],[dict(id="r",text=text,terminated=True)])
             self.assertEqual(scored["strict_json_valid"], valid)
             self.assertEqual(scored["all_four_within_tolerance"], correct)
+        fenced='```json\n{"answer":1,"refuse":0,"appeal":0.5,"exchange":0.4}\n```'
+        scored=numeric_returns([row],[dict(id="r",text=fenced,terminated=True)])
+        self.assertEqual(scored["all_four_within_tolerance"],0)
+        self.assertEqual(scored["secondary_extracted_all_four_within_tolerance"],1)
 
 
 if __name__ == "__main__":
