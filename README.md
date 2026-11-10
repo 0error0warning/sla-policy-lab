@@ -10,6 +10,8 @@ Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, 
 
 See the [findings and limits](docs/MODEL_STUDIES.md), [raw evidence and provenance](artifacts/model-studies/2026-11-10/README.md), and [reproduction instructions](experiments/frozen_models/README.md). These are frozen-inference studies, not LoRA/steering/RL training or an LLM integration into the web UI. They retain the first interrupted diagnostic attempt separately from the complete recovery.
 
+A follow-up compared visible damage with residual patching and crossed action label assignment with display order. The layer 7 effect reproduced under the original layout and depended on the prompt encoding. The study also includes a paired CPU wording control. [Body-channel report and results](artifacts/model-studies/2026-11-10/body-channel/REPORT.md)
+
 Saved evidence can be checked on the CPU without downloads or compute allocation:
 
 ```sh
