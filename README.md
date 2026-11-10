@@ -20,6 +20,8 @@ Read the [full negative result and body trajectories](artifacts/model-studies/20
 
 A [post-hoc CPU audit](artifacts/model-studies/2026-11-10/social-learning-audit/REPORT.md) decomposes the accuracy gap, identifies training-layout confounding and differing target marginals in the shuffle control, and checks the reference rule against adaptive planning. The original scores remain unchanged; their interpretation depends on the chosen objective, horizon and action space.
 
+The [saved-adapter read-only diagnostic](artifacts/model-studies/2026-11-10/saved-lora-diagnostic/REPORT.md) now separates original-training fit from one-field changes. Aligned adapters agree with their training teacher on 51/128 original examples versus frozen 96/128, with only a small mean KL improvement; two checkpoints choose the same request action on every training example. None of 36 required partner-switch pairs is fully correct. All 288 old-probe score vectors reproduce exactly, and no weights were trained or changed during evaluation. The empirical teacher total is corrected to **124/128**; the original model scores remain 80/49/74.
+
 Saved evidence can be checked on the CPU without downloads or compute allocation:
 
 ```sh

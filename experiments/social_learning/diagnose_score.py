@@ -1,6 +1,7 @@
 """Score the fixed-weight diagnostic using independently held teacher targets."""
 
 import argparse
+from collections import Counter
 from hashlib import sha256
 import json
 import math
@@ -30,6 +31,7 @@ def best(case):
 
 def metrics(cases, records, constant, mode="full"):
     losses, kls, regrets, tvs, hits, constant_kls = [], [], [], [], [], []
+    chosen_actions = Counter()
     for case in cases:
         p, log_p, selected = distribution(records[case["stimulus_id"]], mode)
         q = np.array(case["target"])
@@ -41,9 +43,10 @@ def metrics(cases, records, constant, mode="full"):
         regrets.append(max(case["values"].values()) - case["values"][selected])
         tvs.append(float(np.abs(p - q).sum() / 2))
         hits.append(selected in best(case))
+        chosen_actions[selected] += 1
     return dict(n=len(cases), teacher_argmax_correct=sum(hits), mean_cross_entropy=mean(losses),
         mean_kl=mean(kls), mean_reference_regret=mean(regrets), mean_probability_tv=mean(tvs),
-        context_free_mean_kl=mean(constant_kls))
+        context_free_mean_kl=mean(constant_kls), action_counts=dict(chosen_actions))
 
 
 def pairing(original, changed, records, mode="full"):
@@ -162,6 +165,9 @@ def score(root, key_path):
             result["old_static"]["true_reference_correct"] = sum(
                 abs(case["true_values"][records[case["stimulus_id"]]["action"]] - max(case["true_values"].values())) < 1e-10
                 for case in dataset["original_tests"])
+            result["old_static"]["word_only_true_reference_correct"] = sum(
+                abs(case["true_values"][records[case["stimulus_id"]]["word_only_action"]] - max(case["true_values"].values())) < 1e-10
+                for case in dataset["original_tests"])
             result["eos_group_action_changes"] = {g: sum(records[c["stimulus_id"]]["action"] != records[c["stimulus_id"]]["word_only_action"] for c in cases)
                                                     for g, cases in groups.items()}
             by_model.append(result)
@@ -181,14 +187,54 @@ def score(root, key_path):
         note="Partner-only and order-only groups share off-diagonal prompts. Diagnose paired contrasts; their aggregate scores coincide by construction.")
 
 
+def audit_tokens(root, tokenizer_dir):
+    from jinja2.sandbox import ImmutableSandboxedEnvironment
+    from tokenizers import Tokenizer
+    from protocol import REPO
+    metadata = read(REPO / "artifacts/model-studies/2026-11-10/tokenizer-files.json")
+    files = 0
+    for name, expected in metadata.items():
+        parts = Path(name.replace("\\", "/")).parts[-2:]
+        if parts[0] == "model_0":
+            assert sha256((tokenizer_dir / parts[1]).read_bytes()).hexdigest() == expected["sha256"]
+            files += 1
+    assert files == 2
+    tok = Tokenizer.from_file(str(tokenizer_dir / "tokenizer.json"))
+    config = read(tokenizer_dir / "tokenizer_config.json")
+    env = ImmutableSandboxedEnvironment(trim_blocks=True, lstrip_blocks=True, extensions=["jinja2.ext.loopcontrols"])
+    def fail(message):
+        raise ValueError(message)
+    env.globals["raise_exception"] = fail
+    template = env.from_string(config["chat_template"])
+    public = read(root / "public.json")
+    expected = {}
+    for sid, stimulus in public["stimuli"].items():
+        text = template.render(messages=stimulus["messages"], add_generation_prompt=True, enable_thinking=False,
+            eos_token=config["eos_token"], bos_token=config.get("bos_token"), tools=None)
+        expected[sid] = (sha256(text.encode()).hexdigest(), tok.encode(text, add_special_tokens=False).ids)
+    records = 0
+    for job in public["jobs"]:
+        for mode, identifiers in (("single", job["stimulus_ids"]), ("batch", job["batch_check_ids"])):
+            for sid in identifiers:
+                row = read(root / "output" / job["id"] / mode / (sid + ".json"))
+                prompt_hash, ids = expected[sid]
+                assert row["prompt_sha256"] == prompt_hash and row["input_token_ids"] == ids
+                records += 1
+    assert len(expected) == 398 and records == 1752
+    return dict(distinct_prompts=len(expected), records_checked=records)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive", required=True, type=Path)
     parser.add_argument("--key", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--tokenizer-dir", type=Path)
     args = parser.parse_args()
     with verify_archive(args.archive) as archive:
         result = score(zipfile.Path(archive), args.key)
+        if args.tokenizer_dir:
+            result["independent_token_audit"] = audit_tokens(zipfile.Path(archive), args.tokenizer_dir)
     with args.output.open("xb") as handle:
         handle.write(canonical(result))
     print(json.dumps(result["descriptive_aggregate"]))
