@@ -74,3 +74,7 @@ freezes 16 fully crossed policy/body prompts and 8 partner-response prompts per 
 `fit_score.py` checks the archive and recomputes fitting, paired-condition and numerical-return
 diagnostics on CPU. This is a memorization/engineering assay on already inspected controls,
 not a new lifetime, unbiased efficacy test, or a change to the original pilot scores.
+
+See the [fitting report and raw evidence](../../artifacts/model-studies/2026-11-10/crossed-mini-fit/REPORT.md)
+and [objective alignment contract](../../artifacts/model-studies/2026-11-10/crossed-mini-fit/VALUE_TARGET_CONTRACT.md).
+Run `python experiments/social_learning/fit_verify.py` to reproduce the published fitting metrics on CPU.

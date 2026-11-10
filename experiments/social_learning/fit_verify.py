@@ -8,7 +8,6 @@ import numpy as np
 
 from fit_prepare import build
 from fit_score import score
-from protocol import canonical
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "artifacts/model-studies/2026-11-10/crossed-mini-fit"
@@ -35,7 +34,9 @@ if __name__ == "__main__":
     for name,expected in manifest["files"].items():
         raw=(DATA/name).read_bytes()
         assert len(raw)==expected["bytes"] and sha256(raw).hexdigest()==expected["sha256"],name
-    assert (DATA/"protocol.json").read_bytes()==canonical(build())
+    # Rebuilding uses the local NumPy/libm; preserve the frozen bytes as the
+    # execution authority and compare regenerated numeric targets tolerantly.
+    equal(json.loads((DATA/"protocol.json").read_bytes()),build())
     expected=json.loads((DATA/"scored.json").read_bytes())
     actual=score(DATA/"gpu-results.zip",DATA/"protocol.json")
     optional=expected.pop("independent_token_audit",None)
