@@ -18,6 +18,8 @@ A separate pilot now adds two identified partners, equal-cost request wordings a
 
 Read the [full negative result and body trajectories](artifacts/model-studies/2026-11-10/social-learning/REPORT.md) and [method/limits](experiments/social_learning/README.md). This is experience-informed policy distillation with supplied body/partner estimation, not autonomous RL, open-ended dialogue, or an LLM integration into the default web app. `python experiments/social_learning/verify.py` replays and checks the evidence on CPU.
 
+A [post-hoc CPU audit](artifacts/model-studies/2026-11-10/social-learning-audit/REPORT.md) decomposes the accuracy gap, identifies training-layout confounding and differing target marginals in the shuffle control, and checks the reference rule against adaptive planning. The original scores remain unchanged; their interpretation depends on the chosen objective, horizon and action space.
+
 Saved evidence can be checked on the CPU without downloads or compute allocation:
 
 ```sh

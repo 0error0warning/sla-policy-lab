@@ -49,4 +49,6 @@ python experiments/social_learning/score.py --archive /absolute/gpu-results.zip 
 
 An optional `--tokenizer-dir /absolute/pinned/model_0` independently renders and tokenizes every decision input, using the earlier study's verified tokenizer cache. This optional audit needs `tokenizers` and `jinja2`; ordinary replay needs NumPy only.
 
+The subsequent [reference-rule and training-design audit](../../artifacts/model-studies/2026-11-10/social-learning-audit/REPORT.md) is a separate, post-hoc analysis. Reproduce it using `python experiments/social_learning/audit.py --verify artifacts/model-studies/2026-11-10/social-learning-audit/audit.json`. It uses existing outputs only and neither retrains nor allocates compute.
+
 Implementation references: [PEFT LoRA configuration](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/lora), [adapter disabling/loading](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/peft_model), [immutable model checkpoint](https://huggingface.co/Qwen/Qwen3.5-4B/tree/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a).
