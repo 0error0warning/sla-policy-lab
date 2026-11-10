@@ -1,0 +1,27 @@
+name: CPU checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q sla_demo run.py evaluate.py benchmark.py tests
+      - run: node --check web/app.js
+      - run: python tests/dashboard/run_checks.py --repo .
+      - run: python evaluate.py --seed-count 2 --trace-all --save-checkpoint /tmp/toy.npz --output /tmp/results.json
+      - run: python benchmark.py --checkpoint /tmp/toy.npz --seed-count 2 --horizon 8 --strengths 0 --output-dir /tmp/benchmark
+      - run: python evaluate.py --mode online --checkpoint /tmp/toy.npz --seed-count 2 --trace-all --output /tmp/online.json
+      - run: python evaluate.py --mode online --disable-learning --checkpoint /tmp/toy.npz --seed-count 2 --output /tmp/online-frozen.json

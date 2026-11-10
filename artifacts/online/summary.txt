@@ -1,0 +1,7 @@
+Saved artifacts/online/example.json
+Model fingerprint: bc3c498c8475117bcfe0458887f3b4c1a5c984f0bdd84c4794dec04c2b498e10
+prompt_reference   return= 19.378  lifespan= 42.58  answers= 27.79
+small_policy       return= 19.209  lifespan= 40.08  answers= 27.58
+lora               return= 19.965  lifespan= 43.29  answers= 28.46
+steering           return= 18.289  lifespan= 32.83  answers= 26.25
+frozen_base        return= 19.965  lifespan= 43.29  answers= 28.46

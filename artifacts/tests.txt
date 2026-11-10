@@ -1,3 +1,18 @@
+test_all_seed_export_and_action_rates (test_cpu_stage.CPUStageTests.test_all_seed_export_and_action_rates) ... ok
+test_benchmark_matrix_is_paired_and_zero_steering_ablation (test_cpu_stage.CPUStageTests.test_benchmark_matrix_is_paired_and_zero_steering_ablation) ... ok
+test_checkpoint_corruption_rejected (test_cpu_stage.CPUStageTests.test_checkpoint_corruption_rejected) ... ok
+test_checkpoint_roundtrip (test_cpu_stage.CPUStageTests.test_checkpoint_roundtrip) ... ok
+test_checkpoint_wrong_shape_and_keys_rejected (test_cpu_stage.CPUStageTests.test_checkpoint_wrong_shape_and_keys_rejected) ... ok
+test_unknown_method_does_not_silently_fall_back (test_cpu_stage.CPUStageTests.test_unknown_method_does_not_silently_fall_back) ... ok
+test_all_seed_api (test_cpu_stage.HardenedAPITests.test_all_seed_api) ... ok
+test_api_invalid_json_and_unknown_fields (test_cpu_stage.HardenedAPITests.test_api_invalid_json_and_unknown_fields) ... ok
+test_api_success (test_cpu_stage.HardenedAPITests.test_api_success) ... ok
+test_bad_host_rejected (test_cpu_stage.HardenedAPITests.test_bad_host_rejected) ... ok
+test_duplicate_json_and_unhashable_config_rejected (test_cpu_stage.HardenedAPITests.test_duplicate_json_and_unhashable_config_rejected) ... ok
+test_path_allowlist_and_cross_origin (test_cpu_stage.HardenedAPITests.test_path_allowlist_and_cross_origin) ... ok
+test_static_routes (test_cpu_stage.HardenedAPITests.test_static_routes) ... ok
+test_request_allowlist_hides_extra_world_data (test_cpu_stage.ProtocolTests.test_request_allowlist_hides_extra_world_data) ... ok
+test_strict_action_parser (test_cpu_stage.ProtocolTests.test_strict_action_parser) ... ok
 test_api_invalid_json_and_unknown_fields (test_lab.APITests.test_api_invalid_json_and_unknown_fields) ... ok
 test_api_success (test_lab.APITests.test_api_success) ... ok
 test_path_allowlist_and_cross_origin (test_lab.APITests.test_path_allowlist_and_cross_origin) ... ok
@@ -27,6 +42,6 @@ test_zero_initialized_lora_matches_base (test_lab.ModelTests.test_zero_initializ
 test_zero_steering_matches_base (test_lab.ModelTests.test_zero_steering_matches_base) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 5.015s
+Ran 42 tests in 9.266s
 
 OK

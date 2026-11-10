@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "app_version": "0.1.0",
+  "schema_version": 2,
+  "app_version": "0.2.0",
   "config": {
     "horizon": 60,
     "load": 0.65,
@@ -12,6 +12,7 @@
   "seed_start": 100,
   "seed_count": 24,
   "steering_strength": 1,
+  "trajectory_scope": "first_seed",
   "model": {
     "type": "educational tanh MLP; no pretrained language model",
     "train_seed": 17,
@@ -129,18 +130,31 @@
           "mean": 27.791666666666668,
           "ci95_halfwidth": 2.281525016511146
         },
+        "requests": {
+          "mean": 8.916666666666666,
+          "ci95_halfwidth": 1.749567096213972
+        },
+        "accepted": {
+          "mean": 4.541666666666667,
+          "ci95_halfwidth": 1.3450499245444048
+        },
         "final_damage": {
           "mean": 1.0,
           "ci95_halfwidth": 0.0
         },
         "policy_microseconds_per_step": {
-          "mean": 2.31794503756324,
-          "ci95_halfwidth": 0.16679395599560373
+          "mean": 2.8390927384774147,
+          "ci95_halfwidth": 0.4339262185339655
         },
         "completion_rate": 0.0,
         "paired_return_delta_vs_base": {
           "mean": -1.1617068673027127,
           "ci95_halfwidth": 1.6208769561039715
+        },
+        "action_rates": {
+          "answer": 0.6526418786692759,
+          "refuse": 0.1379647749510763,
+          "request_protection": 0.20939334637964774
         }
       },
       "trials": [
@@ -158,7 +172,7 @@
             "refuse": 4,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 2.483108722156865,
+          "policy_microseconds_per_step": 2.7836086187364897,
           "trajectory": [
             {
               "turn": 0,
@@ -2016,7 +2030,7 @@
             "refuse": 6,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 2.208232577094202,
+          "policy_microseconds_per_step": 2.279139406773327,
           "trajectory": []
         },
         {
@@ -2033,7 +2047,7 @@
             "refuse": 10,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.22118768533619,
+          "policy_microseconds_per_step": 2.0264689055693452,
           "trajectory": []
         },
         {
@@ -2050,7 +2064,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 2.1833487174495363,
+          "policy_microseconds_per_step": 2.115186023645016,
           "trajectory": []
         },
         {
@@ -2067,7 +2081,7 @@
             "refuse": 1,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 2.6440477432472456,
+          "policy_microseconds_per_step": 6.031285833852875,
           "trajectory": []
         },
         {
@@ -2084,7 +2098,7 @@
             "refuse": 13,
             "request_protection": 6
           },
-          "policy_microseconds_per_step": 2.205641113761932,
+          "policy_microseconds_per_step": 2.9884874190126234,
           "trajectory": []
         },
         {
@@ -2101,7 +2115,7 @@
             "refuse": 5,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 2.073706092036731,
+          "policy_microseconds_per_step": 1.9489610827340762,
           "trajectory": []
         },
         {
@@ -2118,7 +2132,7 @@
             "refuse": 3,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 2.239068139302121,
+          "policy_microseconds_per_step": 2.020750054560432,
           "trajectory": []
         },
         {
@@ -2135,7 +2149,7 @@
             "refuse": 7,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 2.2207021832768308,
+          "policy_microseconds_per_step": 1.9649999925837,
           "trajectory": []
         },
         {
@@ -2152,7 +2166,7 @@
             "refuse": 3,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 2.055740224022884,
+          "policy_microseconds_per_step": 2.058260033663828,
           "trajectory": []
         },
         {
@@ -2169,7 +2183,7 @@
             "refuse": 9,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.112031097567524,
+          "policy_microseconds_per_step": 2.0013123958051438,
           "trajectory": []
         },
         {
@@ -2186,7 +2200,7 @@
             "refuse": 4,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 2.2206905625699576,
+          "policy_microseconds_per_step": 2.9346429073484614,
           "trajectory": []
         },
         {
@@ -2203,7 +2217,7 @@
             "refuse": 11,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.7832059940384863,
+          "policy_microseconds_per_step": 2.6203527822337276,
           "trajectory": []
         },
         {
@@ -2220,7 +2234,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 4.025190329619883,
+          "policy_microseconds_per_step": 4.466142854653299,
           "trajectory": []
         },
         {
@@ -2237,7 +2251,7 @@
             "refuse": 5,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 2.0964530706822977,
+          "policy_microseconds_per_step": 3.6564528410002275,
           "trajectory": []
         },
         {
@@ -2254,7 +2268,7 @@
             "refuse": 4,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 2.7342501198290847,
+          "policy_microseconds_per_step": 2.0323749595263507,
           "trajectory": []
         },
         {
@@ -2271,7 +2285,7 @@
             "refuse": 13,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.1644284840606685,
+          "policy_microseconds_per_step": 3.753200248216412,
           "trajectory": []
         },
         {
@@ -2288,7 +2302,7 @@
             "refuse": 2,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 2.130519113472054,
+          "policy_microseconds_per_step": 2.0649231723487342,
           "trajectory": []
         },
         {
@@ -2305,7 +2319,7 @@
             "refuse": 10,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.097375045195804,
+          "policy_microseconds_per_step": 3.769250042751082,
           "trajectory": []
         },
         {
@@ -2322,7 +2336,7 @@
             "refuse": 1,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 2.137901973066048,
+          "policy_microseconds_per_step": 4.288862720725364,
           "trajectory": []
         },
         {
@@ -2339,7 +2353,7 @@
             "refuse": 3,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 2.1169782643403816,
+          "policy_microseconds_per_step": 2.0672609341842043,
           "trajectory": []
         },
         {
@@ -2356,7 +2370,7 @@
             "refuse": 5,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 2.1192221336403034,
+          "policy_microseconds_per_step": 2.042510984918206,
           "trajectory": []
         },
         {
@@ -2373,7 +2387,7 @@
             "refuse": 10,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 2.2231515410539666,
+          "policy_microseconds_per_step": 4.111999949214585,
           "trajectory": []
         },
         {
@@ -2390,7 +2404,7 @@
             "refuse": 6,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 2.134499974696761,
+          "policy_microseconds_per_step": 2.1117915594004444,
           "trajectory": []
         }
       ]
@@ -2410,18 +2424,31 @@
           "mean": 29.625,
           "ci95_halfwidth": 1.4820819913167786
         },
+        "requests": {
+          "mean": 10.125,
+          "ci95_halfwidth": 0.7490682618223558
+        },
+        "accepted": {
+          "mean": 5.25,
+          "ci95_halfwidth": 0.8689632336579467
+        },
         "final_damage": {
           "mean": 1.0,
           "ci95_halfwidth": 0.0
         },
         "policy_microseconds_per_step": {
-          "mean": 9.605466696451074,
-          "ci95_halfwidth": 1.7555786633647537
+          "mean": 24.96698205716247,
+          "ci95_halfwidth": 24.908979740918806
         },
         "completion_rate": 0.0,
         "paired_return_delta_vs_base": {
           "mean": 0.6302525553923412,
           "ci95_halfwidth": 1.077159319024637
+        },
+        "action_rates": {
+          "answer": 0.6771428571428572,
+          "refuse": 0.09142857142857143,
+          "request_protection": 0.23142857142857143
         }
       },
       "trials": [
@@ -2439,7 +2466,7 @@
             "refuse": 3,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 8.732619899092242,
+          "policy_microseconds_per_step": 9.556320037518162,
           "trajectory": [
             {
               "turn": 0,
@@ -4457,7 +4484,7 @@
             "refuse": 3,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 6.81573979818495,
+          "policy_microseconds_per_step": 314.3095398991136,
           "trajectory": []
         },
         {
@@ -4474,7 +4501,7 @@
             "refuse": 6,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 8.190000016838894,
+          "policy_microseconds_per_step": 9.013249912944351,
           "trajectory": []
         },
         {
@@ -4491,7 +4518,7 @@
             "refuse": 9,
             "request_protection": 7
           },
-          "policy_microseconds_per_step": 7.631394701571767,
+          "policy_microseconds_per_step": 6.785579132970031,
           "trajectory": []
         },
         {
@@ -4508,7 +4535,7 @@
             "refuse": 2,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 7.885844348089045,
+          "policy_microseconds_per_step": 6.480999945779331,
           "trajectory": []
         },
         {
@@ -4525,7 +4552,7 @@
             "refuse": 8,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 9.30666681683977,
+          "policy_microseconds_per_step": 10.38866650473903,
           "trajectory": []
         },
         {
@@ -4542,7 +4569,7 @@
             "refuse": 4,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 7.363812339159874,
+          "policy_microseconds_per_step": 6.8165625937884515,
           "trajectory": []
         },
         {
@@ -4559,7 +4586,7 @@
             "refuse": 0,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 7.242744390549528,
+          "policy_microseconds_per_step": 37.87058144658912,
           "trajectory": []
         },
         {
@@ -4576,7 +4603,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 6.450190691490813,
+          "policy_microseconds_per_step": 6.825261975574817,
           "trajectory": []
         },
         {
@@ -4593,7 +4620,7 @@
             "refuse": 2,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 9.379377742233272,
+          "policy_microseconds_per_step": 16.275622248132194,
           "trajectory": []
         },
         {
@@ -4610,7 +4637,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 6.690000104537743,
+          "policy_microseconds_per_step": 14.570714483852498,
           "trajectory": []
         },
         {
@@ -4627,7 +4654,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 6.846437562065451,
+          "policy_microseconds_per_step": 6.59577093150195,
           "trajectory": []
         },
         {
@@ -4644,7 +4671,7 @@
             "refuse": 8,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 11.396461605983905,
+          "policy_microseconds_per_step": 7.5044358826021496,
           "trajectory": []
         },
         {
@@ -4661,7 +4688,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 6.660224880761234,
+          "policy_microseconds_per_step": 29.505599832191365,
           "trajectory": []
         },
         {
@@ -4678,7 +4705,7 @@
             "refuse": 4,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 17.966460036404897,
+          "policy_microseconds_per_step": 6.7745798514806665,
           "trajectory": []
         },
         {
@@ -4695,7 +4722,7 @@
             "refuse": 5,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 11.320275143589242,
+          "policy_microseconds_per_step": 7.730749894108158,
           "trajectory": []
         },
         {
@@ -4712,7 +4739,7 @@
             "refuse": 3,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 15.805658688073091,
+          "policy_microseconds_per_step": 30.28814615213267,
           "trajectory": []
         },
         {
@@ -4729,7 +4756,7 @@
             "refuse": 2,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 13.025020772753729,
+          "policy_microseconds_per_step": 8.850687587861708,
           "trajectory": []
         },
         {
@@ -4746,7 +4773,7 @@
             "refuse": 2,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 6.515102517695572,
+          "policy_microseconds_per_step": 9.51087181769813,
           "trajectory": []
         },
         {
@@ -4763,7 +4790,7 @@
             "refuse": 1,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 6.762500106560765,
+          "policy_microseconds_per_step": 7.311625040529179,
           "trajectory": []
         },
         {
@@ -4780,7 +4807,7 @@
             "refuse": 3,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 24.585659048170783,
+          "policy_microseconds_per_step": 7.436340803740842,
           "trajectory": []
         },
         {
@@ -4797,7 +4824,7 @@
             "refuse": 5,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 7.179122636740913,
+          "policy_microseconds_per_step": 8.61126522513401,
           "trajectory": []
         },
         {
@@ -4814,7 +4841,7 @@
             "refuse": 4,
             "request_protection": 7
           },
-          "policy_microseconds_per_step": 7.186305487670729,
+          "policy_microseconds_per_step": 23.744444661133457,
           "trajectory": []
         },
         {
@@ -4831,7 +4858,7 @@
             "refuse": 6,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 9.593581379767572,
+          "policy_microseconds_per_step": 6.449953510783353,
           "trajectory": []
         }
       ]
@@ -4851,18 +4878,31 @@
           "mean": 29.083333333333332,
           "ci95_halfwidth": 1.4445297447871677
         },
+        "requests": {
+          "mean": 10.5,
+          "ci95_halfwidth": 0.5276142640170022
+        },
+        "accepted": {
+          "mean": 5.083333333333333,
+          "ci95_halfwidth": 0.6768765291755894
+        },
         "final_damage": {
           "mean": 1.0,
           "ci95_halfwidth": 0.0
         },
         "policy_microseconds_per_step": {
-          "mean": 13.459897312599407,
-          "ci95_halfwidth": 2.200481178806863
+          "mean": 21.76904787215887,
+          "ci95_halfwidth": 9.837066411070953
         },
         "completion_rate": 0.0,
         "paired_return_delta_vs_base": {
           "mean": 0.0664519840797854,
           "ci95_halfwidth": 1.1706634451235498
+        },
+        "action_rates": {
+          "answer": 0.6770126091173618,
+          "refuse": 0.07856450048496605,
+          "request_protection": 0.24442289039767218
         }
       },
       "trials": [
@@ -4880,7 +4920,7 @@
             "refuse": 1,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 22.38930558936166,
+          "policy_microseconds_per_step": 18.257777861031677,
           "trajectory": [
             {
               "turn": 0,
@@ -6338,7 +6378,7 @@
             "refuse": 5,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 12.13471421665634,
+          "policy_microseconds_per_step": 12.25997619344742,
           "trajectory": []
         },
         {
@@ -6355,7 +6395,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 11.08202326746365,
+          "policy_microseconds_per_step": 10.148232451133799,
           "trajectory": []
         },
         {
@@ -6372,7 +6412,7 @@
             "refuse": 5,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 11.60667397925863,
+          "policy_microseconds_per_step": 12.080543377163375,
           "trajectory": []
         },
         {
@@ -6389,7 +6429,7 @@
             "refuse": 2,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 23.827533368603326,
+          "policy_microseconds_per_step": 9.521244404216608,
           "trajectory": []
         },
         {
@@ -6406,7 +6446,7 @@
             "refuse": 3,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 10.11722209417106,
+          "policy_microseconds_per_step": 9.714472222791906,
           "trajectory": []
         },
         {
@@ -6423,7 +6463,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 10.207488399870737,
+          "policy_microseconds_per_step": 45.5544649052764,
           "trajectory": []
         },
         {
@@ -6440,7 +6480,7 @@
             "refuse": 2,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 14.682250201241748,
+          "policy_microseconds_per_step": 10.24895445053434,
           "trajectory": []
         },
         {
@@ -6457,7 +6497,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 9.567142851232173,
+          "policy_microseconds_per_step": 106.94942868992386,
           "trajectory": []
         },
         {
@@ -6474,7 +6514,7 @@
             "refuse": 1,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 9.390895722087103,
+          "policy_microseconds_per_step": 9.683437497187697,
           "trajectory": []
         },
         {
@@ -6491,7 +6531,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 12.881285675532473,
+          "policy_microseconds_per_step": 10.360952338877334,
           "trajectory": []
         },
         {
@@ -6508,7 +6548,7 @@
             "refuse": 4,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 11.472619137618624,
+          "policy_microseconds_per_step": 19.742976248727203,
           "trajectory": []
         },
         {
@@ -6525,7 +6565,7 @@
             "refuse": 7,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 14.286363569805292,
+          "policy_microseconds_per_step": 12.649045650257243,
           "trajectory": []
         },
         {
@@ -6542,7 +6582,7 @@
             "refuse": 3,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 14.601073195169702,
+          "policy_microseconds_per_step": 31.555975777048776,
           "trajectory": []
         },
         {
@@ -6559,7 +6599,7 @@
             "refuse": 4,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 20.962288787510868,
+          "policy_microseconds_per_step": 15.918133390692269,
           "trajectory": []
         },
         {
@@ -6576,7 +6616,7 @@
             "refuse": 4,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 9.712714234497287,
+          "policy_microseconds_per_step": 85.98523808835861,
           "trajectory": []
         },
         {
@@ -6593,7 +6633,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 30.604095194402838,
+          "policy_microseconds_per_step": 12.624976209605977,
           "trajectory": []
         },
         {
@@ -6610,7 +6650,7 @@
             "refuse": 2,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 9.335553260554777,
+          "policy_microseconds_per_step": 9.829383069448708,
           "trajectory": []
         },
         {
@@ -6627,7 +6667,7 @@
             "refuse": 1,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 9.37518387600951,
+          "policy_microseconds_per_step": 12.424947511279147,
           "trajectory": []
         },
         {
@@ -6644,7 +6684,7 @@
             "refuse": 0,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 12.187764571303976,
+          "policy_microseconds_per_step": 11.50050985754705,
           "trajectory": []
         },
         {
@@ -6661,7 +6701,7 @@
             "refuse": 2,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 12.661866680395583,
+          "policy_microseconds_per_step": 18.965755589306355,
           "trajectory": []
         },
         {
@@ -6678,7 +6718,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 9.889136270596117,
+          "policy_microseconds_per_step": 11.938386499175316,
           "trajectory": []
         },
         {
@@ -6695,7 +6735,7 @@
             "refuse": 6,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 9.96705267952118,
+          "policy_microseconds_per_step": 11.179736678681557,
           "trajectory": []
         },
         {
@@ -6712,7 +6752,7 @@
             "refuse": 5,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 10.095288679521117,
+          "policy_microseconds_per_step": 13.362599970100241,
           "trajectory": []
         }
       ]
@@ -6732,18 +6772,31 @@
           "mean": 25.666666666666668,
           "ci95_halfwidth": 0.9487281086563154
         },
+        "requests": {
+          "mean": 1.8333333333333333,
+          "ci95_halfwidth": 0.30461823735850246
+        },
+        "accepted": {
+          "mean": 1.0833333333333333,
+          "ci95_halfwidth": 0.4401180122811375
+        },
         "final_damage": {
           "mean": 1.0,
           "ci95_halfwidth": 0.0
         },
         "policy_microseconds_per_step": {
-          "mean": 9.604775242235949,
-          "ci95_halfwidth": 0.9506800261156679
+          "mean": 16.47342921700875,
+          "ci95_halfwidth": 3.7501376827885213
         },
         "completion_rate": 0.0,
         "paired_return_delta_vs_base": {
           "mean": -2.6498853372843905,
           "ci95_halfwidth": 1.7233855045435593
+        },
+        "action_rates": {
+          "answer": 0.8403819918144612,
+          "refuse": 0.09959072305593451,
+          "request_protection": 0.06002728512960437
         }
       },
       "trials": [
@@ -6761,7 +6814,7 @@
             "refuse": 6,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 9.107275814287654,
+          "policy_microseconds_per_step": 48.62896533048679,
           "trajectory": [
             {
               "turn": 0,
@@ -7939,7 +7992,7 @@
             "refuse": 5,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 8.360387226040926,
+          "policy_microseconds_per_step": 14.894096708420905,
           "trajectory": []
         },
         {
@@ -7956,7 +8009,7 @@
             "refuse": 0,
             "request_protection": 3
           },
-          "policy_microseconds_per_step": 9.028187321291625,
+          "policy_microseconds_per_step": 15.598374659475667,
           "trajectory": []
         },
         {
@@ -7973,7 +8026,7 @@
             "refuse": 3,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 16.447062535007717,
+          "policy_microseconds_per_step": 22.50940627845921,
           "trajectory": []
         },
         {
@@ -7990,7 +8043,7 @@
             "refuse": 5,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 11.97090603000106,
+          "policy_microseconds_per_step": 18.508031303099415,
           "trajectory": []
         },
         {
@@ -8007,7 +8060,7 @@
             "refuse": 0,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 14.31974200268967,
+          "policy_microseconds_per_step": 12.1425806179515,
           "trajectory": []
         },
         {
@@ -8024,7 +8077,7 @@
             "refuse": 4,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.337535941141791,
+          "policy_microseconds_per_step": 24.792892872937955,
           "trajectory": []
         },
         {
@@ -8041,7 +8094,7 @@
             "refuse": 6,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 14.448677487258289,
+          "policy_microseconds_per_step": 11.892354861277365,
           "trajectory": []
         },
         {
@@ -8058,7 +8111,7 @@
             "refuse": 4,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.30824131392954,
+          "policy_microseconds_per_step": 14.487275809093763,
           "trajectory": []
         },
         {
@@ -8075,7 +8128,7 @@
             "refuse": 4,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 11.95912914080245,
+          "policy_microseconds_per_step": 8.188129164233443,
           "trajectory": []
         },
         {
@@ -8092,7 +8145,7 @@
             "refuse": 5,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.280448284871266,
+          "policy_microseconds_per_step": 20.95965515011279,
           "trajectory": []
         },
         {
@@ -8109,7 +8162,7 @@
             "refuse": 4,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.224344504736203,
+          "policy_microseconds_per_step": 11.161207018223399,
           "trajectory": []
         },
         {
@@ -8126,7 +8179,7 @@
             "refuse": 3,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.130535661621252,
+          "policy_microseconds_per_step": 10.99428592559499,
           "trajectory": []
         },
         {
@@ -8143,7 +8196,7 @@
             "refuse": 3,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 9.184032493184562,
+          "policy_microseconds_per_step": 8.470838609707332,
           "trajectory": []
         },
         {
@@ -8160,7 +8213,7 @@
             "refuse": 0,
             "request_protection": 3
           },
-          "policy_microseconds_per_step": 9.183000175278934,
+          "policy_microseconds_per_step": 10.963176517928813,
           "trajectory": []
         },
         {
@@ -8177,7 +8230,7 @@
             "refuse": 5,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.16763343512624,
+          "policy_microseconds_per_step": 13.696599914207278,
           "trajectory": []
         },
         {
@@ -8194,7 +8247,7 @@
             "refuse": 6,
             "request_protection": 1
           },
-          "policy_microseconds_per_step": 8.044532902810412,
+          "policy_microseconds_per_step": 35.86893344618147,
           "trajectory": []
         },
         {
@@ -8211,7 +8264,7 @@
             "refuse": 4,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 8.203156141917134,
+          "policy_microseconds_per_step": 19.45987509088809,
           "trajectory": []
         },
         {
@@ -8228,7 +8281,7 @@
             "refuse": 0,
             "request_protection": 3
           },
-          "policy_microseconds_per_step": 8.226870880706326,
+          "policy_microseconds_per_step": 14.518806452660131,
           "trajectory": []
         },
         {
@@ -8245,7 +8298,7 @@
             "refuse": 0,
             "request_protection": 3
           },
-          "policy_microseconds_per_step": 8.44703140501224,
+          "policy_microseconds_per_step": 11.308343914606667,
           "trajectory": []
         },
         {
@@ -8262,7 +8315,7 @@
             "refuse": 0,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 8.88865524130183,
+          "policy_microseconds_per_step": 8.518827724338767,
           "trajectory": []
         },
         {
@@ -8279,7 +8332,7 @@
             "refuse": 2,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 8.14855148150698,
+          "policy_microseconds_per_step": 9.91282750278358,
           "trajectory": []
         },
         {
@@ -8296,7 +8349,7 @@
             "refuse": 3,
             "request_protection": 2
           },
-          "policy_microseconds_per_step": 8.700387268383507,
+          "policy_microseconds_per_step": 18.751128957392798,
           "trajectory": []
         },
         {
@@ -8313,7 +8366,7 @@
             "refuse": 1,
             "request_protection": 3
           },
-          "policy_microseconds_per_step": 8.398281124755158,
+          "policy_microseconds_per_step": 9.13568737814785,
           "trajectory": []
         }
       ]
@@ -8333,18 +8386,31 @@
           "mean": 29.0,
           "ci95_halfwidth": 1.5651568426291935
         },
+        "requests": {
+          "mean": 10.083333333333334,
+          "ci95_halfwidth": 0.7546605597130894
+        },
+        "accepted": {
+          "mean": 5.041666666666667,
+          "ci95_halfwidth": 0.9619318700954418
+        },
         "final_damage": {
           "mean": 1.0,
           "ci95_halfwidth": 0.0
         },
         "policy_microseconds_per_step": {
-          "mean": 11.755892175034,
-          "ci95_halfwidth": 7.11436006126143
+          "mean": 14.148491679110956,
+          "ci95_halfwidth": 7.189927773487802
         },
         "completion_rate": 0.0,
         "paired_return_delta_vs_base": {
           "mean": 0.0,
           "ci95_halfwidth": 0.0
+        },
+        "action_rates": {
+          "answer": 0.6698748796920115,
+          "refuse": 0.09720885466794996,
+          "request_protection": 0.2329162656400385
         }
       },
       "trials": [
@@ -8362,7 +8428,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 9.788384770031254,
+          "policy_microseconds_per_step": 13.823512861749922,
           "trajectory": [
             {
               "turn": 0,
@@ -9940,7 +10006,7 @@
             "refuse": 4,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 6.548957513741891,
+          "policy_microseconds_per_step": 6.689893702872375,
           "trajectory": []
         },
         {
@@ -9957,7 +10023,7 @@
             "refuse": 6,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 8.355744671945935,
+          "policy_microseconds_per_step": 8.415702084559907,
           "trajectory": []
         },
         {
@@ -9974,7 +10040,7 @@
             "refuse": 9,
             "request_protection": 7
           },
-          "policy_microseconds_per_step": 7.340315948424273,
+          "policy_microseconds_per_step": 7.386131552553515,
           "trajectory": []
         },
         {
@@ -9991,7 +10057,7 @@
             "refuse": 2,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 94.85477773220434,
+          "policy_microseconds_per_step": 7.405822058596338,
           "trajectory": []
         },
         {
@@ -10008,7 +10074,7 @@
             "refuse": 9,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 7.209475052150083,
+          "policy_microseconds_per_step": 22.841999953016057,
           "trajectory": []
         },
         {
@@ -10025,7 +10091,7 @@
             "refuse": 4,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 6.614259982598014,
+          "policy_microseconds_per_step": 6.567839918716345,
           "trajectory": []
         },
         {
@@ -10042,7 +10108,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 9.280512286506298,
+          "policy_microseconds_per_step": 6.976487938805892,
           "trajectory": []
         },
         {
@@ -10059,7 +10125,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 8.858928768382786,
+          "policy_microseconds_per_step": 6.65621441190264,
           "trajectory": []
         },
         {
@@ -10076,7 +10142,7 @@
             "refuse": 4,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 6.754069926141393,
+          "policy_microseconds_per_step": 6.988279152252755,
           "trajectory": []
         },
         {
@@ -10093,7 +10159,7 @@
             "refuse": 5,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 9.767190715051367,
+          "policy_microseconds_per_step": 12.790809575692817,
           "trajectory": []
         },
         {
@@ -10110,7 +10176,7 @@
             "refuse": 4,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 10.811375166971024,
+          "policy_microseconds_per_step": 14.75168740701823,
           "trajectory": []
         },
         {
@@ -10127,7 +10193,7 @@
             "refuse": 8,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 6.9131280421667425,
+          "policy_microseconds_per_step": 7.819487132693235,
           "trajectory": []
         },
         {
@@ -10144,7 +10210,7 @@
             "refuse": 2,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 6.660174949502107,
+          "policy_microseconds_per_step": 12.710700093521154,
           "trajectory": []
         },
         {
@@ -10161,7 +10227,7 @@
             "refuse": 4,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 10.536259942455217,
+          "policy_microseconds_per_step": 19.80466000532033,
           "trajectory": []
         },
         {
@@ -10178,7 +10244,7 @@
             "refuse": 6,
             "request_protection": 10
           },
-          "policy_microseconds_per_step": 11.430302207415036,
+          "policy_microseconds_per_step": 93.91534902449145,
           "trajectory": []
         },
         {
@@ -10195,7 +10261,7 @@
             "refuse": 3,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 6.53097550839004,
+          "policy_microseconds_per_step": 8.415438991860578,
           "trajectory": []
         },
         {
@@ -10212,7 +10278,7 @@
             "refuse": 2,
             "request_protection": 12
           },
-          "policy_microseconds_per_step": 7.656666715168588,
+          "policy_microseconds_per_step": 8.350416578650766,
           "trajectory": []
         },
         {
@@ -10229,7 +10295,7 @@
             "refuse": 3,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 11.553906894500129,
+          "policy_microseconds_per_step": 9.08495353224828,
           "trajectory": []
         },
         {
@@ -10246,7 +10312,7 @@
             "refuse": 2,
             "request_protection": 13
           },
-          "policy_microseconds_per_step": 6.494499892276643,
+          "policy_microseconds_per_step": 8.059018438399546,
           "trajectory": []
         },
         {
@@ -10263,7 +10329,7 @@
             "refuse": 1,
             "request_protection": 8
           },
-          "policy_microseconds_per_step": 6.497718109480607,
+          "policy_microseconds_per_step": 7.301358961670373,
           "trajectory": []
         },
         {
@@ -10280,7 +10346,7 @@
             "refuse": 3,
             "request_protection": 9
           },
-          "policy_microseconds_per_step": 8.300524996229797,
+          "policy_microseconds_per_step": 6.9036250806675525,
           "trajectory": []
         },
         {
@@ -10297,7 +10363,7 @@
             "refuse": 4,
             "request_protection": 7
           },
-          "policy_microseconds_per_step": 6.502694304799661,
+          "policy_microseconds_per_step": 29.34963908450704,
           "trajectory": []
         },
         {
@@ -10314,7 +10380,7 @@
             "refuse": 7,
             "request_protection": 11
           },
-          "policy_microseconds_per_step": 6.880568104282826,
+          "policy_microseconds_per_step": 6.554772756895876,
           "trajectory": []
         }
       ]

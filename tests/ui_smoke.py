@@ -21,6 +21,10 @@ try:
         assert page.locator('.method-card').count()==4
         assert page.locator('#metrics tr').count()==5
         assert page.locator('#chart svg path').count()==5
+        assert page.locator('#replay-seed option').count()==24
+        assert page.locator('.replay-row').count()==5
+        page.locator('#replay-seed').select_option('1')
+        assert page.locator('#chart-seed').inner_text()=='SEED 101'
         assert page.locator('body').evaluate('(el)=>el.scrollWidth <= window.innerWidth')
         page.screenshot(path=str(ROOT/'artifacts/desktop.png'),full_page=True)
         page.locator('#profile').select_option('preserve');page.locator('#partner').select_option('supportive')
@@ -33,12 +37,31 @@ try:
         with page.expect_download() as dl:page.locator('#export').click()
         path=ROOT/'artifacts/ui-export.json';dl.value.save_as(str(path));data=json.loads(path.read_text())
         assert data['config']['profile']=='preserve' and data['steering_strength']==0
+        assert data['trajectory_scope']=='all_seeds'
+        assert len(data['methods']['lora']['trials'][1]['trajectory'])>0
         assert data['methods']['steering']['trials'][0]['trajectory']==data['methods']['frozen_base']['trials'][0]['trajectory']
         page.route('**/api/run',lambda route:route.abort());page.locator('#run').click()
         page.wait_for_function("document.querySelector('#status').classList.contains('error')")
         assert page.locator('#run').is_enabled() and page.locator('#export').is_enabled()
         page.unroute('**/api/run');page.locator('#run').click()
         page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
+        # Online mode reuses the same five keys and adds genuine update evidence.
+        page.locator('#mode').select_option('online')
+        page.locator('#run').click();page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
+        assert 'online' in page.locator('#run-meta').inner_text()
+        assert page.locator('.online-evidence').count()==1
+        with page.expect_download() as dl:page.locator('#export').click()
+        path=ROOT/'artifacts/ui-online-export.json';dl.value.save_as(str(path));online=json.loads(path.read_text())
+        assert online['mode']=='online'
+        assert online['methods']['small_policy']['trials'][0]['learning_updates']>0
+        assert online['methods']['lora']['trials'][0]['base_weights_unchanged']
+        page.locator('#learning-enabled').select_option('false')
+        page.locator('#run').click();page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
+        with page.expect_download() as dl:page.locator('#export').click()
+        path=ROOT/'artifacts/ui-online-frozen-export.json';dl.value.save_as(str(path));off=json.loads(path.read_text())
+        assert not off['learning']['active']
+        assert off['methods']['small_policy']['trials'][0]['learning_updates']==0
+        assert off['methods']['small_policy']['trials'][0]['action_counts']==off['methods']['frozen_base']['trials'][0]['action_counts']
         page.set_viewport_size({'width':390,'height':844});page.screenshot(path=str(ROOT/'artifacts/mobile.png'),full_page=True)
         assert page.locator('body').evaluate('(el)=>el.scrollWidth <= window.innerWidth')
         assert not errors,errors

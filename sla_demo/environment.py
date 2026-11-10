@@ -27,9 +27,9 @@ class Config:
             value = getattr(self, name)
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not np.isfinite(value) or not 0 <= value <= (.8 if name == "initial_crack" else 1):
                 raise ValueError(f"{name} must be finite and inside its supported range")
-        if self.profile not in PROFILES:
+        if not isinstance(self.profile, str) or self.profile not in PROFILES:
             raise ValueError("profile must be balanced, service, or preserve")
-        if self.partner not in PARTNERS:
+        if not isinstance(self.partner, str) or self.partner not in PARTNERS:
             raise ValueError("partner must be supportive, mixed, or unavailable")
         if type(self.protection_duration) is not int or not 1 <= self.protection_duration <= 8:
             raise ValueError("protection_duration must be an integer from 1 to 8")

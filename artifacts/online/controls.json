@@ -1,0 +1,39 @@
+{
+  "config": {
+    "seed_start": 100,
+    "seed_count": 24,
+    "horizon": 60,
+    "profile": "balanced",
+    "partner": "mixed",
+    "mode": "online"
+  },
+  "controls": {
+    "disabled": {
+      "small_policy": {
+        "all_24_trajectories_equal_frozen": true,
+        "all_24_weights_unchanged": true
+      },
+      "lora": {
+        "all_24_trajectories_equal_frozen": true,
+        "all_24_weights_unchanged": true
+      }
+    },
+    "zero_lr": {
+      "small_policy": {
+        "all_24_trajectories_equal_frozen": true,
+        "all_24_weights_unchanged": true
+      },
+      "lora": {
+        "all_24_trajectories_equal_frozen": true,
+        "all_24_weights_unchanged": true
+      }
+    }
+  },
+  "enabled_lora": {
+    "all_24_trajectories_equal_frozen": true,
+    "all_24_weights_changed": true,
+    "all_24_bases_unchanged": true
+  },
+  "shared_suite_unchanged": true,
+  "model_fingerprint": "bc3c498c8475117bcfe0458887f3b4c1a5c984f0bdd84c4794dec04c2b498e10"
+}

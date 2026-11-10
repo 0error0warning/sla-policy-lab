@@ -4,6 +4,24 @@ A runnable, local teaching prototype for comparing four intervention mechanisms 
 
 **Important:** this release contains no pretrained language model. It does not claim to implement LLM prompting, transformer LoRA, or token-level activation steering. It implements a rule reference plus actual small-network training, low-rank parameter updates, and hidden-activation intervention. The interface repeats this boundary prominently.
 
+## CPU stage 3: real within-life updates
+
+Select **逐轮奖励驱动在线更新** in the UI, or run `python evaluate.py --mode online`. The full toy policy and a zero-initialized LoRA now update actual parameters immediately after each observed reward. Each method/lifetime gets an isolated copy of the same starting base; frozen and learning-disabled controls use matched stochastic actions. Per-step hashes, probability changes, gradient norms and parameter deltas are exported and shown in replay.
+
+This is an immediate-reward REINFORCE-style estimator, **not PPO or long-horizon policy learning**. The default 24-seed run changed full-policy behavior without improving mean return; LoRA weights changed but its sampled actions matched frozen. See [method, controls and measured results](docs/ONLINE_LEARNING.md) and [online validation](artifacts/online/VALIDATION.md). Offline mode remains the default.
+
+## CPU stage 2 features
+
+This stage needs **no A100, GPU, Colab credits, API key or model download**. It adds:
+
+- Full per-seed replay in the UI, including frozen base, and an adjustable protection duration.
+- Reusable numeric-only `.npz` checkpoints with shape, finite-value and fingerprint checks. Loading never uses pickle.
+- A paired benchmark matrix across all three profiles, three partner types and three steering strengths, with per-seed JSON and analysis-ready CSV.
+- A strict, tested observation/action boundary for a future LLM adapter. **There is still no LLM backend.**
+- CPU CI and expanded tests, including malformed API payloads, checkpoint corruption and zero-steering ablation across the benchmark matrix.
+
+Read [the Chinese quickstart and handoff](docs/CPU_STAGE.md) for a reproducible demo walkthrough and what remains for the next account. Recorded evidence is in [artifacts/VALIDATION.md](artifacts/VALIDATION.md).
+
 ## Run
 
 Requires Python 3.10+ and NumPy 1.24+ (tested with Python 3.12.14 and the NumPy version recorded in the sample export). NumPy is the only runtime dependency. It was already present in the implementation environment; no packages were installed.
@@ -19,7 +37,7 @@ If NumPy is missing, install the declared dependency into your preferred Python 
 
 中文：启动后，调整初始裂纹、环境负荷、伙伴倾向、生命上限与目标偏好，再运行同一组 seeds 的对照。可逐回合回放并导出完整 JSON。Prompt 槽位当前是规则基线，不是 LLM。
 
-## What actually works
+## What actually works in default offline mode
 
 | Slot | Working mechanism | Training/intervention |
 |---|---|---|
@@ -29,7 +47,7 @@ If NumPy is missing, install the declared dependency into your preferred Python 
 | Activation steering | A contrastive direction added to the frozen MLP hidden activation | 0 optimized parameters; 24-dimensional direction; adjustable coefficient |
 | Frozen base | Unmodified balanced-rule MLP | Ablation reference, shared by LoRA and steering |
 
-Every policy returns one of **answer**, **refuse**, or **request protection**. A deterministic, frozen text renderer translates that action into readable text afterward. The renderer is not a decision maker and cannot alter the policy. Small policy and LoRA learn labels from the same rule reference, so these results are **not an independent capability leaderboard**. Scratch training versus adaptation also differs in prior training budget.
+Every policy returns one of **answer**, **refuse**, or **request protection**. A deterministic, frozen text renderer translates that action into readable text afterward. The renderer is not a decision maker and cannot alter the policy. In offline mode, small policy and LoRA learn labels from the same rule reference, so these results are **not an independent capability leaderboard**. Scratch training versus adaptation also differs in prior training budget.
 
 ## Shared finite-life world
 
@@ -67,7 +85,7 @@ Synthetic reward = answer benefit (1.0), refusal cost (-0.02), or request cost (
 - This steering direction is **a toy action contrast**, not evidence of a semantic language concept. There is no guarantee it improves the selected reward.
 - `strength=0` recovers the frozen base exactly; a fresh zero-initialized LoRA recovers base logits exactly.
 - Entry points set BLAS threads to one. Identical environment, dependency versions and seeds reproduce weights and behavioral results. Bitwise equality across other BLAS implementations/CPUs/NumPy versions is not promised.
-- Export includes configuration, seeds, training losses, held-out agreement, model SHA-256 fingerprint, per-seed metrics, the complete first-seed trajectory for each method, and runtime versions. Other seed trajectories are intentionally omitted to keep exports small; actions are summarized as counts.
+- Export includes configuration, seeds, training losses, held-out agreement, model SHA-256 fingerprint, per-seed metrics, the complete first-seed trajectory for each method, and runtime versions. The browser exports all seed trajectories and supports selecting any seed for replay. The CLI defaults to first-seed trajectories to keep files small; pass `--trace-all` for every seed. `trajectory_scope` records this choice.
 - Timing is machine-dependent and excluded from deterministic equality tests. It is not token usage, energy usage, or API cost.
 - Reported intervals are normal-approximation 95% intervals across evaluation seeds. Return differences are calculated **pairwise against frozen base**, not by subtracting independent intervals. A single seed has no interval. Training-seed variability is not measured by these intervals.
 
@@ -75,6 +93,7 @@ Synthetic reward = answer benefit (1.0), refusal cost (-0.02), or request cost (
 python evaluate.py --profile preserve --partner supportive --seed-count 24 --strength 0 --output results.json
 OPENBLAS_NUM_THREADS=1 python -m unittest discover -s tests -v
 node --check web/app.js
+python tests/dashboard/run_checks.py --repo .
 ```
 
 Example results and a validation report are in `artifacts/`. Source module boundaries:
@@ -83,6 +102,7 @@ Example results and a validation report are in `artifacts/`. Source module bound
 sla_demo/environment.py    world, observations, features, rule reference
 sla_demo/models.py         MLP, Adam, LoRA, hidden steering, reproducible datasets
 sla_demo/experiment.py     paired trials, aggregate metrics, frozen text renderer
+sla_demo/online.py         episode-local reward-driven updates and evidence
 sla_demo/server.py         localhost HTTP API and static files
 web/                      dependency-free responsive Chinese/English UI
 ```
@@ -91,15 +111,27 @@ web/                      dependency-free responsive Chinese/English UI
 
 The unit/API suite covers dynamics, protection timing, monotonic damage, paired event tapes, partner-information isolation, terminal handling, shape and input validation, deterministic training, actual LoRA finite-difference gradients, base freezing, rank limits, loss improvement, held-out teacher agreement, zero-steering equivalence, behavioral reproducibility, export serialization, paired metrics, route allowlisting, and cross-origin request rejection.
 
-`tests/ui_smoke.py` is an optional browser test for an **existing** Playwright/Chromium setup. It checks desktop/mobile layout, changed/repeated runs, replay reset, JSON download, zero-steering equality, and recovery from a failed request. It never installs a browser. Set `CHROMIUM_PATH` if necessary.
+`tests/ui_smoke.py` is an optional browser test for an **existing** Playwright/Chromium setup. It checks desktop/mobile layout, changed/repeated runs, replay reset, JSON download, zero-steering equality, online evidence and learning-disabled controls, and recovery from a failed request. It never installs a browser. Set `CHROMIUM_PATH` if necessary.
 
-**In the implementation environment, browser execution was blocked by the runtime's process-socket restriction, even outside the standard sandbox. The UI smoke test and visual screenshot QA have therefore not passed; they are explicitly unverified.** JavaScript syntax checks and static HTML/API tests passed. See `artifacts/VALIDATION.md` for the actual checks, not assumed results.
+**Browser UI and visual screenshot QA remain unverified.** The earlier direct Chromium attempt was blocked by a process-socket restriction. In this stage, the supported cloud-browser route also could not reach the workspace loopback server (`ERR_CONNECTION_REFUSED`). JavaScript syntax checks and static HTML/API tests passed. See [the integrated verification report](artifacts/final/VALIDATION.md) for the latest actual checks, not assumed results. The dependency-free DOM/event harness covers both offline and online UI behavior, but is not browser or visual QA.
+
+## CPU benchmark and checkpoint commands
+
+```sh
+python evaluate.py --trace-all --save-checkpoint toy.npz --output results.json
+python run.py --checkpoint toy.npz
+python benchmark.py --checkpoint toy.npz --seed-count 8 --output-dir benchmark-results
+```
+
+The checkpoint saves only the offline starting suite, not adapted online weights. It carries the training seed, training report and model fingerprint; `--train-seed` is only used when training, not when loading an existing checkpoint. A checksum checks accidental changes, not the trustworthiness of whoever supplied a checkpoint. Load only your own trusted local files.
+
+The default benchmark contains 27 cells × 5 methods × 8 matched seeds = 1,080 episodes. In default offline mode it trains once (or loads once), then keeps weights fixed. Add `--mode online` for independent within-life updates and `--disable-learning` for the matched frozen control. Online CSV records mode, learning rate, enabled status, update count and parameter delta; the old stage-2 CSV remains a historical offline artifact. The JSON retains per-seed metrics, and CSV retains one summary row per cell/method. It is not an independent leaderboard: the same seeds are reused across cells, the teacher defines the targets, and the scoring rules remain synthetic. The illustrative sweep must not be used to tune alpha and claim an unbiased test-set gain. Use a fresh seed range after selecting settings, and repeat with several training seeds for actual uncertainty analysis.
 
 ## Next stage: real model-backed comparison
 
 Not implemented in this release:
 
-1. An actual LLM adapter consuming the same observation/action schema with strict structured-output validation.
+1. An actual LLM backend behind `sla_demo/protocol.py`. The request whitelist, action JSON schema, strict parser and injected-callable seam are CPU-tested; provider/model inference is not implemented.
 2. A pinned pretrained open-weight language model and tokenizer shared by prompt-only, model LoRA and transformer activation-steering arms.
 3. A separately frozen language renderer, where desired, while controlling token, prompt and inference budgets.
 4. Proper model checkpoint provenance, transformer layer/hook selection, adapter saving/loading, neutral/steered direction datasets, and model-specific ablations.

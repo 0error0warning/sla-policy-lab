@@ -3,3 +3,9 @@ __pycache__/
 .venv/
 artifacts/*.json
 artifacts/*.png
+
+*.npz
+benchmark-results/
+results.json
+
+tests/dashboard/generated/

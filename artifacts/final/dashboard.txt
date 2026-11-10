@@ -1,0 +1,5 @@
+PASS: unique HTML IDs and all literal JS ID references exist.
+Generated five actual simulator exports with model bc3c498c8475117bcfe0458887f3b4c1a5c984f0bdd84c4794dec04c2b498e10
+PASS: actual-result rendering; five curves; 4 method cards; play/pause/step/restart/speed; seed reset; terminal state; focus retention; timeline selection; visibility pause; dirty state; presets; matching API payload; repeated run; network failure; malformed response; export; reduced motion; playback end; single-seed CI; real alpha-zero equivalence; online mode switch/evidence; learning-disabled frozen controls.
+Scope: isolated DOM/event harness, not browser layout or screenshot verification.
+Not tested: browser rendering, layout, screenshots, real browser event behavior, or HTTP transport.
