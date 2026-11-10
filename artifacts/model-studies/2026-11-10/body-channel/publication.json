@@ -1,0 +1,12 @@
+{
+  "schema": "sla-body-channel-publication-v1",
+  "archive_sha256": "8864c63f614aa05504e895b42381b7f1d10a841f652adb7b08a44b8092e0ff9b",
+  "archive_bytes": 209767,
+  "report_sha256": "105d9333d86964b6be769ac2d2afe9dd960d4d800d889d4658888a7a7c392e31",
+  "measured_code_commit": "f1a14f6",
+  "environment_commit": "71e69b697790310bb45079603bf92f948e11852c",
+  "physical_pairs": 8,
+  "gpu_forward_passes": 832,
+  "repeat_prompt_sets": 16,
+  "cpu_wording_branches": 512
+}
