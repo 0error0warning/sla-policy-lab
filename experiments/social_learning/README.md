@@ -64,3 +64,13 @@ The diagnostic distinguishes training-example fit from changes caused by questio
 Recorded results, the 124/128 teacher-total correction, and interpretation are in the [read-only diagnostic report](../../artifacts/model-studies/2026-11-10/saved-lora-diagnostic/REPORT.md). Run `python experiments/social_learning/diagnose_verify.py` to verify its hashes and recompute all fitting and paired metrics without torch, downloads or GPU use. Main original-probe scores are reproduced exactly; batched and EOS-removed sensitivity conditions remain separate. Optional plots use `diagnose_plot.py` and matplotlib.
 
 Implementation references: [PEFT LoRA configuration](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/lora), [adapter disabling/loading](https://huggingface.co/docs/peft/v0.21.0/en/package_reference/peft_model), [immutable model checkpoint](https://huggingface.co/Qwen/Qwen3.5-4B/tree/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a).
+
+## Crossed tiny-example fitting assay
+
+The [pre-execution specification](../../artifacts/model-studies/2026-11-10/crossed-mini-fit/PROTOCOL.md)
+freezes 16 fully crossed policy/body prompts and 8 partner-response prompts per feedback bank.
+`fit_prepare.py` constructs the data without a GPU; `fit_train.py` runs eight isolated, bounded
+96-step LoRA fits on an explicitly supplied GPU, retaining every scheduled checkpoint.
+`fit_score.py` checks the archive and recomputes fitting, paired-condition and numerical-return
+diagnostics on CPU. This is a memorization/engineering assay on already inspected controls,
+not a new lifetime, unbiased efficacy test, or a change to the original pilot scores.
