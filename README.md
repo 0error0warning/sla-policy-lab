@@ -4,6 +4,10 @@ A runnable, local teaching prototype for comparing four intervention mechanisms 
 
 **Important:** this release contains no pretrained language model. It does not claim to implement LLM prompting, transformer LoRA, or token-level activation steering. It implements a rule reference plus actual small-network training, low-rank parameter updates, and hidden-activation intervention. The interface repeats this boundary prominently.
 
+## Interface refinement
+
+The UI now uses a light, restrained palette and puts the results before long explanations. Common settings stay visible, advanced settings and scientific details expand on demand, and online-only controls appear only when needed. All original mechanisms, replay, evidence and JSON exports remain available. See the [UI refinement checks and browser limits](artifacts/ui-refinement/VALIDATION.md).
+
 ## CPU stage 3: real within-life updates
 
 Select **逐轮奖励驱动在线更新** in the UI, or run `python evaluate.py --mode online`. The full toy policy and a zero-initialized LoRA now update actual parameters immediately after each observed reward. Each method/lifetime gets an isolated copy of the same starting base; frozen and learning-disabled controls use matched stochastic actions. Per-step hashes, probability changes, gradient norms and parameter deltas are exported and shown in replay.

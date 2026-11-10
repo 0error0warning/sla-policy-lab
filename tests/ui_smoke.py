@@ -27,10 +27,11 @@ try:
         assert page.locator('#chart-seed').inner_text()=='SEED 101'
         assert page.locator('body').evaluate('(el)=>el.scrollWidth <= window.innerWidth')
         page.screenshot(path=str(ROOT/'artifacts/desktop.png'),full_page=True)
+        page.locator('#advanced-controls summary').click()
         page.locator('#profile').select_option('preserve');page.locator('#partner').select_option('supportive')
         page.locator('#strength').evaluate("el => { el.value = '0'; el.dispatchEvent(new Event('input', {bubbles:true})); }");page.locator('#count').fill('4')
         page.locator('#run').click();page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
-        assert 'preserve' in page.locator('#run-meta').inner_text()
+        assert page.locator('#run-meta').get_attribute('data-profile')=='preserve'
         page.locator('#turn').evaluate("el => { el.value = '10'; el.dispatchEvent(new Event('input', {bubbles:true})); }");assert page.locator('#turn-output').inner_text()=='回合 11'
         page.locator('#run').click();page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
         assert page.locator('#turn').input_value()=='0'
@@ -48,7 +49,7 @@ try:
         # Online mode reuses the same five keys and adds genuine update evidence.
         page.locator('#mode').select_option('online')
         page.locator('#run').click();page.wait_for_function("document.querySelector('#status').textContent.startsWith('完成。4')")
-        assert 'online' in page.locator('#run-meta').inner_text()
+        assert page.locator('#run-meta').get_attribute('data-mode')=='online'
         assert page.locator('.online-evidence').count()==1
         with page.expect_download() as dl:page.locator('#export').click()
         path=ROOT/'artifacts/ui-online-export.json';dl.value.save_as(str(path));online=json.loads(path.read_text())

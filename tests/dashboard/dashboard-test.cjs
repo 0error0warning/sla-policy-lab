@@ -54,7 +54,7 @@ class Element {
   removeAttribute(key) { delete this.attributes[key]; }
   addEventListener(key,callback) { (this.listeners[key] ??= []).push(callback); }
   async trigger(key) { for (const callback of this.listeners[key] ?? []) await callback({preventDefault(){},target:this}); }
-  click() { if (this.tagName === 'A') downloadCount++; return this.trigger('click'); }
+  click() { if (this.tagName === 'A' && this.download) downloadCount++; return this.trigger('click'); }
   requestSubmit() { return this.trigger('submit'); }
   querySelectorAll(selector) { return walk(this).filter(node => node !== this && matches(node,selector)); }
   querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
@@ -122,6 +122,13 @@ const get = id => ids[id], flush = () => new Promise(resolve => setImmediate(res
   assert.equal(get('chart').querySelectorAll('path').length,5,'damage chart has five paths; markers are circles');
   assert.equal(intervals.size,0,'must not autoplay'); assert.equal(payloads[0].trace_all,true);
   assert.equal(get('play').disabled,false);
+  assert.equal(get('online-controls').hidden,true,'offline hides irrelevant learning controls');
+  assert.equal(get('advanced-controls').getAttribute('open'),null,'advanced settings are initially collapsed');
+  assert.equal(get('model-details').getAttribute('open'),null,'method explanation is initially collapsed');
+  await get('boundary-link').click(); assert.equal(get('model-details').open,true);
+  get('model-details').open=false; await get('boundary-link').click(); assert.equal(get('model-details').open,true,'repeated boundary link reopens disclosure');
+  await get('count').trigger('invalid'); assert.equal(get('advanced-controls').open,true,'invalid advanced input must be revealed');
+  assert.equal(get('run-meta').getAttribute('data-mode'),'offline');
   await get('play').click(); assert.equal(intervals.size,1); assert.equal(get('play').getAttribute('aria-pressed'),'true');
   intervals.values().next().value.callback(); assert.equal(get('turn').value,'1'); assert.equal(get('turn-output').textContent,'回合 2');
   get('speed').value = '300'; await get('speed').trigger('change'); assert.equal(intervals.size,1); assert.equal(intervals.values().next().value.delay,300);
@@ -166,6 +173,7 @@ const get = id => ids[id], flush = () => new Promise(resolve => setImmediate(res
   for(const [key,value] of Object.entries(online.config)) get(({initial_crack:'crack',protection_duration:'duration'})[key] || key).value = value;
   get('count').value=online.seed_count; get('strength').value=online.steering_strength;
   get('mode').value='online'; await get('mode').trigger('change');
+  assert.equal(get('online-controls').hidden,false,'online exposes learning controls');
   get('online-lr').value='.02'; get('learning-enabled').value='true';
   await get('experiment-form').trigger('submit'); assert(get('status').textContent.startsWith('完成。2'));
   await get('replay').children[1].click();
@@ -178,12 +186,17 @@ const get = id => ids[id], flush = () => new Promise(resolve => setImmediate(res
   get('learning-enabled').value='false'; await get('learning-enabled').trigger('change');
   await get('experiment-form').trigger('submit'); assert(get('status').textContent.startsWith('完成。2'));
   assert(get('training-summary').textContent.includes('学习关闭'));
+  assert(get('run-meta').textContent.includes('在线冻结'));
+  assert(get('method-cards').children[1].textContent.includes('完整策略 · 冻结'));
+  assert(get('method-cards').children[2].textContent.includes('低秩适配 · 冻结'));
   assert.equal(onlineOff.methods.small_policy.trials[0].learning_updates,0);
   assert.equal(onlineOff.methods.lora.trials[0].parameter_delta_l2,0);
   const behavior=trial=>trial.trajectory.map(({learning,...step})=>step);
   assert.deepEqual(behavior(onlineOff.methods.small_policy.trials[0]),behavior(onlineOff.methods.frozen_base.trials[0]));
   assert.deepEqual(behavior(onlineOff.methods.lora.trials[0]),behavior(onlineOff.methods.frozen_base.trials[0]));
+  get('mode').value='offline'; await get('mode').trigger('change');
+  assert.equal(get('online-controls').hidden,true,'return to offline hides learning controls');
   assert.equal(timeouts.size,1,'only deferred blob URL cleanup remains');
-  console.log('PASS: actual-result rendering; five curves; 4 method cards; play/pause/step/restart/speed; seed reset; terminal state; focus retention; timeline selection; visibility pause; dirty state; presets; matching API payload; repeated run; network failure; malformed response; export; reduced motion; playback end; single-seed CI; real alpha-zero equivalence; online mode switch/evidence; learning-disabled frozen controls.');
+  console.log('PASS: actual-result rendering; five curves; 4 method cards; play/pause/step/restart/speed; seed reset; terminal state; focus retention; timeline selection; visibility pause; dirty state; presets; matching API payload; repeated run; network failure; malformed response; export; reduced motion; playback end; single-seed CI; real alpha-zero equivalence; progressive disclosure and invalid-field reveal; conditional learning controls; online mode switch/evidence; learning-disabled frozen controls.');
   console.log('Scope: isolated DOM/event harness, not browser layout or screenshot verification.');
 })().catch(error => { console.error(error); process.exitCode = 1; });

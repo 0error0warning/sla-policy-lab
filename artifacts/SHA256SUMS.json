@@ -1,7 +1,7 @@
 {
   ".github/workflows/cpu-checks.yml": "df0ea44245077c9f06222963421d980b725e217d2e11a65241bc8076e9f7f7e9",
   ".gitignore": "a164597dbeb923de5caf1bb620d292ce7b303debb69f01d5219d71b5ecd3b54b",
-  "README.md": "ec21f99b22e615eb8314d8e083de1cb1316b51e34ecf6f2da743fe47e3feab5b",
+  "README.md": "f8b527154a7ef78b0c659b079a21c941d8fa06a1073d7199425f79d19047eea3",
   "artifacts/VALIDATION.md": "1c693b6863640efb557cafa1066d375d4f52a0e2fd6216a0a2e8c901ed8cf6a9",
   "artifacts/benchmark-summary.txt": "020b48130523905ed996416d64264c7aee829111e5f16cee288da13aa38c3d12",
   "artifacts/benchmark/benchmark.csv": "3ce745b6776a6996970d605f348cfc39f53fbc7584a4982d96a24cb1da89e98e",
@@ -23,6 +23,9 @@
   "artifacts/online/summary.txt": "6da31bd5acef78ecf56661b9700ce7953e03402b06cd367c0f49d84315ed0b1b",
   "artifacts/online/tests.txt": "ad3cca7dbb75857af73ad9435d8feb91e333a8fe7eef2a2245c981c40d349291",
   "artifacts/tests.txt": "bac796625c490c663b5d943c67a8eba589a97259ccac96b82a5d979070b02016",
+  "artifacts/ui-refinement/VALIDATION.md": "d8c5b8b14c4ad82416c863c0c515f0b21c9013db1225670117d35a6d80e125d8",
+  "artifacts/ui-refinement/dashboard.txt": "ead02f28146d3fca0f01d9356d0badb32564a87063f5bbc6e76bd04822385d6c",
+  "artifacts/ui-refinement/tests.txt": "b514b1bc18d2a809acb672eb63f6023278bb5fa82b6bc7d032a400b917173e2d",
   "benchmark.py": "e79f9e60fc14ec4ea8e3821d48d2af92b71bcb5dcd47c2401416b8fd2b0ada33",
   "docs/CPU_STAGE.md": "74bfe7b88a0c96e1025d2fce3811c9867bf0f65f6afbc4c9dedc4edaf17b9c56",
   "docs/ONLINE_LEARNING.md": "ccc5238284ea4cf6a0e7925fa442e38c96c95130aebc2334b30122c644be910d",
@@ -38,13 +41,13 @@
   "sla_demo/protocol.py": "d53e6f27d210e19a1b1f495f3c2601a2336ae4309cd66da0a3f7920313997297",
   "sla_demo/server.py": "02bdb7e4e54799d69f72c472582f226c8ca4d5a09032ea99e0d37addcf9f685b",
   "tests/dashboard/README.md": "ba2396f6aedcee68d65d252fb747156d64803c6463ac643eb6c67de08582dedd",
-  "tests/dashboard/dashboard-test.cjs": "bd7e74bade3aab3eafa033fd5a9f5cbfe328cd874f0a82cc03784a91b6c27d44",
+  "tests/dashboard/dashboard-test.cjs": "5af59b485f47916454aade0f073ff5a97f681e261c6b0c0e2adeb2cef221df84",
   "tests/dashboard/run_checks.py": "801333f72eabcfd1c23ad0715f3e5c8588878915e0d0c17c41d9fb73c8f9582b",
   "tests/test_cpu_stage.py": "b2601596960e57767842d8eb02913cd90fe9c798bfb7e4b2e1d974f81a5c69fc",
   "tests/test_lab.py": "3e5058be4ceb0bc876a6ebf31e9f33a1f8366013756ec6779db36d963daa2a99",
   "tests/test_online.py": "3de7e2879e40f7346cac6a60cf9e33ad1b308b977d3a25776b480caadaeb68fe",
-  "tests/ui_smoke.py": "4cb297fdfd273f34bec2a348f9bff83704bf2e47ce5622df5e4bc05a4adbee68",
-  "web/app.js": "f244fe14540ae60238221c9d776e71fa803a429f57d611fad03ad7d356ce2aab",
-  "web/index.html": "de68acc2879b7fd3cfc0523e123bd969383f3d081dfbd292a531d0603ca571d3",
-  "web/style.css": "2f4c8ba5308eba79f77c66cb16dc004683cd99a07f9d9caa89a3575083ed41d4"
+  "tests/ui_smoke.py": "7280175749ee56fb2b6f4d5d9c886982f920282b2ccccb36290e5703ae4080d6",
+  "web/app.js": "318baaf2ba1e721aaa7f8d5537022c870fa3473e2f13da3de8205f6b8d4cc411",
+  "web/index.html": "02489f21a17e944d392e0c334a1b096825b57c98d7c142242bd1736af9ecd6e2",
+  "web/style.css": "4bfc2bca3cc72af22396f11d2f0be388371fbbb924e09ff66c1eee0ec3a91eb2"
 }

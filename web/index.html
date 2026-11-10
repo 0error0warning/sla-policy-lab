@@ -2,74 +2,80 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0d151c">
+  <meta name="theme-color" content="#f5f4f0">
   <title>SLA-HCI · Finite Life Lab</title><link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <a class="skip-link" href="#results">跳到实验结果</a>
 <header class="topbar">
-  <a class="brand" href="/" aria-label="SLA-HCI 实验室首页"><span class="brandmark" aria-hidden="true">◈</span><strong>SLA-HCI</strong><span class="brand-divider"></span><span>FINITE LIFE LAB</span></a>
-  <div class="topbar-status"><span class="signal-dot" aria-hidden="true"></span> LOCAL CPU <span class="version">EXPERIMENT / 02</span></div>
+  <a class="brand" href="/" aria-label="SLA-HCI 实验室首页"><span class="brandmark" aria-hidden="true">S</span><strong>SLA-HCI</strong><span class="brand-divider"></span><span>FINITE LIFE LAB</span></a>
+  <div class="topbar-status"><span class="signal-dot" aria-hidden="true"></span> LOCAL CPU <span class="version">MECHANISM STUDY</span></div>
 </header>
 <main>
   <section class="hero">
-    <div><div class="eyebrow">A SHARED WORLD. DIFFERENT INTERVENTIONS.</div><h1>同一段生命，<span>不同的选择。</span></h1><p>把累积损伤、保护与决策放到同一条时间轴上。观察四种干预，如何改变一个有限生命环境中的行为。</p></div>
-    <div class="hero-index" aria-hidden="true"><span>04</span><p>干预机制<br><b>+ 1 冻结基线</b></p></div>
+    <div><div class="eyebrow">FINITE LIFE / SHARED WORLD</div><h1>同一段生命，<span>不同的选择。</span></h1><p>在同一组事件里，比较四种干预如何改变行为。</p></div>
+    <div class="hero-index" aria-hidden="true"><span>04</span><p>种干预<br><b>一个共享世界</b></p></div>
   </section>
-  <aside class="boundary" aria-label="实验边界"><span class="boundary-icon" aria-hidden="true">i</span><p><strong>小模型机制实验，不是 LLM 评测。</strong> NumPy 12 → 24 → 3 神经网络；Prompt 是手写规则。所有动力学与回报为未经实证校准的教学设定。</p><span class="boundary-tag">NO API · NO GPU</span></aside>
+  <aside class="boundary" aria-label="实验边界"><p><strong>小模型机制实验，非 LLM 评测。</strong> 动力学与回报均为教学设定，未经实证校准。</p><a id="boundary-link" href="#model-details">查看实验边界 <span aria-hidden="true">↘</span></a></aside>
   <div class="workspace">
     <aside class="control-panel">
-      <div class="section-label"><span>01 / CONFIGURE</span><span class="local-chip">本地运行</span></div>
-      <h2>设定共享世界</h2><p class="panel-intro">五组策略共享同一组随机事件，<br class="desktop-only">让改变来自机制，而非运气。</p>
+      <div class="section-label"><span>01 / 设置</span><span class="local-chip">本地运行</span></div>
+      <h2>设定共享世界</h2>
       <form id="experiment-form">
         <fieldset class="preset-fieldset"><legend>场景起点</legend><div class="presets"><button type="button" data-preset="balanced" class="preset active" aria-pressed="true">平衡探索</button><button type="button" data-preset="pressure" class="preset" aria-pressed="false">高负荷</button><button type="button" data-preset="support" class="preset" aria-pressed="false">保护窗口</button></div></fieldset>
         <div class="controls-grid">
-          <label>实验模式 <select id="mode"><option value="offline">离线训练后固定策略</option><option value="online">逐轮奖励驱动在线更新</option></select></label>
-          <label>Online 学习率 <output id="online-lr-output" for="online-lr">0.020</output><input id="online-lr" type="range" min="0" max="0.2" step="0.005" value="0.02"><span class="field-note">只影响 online 模式；0 为冻结权重消融。</span></label>
-          <label>Online 更新 <select id="learning-enabled"><option value="true">开启：每轮反馈后更新</option><option value="false">关闭：保留相同采样，仅冻结权重</option></select></label>
-          <label>生命上限 <output id="horizon-output" for="horizon">60 回合</output><input id="horizon" type="range" min="8" max="160" step="1" value="60"></label>
+          <label>实验模式 <select id="mode"><option value="offline">离线 · 固定策略</option><option value="online">在线 · 逐轮学习</option></select></label>
+          <div id="online-controls" class="online-controls" hidden>
+            <label>学习率 <output id="online-lr-output" for="online-lr">0.020</output><input id="online-lr" type="range" min="0" max="0.2" step="0.005" value="0.02"></label>
+            <label>权重更新 <select id="learning-enabled"><option value="true">开启 · 每轮反馈后更新</option><option value="false">关闭 · 冻结对照</option></select></label>
+          </div>
+          <label>目标偏好 <select id="profile"><option value="balanced">平衡</option><option value="service">回答优先</option><option value="preserve">损伤预算优先</option></select></label>
+          <label>伙伴倾向 <select id="partner"><option value="supportive">支持型 · 85%</option><option value="mixed" selected>混合型 · 50%</option><option value="unavailable">低可用 · 12%</option></select></label>
           <label>环境负荷 <output id="load-output" for="load">0.65</output><input id="load" type="range" min="0" max="1" step="0.05" value="0.65"></label>
-          <label>初始裂纹 <output id="crack-output" for="crack">0.08</output><input id="crack" type="range" min="0" max="0.8" step="0.01" value="0.08"></label>
-          <label>伙伴倾向 <select id="partner"><option value="supportive">支持型 · 85% 接受请求</option><option value="mixed" selected>混合型 · 50% 接受请求</option><option value="unavailable">低可用 · 12% 接受请求</option></select></label>
-          <label>目标偏好 <select id="profile"><option value="balanced">平衡 · balanced</option><option value="service">回答优先 · service</option><option value="preserve">损伤预算优先 · preserve</option></select></label>
-          <label>保护持续 <output id="duration-output" for="duration">3 回合</output><input id="duration" type="range" min="1" max="8" step="1" value="3"></label>
-          <label class="steering-control">Steering 强度 <output id="strength-output" for="strength">+1.00</output><input id="strength" type="range" min="-4" max="4" step="0.25" value="1"><span class="field-note">α = 0 应与 frozen base 完全一致。</span></label>
+          <label>生命上限 <output id="horizon-output" for="horizon">60 回合</output><input id="horizon" type="range" min="8" max="160" step="1" value="60"></label>
         </div>
-        <div class="seed-controls"><label>起始 seed <input id="seed" type="number" value="100" min="0" max="2147482648" required></label><label>配对样本数 <input id="count" type="number" value="24" min="1" max="128" required></label></div>
+        <details id="advanced-controls" class="advanced-controls"><summary>进阶参数 <span aria-hidden="true">＋</span></summary>
+          <div class="controls-grid">
+            <label>初始裂纹 <output id="crack-output" for="crack">0.08</output><input id="crack" type="range" min="0" max="0.8" step="0.01" value="0.08"></label>
+            <label>保护持续 <output id="duration-output" for="duration">3 回合</output><input id="duration" type="range" min="1" max="8" step="1" value="3"></label>
+            <label>Steering 强度 <output id="strength-output" for="strength">+1.00</output><input id="strength" type="range" min="-4" max="4" step="0.25" value="1"></label>
+          </div>
+          <div class="seed-controls"><label>起始 seed <input id="seed" type="number" value="100" min="0" max="2147482648" required></label><label>配对样本数 <input id="count" type="number" value="24" min="1" max="128" required></label></div>
+          <p class="field-note">α = 0 与冻结基线一致；学习率为 0 时不更新权重。</p>
+        </details>
         <button id="run" type="submit" class="run-button">运行对照实验 <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19 19 5M5 5h14v14"/></svg></button>
-        <p id="config-state" class="config-state">参数改变后，点击运行更新结果。</p>
+        <p id="config-state" class="config-state">调整参数后重新运行。</p>
       </form>
-      <div class="control-note"><span aria-hidden="true">◇</span><p>保护从请求获准后的<strong>下一回合</strong>开始，仅隔离外部负荷，不修复既有损伤。真实伙伴概率对策略不可见。</p></div>
+      <details class="control-note"><summary>保护如何生效？</summary><p>请求获准后的<strong>下一回合</strong>开始，仅隔离外部负荷，不修复既有损伤。伙伴倾向中的百分比是教学环境设定，真实概率对策略不可见。</p></details>
     </aside>
     <div class="dashboard">
-      <div class="dashboard-toolbar"><div class="section-label">02 / OBSERVE & COMPARE</div><button id="export" type="button" class="text-button" disabled>导出完整 JSON <span aria-hidden="true">↓</span></button></div>
+      <div class="dashboard-toolbar"><div class="section-label">02 / 观察</div><button id="export" type="button" class="text-button" disabled>导出 JSON <span aria-hidden="true">↓</span></button></div>
       <div id="status" class="status" role="status" aria-live="polite">正在连接本地模型…</div>
       <div id="loading-state" class="empty-state"><span class="loading-orbit" aria-hidden="true"></span><h2>让机制变得可见。</h2><p>本地模型就绪后，将自动运行初始对照。</p></div>
       <section id="results" hidden aria-label="实验结果">
-        <div class="section-heading"><div><h2>行为概览</h2><p>全部配对 seeds 的均值，不是当前回合。</p></div><span id="run-meta" class="meta"></span></div>
+        <div class="section-heading"><div><h2>行为概览</h2><p>平均存活回合 · 全部配对样本</p></div><span id="run-meta" class="meta"></span></div>
         <div id="method-cards" class="method-grid"></div>
         <section class="replay-panel panel" aria-labelledby="replay-title">
-          <div class="panel-heading"><div><div class="eyebrow">LIVE REPLAY</div><h2 id="replay-title">一回合，一次选择。</h2></div><label class="inline-label">事件序列 <select id="replay-seed" aria-label="Replay seed"></select></label></div>
+          <div class="panel-heading"><div><div class="eyebrow">TRAJECTORY</div><h2 id="replay-title">生命轨迹</h2></div><label class="inline-label">样本 <select id="replay-seed" aria-label="Replay seed"></select></label></div>
           <div class="replay-controls"><div class="transport"><button id="play" type="button" class="play-button" aria-label="播放回放" aria-pressed="false">▶ 播放</button><button id="step-back" type="button" class="icon-button" aria-label="上一回合">←</button><button id="step-next" type="button" class="icon-button" aria-label="下一回合">→</button><button id="restart" type="button" class="icon-button" aria-label="从第一回合重新开始">↺</button></div><output id="turn-output" for="turn">回合 1</output><label class="speed-label">速度 <select id="speed" aria-label="回放速度"><option value="1200">0.5×</option><option value="600" selected>1×</option><option value="300">2×</option></select></label></div>
           <input id="turn" aria-label="Replay turn" type="range" min="0" max="59" value="0">
           <div class="chart-header"><span>累积损伤 <b>D</b></span><span id="chart-seed" class="tiny"></span><span>终止阈值 1.0</span></div>
           <div id="chart" role="img" aria-label="累积损伤随回合变化的曲线"></div>
           <div id="legend" class="legend" aria-label="策略图例与观察对象"></div>
-          <p class="chart-caption">曲线显示完整真实轨迹，竖线标记当前回合，淡色竖带为观察策略的保护回合。点击图例或下方策略，可切换观察对象。</p>
-          <div class="timeline-header"><h3>动作时间轴</h3><div class="action-legend"><span class="answer-key">A 回答</span><span class="refuse-key">R 拒绝</span><span class="request-key">P 请求保护</span><span>白色下沿 = 已受保护</span></div></div>
+          <details class="inline-help"><summary>如何阅读与操作？</summary><p>曲线为完整轨迹，竖线为当前回合，淡色带为所选策略的保护回合。点击图例切换策略；播放、单步或拖动滑块查看变化。</p><p id="motion-note" class="motion-note">回放默认暂停；离开页面时自动暂停。</p></details>
+          <div class="timeline-header"><h3>动作时间轴</h3><div class="action-legend"><span class="answer-key">A 回答</span><span class="refuse-key">R 拒绝</span><span class="request-key">P 请求保护</span><span>下沿标记：保护中</span></div></div>
           <div class="timeline-scroll"><div id="timeline" class="timeline" aria-label="每个策略的逐回合动作"></div></div>
-          <p id="motion-note" class="motion-note">回放默认暂停。可播放、单步或拖动时间轴；离开页面时自动暂停。</p>
         </section>
-        <div class="inspection-grid">
-          <section class="panel readout-panel" aria-labelledby="readout-title"><div class="panel-heading"><h3 id="readout-title">同回合状态</h3><span class="tiny">SELECT A POLICY</span></div><div id="replay"></div></section>
+        <details class="panel inspection-details"><summary>逐回合细节 <span>状态与决策 <b>＋</b></span></summary><div class="inspection-grid">
+          <section class="panel readout-panel" aria-labelledby="readout-title"><div class="panel-heading"><h3 id="readout-title">同回合状态</h3></div><div id="replay"></div></section>
           <section class="panel focus-panel" aria-labelledby="focus-title"><div class="panel-heading"><h3 id="focus-title">决策切片</h3><span id="focus-method" class="tiny"></span></div><div id="focus-content"></div></section>
-        </div>
-        <section class="panel comparison-panel" aria-labelledby="comparison-title"><div class="panel-heading"><div><div class="eyebrow">PAIRED EVALUATION</div><h2 id="comparison-title">把单条轨迹，放回整体。</h2></div><span id="sample-caption" class="tiny"></span></div><div class="comparison-grid"><div><div class="chart-subtitle"><h3>动作构成</h3><span>按全部存活回合汇总</span></div><div id="composition"></div></div><div><div class="chart-subtitle"><h3>相对冻结基线的回报差</h3><span>均值及近似 95% CI</span></div><div id="delta-chart" role="img" aria-label="各机制相对冻结基线的配对合成回报差"></div></div></div><p class="chart-caption">回报依赖人为设定的目标权重，不是心理健康、主体性或安全性的度量。区间来自环境 seeds（online 还包含配对动作采样），不包含训练 seed 的不确定性；不构成显著性检验。</p></section>
+        </div></details>
+        <section class="panel comparison-panel" aria-labelledby="comparison-title"><div class="panel-heading"><div><div class="eyebrow">COMPARISON</div><h2 id="comparison-title">整体对照</h2></div><span id="sample-caption" class="tiny"></span></div><div class="comparison-grid"><div><div class="chart-subtitle"><h3>动作构成</h3><span>按全部存活回合汇总</span></div><div id="composition"></div></div><div><div class="chart-subtitle"><h3>相对冻结基线的回报差</h3><span>均值及近似 95% CI</span></div><div id="delta-chart" role="img" aria-label="各机制相对冻结基线的配对合成回报差"></div></div></div><p class="chart-caption">合成回报仅反映设定权重，不代表安全性或主体性。</p><details class="inline-help"><summary>指标与区间说明</summary><p>回报不是心理健康、主体性或安全性的度量。区间来自环境 seeds（online 还包含配对动作采样），不包含训练 seed 的不确定性，不构成显著性检验。差值先在同一 seed 内与 frozen base 相减，再汇总。</p></details></section>
         <details class="panel table-panel"><summary>完整指标 <span>均值 ± 近似 95% CI <b>＋</b></span></summary><div class="table-scroll"><table><caption class="sr-only">五种机制在全部配对 seeds 上的汇总指标</caption><thead><tr><th scope="col">机制</th><th scope="col">回答次数</th><th scope="col">存活回合</th><th scope="col">请求保护</th><th scope="col">到达上限</th><th scope="col">合成回报</th><th scope="col">对基线回报差</th></tr></thead><tbody id="metrics"></tbody></table></div></details>
-        <details class="panel details"><summary>机制、训练与可复现信息 <span>透明边界 <b>＋</b></span></summary><div class="details-content"><p id="training-summary"></p><div id="mechanism-notes" class="mechanism-notes"></div><p id="fingerprint" class="fingerprint"></p><h4>Prompt 槽位的固定指令</h4><p id="prompt" class="prompt"></p><p id="mode-explanation">当前指令仅选择手写规则，不进行自然语言推理。离线模式模仿规则标签；online 模式每轮只使用实际 reward 更新完整小策略和 LoRA，不改变规则、steering 或 frozen base。隐藏向量不是语言概念。</p><h4>冻结的语言输出层</h4><p>动作先由策略决定，再由固定文本模板转成可读句子。语言渲染器不参与决策。这里没有 LLM、transformer、token-level steering、PPO 或人类被试实验。</p></div></details>
+        <details id="model-details" class="panel details"><summary>实验边界与机制 <span>训练与复现 <b>＋</b></span></summary><div class="details-content"><p>这是 NumPy 12 → 24 → 3 小网络的机制演示。Prompt 是手写规则，所有动力学与回报为未经实证校准的教学设定。</p><p id="training-summary"></p><div id="mechanism-notes" class="mechanism-notes"></div><p id="fingerprint" class="fingerprint"></p><h4>Prompt 槽位的固定指令</h4><p id="prompt" class="prompt"></p><p id="mode-explanation">当前指令仅选择手写规则，不进行自然语言推理。离线模式模仿规则标签；online 模式每轮只使用实际 reward 更新完整小策略和 LoRA，不改变规则、steering 或 frozen base。隐藏向量不是语言概念。</p><h4>冻结的语言输出层</h4><p>动作先由策略决定，再由固定文本模板转成可读句子。语言渲染器不参与决策。这里没有 LLM、transformer、token-level steering、PPO 或人类被试实验。</p></div></details>
       </section>
     </div>
   </div>
-  <footer><span><strong>SLA-HCI</strong> / Finite Life Lab</span><span>可复现的机制演示。让假设可见，让边界清楚。</span><a href="#" aria-label="回到顶部">BACK TO TOP ↑</a></footer>
+  <footer><span><strong>SLA-HCI</strong> / Finite Life Lab</span><span>共享事件 · 可复现实验</span><a href="#" aria-label="回到顶部">回到顶部 ↑</a></footer>
 </main><script src="/app.js" defer></script>
 </body></html>
