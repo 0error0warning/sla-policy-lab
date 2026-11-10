@@ -12,6 +12,12 @@ See the [findings and limits](docs/MODEL_STUDIES.md), [raw evidence and provenan
 
 A follow-up compared visible damage with residual patching and crossed action label assignment with display order. The layer 7 effect reproduced under the original layout and depended on the prompt encoding. The study also includes a paired CPU wording control. [Body-channel report and results](artifacts/model-studies/2026-11-10/body-channel/REPORT.md)
 
+## Social experience and real Qwen LoRA — 2026-11-10
+
+A separate pilot now adds two identified partners, equal-cost request wordings and one persistent crack body. Four source lives (two seeds with reversed partner mappings) compare frozen Qwen3.5-4B with aligned-feedback and shuffled-feedback LoRA. The adapters really changed and passed save/reload checks, but aligned training reduced reference-action accuracy to 49/128, versus frozen 80/128 and shuffled 74/128. Two aligned continuations survived by requesting protection every turn and completing no tasks. Partner-specific learning was not demonstrated.
+
+Read the [full negative result and body trajectories](artifacts/model-studies/2026-11-10/social-learning/REPORT.md) and [method/limits](experiments/social_learning/README.md). This is experience-informed policy distillation with supplied body/partner estimation, not autonomous RL, open-ended dialogue, or an LLM integration into the default web app. `python experiments/social_learning/verify.py` replays and checks the evidence on CPU.
+
 Saved evidence can be checked on the CPU without downloads or compute allocation:
 
 ```sh
