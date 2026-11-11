@@ -14,16 +14,25 @@ def draw_tape(seed, native):
     gen = rng(seed, "consequence-checkpoint-tape-v1")
     choice_u = gen.random(shape)
     partner_u = gen.random(shape)
-    quantile = ndtr(-3.) + (ndtr(3.) - ndtr(-3.)) * gen.random((*shape, 5))
-    noise = .1 * ndtri(quantile)
+    quantile = ndtr(-3.0) + (ndtr(3.0) - ndtr(-3.0)) * gen.random((*shape, 5))
+    noise = 0.1 * ndtri(quantile)
     mu = behavior(native)
-    chosen = (choice_u[..., None] > mu.cumsum(axis=-1)[None, :, None, :3]).sum(-1).astype(np.uint8)
+    chosen = (
+        (choice_u[..., None] > mu.cumsum(axis=-1)[None, :, None, :3])
+        .sum(-1)
+        .astype(np.uint8)
+    )
     return chosen, mu, partner_u, noise
 
 
 def settled_tape(chosen, partner_u, noise, rows, mapping, body, healths=TRAIN_H):
     # Only the environment sees the response rule. Unchosen outcomes are never produced.
-    probs = np.array([[0., *probabilities(PARTNERS[r["partner"]], r["frame"], mapping)] for r in rows])
+    probs = np.array(
+        [
+            [0.0, *probabilities(PARTNERS[r["partner"]], r["frame"], mapping)]
+            for r in rows
+        ]
+    )
     p = probs[np.arange(len(rows))[None, :, None], chosen]
     protected = (chosen != 0) & (partner_u < p)
     before = np.broadcast_to(np.array(healths)[:, None, None], chosen.shape)
@@ -40,4 +49,6 @@ def settled_tape(chosen, partner_u, noise, rows, mapping, body, healths=TRAIN_H)
 def shuffled_feedback(reward, seed):
     gen = rng(seed, "permute-within-eight-v1")
     permutation = np.argsort(gen.random(reward.shape), axis=-1)
-    return np.take_along_axis(reward, permutation, axis=-1), permutation.astype(np.uint8)
+    return np.take_along_axis(reward, permutation, axis=-1), permutation.astype(
+        np.uint8
+    )
