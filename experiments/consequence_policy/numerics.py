@@ -7,7 +7,11 @@ from pathlib import Path
 import numpy as np
 
 from experiments.consequence_policy.coverage import SPLIT_WAVES, WAVES
-from experiments.consequence_policy.experiment import evaluation_reference, metrics
+from experiments.consequence_policy.experiment import (
+    contrasts,
+    evaluation_reference,
+    metrics,
+)
 from experiments.consequence_policy.policy import Policy, deployed, features
 from experiments.consequence_policy.study import CONFIRM, TEST_H, TRAIN_H, contexts
 from experiments.direct_policy.protocol import rng, write
@@ -38,6 +42,39 @@ def load_states(path, index=None):
     with np.load(path) as data:
         a, b = data["hidden"], data["logits"]
     return (a, b) if index is None else (a[index], b[index])
+
+
+def population_singleton(output, rows, native, x, partners):
+    body = BodyValue()
+    refs = [evaluation_reference(body, rows, m) for m in (0, 1)]
+    paired = []
+    for seed in CONFIRM:
+        mirrors = []
+        for m in (0, 1):
+            observed = {}
+            for arm in ("real", "shuffle", "blind", "frozen"):
+                model = Policy.load(output / f"s{seed}-m{m}/{arm}.npz")
+                pi = deployed(model.grid_logits(native, x, partners, TEST_H))
+                observed[arm] = metrics(pi, refs[m])
+            mirrors.append(contrasts(observed))
+        paired.append({k: np.mean([r[k] for r in mirrors]) for k in mirrors[0]})
+    thresholds = json.loads((output / "confirm.json").read_bytes())["stats"]
+    bootstrap = rng(63997, "paired-bootstrap").integers(
+        len(CONFIRM), size=(12000, len(CONFIRM))
+    )
+    stats = {}
+    for k, previous in thresholds.items():
+        values = np.array([row[k] for row in paired])
+        low, high = np.quantile(values[bootstrap].mean(axis=1), [0.025, 0.975])
+        passed = values.mean() >= previous["threshold"] and (
+            k == "healthy_vs_frozen" or (low > 0 and (values > 0).sum() >= 16)
+        )
+        stats[k] = {
+            "mean": float(values.mean()),
+            "ci95": [low, high],
+            "passed": bool(passed),
+        }
+    return {"stats": stats, "passed": all(s["passed"] for s in stats.values())}
 
 
 def coverage_singleton(output, rows, native, x, partners):
@@ -205,11 +242,19 @@ def main():
     result = {
         "raw": comparisons,
         "fitted": {k: summary(np.concatenate(v)) for k, v in changes.items()},
-        "batch_to_singleton_by_arm": {k: summary(np.concatenate(v)) for k, v in arm_changes.items()},
+        "batch_to_singleton_by_arm": {
+            k: summary(np.concatenate(v)) for k, v in arm_changes.items()
+        },
         "worst": worst,
         "singleton_vs_full_lives": paired_lives,
         "coverage_singleton": coverage_singleton(
             a.output, [rows[i] for i in test], n1, x1, p
+        ),
+        "third_population_singleton": population_singleton(
+            a.output, [rows[i] for i in test], n1, x1, p
+        ),
+        "second_coverage_singleton": coverage_singleton(
+            a.output, [rows[i] for i in test], states[2][1], states[2][0], p
         ),
     }
     if a.ordering:

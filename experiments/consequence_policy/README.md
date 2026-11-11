@@ -15,7 +15,7 @@ $env:OMP_NUM_THREADS='1'
 python -m experiments.consequence_policy.unpack --artifact artifacts/model-studies/2026-11-12/consequence-policy --destination RUN
 python -m experiments.consequence_policy.audit --cache RUN/capture/output --output RUN/results
 python -m experiments.consequence_policy.audit --cache RUN/capture/output --output RUN/results --gpu RUN/verify/output
-python -m experiments.consequence_policy.numerics --cache RUN/capture/output --gpu RUN/verify/output --third RUN/numerics/output --output RUN/results
+python -m experiments.consequence_policy.numerics --cache RUN/capture/output --gpu RUN/verify/output --third RUN/numerics/output --ordering RUN/ordering/output --output RUN/results
 ```
 
 Each seed archive contains its population and coverage records or its complete lives, depending on the cohort. The raw layout and arrays are documented in [the data index](../../artifacts/model-studies/2026-11-12/consequence-policy/DATA.md).
