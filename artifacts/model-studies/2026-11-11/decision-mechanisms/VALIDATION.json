@@ -1,0 +1,14 @@
+{
+  "verified_recorded_checkpoints": 16,
+  "matched_tapes": 4,
+  "source_rounds_per_tape": 8,
+  "replay_update_steps": 384,
+  "permutations_per_condition": 24,
+  "cpu_replay_and_clipped_loss_verified": true,
+  "activation_sham_exact": true,
+  "original_first_seed_reproduced_exactly": true,
+  "archive_members_verified": 137,
+  "first_replay_runtime_removed_before_export_download": true,
+  "final_active_assignments": 0,
+  "validation_scope": "CPU arithmetic and archive verification, not fresh GPU inference"
+}

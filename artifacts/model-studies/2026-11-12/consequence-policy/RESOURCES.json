@@ -1,0 +1,95 @@
+{
+  "start_observation_utc": "2026-11-11T16:25:03Z",
+  "start_balance_cu": 389.66123163772295,
+  "last_release_balance_cu": 389.0258104544988,
+  "observed_account_decrease_cu": 0.635421183224139,
+  "allocations": [
+    {
+      "mode": "capture",
+      "gpu": "NVIDIA L4",
+      "allocation_utc": "2026-11-11T16:41:46.828675+00:00",
+      "release_utc": "2026-11-11T16:46:23.609292+00:00",
+      "allocation_to_release_seconds": 276.780617,
+      "worker_seconds": 180.628756125,
+      "peak_allocated_bytes": 9577654272,
+      "input_sha256": "6cf449183c0ae7974fa4c929968f5c5cc043da3f24678a837878d2a84858306d",
+      "result_sha256": "c9717850534c9d5975b4338d112eba1598bd8c45add9bad93b42be73f6f5bcbd",
+      "observed_cu_before": 389.66123163772295,
+      "observed_cu_after": 389.55944664061803,
+      "observed_decrease_cu": 0.10178499710491451,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "cu_per_hour_after_release": 0.0
+    },
+    {
+      "mode": "verify",
+      "gpu": "NVIDIA L4",
+      "allocation_utc": "2026-11-11T16:55:59.702473+00:00",
+      "release_utc": "2026-11-11T17:03:03.879059+00:00",
+      "allocation_to_release_seconds": 424.176586,
+      "worker_seconds": 216.844501917,
+      "peak_allocated_bytes": 9405606400,
+      "input_sha256": "4306414a5b71b58b372aedd97ecf0859dc9607fdc2a6003f414a0219e0b10301",
+      "result_sha256": "2d03040ce9e850cf01d96a877e6defb8d99436ab1cd3c701e0d76adf47a681cc",
+      "observed_cu_before": 389.55944664061803,
+      "observed_cu_after": 389.43672561989973,
+      "observed_decrease_cu": 0.12272102071830204,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "cu_per_hour_after_release": 0.0
+    },
+    {
+      "mode": "numerics",
+      "gpu": "NVIDIA L4",
+      "allocation_utc": "2026-11-11T17:04:57.087584+00:00",
+      "release_utc": "2026-11-11T17:13:15.716582+00:00",
+      "allocation_to_release_seconds": 498.628998,
+      "worker_seconds": 266.647370381,
+      "peak_allocated_bytes": 9577654272,
+      "input_sha256": "29d00f6ab074e97fd8809d3d982612333d31b5a71c799714d5843b5f790c5ba3",
+      "result_sha256": "061f23ad67dd18d5b4c72142ab4bab4f91aa1e072f6145d71b59d5e74c8a1eca",
+      "observed_cu_before": 389.43672561989973,
+      "observed_cu_after": 389.28374307162414,
+      "observed_decrease_cu": 0.15298254827558821,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "cu_per_hour_after_release": 0.0
+    },
+    {
+      "mode": "ordering",
+      "gpu": "NVIDIA L4",
+      "allocation_utc": "2026-11-11T17:21:42.320792+00:00",
+      "release_utc": "2026-11-11T17:33:12.130253+00:00",
+      "allocation_to_release_seconds": 689.809461,
+      "worker_seconds": 527.2906930290001,
+      "peak_allocated_bytes": null,
+      "input_sha256": "4837b5aa01d722b5f7d6f1023cb57c6b2e210e2a565d1f72975cd26140ac8e33",
+      "result_sha256": "2fc59d07b4efd9d32ca24d698eed61ccd35079160df161f0530f784faa4d894b",
+      "observed_cu_before": 389.28374307162414,
+      "observed_cu_after": 389.0258104544988,
+      "observed_decrease_cu": 0.2579326171253342,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "cu_per_hour_after_release": 0.0
+    }
+  ],
+  "total_allocation_seconds": 1889.3956620000001,
+  "local_cpu": {
+    "python": "3.13.5",
+    "numpy": "2.2.6",
+    "scipy": "1.16.2",
+    "blas_threads": 1,
+    "population_seed_loops_seconds": {
+      "pilot": 3.59,
+      "confirm": 22.68
+    },
+    "timing_scope": "Local loop measurements exclude initialization and other stages."
+  },
+  "note": "Balances are account observations at the given times, not a final itemized invoice. No other assignment remained after each release.",
+  "final_account_observation": {
+    "retrieved_at_utc": "2026-11-12T01:33:54.985623+08:00",
+    "balance_cu": 389.0258104544988,
+    "active_assignments": 0,
+    "rate_cu_per_hour": 0.0
+  }
+}

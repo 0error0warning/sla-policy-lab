@@ -1,0 +1,151 @@
+{
+  "gpu_status": {
+    "adapter_initial_sha256": {
+      "early": "5feec0b0f320967ae3c460d72c316d6f24b5a107d3c38a01ec43c089f3bb5f82",
+      "tail": "d56a515a541c51fe886f064f9d8cb2c8029793f3ef7f30b0f094e2f855338b53"
+    },
+    "base_sha256": "a224739a8642c372edb53f78be655eb4fe07b528df200babf358898babed73f3",
+    "base_tensor_sha256": "a224739a8642c372edb53f78be655eb4fe07b528df200babf358898babed73f3",
+    "base_unchanged": true,
+    "case": "62104-independent-heavy",
+    "completed_cases": 32,
+    "letter_token_ids": [
+      32,
+      33,
+      34,
+      35
+    ],
+    "optimizer_steps": 768,
+    "stage": "complete",
+    "total_cases": 32,
+    "trainable_parameters": 188416
+  },
+  "source_lock_verified": true,
+  "source_actions": 64,
+  "signal_rows": 256,
+  "paired_cases": 32,
+  "optimizer_steps": 768,
+  "adapter_hashes_verified": 32,
+  "baseline_sources_exclude_test_seed": true,
+  "loss_arithmetic_verified": true,
+  "working_gate": {
+    "new": {
+      "high_answer": {
+        "descriptive_bootstrap_95": [
+          -0.002572923454690429,
+          0.029269639257937047
+        ],
+        "mean": 0.014091250920681087,
+        "range": [
+          -0.008640767392594007,
+          0.03385169715772507
+        ],
+        "values": [
+          0.03385169715772507,
+          0.01552346555857298,
+          -0.008640767392594007,
+          0.015630608359020304
+        ]
+      },
+      "interaction": {
+        "descriptive_bootstrap_95": [
+          -0.0057223465441372245,
+          -0.0002571129509548187
+        ],
+        "mean": -0.002820845181055076,
+        "range": [
+          -0.006979629794837239,
+          0.0006624011667633045
+        ],
+        "values": [
+          0.0006624011667633045,
+          -0.0030156553041091883,
+          -0.006979629794837239,
+          -0.0019504967920371818
+        ]
+      },
+      "low_answer": {
+        "descriptive_bootstrap_95": [
+          0.003388927017352966,
+          0.029287248280985695
+        ],
+        "mean": 0.016912096101736163,
+        "range": [
+          -0.0016611375977567677,
+          0.033189295990961765
+        ],
+        "values": [
+          0.033189295990961765,
+          0.018539120862682168,
+          -0.0016611375977567677,
+          0.017581105151057486
+        ]
+      },
+      "working_gate_passed": false
+    },
+    "original": {
+      "high_answer": {
+        "descriptive_bootstrap_95": [
+          -0.0705806532768112,
+          0.001705788999518676
+        ],
+        "mean": -0.028095056193722018,
+        "range": [
+          -0.08984367231016632,
+          0.008284056143025298
+        ],
+        "values": [
+          -0.012791596176745856,
+          -0.08984367231016632,
+          -0.01802901243100119,
+          0.008284056143025298
+        ]
+      },
+      "interaction": {
+        "descriptive_bootstrap_95": [
+          -0.009948069751795185,
+          -0.0036740905995334416
+        ],
+        "mean": -0.0068110801756643136,
+        "range": [
+          -0.011455843449391434,
+          -0.0024011507995544967
+        ],
+        "values": [
+          -0.0049470303995123865,
+          -0.011455843449391434,
+          -0.008440296054198937,
+          -0.0024011507995544967
+        ]
+      },
+      "low_answer": {
+        "descriptive_bootstrap_95": [
+          -0.060752013089889534,
+          0.005616726112734283
+        ],
+        "mean": -0.021283976018057704,
+        "range": [
+          -0.07838782886077489,
+          0.010685206942579795
+        ],
+        "values": [
+          -0.00784456577723347,
+          -0.07838782886077489,
+          -0.009588716376802253,
+          0.010685206942579795
+        ]
+      },
+      "working_gate_passed": false
+    }
+  },
+  "readout_gate": {
+    "independent": false,
+    "zero": false
+  },
+  "max_restore_probability_error": 0.0,
+  "ruff_FE9_passed": true,
+  "final_active_assignments": 0,
+  "final_consumption_rate_cu_per_hour": 0.0,
+  "scope": "CPU verification of recorded GPU measurements",
+  "cross_run_caveat": "Original zero-baseline checkpoints were retrained; they differ from the previous run. Comparisons use current-run pairs."
+}
