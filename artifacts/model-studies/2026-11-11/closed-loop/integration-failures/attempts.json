@@ -1,0 +1,22 @@
+[
+  {
+    "attempt": 1,
+    "stage": "cached-score identity check, before closed loops",
+    "error": "Different FP32 GEMM batch sizes in cached and live scores",
+    "fix": "Use the same six-row readout batches",
+    "worker_returncode": 1,
+    "archive": "attempt-1.zip",
+    "sha256": "634397ceff6d172a3d05e8c2d787b52bebb28756e992b5c0c530d16c2bbe1d02",
+    "bytes": 3712950
+  },
+  {
+    "attempt": 2,
+    "stage": "first LoRA optimizer call, before its first update",
+    "error": "Missing rng import",
+    "fix": "Import rng and run Ruff F/E9 on all scripts",
+    "worker_returncode": 1,
+    "archive": "attempt-2.zip",
+    "sha256": "56d80fd701e151036567737dcad6f3fe8efb1373d184e79a816ed40056477f9a",
+    "bytes": 5872671
+  }
+]
