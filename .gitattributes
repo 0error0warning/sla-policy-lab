@@ -5,5 +5,6 @@ artifacts/model-studies/**/*.jsonl linguist-generated=true
 artifacts/model-studies/**/*.csv linguist-generated=true
 # These files are compared byte-for-byte with the archived GPU run sources.
 experiments/social_closed_loop/** text eol=lf
+experiments/direct_policy/** text eol=lf
 # Retain the archived source's terminal blank line without suppressing other checks.
 experiments/social_closed_loop/core.py whitespace=-blank-at-eof
