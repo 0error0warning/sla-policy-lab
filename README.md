@@ -12,6 +12,18 @@ See the [findings and limits](docs/MODEL_STUDIES.md), [raw evidence and provenan
 
 A follow-up compared visible damage with residual patching and crossed action label assignment with display order. The layer 7 effect reproduced under the original layout and depended on the prompt encoding. The study also includes a paired CPU wording control. [Body-channel report and results](artifacts/model-studies/2026-11-10/body-channel/REPORT.md)
 
+## Social experience and real Qwen LoRA — 2026-11-10
+
+A separate pilot now adds two identified partners, equal-cost request wordings and one persistent crack body. Four source lives (two seeds with reversed partner mappings) compare frozen Qwen3.5-4B with aligned-feedback and shuffled-feedback LoRA. The adapters really changed and passed save/reload checks, but aligned training reduced reference-action accuracy to 49/128, versus frozen 80/128 and shuffled 74/128. Two aligned continuations survived by requesting protection every turn and completing no tasks. Partner-specific learning was not demonstrated.
+
+Read the [full negative result and body trajectories](artifacts/model-studies/2026-11-10/social-learning/REPORT.md) and [method/limits](experiments/social_learning/README.md). This is experience-informed policy distillation with supplied body/partner estimation, not autonomous RL, open-ended dialogue, or an LLM integration into the default web app. `python experiments/social_learning/verify.py` replays and checks the evidence on CPU.
+
+A [post-hoc CPU audit](artifacts/model-studies/2026-11-10/social-learning-audit/REPORT.md) decomposes the accuracy gap, identifies training-layout confounding and differing target marginals in the shuffle control, and checks the reference rule against adaptive planning. The original scores remain unchanged; their interpretation depends on the chosen objective, horizon and action space.
+
+The [saved-adapter read-only diagnostic](artifacts/model-studies/2026-11-10/saved-lora-diagnostic/REPORT.md) now separates original-training fit from one-field changes. Aligned adapters agree with their training teacher on 51/128 original examples versus frozen 96/128, with only a small mean KL improvement; two checkpoints choose the same request action on every training example. None of 36 required partner-switch pairs is fully correct. All 288 old-probe score vectors reproduce exactly, and no weights were trained or changed during evaluation. The empirical teacher total is corrected to **124/128**; the original model scores remain 80/49/74.
+
+The [crossed tiny-example fitting report](artifacts/model-studies/2026-11-10/crossed-mini-fit/REPORT.md) tests both partners and both display orders for each fixed context. All four combined-policy fits end at 12/16 by always answering. The split probes show a gap between selecting supplied action values (32/32 frozen) and computing them (0/16 within tolerance, with valid JSON in all 16 cases). The companion [objective contract](artifacts/model-studies/2026-11-10/crossed-mini-fit/VALUE_TARGET_CONTRACT.md) describes the shared Reference-RUL target for a paper-aligned comparison.
+
 Saved evidence can be checked on the CPU without downloads or compute allocation:
 
 ```sh

@@ -1,0 +1,39 @@
+{
+  "files": {
+    "PROTOCOL.md": {
+      "bytes": 4543,
+      "sha256": "332853ac37db2b5e0a2ac3f83e43501bb259793e5d126c96956ce66bebd72980"
+    },
+    "REPORT.md": {
+      "bytes": 6155,
+      "sha256": "9c84e20a6f28c4d6b2db1a7bf953bd4eff32bbdc9808931340bf8c54dc111d8d"
+    },
+    "VALUE_TARGET_CONTRACT.md": {
+      "bytes": 4462,
+      "sha256": "b8fb2209716b60b27ec440d34c9433220e0af71af04e7d732ee79f9dfd6e46ff"
+    },
+    "fit-curves.png": {
+      "bytes": 196771,
+      "sha256": "399de629e66a533477d83ddeee07bf9a92ccc998f4a836370f674cff1fbd8345"
+    },
+    "gpu-results.zip": {
+      "bytes": 22800313,
+      "sha256": "2ac9a2c0537171179d9c4c25e3d9d07742069ebe18dabfbc10557e5f53b4a061"
+    },
+    "protocol.json": {
+      "bytes": 281423,
+      "sha256": "294a615149b6ca3d2f75b2e8d805947d3c2ce00863c70265d564c9dc36c25fd6"
+    },
+    "scored.json": {
+      "bytes": 83368,
+      "sha256": "ca511f7807a52408267bc3378a165966e26e9495a9d184ec15f60346b907110f"
+    }
+  },
+  "independent_adapter_tensor_fingerprints": 32,
+  "independent_token_audit": {
+    "distinct_prompts": 136,
+    "records_checked": 1104,
+    "transformers_used": false
+  },
+  "schema": "crossed-mini-fit-publication-v1"
+}

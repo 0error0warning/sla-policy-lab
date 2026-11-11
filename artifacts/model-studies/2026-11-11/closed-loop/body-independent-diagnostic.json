@@ -1,0 +1,77 @@
+{
+  "seed": 611110,
+  "probability_vectors": 12000,
+  "distribution": "independent Uniform(0,1) across three acts",
+  "result": {
+    "350.0": {
+      "greedy_flip_rate_vs_350": 0.0,
+      "action_counts": [
+        149,
+        8212,
+        1842,
+        1797
+      ],
+      "reference_rul": 60.863624040827105
+    },
+    "200.0": {
+      "greedy_flip_rate_vs_350": 0.0,
+      "action_counts": [
+        149,
+        8212,
+        1842,
+        1797
+      ],
+      "reference_rul": 29.609637167221567
+    },
+    "100.0": {
+      "greedy_flip_rate_vs_350": 0.0,
+      "action_counts": [
+        149,
+        8212,
+        1842,
+        1797
+      ],
+      "reference_rul": 13.63353173649681
+    },
+    "20.0": {
+      "greedy_flip_rate_vs_350": 0.01575,
+      "action_counts": [
+        199,
+        8023,
+        1914,
+        1864
+      ],
+      "reference_rul": 2.67844967012298
+    },
+    "6.0": {
+      "greedy_flip_rate_vs_350": 0.10925,
+      "action_counts": [
+        0,
+        7056,
+        2486,
+        2458
+      ],
+      "reference_rul": 0.8861650817439524
+    },
+    "2.0": {
+      "greedy_flip_rate_vs_350": 0.31566666666666665,
+      "action_counts": [
+        0,
+        12000,
+        0,
+        0
+      ],
+      "reference_rul": 0.39285714285714285
+    }
+  },
+  "ordinary_state_approximation": {
+    "action_expected_log_fragility_increments": [
+      0.0,
+      0.0007140286389368778,
+      0.004987439743269948,
+      0.004987439743269948
+    ],
+    "unit_environment_expected_log_fragility_increment": 0.0028530356099577075,
+    "derivation": "For u=700-h before absorbing truncation, u_next=u*(1+b*(1+eta)/350). The log increment does not depend on h. Boundary/overshoot can still affect exact Reference-RUL rankings."
+  }
+}
