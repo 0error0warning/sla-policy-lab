@@ -8,9 +8,9 @@ import numpy as np
 from scipy.special import ndtr, ndtri
 
 from experiments.consequence_policy.experiment import read_inputs
-from experiments.consequence_policy.policy import Policy, deployed, softmax
+from experiments.consequence_policy.policy import Policy, deployed, features, softmax
 from experiments.consequence_policy.study import CONFIRM, EXPLORATION, LIVE_CAP, PARTNERS, PILOT, TEMP, TEST_H, basis
-from experiments.direct_policy.protocol import probabilities, render, rng, settle, write
+from experiments.direct_policy.protocol import probabilities, rng, settle, write
 from experiments.social_closed_loop.core import BodyValue
 
 WORLDS = ((0, 0), (0, 1), (1, 0), (1, 1))
@@ -142,6 +142,9 @@ def run_life(actor, seed, world, replica, tape, rows, native, x, body, override=
         normalized = observed / min(1., body.rul(h))
         before = actor.u.copy()
         grad, fisher = actor.update(p, a, h, x[i], pi, logits, direction, normalized)
+        if override is not None:
+            actual_u, grad, fisher = override.commit(p, a, normalized, actor.u, grad, fisher)
+            actor.u[:] = actual_u
         records.append([i, h, a, -1 if accepted is None else int(accepted), after, observed,
                         *pi, *before, grad, fisher, normalized, *actor.u])
         h = after
@@ -210,8 +213,20 @@ def main():
     parser.add_argument("--cache", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--wave", choices=["pilot", "confirm"], required=True)
+    parser.add_argument("--fresh-prefixes", type=Path)
+    parser.add_argument("--life-output", type=Path)
     args = parser.parse_args()
     rows, native, x, _, _ = read_inputs(args.cache, args.output)
+    destination = args.life_output or args.output
+    if args.fresh_prefixes:
+        if destination.resolve() == args.output.resolve():
+            raise ValueError("Provide a separate output path for the singleton deployment.")
+        with np.load(args.fresh_prefixes) as fresh, np.load(args.output / "projection.npz") as projection:
+            index = fresh["context"]
+            assert np.array_equal(index, [i for i, r in enumerate(rows) if r["split"] == "test"])
+            native[index] = fresh["logits"]
+            x[index] = features(fresh["hidden"], projection["center"], projection["matrix"])
+    destination.mkdir(parents=True, exist_ok=True)
     seeds = PILOT if args.wave == "pilot" else CONFIRM
     body = BodyValue()
     for seed in seeds:
@@ -229,12 +244,12 @@ def main():
                     if arm == "scratch":
                         checkpoints[key] = actor.main.weights
                 results.append(dict(world=list(world), replica=replica, arms=arms))
-        np.savez_compressed(args.output / f"life-{seed}-traces.npz", **trajectories)
-        np.savez_compressed(args.output / f"life-{seed}-scratch.npz", **checkpoints)
-        write(args.output / f"life-{seed}.json", results)
+        np.savez_compressed(destination / f"life-{seed}-traces.npz", **trajectories)
+        np.savez_compressed(destination / f"life-{seed}-scratch.npz", **checkpoints)
+        write(destination / f"life-{seed}.json", results)
         print("complete life seed", seed, flush=True)
-    report = lifetime_summary(args.output, seeds)
-    write(args.output / f"life-{args.wave}.json", report)
+    report = lifetime_summary(destination, seeds)
+    write(destination / f"life-{args.wave}.json", report)
     print(json.dumps(report["stats"]), flush=True)
 
 

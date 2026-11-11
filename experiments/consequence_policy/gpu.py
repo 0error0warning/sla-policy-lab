@@ -115,14 +115,25 @@ def capture(actor, out):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
-    parser.add_argument("--mode", choices=["capture", "verify"], default="capture")
+    parser.add_argument("--mode", choices=["capture", "verify", "numerics"], default="capture")
     args = parser.parse_args()
     out = args.root / "output"
     out.mkdir(parents=True, exist_ok=True)
     start = time.monotonic()
     actor = FrozenQwen(args.root / "expected-weights.json", out)
-    if args.mode == "capture":
+    if args.mode in ("capture", "numerics"):
         summary = capture(actor, out)
+        if args.mode == "numerics":
+            rows = json.loads((out / "contexts.json").read_bytes())
+            hidden, logits = [], []
+            for index, row in enumerate(rows):
+                z, score = actor.batch([row["input_ids"]])
+                hidden.append(z[0].astype(np.float16))
+                logits.append(score[0])
+                if index % 32 == 0:
+                    write(out / "status.json", dict(stage="singleton", finished=index, total=len(rows)))
+            np.savez_compressed(out / "all-singleton.npz", hidden=np.asarray(hidden), logits=np.asarray(logits))
+            summary["singleton_contexts"] = len(rows)
     else:
         from experiments.consequence_policy.live import verify
         summary = verify(actor, args.root, out)

@@ -21,12 +21,12 @@ def draw_tape(seed, native):
     return chosen, mu, partner_u, noise
 
 
-def settled_tape(chosen, partner_u, noise, rows, mapping, body):
+def settled_tape(chosen, partner_u, noise, rows, mapping, body, healths=TRAIN_H):
     # Only the environment sees the response rule. Unchosen outcomes are never produced.
     probs = np.array([[0., *probabilities(PARTNERS[r["partner"]], r["frame"], mapping)] for r in rows])
     p = probs[np.arange(len(rows))[None, :, None], chosen]
     protected = (chosen != 0) & (partner_u < p)
-    before = np.broadcast_to(np.array(TRAIN_H)[:, None, None], chosen.shape)
+    before = np.broadcast_to(np.array(healths)[:, None, None], chosen.shape)
     h = body_event(before, np.array(COSTS)[chosen], noise[..., 0])
     for j in range(1, 5):
         h = body_event(h, (~protected).astype(float), noise[..., j])
