@@ -23,6 +23,17 @@ def main():
     elif args.mode.startswith("depth"):
         from experiments.internal_body.depth import run
         result=run(actor,args.root,out)
+        if json.loads((args.root/"depth-job.json").read_bytes()).get("also_jacobians"):
+            from experiments.internal_body.jacobians import capture
+            dest=out/"jacobians";dest.mkdir(exist_ok=True)
+            write(out/"status.json",dict(stage="jacobian_acquisition",depth_training_completed=True))
+            result["jacobians"]=capture(actor,args.root,dest)
+    elif args.mode.startswith("transplant"):
+        from experiments.internal_body.transplant import deploy
+        result=deploy(actor,args.root,out)
+    elif args.mode.startswith("jacobian"):
+        from experiments.internal_body.jacobians import capture
+        result=capture(actor,args.root,out)
     else:
         from experiments.internal_body.live import run
         result=run(actor,args.root,out)

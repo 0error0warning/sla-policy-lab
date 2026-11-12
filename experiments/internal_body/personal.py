@@ -113,7 +113,8 @@ class LifeActor:
         jac=(np.eye(4,dtype=np.float32)-s)*(1-EXPLORATION)*s[:,None]/pi[:,None]/TEMP
         v=jac@z.t.T
         gradient=v/den-(v@r)[:,None]*r/(len(r)*den**3)
-        advantage=normalized_reward+.9
+        # Logged NumPy scalars and online Python floats must take the same FP32 update path.
+        advantage=float(normalized_reward)+.9
         if self.arm=="supplied":
             scalar=gradient@d[0]
             fisher=float(pi@(scalar*scalar))

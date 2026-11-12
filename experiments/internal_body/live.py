@@ -60,7 +60,7 @@ class Installed:
             c=self.feat@t
             if self.kind=="nonlinear":c=c.tanh()
             self.delta=c@self.block.B
-            if getattr(self.block,"W",None) is not None:
+            if getattr(self.block,"W",None) is not None and getattr(self,"personal_on",True):
                 self.delta=self.delta+torch.einsum("b,k,bkd->d",self.pg,self.key,self.block.W[self.partner])[None]
             if self.kind=="postnorm":return value
             result=torch.cat((value[:,:-1],(value[:,-1].float()+self.delta).to(value.dtype)[:,None]),dim=1)
@@ -155,6 +155,7 @@ def static(actor,root,out,job,rows,proj,norm,head,cfg):
 
 def actual_native(actor,root,out,job,rows):
     from experiments.consequence_policy.policy import feedback_scores
+    from experiments.internal_body.carrier_gpu import FixedRotation
     lm=actor.model.model.language_model
     old=lm.norm.weight
     original=digest(old)
@@ -165,7 +166,12 @@ def actual_native(actor,root,out,job,rows):
     with np.load(root/"native-actual-tape.npz") as z:
         scores=feedback_scores(z["action"],z["reward"],z["mu"],np.minimum(1.,[body.rul(h) for h in SPLIT_H]))
     states=schedule(seed,ids)[:16]
-    for visible in (True,False):
+    for label in ("text","hidden","carrier"):
+        visible=label=="text"
+        rotation=None
+        if label=="carrier":
+            with np.load(root/"native"/"basis-64501.npz") as sensor:
+                rotation=FixedRotation(lm,sensor["u"],sensor["v"])
         lm.norm.weight=nn.Parameter(old.detach().float().clone(),requires_grad=True)
         optimizer=torch.optim.Adam([lm.norm.weight],lr=LR_NATIVE)
         names=[n for n,p in actor.model.named_parameters() if p.requires_grad]
@@ -176,6 +182,7 @@ def actual_native(actor,root,out,job,rows):
                 for i,j in zip(indices,levels):
                     key=(int(i),int(j))
                     if key not in base:
+                        if rotation is not None:rotation.health(SPLIT_H[j])
                         prefix=encode(actor,rows[i],SPLIT_H[j] if visible else None)
                         with torch.no_grad():base[key]=(prefix,distribution(full(actor,prefix)).detach())
             for step,(indices,levels) in enumerate(states):
@@ -183,6 +190,7 @@ def actual_native(actor,root,out,job,rows):
                 losses=[]
                 for i,j in zip(indices,levels):
                     prefix,prior=base[int(i),int(j)]
+                    if rotation is not None:rotation.health(SPLIT_H[j])
                     pi=distribution(full(actor,prefix))
                     val=torch.as_tensor(scores[j,i],device="cuda")
                     loss=-(pi*val).sum()+KL*(pi*(pi/prior).log()).sum()
@@ -198,22 +206,25 @@ def actual_native(actor,root,out,job,rows):
             with torch.no_grad():
                 for i in [v for v in range(768,960) if rows[v]["layout"]%4==0]:
                     for h in (2.,300.):
+                        if rotation is not None:rotation.health(h)
                         pp=encode(actor,rows[i],h if visible else None)
                         pi.append([i,h,*distribution(full(actor,pp)).cpu().tolist()])
-            label="visible" if visible else "hidden"
             np.savez_compressed(out/f"native-actual-{label}.npz",original=old.detach().float().cpu().numpy(),
                 master=master.cpu().numpy(),effective=lm.norm.weight.detach().float().cpu().numpy(),probes=pi)
-            runs.append(dict(visible=visible,original=original,effective=digest(lm.norm.weight),trainable=names,
+            runs.append(dict(channel=label,visible=visible,original=original,effective=digest(lm.norm.weight),trainable=names,
                 changed=int((old!=lm.norm.weight).sum()),steps=history))
-        finally:lm.norm.weight=old
+        finally:
+            lm.norm.weight=old
+            if rotation is not None:rotation.close()
         assert digest(lm.norm.weight)==original
     write(out/"native-actual.json",runs)
     return len(runs)
 
 
 class DirectLife:
-    def __init__(self,actor,life,seed,root,proj,cfg):
+    def __init__(self,actor,life,seed,root,proj,cfg,rule="scalar"):
         self.actor=actor
+        self.rule=rule
         with np.load(root/"checkpoints"/f"generic-{seed}.npz") as z:
             self.install=Installed(actor,life.arm,{k:z[k] for k in ("A","B")},proj,cfg["norm_offset"],cfg["epsilon"],life)
         self.ids={}
@@ -221,16 +232,32 @@ class DirectLife:
     def policy(self,i,h,life):
         if i not in self.ids:self.ids[i]=encode(self.actor,life.data.rows[i])
         self.install.condition(life.data.slot[i],h,life,i)
-        self.pi=distribution(full(self.actor,self.ids[i]))
+        if self.rule=="predict":
+            self.install.personal_on=False
+            with torch.no_grad():self.prior_log=torch.log_softmax(full(self.actor,self.ids[i])/TEMP,dim=0)
+            self.install.personal_on=True
+        scores=full(self.actor,self.ids[i]);self.log_scores=torch.log_softmax(scores/TEMP,dim=0)
+        self.pi=distribution(scores)
         return (self.pi.detach().cpu().numpy()[None],)
 
     def update(self,index,action,scaled,life,details):
         if life.arm=="fixed":return 0.,0.
         w=self.install.block.W
+        if self.rule=="predict":
+            centered=self.log_scores[action]-self.log_scores.mean()
+            movement=self.log_scores.detach()-self.prior_log
+            estimate=float(movement[action]-movement.mean())
+            grad=torch.autograd.grad(centered,w)[0]
+            energy=float(grad.square().sum())
+            with torch.no_grad():
+                w.add_(grad,alpha=.55*(3*(scaled+.9)-estimate)/(.05+energy))
+                life.W[:]=w.detach().cpu().numpy()
+            return float(grad.norm()),energy
         gradient=[torch.autograd.grad(self.pi[j].log(),w,retain_graph=j!=3)[0] for j in range(4)]
         with torch.no_grad():
             fisher=sum(float(self.pi[j])*float(g.square().sum()) for j,g in enumerate(gradient))
-            w.add_(gradient[action],alpha=.55*(scaled+.9)/(.05+fisher))
+            gain=3. if self.rule=="scalar3" else 1.
+            w.add_(gradient[action],alpha=gain*.55*(scaled+.9)/(.05+fisher))
             life.W[:]=w.detach().cpu().numpy()
         return float(gradient[action].norm()),fisher
 
@@ -241,23 +268,27 @@ def run(actor,root,out):
     cfg=json.loads((cache/"architecture.json").read_bytes())
     with np.load(cache/"architecture.npz") as z:proj,norm,head=[z[s] for s in ("projection","norm","head")]
     count=static(actor,root,out,job,rows,proj,norm,head,cfg)
+    from experiments.internal_body.carrier_gpu import checks
+    carrier_count=checks(actor,root,out,rows)
     direct_native=actual_native(actor,root,out,job,rows)
     data=LifeInputs(cache);body=BodyValue()
     all_logs={};reports=[];snapshots={}
-    for seed,world,rev in zip(job["seeds"],((0,1),(1,0)),(0,1)):
+    both=[(s,w,v,[("fixed","fixed"),("free","scalar")]) for s,w,v in zip(job["seeds"],((0,1),(1,0)),(0,1))]
+    both += [(s,w,v,[("fixed","fixed"),("free","scalar3"),("free","predict")]) for s,w,v in zip(job.get("credit_seeds",[]),((0,0),(1,0)),(0,1))]
+    for seed,world,rev,conditions in both:
         tape=life_tape(seed,world,data.rows)
-        for arm in ("fixed","free"):
+        for arm,rule in conditions:
             agent=LifeActor(data,root/"checkpoints",seed,arm)
-            direct=DirectLife(actor,agent,seed,root,proj,cfg)
+            direct=DirectLife(actor,agent,seed,root,proj,cfg,rule)
             try:
                 trace,rep=run_one(agent,seed,world,rev,tape,body,direct=direct)
-                key=f"s{seed}-{arm}"
+                key=f"s{seed}-{rule}"
                 all_logs[key]=trace;snapshots[key]=agent.parameters()
-                reports.append(dict(key=key,world=world,reversal=rev,metrics=rep,
+                reports.append(dict(key=key,seed=seed,rule=rule,world=world,reversal=rev,metrics=rep,
                     trainable=[n for n,p in actor.model.named_parameters() if p.requires_grad]))
                 write(out/"status.json",dict(stage="actual_life",completed=len(reports)))
             finally:direct.install.close()
     write(out/"lives.json",reports)
     np.savez_compressed(out/"lifetimes.npz",**all_logs)
     np.savez_compressed(out/"personal-checkpoints.npz",**snapshots)
-    return dict(static=count,genuine_native_fits=direct_native,lives=len(reports),turns=sum(len(t) for t in all_logs.values()))
+    return dict(static=count,carrier_static=carrier_count,genuine_native_fits=direct_native,lives=len(reports),turns=sum(len(t) for t in all_logs.values()))
