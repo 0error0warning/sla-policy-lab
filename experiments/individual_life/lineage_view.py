@@ -147,7 +147,9 @@ def run(root, analysis, out):
         if rule != "true1":
             continue
         links[tag] = feedback_links(events)
-        if seed in ("s68011", "s68101") and sense == "visible":
+        if sense == "visible" and (
+            seed in ("s68011", "s68101") or (seed == "s68012" and birth == "population")
+        ):
             emit(out / ("life-" + seed + "-" + birth + ".csv"), individual(events))
     emit(out / "per-seed.csv", seed_rows)
     summary = {}
