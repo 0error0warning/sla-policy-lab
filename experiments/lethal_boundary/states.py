@@ -112,7 +112,7 @@ def probes(model, bank, sense, health_axis=ALL_H):
         )
 
     witness = np.searchsorted(health_axis, WITNESS_H)
-    np.testing.assert_array_equal(health_axis[witness],WITNESS_H)
+    np.testing.assert_array_equal(health_axis[witness], WITNESS_H)
     panel = scores[witness]
     if nk > 1:
         panel = panel[:, WITNESS_K]
