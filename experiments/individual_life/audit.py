@@ -136,7 +136,7 @@ def reconstruct(folder, meta, events, birth):
     return [meta["birth_sha256"]] + [u["after"] for u in main], len(changes)
 
 
-def verify_folder(folder, tables, items, body, birth):
+def verify_folder(folder, tables, items, body, birth, paired):
     events = read_lines(folder / "life.jsonl")
     meta = json.loads((folder / "life.json").read_bytes())
     sense, seed, origin, rule = folder.parts[-4:]
@@ -186,6 +186,7 @@ def verify_folder(folder, tables, items, body, birth):
     h = 350.0
     rewards = -8.0
     max_err = 0.0
+    noise_error = 0.0
     native = []
     native_changed = 0
     for k, t in enumerate(events):
@@ -208,7 +209,18 @@ def verify_folder(folder, tables, items, body, birth):
             and t["action_uniform"] == uni[k, 0]
             and t["partner_uniform"] == uni[k, 1]
         )
-        np.testing.assert_array_equal(t["body_noise"], noise[k])
+        # Local and Colab inverse-normal implementations can differ by a few FP64 ulps.
+        observed = tuple(t["body_noise"])
+        exogenous = (
+            t["context"],
+            t["action_uniform"],
+            t["partner_uniform"],
+            observed,
+            t["wrong_action_offset"],
+        )
+        assert paired.setdefault(k, exogenous) == exogenous
+        noise_error = max(noise_error, float(np.max(np.abs(noise[k] - observed))))
+        assert noise_error < 1e-13
         fav = 2 + (j ^ t["frame"] ^ meta["world"][j])
         p = 0.15 if a == 1 else 0.9 if a == fav else 0.1
         resp = None if a == 0 else t["partner_uniform"] < p
@@ -275,13 +287,15 @@ def verify_folder(folder, tables, items, body, birth):
             native.append(float(np.max(np.abs(np.asarray(n) - t["prob_current"]))))
             native_changed += int(sampled(n, t["action_uniform"]) != a)
     assert h == 0 and version == meta["main_steps"] and max_err < 3e-5
-    return len(events), updates, max_err, native, native_changed
+    return len(events), updates, max_err, native, native_changed, noise_error
 
 
 def run(root, source, out):
     items = rows()
     body = BodyValue()
     tapes = {}
+    paired = defaultdict(dict)
+    max_noise_error = 0.0
     births = {
         key: np.concatenate([x.ravel() for x in starting(source, key)]).view("<u4")
         for key in BIRTHS
@@ -295,8 +309,8 @@ def run(root, source, out):
         seed = int(folder.parts[-3][1:])
         if seed not in tapes:
             tapes[seed] = tape(seed, items)
-        n, u, d, p, z = verify_folder(
-            folder, tapes[seed], items, body, births[folder.parts[-2]]
+        n, u, d, p, z, noise_error = verify_folder(
+            folder, tapes[seed], items, body, births[folder.parts[-2]], paired[seed]
         )
         counts.update(
             {
@@ -307,6 +321,7 @@ def run(root, source, out):
                 "main_and_shadow_microsteps": u,
             }
         )
+        max_noise_error = max(max_noise_error, noise_error)
         max_dup = max(max_dup, d)
         errors += p
         flips += z
@@ -316,6 +331,8 @@ def run(root, source, out):
         "independent_seeds": sorted(tapes),
         "birth_parameter_sha256": {k: checksum(v) for k, v in births.items()},
         "equal_snapshot_max_probability_error": max_dup,
+        "max_local_noise_reconstruction_error": max_noise_error,
+        "exact_exogenous_pairing_across_arms": True,
         "same_state_suffix_rows": len(errors),
         "same_state_suffix_max_abs": float(np.max(errors)) if errors else None,
         "same_state_suffix_q95_abs": float(np.quantile(errors, 0.95))

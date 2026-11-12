@@ -87,6 +87,10 @@ def main():
     actor = FrozenQwen(a.root / "expected-weights.json", out)
     if a.mode == "lifecapture":
         result = capture(actor, a.root, out)
+    elif a.mode == "lifeprobes":
+        from experiments.individual_life.probe_check import hardware
+
+        result = hardware(actor, a.root, out)
     elif a.mode in ("lifepilot", "lifeconfirm"):
         from experiments.individual_life.run import hardware
 
