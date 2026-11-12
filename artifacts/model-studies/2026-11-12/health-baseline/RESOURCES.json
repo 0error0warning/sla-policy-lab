@@ -1,0 +1,95 @@
+{
+  "completed_assignments": 6,
+  "final_active": 0,
+  "final_check_utc": "2026-11-12T13:39:18.664191+00:00",
+  "final_rate": 0,
+  "interrupted_assignments": 1,
+  "note": "Balance differences are observations across the run.",
+  "observed_credit_decrease": 2.5163035021487303,
+  "stages": [
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T11:54:56.453280+00:00",
+      "assigned_seconds": 552.674304,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.13261665196677086,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T12:04:09.127584+00:00",
+      "stage": "hbreplay",
+      "worker_seconds": 476.3218140800001
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T12:04:20.647856+00:00",
+      "assigned_seconds": 1085.181791,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.6465612105246237,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T12:22:25.829647+00:00",
+      "stage": "hbpilot",
+      "worker_seconds": 1017.60142874
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T12:22:36.453524+00:00",
+      "completion": "provider_unassigned",
+      "confirmed_unassigned_utc": "2026-11-12T20:35:58.889523+08:00",
+      "device": "L4 assignment",
+      "maximum_assigned_seconds": 802.435999,
+      "observed_credit_decrease": 0.21672601539017933,
+      "rate_after_release": 0,
+      "stage": "hbrepa-interrupted-1",
+      "worker_seconds": null
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T12:39:59.195069+00:00",
+      "assigned_seconds": 1123.369549,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.456573779611972,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T12:58:42.564618+00:00",
+      "stage": "hbrepa",
+      "worker_seconds": 1007.6137103669994
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T12:58:54.349717+00:00",
+      "assigned_seconds": 1123.933434,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.644716816608252,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T13:17:38.283151+00:00",
+      "stage": "hbrepb",
+      "worker_seconds": 1016.8739864159999
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T13:17:49.762625+00:00",
+      "assigned_seconds": 567.143925,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.204357189265977,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T13:27:16.906550+00:00",
+      "stage": "hbrepeat",
+      "worker_seconds": 472.89054789400006
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T13:27:33.003536+00:00",
+      "assigned_seconds": 696.780288,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.2147518387809555,
+      "peak_bytes": 9582481408,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T13:39:09.783824+00:00",
+      "stage": "hbverify",
+      "worker_seconds": 541.3292842660001
+    }
+  ]
+}
