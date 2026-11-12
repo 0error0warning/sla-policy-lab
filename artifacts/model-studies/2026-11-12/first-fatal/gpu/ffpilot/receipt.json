@@ -1,0 +1,24 @@
+{
+  "worker_returncode": 0,
+  "files": 200,
+  "bytes": 11541053,
+  "sha256": "76bbbb6e7fd445c5874015d53192c6ed2b0c1b930d142f89c0090244622d7b00",
+  "study_stage": "ffpilot",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "6e2442e597ea746a9af91a8a61004c86487d7c9ce246d7810bfc9d30c9b09e55"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "566c4766ce8549b512237948909e1cc4f9e669d0c9717aec38b03ff8aef5bb19"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 1055293,
+      "sha256": "c8606250fc56d3218956429a5bb20c1dae569b5157bc5c050e4172ea45e762df"
+    }
+  ]
+}
