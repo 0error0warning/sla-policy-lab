@@ -50,6 +50,8 @@ def unpack(artifact, dest):
                 raise ValueError(f"Input transport mismatch for {stage.name}")
             inputs = dest / (stage.name + "-inputs-transport.zip")
             join_parts(stage, inputs, parts["chunks"])
+            if inputs.stat().st_size != parts["bytes"]:
+                raise ValueError(f"Input transport size mismatch for {stage.name}")
         if sha256(inputs.read_bytes()).hexdigest() != launch["input_sha256"]:
             raise ValueError(f"Input hash mismatch for {stage.name}")
         unpack_checked(inputs, full / "inputs", True)
