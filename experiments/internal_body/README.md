@@ -48,6 +48,7 @@ python -m experiments.internal_body.audit --root RUN --cache RUN/gpu/capture2/ou
 python -m experiments.internal_body.refit --cache RUN/gpu/capture2/output --population RUN/population --native RUN/native --placement RUN/placement --jacobians RUN/gpu/depthpilot2b/output/jacobians --output CHECK/refit.json
 python -m experiments.internal_body.depth_analysis --depth RUN/gpu/depthpilot1/output RUN/gpu/depthpilot2b/output --trained RUN/placement --transplant RUN/gpu/transplant/output --output CHECK/depth.json
 python -m experiments.internal_body.direct_audit --depth RUN/gpu/depthpilot1/output RUN/gpu/depthpilot2b/output --seen RUN/gpu/seenfit/output --output CHECK/direct-audit.json
+python -m experiments.internal_body.coverage_numerics --cache RUN/gpu/capture2/output --fresh RUN/gpu/transplant/output/fresh-tail --study RUN/nonfatal --output CHECK
 python -m experiments.internal_body.quantized --cache RUN/gpu/capture2/output --fresh RUN/gpu/transplant/output/fresh-tail --population RUN/population --native RUN/native --credit RUN/credit --output CHECK
 ```
 

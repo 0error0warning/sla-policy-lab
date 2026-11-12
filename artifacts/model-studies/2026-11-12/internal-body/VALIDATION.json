@@ -1,0 +1,385 @@
+{
+  "cohort_seed_ids": {
+    "budget": [
+      64811,
+      64812,
+      64813,
+      64814,
+      64815,
+      64816,
+      64817,
+      64818,
+      64819,
+      64820,
+      64821,
+      64822
+    ],
+    "credit": [
+      64601,
+      64602,
+      64603,
+      64604,
+      64701,
+      64702,
+      64703,
+      64704,
+      64705,
+      64706,
+      64707,
+      64708,
+      64709,
+      64710,
+      64711,
+      64712,
+      64713,
+      64714,
+      64715,
+      64716,
+      64717,
+      64718,
+      64719,
+      64720
+    ],
+    "native": [
+      64401,
+      64402,
+      64403,
+      64404,
+      64501,
+      64502,
+      64503,
+      64504,
+      64505,
+      64506,
+      64507,
+      64508,
+      64509,
+      64510,
+      64511,
+      64512,
+      64513,
+      64514,
+      64515,
+      64516,
+      64517,
+      64518,
+      64519,
+      64520
+    ],
+    "nonfatal": [
+      65801,
+      65802,
+      65803,
+      65804
+    ],
+    "placement": [
+      65001,
+      65002,
+      65003,
+      65004,
+      65005,
+      65006,
+      65007,
+      65008,
+      65009,
+      65010,
+      65011,
+      65012
+    ],
+    "population": [
+      64001,
+      64002,
+      64003,
+      64004,
+      64101,
+      64102,
+      64103,
+      64104,
+      64105,
+      64106,
+      64107,
+      64108,
+      64109,
+      64110,
+      64111,
+      64112,
+      64113,
+      64114,
+      64115,
+      64116,
+      64117,
+      64118,
+      64119,
+      64120
+    ],
+    "routing": [
+      64701,
+      64702,
+      64703,
+      64704,
+      64705,
+      64706,
+      64707,
+      64708,
+      64709,
+      64710,
+      64711,
+      64712,
+      64713,
+      64714,
+      64715,
+      64716,
+      64717,
+      64718,
+      64719,
+      64720
+    ]
+  },
+  "direct_training_seed_ids": [
+    64211,
+    64212,
+    64213,
+    64214
+  ],
+  "distinct_training_or_acquisition_seed_ids": 104,
+  "separate_routing_environment_seeds": [
+    65701,
+    65702,
+    65703,
+    65704,
+    65705,
+    65706,
+    65707,
+    65708,
+    65709,
+    65710,
+    65711,
+    65712,
+    65713,
+    65714,
+    65715,
+    65716,
+    65717,
+    65718,
+    65719,
+    65720
+  ],
+  "behavioral_gates": {
+    "internal_primary_confirm": true,
+    "native_fixed_sensor_confirm": true,
+    "original_single_life_confirm": false,
+    "revised_credit_confirm": true,
+    "nonfatal_only_pilot": false,
+    "small_batch_direct_depth": {
+      "local31": false,
+      "site15": false,
+      "site3": false,
+      "site31": false
+    },
+    "full_tape_real_deployment": {
+      "15": false,
+      "3": false,
+      "31": true
+    }
+  },
+  "cpu_rebuilt_source_choices": 4915200,
+  "cpu_rebuilt_population_settlements": 19660800,
+  "direct_pilot_choices_additional": 196608,
+  "direct_pilot_settlements_additional": 393216,
+  "cached_prefix_lives": 3040,
+  "cached_prefix_turns": 206789,
+  "full_qwen_lives": 10,
+  "full_qwen_turns": 656,
+  "selected_individual_checkpoint_bitwise_replays": 224,
+  "small_batch_full_graph_optimizer_steps": 1024,
+  "matched_seen_probability_vectors": 10240,
+  "identical_physical_transplant_vector_checks": 96,
+  "fresh_same_process_complete_model_witnesses_by_mode": {
+    "linear": 96,
+    "native_prompt": 96,
+    "nonlinear": 96,
+    "postnorm": 96,
+    "prompt_lora": 96
+  },
+  "maximum_fresh_reconstruction_probability_error": 1.1920928955078125e-07,
+  "original_and_new_parameters": {
+    "internal_conditional": 13408,
+    "matched_nuisance_route": 76800,
+    "original_norm": 2560,
+    "output_reference5": 3168,
+    "personal_supplied_direction": 2,
+    "personal_tied": 38400,
+    "personal_unrestricted": 76800
+  },
+  "public_bundles_and_gpu_member_hashes_verified": true,
+  "roundtrip": {
+    "regenerated_byte_identical": {
+      "audit.json": "408e218bd32005fc448dcb7c6f5bbb17ba25078e84da1e8c5866b3068391eaf4",
+      "evidence.json": "4ce38101cbdd368d6bf3d16503b056c2414276dae095e622927b0c20cb217d24",
+      "parameters.json": "869c2021d3fc8f02098d7266a8d870f8848179bb2312570464d16807eccfbb90",
+      "depth.json": "b33aef268ac6087281c3a89e299dfdef7a00b5189f14c18d06d54f961a3b9f3f",
+      "direct-audit.json": "2fdd25a27af480815e05ac7eab31c3000c71dce4aaafbb4516de3685e333ee44",
+      "fresh-summary.json": "43dece871bd9588f60d6f0b6c9c6b3bf6cba67b2fdea0fc72da367c0a3699fea",
+      "fresh-population.json": "15cf214a237d93bb6ddd3244358334be2b7c7ee5c5b79925b5323641a859bdfe",
+      "fresh-carrier.json": "5c56aa91092412c208e0b1144a4cba2447753095a46afc21584e0c87bd8ef961",
+      "full-qwen-encounters.jsonl": "31d308285bd5792e0f588a9e42c1932cb7828721d70e8cf82d88d8a2b4287525",
+      "nonfatal-numerics.json": "ebe024965a54c03a0cf1ddc21a399096ecb2b499299ae082ee6f0efd69391c40",
+      "nonfatal-numerics.npz": "49945aa1fb898d7948109644b5f9713a389695c921933e3de7b0c4848d11afb8"
+    },
+    "fresh_refit_from_restored_data": [
+      {
+        "arm": "linear",
+        "exact": true,
+        "mapping": 0,
+        "seed": 64001
+      },
+      {
+        "arm": "nonlinear",
+        "exact": true,
+        "mapping": 0,
+        "seed": 64001
+      },
+      {
+        "arm": "postnorm",
+        "exact": true,
+        "mapping": 0,
+        "seed": 64001
+      },
+      {
+        "arm": "native_prompt",
+        "exact": true,
+        "mapping": 0,
+        "seed": 64001
+      },
+      {
+        "arm": "linear",
+        "exact": true,
+        "mapping": 1,
+        "seed": 64120
+      },
+      {
+        "arm": "nonlinear",
+        "exact": true,
+        "mapping": 1,
+        "seed": 64120
+      },
+      {
+        "arm": "postnorm",
+        "exact": true,
+        "mapping": 1,
+        "seed": 64120
+      },
+      {
+        "arm": "native_prompt",
+        "exact": true,
+        "mapping": 1,
+        "seed": 64120
+      },
+      {
+        "arm": "native_sensor",
+        "exact": true,
+        "mapping": 0,
+        "seed": 64401
+      },
+      {
+        "arm": "native_sensor",
+        "exact": true,
+        "mapping": 1,
+        "seed": 64520
+      },
+      {
+        "arm": "tangent3",
+        "exact": false,
+        "mapping": 0,
+        "max_absolute_difference": {
+          "A": 1.817941665649414e-06,
+          "B": 1.2665987014770508e-07,
+          "probability": 1.0728836059570312e-06
+        },
+        "seed": 65001
+      },
+      {
+        "arm": "tangent15",
+        "exact": false,
+        "mapping": 0,
+        "max_absolute_difference": {
+          "A": 1.5795230865478516e-06,
+          "B": 2.60770320892334e-08,
+          "probability": 5.662441253662109e-07
+        },
+        "seed": 65001
+      },
+      {
+        "arm": "tangent31",
+        "exact": false,
+        "mapping": 0,
+        "max_absolute_difference": {
+          "A": 3.0994415283203125e-06,
+          "B": 2.9802322387695312e-08,
+          "probability": 2.2649765014648438e-06
+        },
+        "seed": 65001
+      }
+    ],
+    "bitwise_restored_gpu_members_and_seed_arrays": true
+  },
+  "gpu_assignments": {
+    "capture": {
+      "worker_returncode": 1,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "capture2": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "depthpilot1": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "depthpilot2": {
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "fullverify": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "depthpilot2b": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "transplant": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    },
+    "seenfit": {
+      "worker_returncode": 0,
+      "assignment_removed": true,
+      "active_after_release": 0,
+      "after_rate": 0.0
+    }
+  },
+  "ending_active_assignments": 0,
+  "ending_rate_cu_per_hour": 0.0,
+  "repository_pytest": {
+    "passed": 91,
+    "subtests_passed": 11
+  },
+  "package_ruff": "passed",
+  "note": "Stored checkpoints restore bitwise. Independent training refits are reported with their actual precision. Time steps, within-seed mirror ecologies and prompts are not independent replications.",
+  "local_documentation_links_verified": 53,
+  "study_files_excluding_manifest": 175
+}

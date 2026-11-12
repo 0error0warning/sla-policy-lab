@@ -7,7 +7,8 @@ from pathlib import Path
 import numpy as np
 
 from experiments.consequence_policy.environment import draw_tape
-from experiments.consequence_policy.study import PARTNERS
+from experiments.consequence_policy.policy import feedback_scores
+from experiments.consequence_policy.study import KL, PARTNERS
 from experiments.direct_policy.protocol import COSTS, probabilities, write
 from experiments.internal_body.design import SPLIT_H, all_rows
 from experiments.internal_body.evidence import stat
@@ -19,7 +20,9 @@ def run(stages, seen=None):
     body = BodyValue()
     seeds = set()
     choices = settlements = steps = 0
+    verified_seen_vectors = 0
     max_restore = 0.0
+    max_noise_difference = 0.0
     for root in stages:
         with np.load(root / "calibration.npz") as z:
             native = z["native"][:768]
@@ -33,9 +36,14 @@ def run(stages, seen=None):
                     ("choice", action),
                     ("mu", mu),
                     ("response_uniform", u),
-                    ("noise", noise),
                 ):
                     np.testing.assert_array_equal(z[key], x)
+                archived_noise = z["noise"]
+                max_noise_difference = max(
+                    max_noise_difference, float(np.max(np.abs(noise - archived_noise)))
+                )
+                np.testing.assert_allclose(noise, archived_noise, rtol=0, atol=1e-14)
+                noise = archived_noise  # Replay the physical draws actually settled on the GPU host.
             choices += action.size
             seq = json.loads((root / f"schedule-{seed}.json").read_bytes())
             assert len(seq) == 32 and all(
@@ -67,6 +75,40 @@ def run(stages, seen=None):
                         rtol=0,
                         atol=1e-12,
                     )
+                if seen:
+                    schedule = np.asarray(seq)
+                    ix, hs = schedule[:, 0], schedule[:, 1]
+                    with np.load(folder / "observed.npz") as saved:
+                        scale = np.minimum(1.0, [body.rul(x) for x in SPLIT_H])
+                        score = feedback_scores(action, saved["reward"], mu, scale)[
+                            hs, ix
+                        ]
+                    key = f"s{seed}-m{m}"
+                    measurements = json.loads((seen / (key + ".json")).read_bytes())
+                    with np.load(seen / (key + ".npz")) as prob:
+                        base = prob["frozen"]
+                        for site in prob:
+                            pi = prob[site]
+                            assert pi.shape == (32, 8, 4)
+                            np.testing.assert_allclose(pi.sum(-1), 1, rtol=0, atol=3e-7)
+                            gain = np.mean(((pi - base) * score).sum(-1))
+                            kl = np.mean((pi * np.log(pi / base)).sum(-1))
+                            ans = pi[:, :, 2:].sum(-1)
+                            compare = {
+                                "chosen_tape_gain": gain,
+                                "kl_to_frozen": kl,
+                                "net_objective_gain": gain - KL * kl,
+                                "low_answer": ans[np.isin(hs, [0, 1])].mean(),
+                                "healthy_answer": ans[np.isin(hs, [3, 4, 6, 7])].mean(),
+                                "max_single_probability_change": np.abs(
+                                    pi - base
+                                ).max(),
+                            }
+                            for metric, v in compare.items():
+                                np.testing.assert_allclose(
+                                    v, measurements[site][metric], rtol=0, atol=1e-6
+                                )
+                            verified_seen_vectors += pi.shape[0] * pi.shape[1]
                 settlements += action.size
                 for name, v in json.loads(
                     (folder / "metrics.json").read_bytes()
@@ -83,6 +125,7 @@ def run(stages, seen=None):
         "settlements": settlements,
         "actual_optimizer_steps": steps,
         "max_disabled_frozen_logit_gap": max_restore,
+        "max_cross_host_regenerated_body_noise_difference": max_noise_difference,
     }
     if seen:
         values = {}
@@ -96,6 +139,7 @@ def run(stages, seen=None):
                 means.append({k: np.mean([v[k] for v in pair]) for k in pair[0]})
             values[method] = {k: stat([r[k] for r in means]) for k in means[0]}
         out["full_training_fit"] = values
+        out["verified_training_state_probability_vectors"] = verified_seen_vectors
     return out
 
 
