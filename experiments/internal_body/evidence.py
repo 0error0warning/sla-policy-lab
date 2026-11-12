@@ -278,6 +278,41 @@ if __name__ == "__main__":
             for w in WORLDS
         },
     }
+    if (root / "nonfatal" / "pilot.json").exists():
+        nf = root / "nonfatal"
+        waves = {
+            p.stem: read(p)
+            for p in (nf / "pilot.json", nf / "confirm.json")
+            if p.exists()
+        }
+        tables = {}
+        for wave, trial in waves.items():
+            values = [
+                read(nf / f"coverage-{seed}-m{m}/metrics.json")["by_arm"]
+                for seed in trial["seeds"]
+                for m in (0, 1)
+            ]
+            keys = ("danger_answer", "healthy_answer", "healthy_style", "answer300")
+            tables[wave] = {
+                arm: {
+                    setting: {
+                        **{
+                            k: float(np.mean([v[arm][setting][k] for v in values]))
+                            for k in keys
+                        },
+                        "death_by_test_health": np.mean(
+                            [v[arm][setting]["death"] for v in values], axis=0
+                        ).tolist(),
+                    }
+                    for setting in ("visible", "masked")
+                }
+                for arm in ("high", "nonfatal")
+            }
+        result["nonfatal_coverage"] = {
+            "by_wave": tables,
+            "test_health": TEST_H,
+            "paired": waves,
+        }
     if a.gpu:
         result["physical"] = physical(a.gpu, primary, root / "credit")
     write(a.output, result)

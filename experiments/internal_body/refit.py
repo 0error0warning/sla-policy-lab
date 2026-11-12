@@ -65,6 +65,9 @@ def main():
         from experiments.internal_body.placement import fit_tangent
 
         torch.set_num_threads(4)
+        torch.use_deterministic_algorithms(
+            False
+        )  # Match the tangent acquisition process.
         common = np.load(a.jacobians / "common.npz")
         i, j = np.arange(768), np.arange(768, 960)
         part = torch.tensor([r["partner"] for r in bank.rows[:960]])
@@ -81,19 +84,38 @@ def main():
 
         for position, l in enumerate((3, 15, 31)):
             jac = torch.as_tensor(np.load(a.jacobians / f"layer-{l}.npz")["gradient"])
-            model, _, _, _ = fit_tangent(
+            model, probs, _, _ = fit_tangent(
                 grid(i, SPLIT_H, position, jac),
                 grid(j, TEST_H, position, jac),
                 signal(a.placement, 65001, 0, scale),
             )
-            with np.load(a.placement / "s65001-m0" / f"l{l}-real.npz") as z:
-                np.testing.assert_array_equal(model.A.detach().numpy(), z["A"])
-                np.testing.assert_array_equal(model.B.detach().numpy(), z["B"])
+            path = a.placement / "s65001-m0"
+            errors = {}
+            with np.load(path / f"l{l}-real.npz") as z:
+                for name, tensor in model.named_parameters():
+                    current = tensor.detach().numpy()
+                    errors[name] = float(np.abs(current - z[name]).max())
+                    np.testing.assert_allclose(current, z[name], rtol=0, atol=2e-5)
+            with np.load(path / "predicted-probes.npz") as z:
+                old = z[f"l{l}-real"]
+                errors["probability"] = float(np.abs(old - probs).max())
+                np.testing.assert_allclose(probs, old, rtol=0, atol=1e-4)
             reports.append(
-                {"seed": 65001, "mapping": 0, "arm": f"tangent{l}", "exact": True}
+                {
+                    "seed": 65001,
+                    "mapping": 0,
+                    "arm": f"tangent{l}",
+                    "exact": all(v == 0 for v in errors.values()),
+                    "max_absolute_difference": errors,
+                }
             )
     write(a.output, reports)
-    print("Bitwise-reproduced fitted checkpoints:", len(reports))
+    print(
+        "Refitted checkpoints:",
+        len(reports),
+        "bitwise exact:",
+        sum(r["exact"] for r in reports),
+    )
 
 
 if __name__ == "__main__":

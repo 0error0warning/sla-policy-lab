@@ -15,6 +15,7 @@ def read(p):
 
 
 def main():
+    plt.switch_backend("Agg")
     p = argparse.ArgumentParser()
     p.add_argument("--evidence", type=Path, required=True)
     p.add_argument("--credit", type=Path, required=True)

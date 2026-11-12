@@ -156,7 +156,9 @@ def placement(gpu, trained):
                         gaps.setdefault(name, []).append(err.ravel())
                         v["predicted_danger"] = float(approx[0, :, 2:].sum(-1).mean())
                         v["predicted_healthy"] = float(
-                            approx[[-2, -1], :, 2:].sum(-1).mean()
+                            approx[[i for i, h in enumerate(lvl) if h >= 90], :, 2:]
+                            .sum(-1)
+                            .mean()
                         )
             all_obs[key] = obs
     names = {k for sample in all_obs.values() for k in sample}
@@ -172,6 +174,24 @@ def placement(gpu, trained):
                 ]
             )
         stats[name] = one
+    contrasts = {}
+    for first, second in ((3, 15), (3, 31), (15, 31)):
+        left, right = (f"d{site}-r{site}-real-x1" for site in (first, second))
+        contrasts[f"{first}_minus_{second}"] = {
+            measure: stat(
+                [
+                    np.mean(
+                        [
+                            all_obs[f"s{s}-m{m}"][left][measure]
+                            - all_obs[f"s{s}-m{m}"][right][measure]
+                            for m in (0, 1)
+                        ]
+                    )
+                    for s in range(65001, 65013)
+                ]
+            )
+            for measure in ("danger", "healthy", "style", "death2", "death6", "gap")
+        }
     gates = {}
     for l in (3, 15, 31):
         v = stats[f"d{l}-r{l}-real-x1"]
@@ -193,6 +213,7 @@ def placement(gpu, trained):
     }
     return {
         "per_world": all_obs,
+        "paired_site_differences": contrasts,
         "stats": stats,
         "gates": gates,
         "identical_transplant_hash_comparisons": physical_hashes,

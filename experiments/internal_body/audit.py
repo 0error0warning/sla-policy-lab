@@ -6,6 +6,7 @@ from pathlib import Path
 
 import numpy as np
 
+from experiments.consequence_policy.coverage import RANGES
 from experiments.consequence_policy.environment import draw_tape
 from experiments.consequence_policy.study import PARTNERS, WORDS
 from experiments.direct_policy.protocol import (
@@ -23,7 +24,13 @@ from experiments.internal_body.personal import ARMS, LifeActor, LifeInputs
 from experiments.social_closed_loop.core import BodyValue
 
 
-def acquisition(d, native, seeds, rows, body):
+def acquisition(d, native, seeds, rows, body, nonfatal=False):
+    first_levels, first_after, first_reward = (
+        (RANGES["nonfatal"], "nonfatal_after", "nonfatal_reward")
+        if nonfatal
+        else (SPLIT_H, "after", "reward")
+    )
+    prefix = "coverage-" if nonfatal else "s"
     counts = {
         "sampled_choices": 0,
         "paired_physical_transitions": 0,
@@ -49,10 +56,10 @@ def acquisition(d, native, seeds, rows, body):
             )
             accepted = u < p[np.arange(768)[None, :, None], a]
             response = np.where(a == 0, -1, accepted)
-            with np.load(d / f"s{seed}-m{m}/outcomes.npz") as observed:
+            with np.load(d / f"{prefix}{seed}-m{m}/outcomes.npz") as observed:
                 np.testing.assert_array_equal(response, observed["response"])
                 for levels, h_key, r_key in (
-                    (SPLIT_H, "after", "reward"),
+                    (first_levels, first_after, first_reward),
                     (HIGH_H, "high_after", "high_reward"),
                 ):
                     h0 = np.broadcast_to(np.asarray(levels)[:, None, None], a.shape)
@@ -67,10 +74,34 @@ def acquisition(d, native, seeds, rows, body):
                     )
                     np.testing.assert_allclose(h, observed[h_key], atol=1e-12, rtol=0)
                     np.testing.assert_allclose(r, observed[r_key], atol=1e-12, rtol=0)
+                    if nonfatal:
+                        assert np.all(h > 0)
+                        arm = r_key.split("_")[0]
+                        # Recover each selected action's advantage directly from all other replicas.
+                        scale = np.minimum(1.0, [body.rul(z) for z in levels])[
+                            :, None, None
+                        ]
+                        n = a.shape[-1]
+                        advantage = (
+                            r - (r.sum(axis=-1, keepdims=True) - r) / (n - 1)
+                        ) / scale
+                        np.testing.assert_allclose(
+                            advantage, observed[arm + "_advantage"], rtol=0, atol=1e-12
+                        )
+                        scores = np.stack(
+                            [
+                                np.mean((a == k) * advantage, axis=-1) / mu[:, k]
+                                for k in range(4)
+                            ],
+                            axis=-1,
+                        )
+                        np.testing.assert_allclose(
+                            scores, observed[arm + "_scores"], rtol=1e-6, atol=1e-7
+                        )
                     counts["paired_physical_transitions"] += a.size
                 assert np.all(observed["high_after"] > 0)
                 counts["critical_answers"] += int(
-                    ((a >= 2) & (np.array(SPLIT_H)[:, None, None] <= 2.5)).sum()
+                    ((a >= 2) & (np.array(first_levels)[:, None, None] <= 2.5)).sum()
                 )
     return counts
 
@@ -182,6 +213,14 @@ def main():
     result = {"acquisition": {}, "lifetimes": {}}
     for key, d, seeds in series:
         result["acquisition"][key] = acquisition(d, data.n, seeds, data.rows, body)
+    if (root / "nonfatal" / "pilot.json").is_file():
+        nf = root / "nonfatal"
+        seeds = json.loads((nf / "pilot.json").read_bytes())["seeds"]
+        if (nf / "confirm.json").exists():
+            seeds += json.loads((nf / "confirm.json").read_bytes())["seeds"]
+        result["acquisition"]["nonfatal"] = acquisition(
+            nf, data.n, seeds, data.rows, body, nonfatal=True
+        )
     if a.placement_capture:
         with np.load(a.placement_capture / "common.npz") as z:
             n = z["native"]
