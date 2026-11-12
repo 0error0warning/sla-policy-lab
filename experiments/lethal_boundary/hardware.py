@@ -1,4 +1,6 @@
-"""Reinstall final-block LoRA on full Qwen and compare decisions at eight matched healths."""
+"""Reinstall final-block LoRA on full Qwen and compare decisions on a matched health panel."""
+
+import json
 
 import numpy as np
 import torch
@@ -17,7 +19,18 @@ def run(actor, root, out):
     rows = contexts()[768:]
     ix = heldout_panel()
     counts = (None, 7, 15)
-    gs = torch.tensor(basis(WITNESS_H), device="cuda", dtype=torch.float32)
+    plan_file = root / "installation-plan.json"
+    plan = (
+        json.loads(plan_file.read_bytes())
+        if plan_file.exists()
+        else {
+            "seeds": [67101, 67102],
+            "arms": ["D", "R", "M"],
+            "senses": ["plain", "record"],
+            "health": WITNESS_H.tolist(),
+        }
+    )
+    gs = torch.tensor(basis(plan["health"]), device="cuda", dtype=torch.float32)
     projection = torch.tensor(
         np.load(root / "architecture.npz")["projection"], device="cuda"
     )
@@ -68,10 +81,10 @@ def run(actor, root, out):
     np.savez_compressed(out / "fresh-components.npz", **base, indices=ix)
     done = []
     results = {}
-    for seed in (67101, 67102):
+    for seed in plan["seeds"]:
         for m in (0, 1):
-            for sense in ("plain", "record"):
-                for arm in ("D", "R", "M"):
+            for sense in plan["senses"]:
+                for arm in plan["arms"]:
                     name = f"s{seed}-m{m}-{sense}-{arm}"
                     with np.load(root / "weights" / (name + ".npz")) as z:
                         block = nn.Module()
@@ -157,7 +170,7 @@ def run(actor, root, out):
     return {
         "checkpoints": len(done),
         "contexts": len(ix),
-        "health": WITNESS_H.tolist(),
+        "health": plan["health"],
         "record_counts": counts,
         "decisions": sum(x.shape[0] * x.shape[1] for x in results.values()),
         "disabled_native_identical": True,

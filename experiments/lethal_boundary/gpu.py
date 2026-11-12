@@ -118,7 +118,7 @@ def main():
     actor = FrozenQwen(a.root / "expected-weights.json", out)
     if a.mode == "boundarycapture":
         result = capture(actor, a.root, out)
-    elif a.mode == "boundaryaudit":
+    elif a.mode in ("boundaryaudit", "boundarytransition"):
         from experiments.lethal_boundary.hardware import run
 
         result = run(actor, a.root, out)

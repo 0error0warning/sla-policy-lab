@@ -88,18 +88,18 @@ def at(grid, h):
     return {**grid, "g": arr(basis(h), "cpu")}
 
 
-def probes(model, bank, sense):
+def probes(model, bank, sense, health_axis=ALL_H):
     grid = bank.test_grids[sense]
     nk = 1 if sense == "plain" else 21
     with torch.no_grad():
         if model is None:
             base = distribution(grid["n"]).numpy()
-            scores = np.broadcast_to(base, (len(ALL_H), base.shape[1], 4))
+            scores = np.broadcast_to(base, (len(health_axis), base.shape[1], 4))
             masked = base
         else:
-            scores = distribution(model.scores(at(grid, ALL_H))).numpy()
+            scores = distribution(model.scores(at(grid, health_axis))).numpy()
             masked = distribution(model.scores(at(grid, [2.0]), masked=True)).numpy()
-    scores = scores.reshape(len(ALL_H), nk, 192, 4)
+    scores = scores.reshape(len(health_axis), nk, 192, 4)
     masked = masked.reshape(1, nk, 192, 4)
 
     def group_mean(probs):
@@ -111,7 +111,9 @@ def probes(model, bank, sense):
             axis=2,
         )
 
-    panel = scores[ix_health(WITNESS_H)]
+    witness = np.searchsorted(health_axis, WITNESS_H)
+    np.testing.assert_array_equal(health_axis[witness],WITNESS_H)
+    panel = scores[witness]
     if nk > 1:
         panel = panel[:, WITNESS_K]
     return {
