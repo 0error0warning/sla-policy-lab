@@ -6,10 +6,11 @@ from collections import Counter
 from hashlib import sha256
 from itertools import product
 from pathlib import Path
+from statistics import NormalDist
 
 import numpy as np
 
-from experiments.direct_policy.protocol import write
+from experiments.direct_policy.protocol import rng, write
 from experiments.first_fatal.analysis import records
 from experiments.first_fatal.design import FATAL, HEALTHY, expected_after, world
 from experiments.individual_life.design import rows, starting
@@ -83,6 +84,43 @@ def expected_check():
 
 def checksum(a):
     return sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
+
+
+def check_arrivals(paired, items):
+    normal = NormalDist()
+    lo, hi = normal.cdf(-3), normal.cdf(3)
+    max_noise_error = 0.0
+    for seed in sorted({s for s, _ in paired}):
+        count = max(t for s, t in paired if s == seed)
+        for block in range((count + 23) // 24):
+            g = rng(seed, "first-fatal-arrivals-v1", block)
+            layouts = g.permutation(24)
+            cells = np.concatenate([g.permutation([0, 1, 2, 3] * 2) for _ in range(3)])
+            draws = g.random((24, 2))
+            noise_draws = g.random((24, 5))
+            offsets = rng(seed, "first-fatal-wrong-label-v1", block).integers(1, 4, 24)
+            assert sorted(layouts) == list(range(24))
+            assert all(
+                np.array_equal(np.bincount(c), [2] * 4) for c in np.split(cells, 3)
+            )
+            for j in range(min(24, count - 24 * block)):
+                idx, u, noise, offset = paired[seed, 24 * block + j + 1]
+                r = items[idx]
+                assert (r["partner"] - 2, r["frame"], r["layout"]) == (
+                    *divmod(cells[j], 2),
+                    layouts[j],
+                )
+                np.testing.assert_array_equal(u, draws[j])
+                assert offset == offsets[j]
+                independent = [
+                    0.1 * normal.inv_cdf(lo + (hi - lo) * x) for x in noise_draws[j]
+                ]
+                max_noise_error = max(
+                    max_noise_error,
+                    float(np.max(np.abs(np.asarray(noise) - independent))),
+                )
+    assert max_noise_error < 1e-12
+    return max_noise_error
 
 
 def run(roots, source, out):
@@ -279,6 +317,7 @@ def run(roots, source, out):
             "birth_hashes": births,
             "distinct_seeds": len({k[0] for k in keys}),
             "paired_exogenous_draws_checked": len(paired),
+            "max_seed_reconstructed_noise_disagreement": check_arrivals(paired, items),
             "max_subevent_disagreement": max_path_error,
             "max_recomputed_feedback_disagreement": max_signalerr,
             "minimum_observed_practice_advantage_of_best_refusal": min_margin,

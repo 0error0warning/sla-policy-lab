@@ -6,12 +6,13 @@ Each body is born once. Near its capacity limit it can experience several costly
 
 ## Recompute from the archived runs
 
-Run from the repository root with Python 3.11+ and NumPy. The independent body audit uses the previous study's reference-damage curve. The optional figure needs Matplotlib. Input packages pin the model, architecture, body-trained origin, code and GPU dependencies.
+Run from the repository root with Python 3.11+ and NumPy. The independent body audit uses the previous study's reference-damage curve. The counterfactual training-feedback diagnostic uses SciPy and the optional figure needs Matplotlib. Input packages pin the model, architecture, body-trained origin, code and GPU dependencies.
 
 ```sh
 python -m experiments.individual_life.release --artifact artifacts/model-studies/2026-11-12/first-fatal --destination unpacked-fatal
 python -m experiments.first_fatal.analysis --lives unpacked-fatal/gpu/ffpilot/output/lives unpacked-fatal/gpu/ffconfirm/output/lives --output checked-fatal
 python -m experiments.first_fatal.audit --lives unpacked-fatal/gpu/ffpilot/output/lives unpacked-fatal/gpu/ffconfirm/output/lives --source unpacked-fatal/gpu/ffpilot/inputs/birth-source.npz --output checked-fatal/audit.json
+python -m experiments.first_fatal.feedback_check --lives unpacked-fatal/gpu/ffpilot/output/lives unpacked-fatal/gpu/ffconfirm/output/lives --output checked-fatal/feedback-check.json
 python -m experiments.first_fatal.display --pilot unpacked-fatal/gpu/ffpilot/output/lives --analysis checked-fatal --output checked-fatal
 python -m experiments.first_fatal.witness --lives unpacked-fatal/gpu/ffpilot/output/lives unpacked-fatal/gpu/ffconfirm/output/lives --output checked-fatal/restore-inputs
 ```
