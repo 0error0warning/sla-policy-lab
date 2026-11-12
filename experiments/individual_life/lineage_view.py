@@ -126,10 +126,26 @@ def run(root, analysis, out):
                 )
             }
         )
+        events = records(root / tag / "life.jsonl")
+        low = [e for e in events if e["health_before"] <= 10]
+        doomed = [e for e in events if e["health_before"] <= 2.4414549078]
+        rescuable = [e for e in events if 4.520616 < e["health_before"] < 7.994132]
+        a.update(
+            first_low_request=low[0]["turn"] if low else "",
+            living_requests_at_or_below_10=len(low),
+            low_experiences_with_living_successor=sum(not e["terminal"] for e in low),
+            doomed_region_with_living_successor=sum(not e["terminal"] for e in doomed),
+            rescuable_region_with_living_successor=sum(
+                not e["terminal"] for e in rescuable
+            ),
+            maintained_rescuable_answers_with_living_successor=sum(
+                e["action"] >= 2 and e["maintenance"] is True and not e["terminal"]
+                for e in rescuable
+            ),
+        )
         seed_rows.append(a)
         if rule != "true1":
             continue
-        events = records(root / tag / "life.jsonl")
         links[tag] = feedback_links(events)
         if seed in ("s68011", "s68101") and sense == "visible":
             emit(out / ("life-" + seed + "-" + birth + ".csv"), individual(events))

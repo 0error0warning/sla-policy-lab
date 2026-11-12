@@ -48,6 +48,72 @@ class PrivateLifeTests(unittest.TestCase):
             else:
                 self.assertEqual(old, mapped)
 
+    def test_heldout_probe_loads_only_a_snapshot_with_a_living_successor(self):
+        import hashlib
+        import json
+
+        from experiments.individual_life.probe_check import prepare
+
+        def checksum(bits):
+            return hashlib.sha256(bits.tobytes()).hexdigest()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = root / "visible/s68011/blank/true1"
+            folder.mkdir(parents=True)
+            birth = np.array([17, 41], dtype="<u4")
+            first = birth ^ [np.uint32(16), np.uint32(128)]
+            last = first ^ [np.uint32(4), np.uint32(2)]
+            np.savez(
+                folder / "parameters.npz",
+                birth=birth,
+                main_xor=[birth ^ first, first ^ last],
+            )
+            events = []
+            for j, (h, current, after) in enumerate(
+                ((350.0, birth, first), (7.0, first, last))
+            ):
+                events.append(
+                    {
+                        "before_learning_version": j,
+                        "previous_decision_version": 0,
+                        "health_before": h,
+                        "context": 3,
+                        "prob_previous": [0.25] * 4,
+                        "prob_current": [0.25] * 4,
+                        "after_hash": checksum(after),
+                    }
+                )
+            (folder / "life.jsonl").write_text(
+                "\n".join(map(json.dumps, events)), encoding="utf8"
+            )
+            checkpoints = {
+                "birth": {"version": 0, "after_turn": 0, "actual_alive_health": 350.0},
+                "first_low": {
+                    "version": 1,
+                    "after_turn": 1,
+                    "actual_alive_health": 7.0,
+                },
+            }
+            meta = {
+                "living_probes": checkpoints,
+                "world": [0, 0],
+                "visible": True,
+                "birth_sha256": checksum(birth),
+            }
+            (folder / "life.json").write_text(json.dumps(meta), encoding="utf8")
+            out = root / "held"
+            prepare([root], out)
+            with np.load(out / "probe-parameters.npz") as weights:
+                self.assertCountEqual(weights.files, [checksum(birth), checksum(first)])
+                np.testing.assert_array_equal(weights[checksum(first)], first)
+            checkpoints["first_low"].update(
+                version=2, after_turn=2, actual_alive_health=0.0
+            )
+            (folder / "life.json").write_text(json.dumps(meta), encoding="utf8")
+            with self.assertRaises(AssertionError):
+                prepare([root], root / "invalid")
+
     def test_counterfactual_sampling_uses_semantic_probabilities(self):
         self.assertEqual(action_at([0.1, 0.2, 0.4, 0.3], 0.45), 2)
         self.assertEqual(action_at([0.5, 0.2, 0.2, 0.1], 0.45), 0)

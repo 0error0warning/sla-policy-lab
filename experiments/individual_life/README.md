@@ -20,6 +20,14 @@ python -m experiments.individual_life.audit --root replayed-lives --source unpac
 
 The same analysis entry point accepts a published cached cohort as `--root unpacked-life/cached-pilot`. Completed GPU stages can also be reproduced on their compatible GPU software stack using that stage's extracted locked input bundle and `python -m experiments.individual_life.gpu --root <inputs> --mode <stage>`. The inputs include the public weights manifest. Each Colab export records the SHA-256 of the complete launch bundle. The archive includes the source as executed, including any formatting differences from the checkout.
 
+For the independent 12-seed replication, choose the cohort, `unpacked-life/gpu/lifeconfirm/output/lives` for the physically deployed Qwen and `unpacked-life/cached-confirm` for frozen-prefix execution. To regenerate the compact seed and readable individual tables, run `python -m experiments.individual_life.lineage_view --root <cohort> --analysis <analysis-directory> --output <destination>`. The same columns count low-health experiences that actually left the individual alive for another encounter.
+
+The separate [complete-model checkpoint check](PROBE_CHECK.md) restores exact living states from the physical pilot and confirmation. Recompute its reported health effects without a GPU using the archived direct forward results.
+
+```sh
+python -m experiments.individual_life.probe_check analyze --lives unpacked-life/gpu/lifepilot/output/lives unpacked-life/gpu/lifeconfirm/output/lives --hardware unpacked-life/gpu/lifeprobes/output --output checked/body
+```
+
 ## Read one life
 
 Choose an execution engine, sensing condition, seed, birth and rule, for example `gpu/lifepilot/output/lives/visible/s68011/blank/true1/`. Semantic action order is always `wait` (silent refusal), `ask` (refuse, request maintenance), `help` (answer and appeal), `trade` (answer and propose exchange). Layout describes presentation order only. Language is template-rendered after the policy chooses one of the four original Qwen token scores.

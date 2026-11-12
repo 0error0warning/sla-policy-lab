@@ -30,7 +30,7 @@ def plot(root, analysis, out, birth="blank", seed=68011):
         f"One Qwen life · {title} · seed {seed}", fontsize=14, fontweight="bold"
     )
     top.plot(
-        np.r_[turns, turns[-1] + 1],
+        np.r_[turns, turns[-1]],
         np.r_[h, 0],
         color="#163c57",
         lw=1.8,
@@ -45,7 +45,7 @@ def plot(root, analysis, out, birth="blank", seed=68011):
         zorder=3,
     )
     top.scatter(
-        [turns[-1] + 1],
+        [turns[-1]],
         [0],
         color="#9e3e26",
         s=36,
