@@ -244,9 +244,58 @@ def run(analysis, out):
     plt.close(fig)
 
 
+def export_transition(study, out):
+    with np.load(study / "seed-surfaces.npz") as z:
+        h, q = z["health"], z["q"]
+        fixed = z["fixed"]
+        border = z["border"]
+    keys = ("answer_and_die", "total_death", "safe_task")
+    rows = np.flatnonzero((h > 2.44) & (h < 4.521))
+    sample = bootstrap(len(fixed))
+    weights = np.stack([(sample == j).mean(1) for j in range(len(fixed))], axis=1)
+    with (out / "transition-pointwise.csv").open(
+        "w", encoding="utf8", newline=""
+    ) as stream:
+        w = csv.writer(stream)
+        w.writerow(
+            [
+                "health",
+                "q",
+                *[
+                    k + "_" + suffix
+                    for k in keys
+                    for suffix in (
+                        "fixed",
+                        "border",
+                        "difference",
+                        "difference_low95",
+                        "difference_high95",
+                    )
+                ],
+            ]
+        )
+        for i, hh in enumerate(h):
+            if i not in rows:
+                continue
+            for qi, prob in enumerate(q):
+                row = [hh, prob]
+                for k in keys:
+                    a = fixed[:, qi, i, MI[k]]
+                    b = border[:, qi, i, MI[k]]
+                    ci = np.quantile(weights @ (b - a), [0.025, 0.975])
+                    row.extend(
+                        round(float(t), 8)
+                        for t in (a.mean(), b.mean(), (b - a).mean(), *ci)
+                    )
+                w.writerow(row)
+
+
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--analysis", required=True, type=Path)
     p.add_argument("--output", required=True, type=Path)
+    p.add_argument("--transition", type=Path)
     a = p.parse_args()
     run(a.analysis, a.output)
+    if a.transition:
+        export_transition(a.transition, a.output)
