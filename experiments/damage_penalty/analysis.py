@@ -36,6 +36,11 @@ def replay_events(root):
             )
             p = np.array(nxt["probs"], float)
             ans = p[:, 2:].sum(1)
+            if prev["reward"] == 0:
+                assert (
+                    prev["updates"][0]["after_hash"] == prev["updates"][2]["after_hash"]
+                )
+                np.testing.assert_array_equal(p[1], p[4])
             draws = [action_at(v, nxt["u"]) for v in p]
             row = {
                 "seed": m["seed"],
@@ -218,6 +223,20 @@ def live_summary(roots, out):
                 for role in ("birth", "wrong", "other", "entry")
                 for k in ("fatal", "fatal_panel", "healthy_same", "healthy_panel")
             }
+            for role in ("birth", "other"):
+                contrasts[arm]["descriptive_danger_minus_healthy_vs_" + role] = (
+                    intervals(
+                        vals,
+                        [
+                            (row["fatal_panel_current"] - row["fatal_panel_" + role])
+                            - (
+                                row["healthy_panel_current"]
+                                - row["healthy_panel_" + role]
+                            )
+                            for row in vals
+                        ],
+                    )
+                )
         deployed = arms["two_true"]
         free = {}
         for arm, other in arms.items():
