@@ -41,3 +41,21 @@ def split_arm(arm):
 
 def choose(criterion, g, l):
     return {"global": g, "local": l}[criterion]
+
+
+@dataclass(frozen=True)
+class FeedbackRule:
+    """Weight the current damage while keeping past observations in physical units."""
+
+    name: str
+    reference: str
+    damage_weight: float = 1.0
+
+    def baseline(self, global_mean, local_mean):
+        return choose(self.reference, global_mean, local_mean)
+
+    def signal(self, raw, global_mean, local_mean):
+        return self.damage_weight * raw - self.baseline(global_mean, local_mean)
+
+
+BASELINES = (FeedbackRule("global", "global"), FeedbackRule("local", "local"))

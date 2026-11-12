@@ -46,9 +46,16 @@ def score(update, signal, behavior, current):
     return int(applied != ratio)
 
 
-def audit_replay(root, tapes):
+BASELINE_AUDIT = (("global", "global", 1.0), ("local", "local", 1.0))
+
+
+def audit_replay(root, tapes, specification=BASELINE_AUDIT, expected_answers=680):
+    (primary, first_ref, first_weight), (secondary, second_ref, second_weight) = (
+        specification
+    )
     count = Counter()
     max_norm_error = 0.0
+    body = BodyValue() if specification != BASELINE_AUDIT else None
     with ZipFile(tapes) as archive:
         for f in sorted(root.glob("s*/*/life.json")):
             meta = json.loads(f.read_bytes())
@@ -88,22 +95,52 @@ def audit_replay(root, tapes):
                     and abs(l - e["local_baseline"]) < 1e-9
                     and n == e["eligible"]
                 )
-                assert e["source_global_hash_match"] == (
+                assert e[f"source_{primary}_hash_match"] == (
                     e["updates"][0]["after_hash"] == s["after_hash"][0]
                 )
                 assert (
                     abs(
-                        e["source_global_max_error"]
+                        e[f"source_{primary}_max_error"]
                         - np.abs(p[1] - s["probs"][1]).max()
                     )
                     < 1e-12
                 )
                 a = s["action"]
-                for k, (rec, idx, baseline) in enumerate(
-                    zip(e["updates"], (1, 3, 1), (g, l, l), strict=True)
+                ref = {"global": g, "local": l}
+                raw = s["reward"]
+                assert abs(s["baseline"] - ref[first_ref]) < 1e-9
+                signals = (
+                    first_weight * raw - ref[first_ref],
+                    second_weight * raw - ref[second_ref],
+                )
+                if specification != BASELINE_AUDIT:
+                    np.testing.assert_allclose(e["signals"], signals, rtol=0, atol=1e-9)
+                    np.testing.assert_array_equal(
+                        e["weighted_feedback"],
+                        [first_weight * raw, second_weight * raw],
+                    )
+                    expected_delta = (
+                        (second_weight - first_weight) * raw
+                        + ref[first_ref]
+                        - ref[second_ref]
+                    )
+                    assert (
+                        abs((signals[1] - signals[0]) - expected_delta) < 1e-9
+                        and raw <= 1e-10
+                    )
+                    assert (
+                        abs((body.rul(e["after"]) - body.rul(e["health"])) - raw) < 1e-9
+                    )
+                for k, (rec, idx, signal) in enumerate(
+                    zip(
+                        e["updates"],
+                        (1, 3, 1),
+                        (signals[0], signals[1], signals[1]),
+                        strict=True,
+                    )
                 ):
                     count["propensity_clips"] += score(
-                        rec, s["reward"] - baseline, s["probs"][1][a], p[idx, a]
+                        rec, signal, s["probs"][1][a], p[idx, a]
                     )
                     max_norm_error = max(
                         max_norm_error,
@@ -140,11 +177,11 @@ def audit_replay(root, tapes):
                 prev = ev[j - 1]
                 for n, h in zip(
                     (
-                        "global_before",
-                        "local_before",
-                        "global",
-                        "local",
-                        "local_from_global",
+                        primary + "_before",
+                        secondary + "_before",
+                        primary,
+                        secondary,
+                        secondary + "_from_" + primary,
                     ),
                     prev["before_hash"] + [u["after_hash"] for u in prev["updates"]],
                     strict=True,
@@ -152,11 +189,15 @@ def audit_replay(root, tapes):
                     assert checksum(z[n]) == h
             count["tapes"] += 1
             count["turns"] += len(ev)
-    assert count["tapes"] == 48 and count["practice_answer_successors"] == 680
+    assert (
+        count["tapes"] == 48 and count["practice_answer_successors"] == expected_answers
+    )
     return {**count, "max_actual_minus_nominal_step": max_norm_error}
 
 
-def audit_lives(roots, source):
+def audit_lives(roots, source, specification=BASELINE_AUDIT):
+    names = [v[0] for v in specification]
+    config = {name: (ref, k) for name, ref, k in specification}
     items = rows()
     body = BodyValue()
     starts = {
@@ -182,8 +223,8 @@ def audit_lives(roots, source):
         ] == list(world(seed))
         yes = rule.endswith("_true")
         frozen = rule == "frozen"
-        mode = rule.split("_")[0]
-        other = "global" if mode == "local" else "local"
+        mode = names[0] if frozen else rule.split("_")[0]
+        other = names[0] if mode == names[1] else names[1]
         hashes = [starts[birth]] * (3 if yes else 1)
         with np.load(f.parent / "parameters.npz") as z:
             assert all(checksum(z[k]) == m["snapshot_hashes"][k] for k in z.files)
@@ -274,9 +315,14 @@ def audit_lives(roots, source):
             )
             assert (
                 abs(reward - e["reward"]) < 1e-9
-                and abs(e["baseline"] - (l if mode == "local" else g)) < 1e-9
+                and abs(e["baseline"] - (l if config[mode][0] == "local" else g)) < 1e-9
             )
-            assert abs(e["signal"] - reward + e["baseline"]) < 1e-9
+            assert abs(e["signal"] - config[mode][1] * reward + e["baseline"]) < 1e-9
+            if specification != BASELINE_AUDIT:
+                assert (
+                    abs(e["weighted_feedback"] - reward * config[mode][1]) < 1e-9
+                    and reward <= 1e-10
+                )
             wrong = (a + e["offset"]) % 4
             labels = (
                 []
@@ -288,7 +334,13 @@ def audit_lives(roots, source):
             for j, ((label, center), rec) in enumerate(
                 zip(labels, e["update"], strict=True), 1
             ):
-                signal = reward - (g if center == "global" else l)
+                reference, weight = config[center]
+                signal = weight * reward - (g if reference == "global" else l)
+                if specification != BASELINE_AUDIT:
+                    assert (
+                        rec["damage_weight"] == weight
+                        and abs(rec["weighted_feedback"] - reward * weight) < 1e-9
+                    )
                 assert (
                     rec["credited_action"] == label
                     and rec["criterion"] == center

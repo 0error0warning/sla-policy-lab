@@ -11,7 +11,7 @@ import torch
 from experiments.direct_policy.protocol import write
 from experiments.first_fatal.design import BIRTHS, PILOT, REPLICATION
 from experiments.first_fatal.study import bits, hashed
-from experiments.health_baseline.design import Past
+from experiments.health_baseline.design import BASELINES, Past
 from experiments.individual_life.model import derivatives, update
 
 # All six roles score the next living state before its outcome is read.
@@ -40,8 +40,9 @@ def step_size(before, after):
     )
 
 
-def replay(d, backend, ev, meta, whole):
+def replay(d, backend, ev, meta, whole, rules=BASELINES, roles=ROLES):
     d.mkdir(parents=True, exist_ok=True)
+    first, second = rules
     g, l, f = [backend.new(meta["birth"]) for _ in range(3)]
     backend.bind(g, l, f)
     bg, bl = g.snapshot(), l.snapshot()
@@ -76,7 +77,7 @@ def replay(d, backend, ev, meta, whole):
             if focal:
                 witness = {"turn": k + 1, "index": i, "health": h, "u": e["u"][0]}
                 stash = {
-                    name: bits(pair) for name, pair in zip(ROLES, weights, strict=True)
+                    name: bits(pair) for name, pair in zip(roles, weights, strict=True)
                 }
                 witness["hashes"] = {n: hashed(v) for n, v in stash.items()}
                 np.savez_compressed(d / "successor.npz", **stash, probs=prob)
@@ -87,13 +88,15 @@ def replay(d, backend, ev, meta, whole):
                 for x, y in zip(f.live(), bg, strict=True):
                     x.copy_(y)
             gb, lb, n = past.baselines(h)
-            assert abs(gb - e["baseline"]) < 1e-9
+            assert abs(first.baseline(gb, lb) - e["baseline"]) < 1e-9
+            signal_first = first.signal(e["reward"], gb, lb)
+            signal_second = second.signal(e["reward"], gb, lb)
             denom = e["probs"][1][a]
             updates = []
             for model, grad, adv, pi, initial in (
-                (g, gg, e["reward"] - gb, prob[1, a], pg),
-                (l, gl, e["reward"] - lb, prob[3, a], pl),
-                (f, gg, e["reward"] - lb, prob[1, a], pg),
+                (g, gg, signal_first, prob[1, a], pg),
+                (l, gl, signal_second, prob[3, a], pl),
+                (f, gg, signal_second, prob[1, a], pg),
             ):
                 info = update(model, grad, adv, denom, float(pi))
                 end = model.bits()
@@ -120,15 +123,20 @@ def replay(d, backend, ev, meta, whole):
                     "probs": prob[:5].tolist(),
                     "before_hash": [hashed(pg), hashed(pl)],
                     "updates": updates,
-                    "source_global_max_error": float(
+                    f"source_{first.name}_max_error": float(
                         np.max(
                             np.abs(prob[1].astype(float) - np.asarray(e["probs"][1]))
                         )
                     ),
-                    "source_global_hash_match": updates[0]["after_hash"]
+                    f"source_{first.name}_hash_match": updates[0]["after_hash"]
                     == e["after_hash"][0],
                 }
             )
+            if rules != BASELINES:
+                logs[-1]["weighted_feedback"] = [
+                    mode.damage_weight * e["reward"] for mode in rules
+                ]
+                logs[-1]["signals"] = [signal_first, signal_second]
             past.observe(h, e["reward"])
         assert ev[-1]["after"] == 0 and witness is not None
         write_events(d / "replay.jsonl.gz", logs)
@@ -147,14 +155,23 @@ def replay(d, backend, ev, meta, whole):
         backend.close()
 
 
-def execute(out, backend, root):
+def execute(
+    out,
+    backend,
+    root,
+    waves=(PILOT, REPLICATION),
+    source_rule="true1",
+    rules=BASELINES,
+    roles=ROLES,
+):
     n = total = 0
     with ZipFile(root / "tapes.zip") as z:
         provenance = json.loads(z.read("sources.json"))
         assert all(
             sha256(z.read(k)).hexdigest() == v for k, v in provenance["files"].items()
         )
-        for seed in (*PILOT, *REPLICATION):
+        pilot, replication = waves
+        for seed in (*pilot, *replication):
             for birth in BIRTHS:
                 key = f"s{seed}/{birth}"
                 meta = json.loads(z.read(key + "/life.json"))
@@ -167,14 +184,16 @@ def execute(out, backend, root):
                 assert (meta["seed"], meta["birth"], meta["rule"]) == (
                     seed,
                     birth,
-                    "true1",
+                    source_rule,
                 )
                 total += replay(
                     out / "replays" / key,
                     backend,
                     events,
                     meta,
-                    seed in (PILOT[0], REPLICATION[0]),
+                    seed in (pilot[0], replication[0]),
+                    rules,
+                    roles,
                 )
                 n += 1
                 write(

@@ -12,16 +12,24 @@ from experiments.consequence_policy.study import WORDS
 from experiments.direct_policy.protocol import render, write
 from experiments.first_fatal.design import BIRTHS, first_fatal, practice, settle, world
 from experiments.first_fatal.study import arrivals, hashed, probe
-from experiments.health_baseline.design import ARMS, Past, choose, split_arm
+from experiments.health_baseline.design import ARMS, BASELINES, Past
 from experiments.health_baseline.replay import write_events
 from experiments.individual_life.design import action_at, offers
 from experiments.individual_life.model import derivatives, update
 
 
-def run_life(d, backend, body, seed, birth, arm, whole):
+def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
     d.mkdir(parents=True, exist_ok=True)
-    criterion, credit = split_arm(arm)
-    other_criterion = "local" if criterion == "global" else "global"
+    primary, secondary = rules
+    name, credit = (primary.name, "frozen") if arm == "frozen" else arm.split("_")
+    if credit not in ("frozen", "true", "wrong") or name not in {
+        primary.name,
+        secondary.name,
+    }:
+        raise ValueError(arm)
+    criterion, other_criterion = (
+        (primary, secondary) if name == primary.name else (secondary, primary)
+    )
     main = backend.new(birth)
     wrong = backend.new(birth) if credit == "true" else None
     other = backend.new(birth) if credit == "true" else None
@@ -78,7 +86,7 @@ def run_life(d, backend, body, seed, birth, arm, whole):
             gb, lb, n = past.baselines(h)
             after, path, peak = settle(h, a, maintained, noise)
             reward = body.rul(after) - body.rul(h)
-            baseline = choose(criterion, gb, lb)
+            baseline = criterion.baseline(gb, lb)
             credited = []
             before = hashes.copy()
             if credit != "frozen":
@@ -91,7 +99,7 @@ def run_life(d, backend, body, seed, birth, arm, whole):
                 for j, ((k, label, model), grad, center) in enumerate(
                     zip(roles, derivatives(panel, roles), modes, strict=True)
                 ):
-                    signal = reward - choose(center, gb, lb)
+                    signal = center.signal(reward, gb, lb)
                     info = update(
                         model,
                         grad,
@@ -103,7 +111,7 @@ def run_life(d, backend, body, seed, birth, arm, whole):
                     credited.append(
                         dict(
                             credited_action=label,
-                            criterion=center,
+                            criterion=center.name,
                             signal=signal,
                             **info,
                         )
@@ -134,13 +142,18 @@ def run_life(d, backend, body, seed, birth, arm, whole):
                     "global_baseline": gb,
                     "local_baseline": lb,
                     "eligible": n,
-                    "signal": reward - baseline,
+                    "signal": criterion.signal(reward, gb, lb),
                     "version_at_choice": t - 1 if credit != "frozen" else 0,
                     "update": credited,
                     "before_hash": before,
                     "after_hash": hashes.copy(),
                 }
             )
+            if rules != BASELINES:
+                events[-1]["weighted_feedback"] = criterion.damage_weight * reward
+                for rec, role in zip(credited, (criterion, criterion, other_criterion)):
+                    rec["weighted_feedback"] = role.damage_weight * reward
+                    rec["damage_weight"] = role.damage_weight
             past.observe(h, reward)
             h = after
             if h <= 0:
@@ -168,14 +181,14 @@ def run_life(d, backend, body, seed, birth, arm, whole):
         backend.close()
 
 
-def execute(out, backend, body, seeds):
+def execute(out, backend, body, seeds, arms=ARMS, rules=BASELINES):
     n = turns = 0
     backup = out.parent / "seed-backups"
     backup.mkdir(exist_ok=True)
     for seed in seeds:
         bucket = out / "lives" / f"s{seed}"
         for birth in BIRTHS:
-            for arm in ARMS:
+            for arm in arms:
                 turns += run_life(
                     bucket / birth / arm,
                     backend,
@@ -184,6 +197,7 @@ def execute(out, backend, body, seeds):
                     birth,
                     arm,
                     seed == seeds[0],
+                    rules,
                 )
                 n += 1
                 write(
