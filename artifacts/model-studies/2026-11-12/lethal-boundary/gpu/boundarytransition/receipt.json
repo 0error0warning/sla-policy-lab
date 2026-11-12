@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 9,
+  "bytes": 1399878,
+  "sha256": "c3f770a8af884c1c8b1024cc8ed56e1ca8f3765c7875e0c063094e8ad14a2275",
+  "study_stage": "boundarytransition",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 1399878,
+      "sha256": "c3f770a8af884c1c8b1024cc8ed56e1ca8f3765c7875e0c063094e8ad14a2275"
+    }
+  ]
+}

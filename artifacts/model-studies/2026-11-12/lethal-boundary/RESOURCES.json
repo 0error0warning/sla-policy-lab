@@ -1,0 +1,62 @@
+{
+  "stages": [
+    {
+      "stage": "boundarycapture",
+      "device": "NVIDIA L4",
+      "allocation_utc": "2026-11-12T04:08:33.760779+00:00",
+      "release_utc": "2026-11-12T04:18:17.671837+00:00",
+      "assigned_seconds": 583.911058,
+      "worker_seconds": 485.81108283900005,
+      "peak_bytes": 9577654272,
+      "observed_credit_decrease": 0.1630341707902403,
+      "output_sha256": "69c600d0c75534da8c44500cb8302816b9ad12d59cca4274c930450932a9b725",
+      "result_bytes": 78787106,
+      "active_after_release": 0,
+      "rate_after_release": 0.0
+    },
+    {
+      "stage": "boundaryaudit",
+      "device": "NVIDIA L4",
+      "allocation_utc": "2026-11-12T04:19:50.835942+00:00",
+      "release_utc": "2026-11-12T04:29:12.211341+00:00",
+      "assigned_seconds": 561.375399,
+      "worker_seconds": 501.4963760300001,
+      "peak_bytes": 9580155904,
+      "observed_credit_decrease": 0.13787874002366607,
+      "output_sha256": "c99e4d65cee5ab534922f70fb92d0a74761e6fddf9ec9e04091d366b5fd0d053",
+      "result_bytes": 1306371,
+      "active_after_release": 0,
+      "rate_after_release": 0.0
+    },
+    {
+      "stage": "boundarytransition",
+      "device": "NVIDIA L4",
+      "allocation_utc": "2026-11-12T04:52:18.055884+00:00",
+      "release_utc": "2026-11-12T05:11:55.052832+00:00",
+      "assigned_seconds": 1176.996948,
+      "worker_seconds": 846.0871969110001,
+      "peak_bytes": 9778543104,
+      "observed_credit_decrease": 0.7102344596177659,
+      "output_sha256": "c3f770a8af884c1c8b1024cc8ed56e1ca8f3765c7875e0c063094e8ad14a2275",
+      "result_bytes": 1399878,
+      "active_after_release": 0,
+      "rate_after_release": 0.0,
+      "retrieval": {
+        "worker_exit_code": 0,
+        "full_output_sha_verified": true,
+        "all_members_verified": true,
+        "original_waiter_returned_before_retrieval": false,
+        "verified_decisions": 12288,
+        "release_verified": true
+      }
+    }
+  ],
+  "total_observed_credit_decrease": 1.0111473704316722,
+  "total_assigned_seconds": 2322.283405,
+  "final_check_utc": "2026-11-12T05:11:59.372410+00:00",
+  "final_active_assignments": 0,
+  "final_consumption_rate": 0,
+  "cpu_threads_per_fit": 4,
+  "note": "Balance differences are observations across the study, not a final billing statement. Frozen-prefix training ran on CPU. Two independent full-model capture/deployment jobs used L4.",
+  "between_last_release_and_final_account_read_cu": 0.0
+}
