@@ -8,6 +8,7 @@ from pathlib import Path
 from experiments.direct_policy.protocol import write
 from experiments.health_baseline.analysis import lives_summary, replay_summary
 from experiments.health_baseline.audit import audit_lives, audit_replay
+from experiments.health_baseline.device_check import run as device_check
 from experiments.health_baseline.numerics import repeats, restoration
 from experiments.health_baseline.tapes import build as recover_tapes
 from experiments.health_baseline.witness import build as recover_weights
@@ -41,6 +42,12 @@ def run(artifact, parent, dest):
             "replay_repeat": repeats(original, repeated),
             "restored": restoration(last / "inputs", last / "output"),
         },
+    )
+    write(
+        analysis / "device-check.json",
+        device_check(
+            source / "tapes.zip", original, roots, last / "inputs", last / "output"
+        ),
     )
     extra = dest / "reconstructed-inputs"
     recover_weights(roots, original, extra)
