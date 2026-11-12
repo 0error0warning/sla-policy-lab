@@ -16,6 +16,7 @@ def repeats(first, second):
     drift = []
     focused = []
     steps = []
+    archived = {"primary": [], "repeat": []}
     for fp in sorted(first.glob("s*/*/life.json")):
         original = json.loads(fp.read_bytes())
         repeated = json.loads((second / fp.relative_to(first)).read_bytes())
@@ -40,6 +41,13 @@ def repeats(first, second):
             p, q = np.asarray(a["probs"]), np.asarray(b["probs"])
             delta = float(np.max(np.abs(p - q)))
             drift.append(delta)
+            for label, event in (("primary", a), ("repeat", b)):
+                archived[label].append(
+                    (
+                        event["source_global_max_error"],
+                        event["source_global_hash_match"],
+                    )
+                )
             if not i or not (x[i - 1]["practice"] and x[i - 1]["action"] >= 2):
                 continue
             u = a["u"]
@@ -71,6 +79,15 @@ def repeats(first, second):
             "different_source_or_destination_action": int(a[:, 3].sum()),
         }
     return {
+        "global_vs_original_pr9": {
+            run: {
+                "turns": len(vals),
+                "exact_semantic_distributions": sum(d == 0 for d, _ in vals),
+                "exact_post_update_parameters": sum(v for _, v in vals),
+                "max_probability_difference": max(d for d, _ in vals),
+            }
+            for run, vals in archived.items()
+        },
         "median_actual_steps": {
             label: {
                 "global": float(g),

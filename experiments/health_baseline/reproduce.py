@@ -1,11 +1,13 @@
 """Rebuild the release analyses from checked raw exports. No GPU or retraining is involved."""
 
 import argparse
+import ast
 import json
 import sys
 from hashlib import sha256
 from importlib.metadata import version
 from pathlib import Path
+from zipfile import ZipFile
 
 from experiments.direct_policy.protocol import write
 from experiments.health_baseline.analysis import lives_summary, replay_summary
@@ -16,6 +18,72 @@ from experiments.health_baseline.numerics import repeats, restoration
 from experiments.health_baseline.tapes import build as recover_tapes
 from experiments.health_baseline.witness import build as recover_weights
 from experiments.individual_life.release import unpack
+
+
+def training_parity(parent, full):
+    stages = ("hbreplay", "hbpilot", "hbrepa", "hbrepb", "hbrepeat", "hbverify")
+    locks = {
+        s: json.loads((full / s / "inputs/run-lock.json").read_bytes())["files"]
+        for s in stages
+    }
+    reused = (
+        "architecture.npz",
+        "birth-source.npz",
+        "expected-weights.json",
+        "requirements-gpu.txt",
+        "experiments/direct_policy/protocol.py",
+        "experiments/social_closed_loop/core.py",
+        "experiments/individual_life/model.py",
+        "experiments/individual_life/design.py",
+        "experiments/first_fatal/design.py",
+        "experiments/consequence_policy/gpu.py",
+        "experiments/consequence_policy/study.py",
+        "experiments/internal_body/capture.py",
+        "experiments/internal_body/design.py",
+        "experiments/internal_body/suffix.py",
+        "experiments/lethal_boundary/states.py",
+    )
+    functions = {
+        "experiments/first_fatal/study.py": ("arrivals", "bits", "hashed", "probe"),
+        "experiments/first_fatal/engine.py": ("ordinary", "tail", "paired", "prepare"),
+    }
+
+    def expressions(src, names):
+        nodes = {
+            n.name: ast.dump(n)
+            for n in ast.walk(ast.parse(src))
+            if isinstance(n, ast.FunctionDef) and n.name in names
+        }
+        assert set(nodes) == set(names)
+        return nodes
+
+    for prior in ("ffpilot", "ffconfirm"):
+        with ZipFile(parent / "gpu" / prior / "inputs.zip") as z:
+            old = json.loads(z.read("run-lock.json"))["files"]
+            for k in reused:
+                assert all(locks[stage][k] == old[k] for stage in stages), k
+            for file, names in functions.items():
+                expected = expressions(z.read(file), names)
+                for stage in stages:
+                    assert (
+                        expressions(
+                            (full / stage / "inputs" / file).read_bytes(), names
+                        )
+                        == expected
+                    ), file
+    for name, waves in (
+        ("gpu", stages),
+        ("design", stages),
+        ("replay", ("hbreplay", "hbrepeat")),
+        ("live", stages[1:4]),
+    ):
+        k = "experiments/health_baseline/" + name + ".py"
+        assert len({locks[stage][k] for stage in waves}) == 1
+    return {
+        "identical_parent_files": list(reused),
+        "matching_parent_function_expressions": functions,
+        "matched_primary_repeat_and_free_training_sources": True,
+    }
 
 
 def run(artifact, parent, dest):
@@ -82,6 +150,7 @@ def run(artifact, parent, dest):
             "backbone_restored"
         ]
     proof = {
+        "source_parity": training_parity(parent, full),
         "analysis_python": sys.version.split()[0],
         "analysis_numpy": version("numpy"),
         "raw_transports_member_hashes_and_launch_inputs_verified": True,
