@@ -4,6 +4,10 @@ A runnable, local teaching prototype for comparing four intervention mechanisms 
 
 **Scope:** the default web app implements a rule reference plus small-network training, low-rank parameter updates, and hidden-activation intervention. It does not run a pretrained language model, transformer LoRA, or token-level activation steering. Separate frozen-LLM studies are now recorded below; pretrained weights are not stored in this repository.
 
+## Learning within one life
+
+In the [individual-life study](artifacts/model-studies/2026-11-12/individual-life/REPORT.md), each Qwen3.5-4B individual receives its own finite body and last-layer LoRA. Its own actions, partners’ responses and physical consequences drive its private updates. The same next living request is scored with the weights before and after the previous interaction. Two birth conditions isolate what an individual adds to an existing population-trained policy and what changes without prior body training. The [study package](experiments/individual_life/README.md) provides a readable whole life, the raw chronological records, exact parameter histories and reproduction commands.
+
 ## Frozen language-model studies — 2026-11-10
 
 Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, followed by staged diagnostics and eight fresh paired seeds for the two 4B candidates. The initial screen scored 18/48, 24/48, and 27/48. In the follow-up, both 4B models selected correctly in 16/16 cases when correct returns were provided, while neither computed both returns correctly in any of 16 end-to-end cases. Qwen3.5's rollout mean (5.603576) was close to a simple one-step rule (5.599052); no reliable superiority claim follows.
