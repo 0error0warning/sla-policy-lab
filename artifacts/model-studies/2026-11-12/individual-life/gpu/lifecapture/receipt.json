@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 9,
+  "bytes": 6295099,
+  "sha256": "40db9e901a5effeb0ad60f7916c3301d066502289f6c3b95f554dee9e1f1d2b6",
+  "study_stage": "lifecapture",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "4de884dc09bc8ac41a4455b749c3918248683cf9f05eb34ea8564e51e9d834a2"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 1052219,
+      "sha256": "5a00624d8a8d7c66695f93b32c91c1bffc9a9409145abf9e8c750d62e0cbcb3d"
+    }
+  ]
+}
