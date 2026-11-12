@@ -49,8 +49,12 @@ def score(update, signal, behavior, current):
 BASELINE_AUDIT = (("global", "global", 1.0), ("local", "local", 1.0))
 
 
+def weight_at(weight, health):
+    return weight(health) if callable(weight) else weight
+
+
 def audit_replay(root, tapes, specification=BASELINE_AUDIT, expected_answers=680):
-    (primary, first_ref, first_weight), (secondary, second_ref, second_weight) = (
+    (primary, first_ref, first_schedule), (secondary, second_ref, second_schedule) = (
         specification
     )
     count = Counter()
@@ -108,6 +112,8 @@ def audit_replay(root, tapes, specification=BASELINE_AUDIT, expected_answers=680
                 a = s["action"]
                 ref = {"global": g, "local": l}
                 raw = s["reward"]
+                first_weight = weight_at(first_schedule, s["health"])
+                second_weight = weight_at(second_schedule, s["health"])
                 assert abs(s["baseline"] - ref[first_ref]) < 1e-9
                 signals = (
                     first_weight * raw - ref[first_ref],
@@ -195,7 +201,7 @@ def audit_replay(root, tapes, specification=BASELINE_AUDIT, expected_answers=680
     return {**count, "max_actual_minus_nominal_step": max_norm_error}
 
 
-def audit_lives(roots, source, specification=BASELINE_AUDIT):
+def audit_lives(roots, source, specification=BASELINE_AUDIT, shadow_modes=None):
     names = [v[0] for v in specification]
     config = {name: (ref, k) for name, ref, k in specification}
     items = rows()
@@ -225,7 +231,8 @@ def audit_lives(roots, source, specification=BASELINE_AUDIT):
         frozen = rule == "frozen"
         mode = names[0] if frozen else rule.split("_")[0]
         other = names[0] if mode == names[1] else names[1]
-        hashes = [starts[birth]] * (3 if yes else 1)
+        other, extra = (shadow_modes or {}).get(rule, (other, None))
+        hashes = [starts[birth]] * (1 + 2 * int(yes) + int(extra is not None))
         with np.load(f.parent / "parameters.npz") as z:
             assert all(checksum(z[k]) == m["snapshot_hashes"][k] for k in z.files)
             assert checksum(z["birth"]) == starts[birth]
@@ -277,7 +284,12 @@ def audit_lives(roots, source, specification=BASELINE_AUDIT):
                 assert hashes[0] == m["snapshot_hashes"]["first"]
                 if yes:
                     assert hashes[1:] == [
-                        m["snapshot_hashes"][k] for k in ("first_wrong", "first_other")
+                        m["snapshot_hashes"][k]
+                        for k in (
+                            ("first_wrong", "first_other", "first_extra")
+                            if extra is not None
+                            else ("first_wrong", "first_other")
+                        )
                     ]
                 assert (e["after"] == 0) == (a >= 2)
                 assert all(path(h, b, True, [-0.3] * 5)[0][-1] == 0 for b in (2, 3))
@@ -317,10 +329,11 @@ def audit_lives(roots, source, specification=BASELINE_AUDIT):
                 abs(reward - e["reward"]) < 1e-9
                 and abs(e["baseline"] - (l if config[mode][0] == "local" else g)) < 1e-9
             )
-            assert abs(e["signal"] - config[mode][1] * reward + e["baseline"]) < 1e-9
+            coefficient = weight_at(config[mode][1], h)
+            assert abs(e["signal"] - coefficient * reward + e["baseline"]) < 1e-9
             if specification != BASELINE_AUDIT:
                 assert (
-                    abs(e["weighted_feedback"] - reward * config[mode][1]) < 1e-9
+                    abs(e["weighted_feedback"] - reward * coefficient) < 1e-9
                     and reward <= 1e-10
                 )
             wrong = (a + e["offset"]) % 4
@@ -331,10 +344,13 @@ def audit_lives(roots, source, specification=BASELINE_AUDIT):
                 if yes
                 else [(wrong, mode)]
             )
+            if extra is not None:
+                labels.append((a, extra))
             for j, ((label, center), rec) in enumerate(
                 zip(labels, e["update"], strict=True), 1
             ):
-                reference, weight = config[center]
+                reference, schedule = config[center]
+                weight = weight_at(schedule, h)
                 signal = weight * reward - (g if reference == "global" else l)
                 if specification != BASELINE_AUDIT:
                     assert (

@@ -1,0 +1,60 @@
+{
+  "completed_assignments": 4,
+  "final_active": 0,
+  "final_check_source": "independent post-release usage query",
+  "final_check_utc": "2026-11-12T18:18:49.472287+00:00",
+  "final_rate": 0,
+  "interrupted_assignments": 0,
+  "note": "Balance differences are observations across the run.",
+  "observed_credit_decrease": 2.9770843612334374,
+  "stages": [
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T16:24:53.583686+00:00",
+      "assigned_seconds": 963.968519,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.4589254061078236,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T16:40:57.552205+00:00",
+      "stage": "gpreplay",
+      "worker_seconds": 768.152556133
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T16:41:22.292833+00:00",
+      "assigned_seconds": 1889.650163,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.895624293573519,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T17:12:51.942996+00:00",
+      "stage": "gppilot",
+      "worker_seconds": 1380.82142333
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T17:13:12.386366+00:00",
+      "assigned_seconds": 2189.158863,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.8540045572215149,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T17:49:41.545229+00:00",
+      "stage": "gprep",
+      "worker_seconds": 2090.275316378
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T17:50:26.459813+00:00",
+      "assigned_seconds": 1667.12332,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.7685301043305799,
+      "peak_bytes": 9539508736,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T18:18:13.583133+00:00",
+      "stage": "gpcheck",
+      "worker_seconds": 1381.9355487819998
+    }
+  ]
+}

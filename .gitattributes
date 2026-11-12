@@ -15,3 +15,4 @@ experiments/first_fatal/** text eol=lf
 experiments/social_closed_loop/core.py whitespace=-blank-at-eof
 experiments/health_baseline/** text eol=lf
 experiments/damage_penalty/** text eol=lf
+experiments/conditional_penalty/** text eol=lf

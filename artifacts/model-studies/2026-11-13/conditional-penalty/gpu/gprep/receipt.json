@@ -1,0 +1,74 @@
+{
+  "worker_returncode": 0,
+  "files": 904,
+  "bytes": 65218409,
+  "sha256": "c5349559e888b399d84a26e2a5d895b664540de740a183e3acc682d61baf787d",
+  "study_stage": "gprep",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "08b66789493bb9836b0f77d0887d7012b106b12965368313de8df1259ee50e41"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "32648985327546820a072d310c4ec6cac3d4b8c23b9bb0dfd47e5f8aa7ead1c7"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 5242880,
+      "sha256": "7d99872a7fbaddd467f711d2f36bbd72d2d145ef78dcb10dc8b95b930623255c"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 5242880,
+      "sha256": "f1e24ac6f31df043db8b370cc3f3502bfc0ca81dc91ee27323fac9390baee34b"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 5242880,
+      "sha256": "e6ab39d4374c6a4a51cf76b157711593f5c57be1891a4ff6b0ca9c9fea7a7b92"
+    },
+    {
+      "name": "part-005.bin",
+      "bytes": 5242880,
+      "sha256": "80013364a571c0c242a3bdc046173293bd7502683ed6422b214c4c9e194ae61f"
+    },
+    {
+      "name": "part-006.bin",
+      "bytes": 5242880,
+      "sha256": "b4835c65636e20720777c4039162d9d2aae05337bec7a9a720ce0f0186518cd2"
+    },
+    {
+      "name": "part-007.bin",
+      "bytes": 5242880,
+      "sha256": "d84e538de8fb89d083e8f24a264c7192477fa9e302a2559fbac0f1a384832538"
+    },
+    {
+      "name": "part-008.bin",
+      "bytes": 5242880,
+      "sha256": "ff12ec7bb98f4adbcddfda7717f4a7addc2df3043656677ce0cda516746c0cd9"
+    },
+    {
+      "name": "part-009.bin",
+      "bytes": 5242880,
+      "sha256": "7b6df6ae7edb1f4d56c374bb2e2832d758233aebd74639899731be5086e9c568"
+    },
+    {
+      "name": "part-010.bin",
+      "bytes": 5242880,
+      "sha256": "44d38fa8f51af36afc0b33be7b29808f0f374830ad37d5ae6af30d3840cf0eba"
+    },
+    {
+      "name": "part-011.bin",
+      "bytes": 5242880,
+      "sha256": "8b25ac97e025248afca64f45ad90df51fc7c260a8992571730337c4261760a93"
+    },
+    {
+      "name": "part-012.bin",
+      "bytes": 2303849,
+      "sha256": "bc0523fbc67e1e5f0f3e94ae8c7bc6a2a960efc2e0b9eb9af051e047055cc5cd"
+    }
+  ]
+}

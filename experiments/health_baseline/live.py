@@ -18,7 +18,9 @@ from experiments.individual_life.design import action_at, offers
 from experiments.individual_life.model import derivatives, update
 
 
-def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
+def run_life(
+    d, backend, body, seed, birth, arm, whole, rules=BASELINES, extra_rule=None
+):
     d.mkdir(parents=True, exist_ok=True)
     primary, secondary = rules
     name, credit = (primary.name, "frozen") if arm == "frozen" else arm.split("_")
@@ -27,23 +29,28 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
         secondary.name,
     }:
         raise ValueError(arm)
-    criterion, other_criterion = (
+    policy_rule, other_rule = (
         (primary, secondary) if name == primary.name else (secondary, primary)
     )
     main = backend.new(birth)
     wrong = backend.new(birth) if credit == "true" else None
     other = backend.new(birth) if credit == "true" else None
+    extra = backend.new(birth) if extra_rule is not None and credit == "true" else None
     backend.bind(main, wrong, other)
     born = main.snapshot()
     entry = born
     store = {"birth": main.bits()}
-    hashes = [hashed(store["birth"])] * (3 if wrong is not None else 1)
+    hashes = [hashed(store["birth"])] * (
+        1 + 2 * int(wrong is not None) + int(extra is not None)
+    )
     entry_t = endpoint = None
     events = []
     past = Past()
     h = 350.0
     try:
         for t, (i, u, noise, offset) in enumerate(arrivals(seed, backend.rows), 1):
+            criterion = policy_rule.at_health(h)
+            other_criterion = other_rule.at_health(h)
             row = backend.rows[i]
             near = practice(h)
             if near and entry_t is None:
@@ -55,7 +62,7 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
                 main.live(),
                 wrong.live() if wrong is not None else born,
                 other.live() if other is not None else born,
-                entry,
+                extra.live() if extra is not None else entry,
                 tuple(v.detach() for v in main.live()),
             ]
             first = first_fatal(h) and endpoint is None
@@ -65,6 +72,8 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
                 if wrong is not None:
                     store["first_wrong"] = wrong.bits()
                     store["first_other"] = other.bits()
+                if extra is not None:
+                    store["first_extra"] = extra.bits()
                 focal = probe(backend, weights, i, h, seed, t)
                 np.savez_compressed(d / "predecision.npz", **focal)
             with torch.set_grad_enabled(credit != "frozen"):
@@ -73,6 +82,8 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
                     if credit != "frozen" and (first or (whole and t % 13 == 0))
                     else []
                 )
+                if requested and extra is not None:
+                    requested.append((4, (seed + t) % 4, extra))
                 panel = backend.panel(
                     i, h, weights, check=whole or first or t == 1, requests=requested
                 )
@@ -96,6 +107,9 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
                 if wrong is not None:
                     roles.extend([(2, mis, wrong), (3, a, other)])
                     modes.extend([criterion, other_criterion])
+                if extra is not None:
+                    roles.append((4, a, extra))
+                    modes.append(extra_rule.at_health(h))
                 for j, ((k, label, model), grad, center) in enumerate(
                     zip(roles, derivatives(panel, roles), modes, strict=True)
                 ):
@@ -116,6 +130,11 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
                             **info,
                         )
                     )
+                    if rules != BASELINES:
+                        credited[-1].update(
+                            weighted_feedback=center.damage_weight * reward,
+                            damage_weight=center.damage_weight,
+                        )
             events.append(
                 {
                     "turn": t,
@@ -151,9 +170,6 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
             )
             if rules != BASELINES:
                 events[-1]["weighted_feedback"] = criterion.damage_weight * reward
-                for rec, role in zip(credited, (criterion, criterion, other_criterion)):
-                    rec["weighted_feedback"] = role.damage_weight * reward
-                    rec["damage_weight"] = role.damage_weight
             past.observe(h, reward)
             h = after
             if h <= 0:
@@ -181,7 +197,7 @@ def run_life(d, backend, body, seed, birth, arm, whole, rules=BASELINES):
         backend.close()
 
 
-def execute(out, backend, body, seeds, arms=ARMS, rules=BASELINES):
+def execute(out, backend, body, seeds, arms=ARMS, rules=BASELINES, arm_overrides=None):
     n = turns = 0
     backup = out.parent / "seed-backups"
     backup.mkdir(exist_ok=True)
@@ -189,6 +205,7 @@ def execute(out, backend, body, seeds, arms=ARMS, rules=BASELINES):
         bucket = out / "lives" / f"s{seed}"
         for birth in BIRTHS:
             for arm in arms:
+                selected, extra = (arm_overrides or {}).get(arm, (rules, None))
                 turns += run_life(
                     bucket / birth / arm,
                     backend,
@@ -197,7 +214,8 @@ def execute(out, backend, body, seeds, arms=ARMS, rules=BASELINES):
                     birth,
                     arm,
                     seed == seeds[0],
-                    rules,
+                    selected,
+                    extra,
                 )
                 n += 1
                 write(

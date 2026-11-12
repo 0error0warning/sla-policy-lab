@@ -19,7 +19,7 @@ from experiments.health_baseline.replay import execute as replay
 from experiments.social_closed_loop.core import BodyValue
 
 
-def run(root, stage):
+def run_study(root, stage, work, result_directories, verify_snapshots):
     out = root / "output"
     out.mkdir(parents=True, exist_ok=True)
     models = {
@@ -44,31 +44,25 @@ def run(root, stage):
         {"exact": backend.fast, "fallback": fallback, "counts": backend.stats.copy()},
     )
 
-    def execute():
-        if stage in WAVES:
-            return autonomous(out, backend, BodyValue(), WAVES[stage], ARMS, RULES)
-        return replay(
-            out, backend, root, SOURCE_WAVES, "local_true", RULES, REPLAY_ROLES
-        )
-
     try:
-        result = execute()
+        result = work(out, backend, root, stage)
     except NumericalMismatch as exc:
         if not backend.fast:
             raise
         fallback = str(exc)
         backend.fast = False
-        directory = "lives" if stage in WAVES else "replays"
-        (out / directory).rename(root / "superseded-cache-execution")
+        for directory in result_directories:
+            if (out / directory).exists():
+                (out / directory).rename(root / ("superseded-" + directory))
         if (root / "seed-backups").exists():
             (root / "seed-backups").rename(root / "superseded-seed-backups")
         write(
             out / "status.json",
             {"stage": "restarting_with_full_model", "fallback": fallback},
         )
-        result = execute()
+        result = work(out, backend, root, stage)
     engine = "checked_immutable_prefix" if backend.fast else "ordinary_only"
-    if stage == "dpcheck":
+    if verify_snapshots:
         backend.fast = False
         result["reinstall"] = reinstall(backend, root, out)
     actor.verify_unchanged()
@@ -94,6 +88,22 @@ def run(root, stage):
     write(
         out / "status.json",
         {"stage": "complete", "completed": result["assigned_lives"]},
+    )
+
+
+def execute(out, backend, root, stage):
+    if stage in WAVES:
+        return autonomous(out, backend, BodyValue(), WAVES[stage], ARMS, RULES)
+    return replay(out, backend, root, SOURCE_WAVES, "local_true", RULES, REPLAY_ROLES)
+
+
+def run(root, stage):
+    run_study(
+        root,
+        stage,
+        execute,
+        ("lives",) if stage in WAVES else ("replays",),
+        stage == "dpcheck",
     )
 
 

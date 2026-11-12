@@ -42,7 +42,7 @@ def step_size(before, after):
 
 def replay(d, backend, ev, meta, whole, rules=BASELINES, roles=ROLES):
     d.mkdir(parents=True, exist_ok=True)
-    first, second = rules
+    first_rule, second_rule = rules
     g, l, f = [backend.new(meta["birth"]) for _ in range(3)]
     backend.bind(g, l, f)
     bg, bl = g.snapshot(), l.snapshot()
@@ -52,6 +52,7 @@ def replay(d, backend, ev, meta, whole, rules=BASELINES, roles=ROLES):
     try:
         for k, e in enumerate(ev):
             i, h, a = e["index"], e["health"], e["action"]
+            first, second = first_rule.at_health(h), second_rule.at_health(h)
             weights = [
                 bg,
                 g.live(),
@@ -134,7 +135,7 @@ def replay(d, backend, ev, meta, whole, rules=BASELINES, roles=ROLES):
             )
             if rules != BASELINES:
                 logs[-1]["weighted_feedback"] = [
-                    mode.damage_weight * e["reward"] for mode in rules
+                    mode.damage_weight * e["reward"] for mode in (first, second)
                 ]
                 logs[-1]["signals"] = [signal_first, signal_second]
             past.observe(h, e["reward"])
@@ -163,6 +164,8 @@ def execute(
     source_rule="true1",
     rules=BASELINES,
     roles=ROLES,
+    status_path=None,
+    phase=None,
 ):
     n = total = 0
     with ZipFile(root / "tapes.zip") as z:
@@ -197,9 +200,9 @@ def execute(
                 )
                 n += 1
                 write(
-                    out / "status.json",
+                    status_path if status_path is not None else out / "status.json",
                     {
-                        "stage": "replaying_fixed_histories",
+                        "stage": phase or "replaying_fixed_histories",
                         "completed": n,
                         "seed": seed,
                         "birth": birth,
