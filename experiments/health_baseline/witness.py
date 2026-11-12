@@ -20,7 +20,7 @@ REPLAY_NAMES = (
 )
 
 
-def build(roots, replays, dest, replay_names=REPLAY_NAMES):
+def build(roots, replays, dest, replay_names=REPLAY_NAMES, additional_replay=None):
     cases = []
     weights = {}
     expected = []
@@ -45,7 +45,7 @@ def build(roots, replays, dest, replay_names=REPLAY_NAMES):
             "first",
             "first_wrong" if yes else "birth",
             "first_other" if yes else "birth",
-            "entry",
+            "first_extra" if "first_extra" in m["snapshot_hashes"] else "entry",
             "first",
         ]
         with np.load(f.parent / "parameters.npz") as z:
@@ -70,25 +70,31 @@ def build(roots, replays, dest, replay_names=REPLAY_NAMES):
                 "checks": checks,
             }
         )
-    for f in sorted(replays.glob("s*/*/life.json")):
-        m = json.loads(f.read_bytes())
-        w = m["witness"]
-        with np.load(f.parent / "successor.npz") as z:
-            keys = [remember(z[n], w["hashes"][n]) for n in replay_names]
-            expected.append(z["probs"])
-        cases.append(
-            {
-                "kind": "replay",
-                "seed": m["seed"],
-                "birth": m["birth"],
-                "rule": "tape",
-                "turn": w["turn"],
-                "u": w["u"],
-                "weights": keys,
-                "checks": [[w["index"], w["health"]]],
-            }
-        )
-    assert len(cases) > 48 and sum(c["kind"] == "replay" for c in cases) == 48
+    sources = [(replays, replay_names)]
+    if additional_replay is not None:
+        sources.append(additional_replay)
+    for folder, names in sources:
+        for f in sorted(folder.glob("s*/*/life.json")):
+            m = json.loads(f.read_bytes())
+            w = m["witness"]
+            with np.load(f.parent / "successor.npz") as z:
+                keys = [remember(z[n], w["hashes"][n]) for n in names]
+                expected.append(z["probs"])
+            cases.append(
+                {
+                    "kind": "replay",
+                    "seed": m["seed"],
+                    "birth": m["birth"],
+                    "rule": names[3] if additional_replay is not None else "tape",
+                    "turn": w["turn"],
+                    "u": w["u"],
+                    "weights": keys,
+                    "checks": [[w["index"], w["health"]]],
+                }
+            )
+    assert len(cases) > 48 and sum(c["kind"] == "replay" for c in cases) == 48 * len(
+        sources
+    )
     write(dest / "witness-cases.json", cases)
     np.savez_compressed(dest / "witness-weights.npz", **weights)
     np.savez_compressed(dest / "witness-expected.npz", arrays=np.stack(expected))

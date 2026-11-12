@@ -55,7 +55,7 @@ def analysis(paths, out, artifact):
     )
 
 
-def parity(paths, parent):
+def parity(paths, parent, parent_stages=("hbpilot", "hbrepa", "hbrepb"), core=None):
     locks = {
         k: json.loads((d / "inputs/run-lock.json").read_bytes())["files"]
         for k, d in paths.items()
@@ -78,18 +78,18 @@ def parity(paths, parent):
         "experiments/internal_body/suffix.py",
         "experiments/internal_body/capture.py",
     )
-    for stage in ("hbpilot", "hbrepa", "hbrepb"):
+    for stage in parent_stages:
         with ZipFile(parent / "gpu" / stage / "inputs.zip") as z:
             past = json.loads(z.read("run-lock.json"))["files"]
-        assert all(locks[s][file] == past[file] for s in STAGES for file in immutable)
-    new_core = (
+        assert all(locks[s][file] == past[file] for s in paths for file in immutable)
+    new_core = core or (
         "experiments/damage_penalty/design.py",
         "experiments/damage_penalty/gpu.py",
         "experiments/health_baseline/design.py",
         "experiments/health_baseline/live.py",
         "experiments/health_baseline/replay.py",
     )
-    assert all(len({locks[s][k] for s in STAGES}) == 1 for k in new_core)
+    assert all(len({locks[s][k] for s in paths}) == 1 for k in new_core)
     return {
         "unchanged_vs_parent": list(immutable),
         "same_training_code_on_all_assignments": list(new_core),

@@ -14,7 +14,7 @@ from experiments.health_baseline.analysis import read_replay
 from experiments.individual_life.design import action_at
 
 
-def retraining(primary, repeat):
+def retraining(primary, repeat, expected_risky_answers=652):
     drift = []
     t0 = []
     focus = []
@@ -58,7 +58,7 @@ def retraining(primary, repeat):
                     )
                 focus.append(pair)
     x = np.asarray(focus, dtype=float)
-    assert x.shape == (652, 2, 2)
+    assert x.shape == (expected_risky_answers, 2, 2)
     return {
         "n": len(drift),
         "exact_panels": sum(v == 0 for v in drift),
@@ -80,7 +80,15 @@ def retraining(primary, repeat):
     }
 
 
-def reinstalls(inputs, output):
+def reinstalls(
+    inputs,
+    output,
+    *,
+    focal_arm="two_true",
+    contrasts=(("birth", 1, 0), ("mismatch", 1, 2), ("one", 1, 3)),
+    estimate=intervals,
+    summary_key="two_fatal_contrasts",
+):
     cases = json.loads((inputs / "witness-cases.json").read_bytes())
     with np.load(inputs / "witness-expected.npz") as z:
         expected = z["arrays"]
@@ -111,19 +119,19 @@ def reinstalls(inputs, output):
                     "answer_class_changed": (label >= 2) != (new >= 2),
                 }
             )
-        if c["kind"] == "live" and c["rule"] == "two_true":
+        if c["kind"] == "live" and c["rule"] == focal_arm:
             row = {"seed": c["seed"], "birth": c["birth"]}
             for m, array in (("recorded", a), ("restored", b)):
                 ans = array[:, 2:].sum(1)
-                for key, j in (("birth", 0), ("mismatch", 2), ("one", 3)):
-                    row[m + "_vs_" + key] = float(ans[1] - ans[j])
+                for key, a_idx, b_idx in contrasts:
+                    row[m + "_vs_" + key] = float(ans[a_idx] - ans[b_idx])
             risk.append(row)
     diffs = np.abs(expected.astype(float) - restored.astype(float)).max(axis=(1, 2))
     grouped = {}
     for origin in BIRTHS:
         vals = [r for r in risk if r["birth"] == origin]
         grouped[origin] = {
-            k: intervals(vals, [v[k] for v in vals])
+            k: estimate(vals, [v[k] for v in vals])
             for k in vals[0]
             if k not in ("seed", "birth")
         }
@@ -137,7 +145,7 @@ def reinstalls(inputs, output):
         "live_first_survival_changes": sum(
             c["kind"] == "live" and c["answer_class_changed"] for c in changes
         ),
-        "two_fatal_contrasts": grouped,
+        summary_key: grouped,
     }
 
 

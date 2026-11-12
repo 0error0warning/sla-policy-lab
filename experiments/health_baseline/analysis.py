@@ -252,7 +252,8 @@ def live_row(d):
     with np.load(d / "predecision.npz") as z:
         same = z["same_request"].astype(float)[:, :, 2:].sum(-1)
         panel = z["panel"].astype(float)[:, :, :, 2:].sum(-1).mean(1)
-    for j, role in enumerate(("birth", "current", "wrong", "other", "entry")):
+    last_role = "extra" if "first_extra" in m["snapshot_hashes"] else "entry"
+    for j, role in enumerate(("birth", "current", "wrong", "other", last_role)):
         if role in ("wrong", "other") and not m["rule"].endswith("_true"):
             continue
         for key, value in (

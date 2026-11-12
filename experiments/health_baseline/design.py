@@ -51,6 +51,9 @@ class FeedbackRule:
     reference: str
     damage_weight: float = 1.0
 
+    def at_health(self, health):
+        return self
+
     def baseline(self, global_mean, local_mean):
         return choose(self.reference, global_mean, local_mean)
 
