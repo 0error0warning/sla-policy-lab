@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 23,
+  "bytes": 6023167,
+  "sha256": "dc3c10885a9ce85df5d7dfba33cc5cd9d3d6962c60caa8a86a175db6ffbef7e9",
+  "study_stage": "depthpilot1",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "f3a42e6de72be11b4d827685367ba08990be618cb831db284067306bbcf6113a"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 780287,
+      "sha256": "17acd2e29ede5f55cb9cae8d1a43d54bc4984bc27a2df1da0d12ece2ec5980cd"
+    }
+  ]
+}

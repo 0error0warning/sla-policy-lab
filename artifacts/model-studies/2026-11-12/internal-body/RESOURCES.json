@@ -1,0 +1,169 @@
+{
+  "initial_observation": "2026-11-12T08:39:04.995604+08:00",
+  "total_observed_decrease_cu": 2.843913720511125,
+  "assigned_seconds": 6433.703715,
+  "stages": [
+    {
+      "stage": "capture",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T00:51:43.269718+00:00",
+      "release_utc": "2026-11-12T00:55:07.277279+00:00",
+      "allocated_seconds": 204.007561,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 1,
+      "result_bytes": 4868,
+      "result_sha256": "daf5e1468cef7b85b0274c609bd6bd077a59bd0de2565ce5a1a2115dba8bda7b",
+      "input_sha256": "3d10904cf6b46dc987aa2a42f97b171e8ef5d83267da18b3e14cfba3b725e51d",
+      "observed_cu": 0.07398453855842035
+    },
+    {
+      "stage": "capture2",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T00:59:32.198912+00:00",
+      "release_utc": "2026-11-12T01:11:26.030686+00:00",
+      "allocated_seconds": 713.831774,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 75898676,
+      "result_sha256": "f10831c1579dadaad675012c98e3414c186d07cf7bf8233829594cdb1ecf68b5",
+      "input_sha256": "14300c997cead82203257e4561feb979a8765af28ec80517d486429cf355bbad",
+      "worker_seconds": 639.561737921,
+      "peak_allocated_bytes": 9577654272,
+      "observed_cu": 0.3092448855610428
+    },
+    {
+      "stage": "depthpilot1",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T01:17:09.278818+00:00",
+      "release_utc": "2026-11-12T01:25:38.672274+00:00",
+      "allocated_seconds": 509.393456,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 6023167,
+      "result_sha256": "dc3c10885a9ce85df5d7dfba33cc5cd9d3d6962c60caa8a86a175db6ffbef7e9",
+      "input_sha256": "0c9c7faee78ddc204084414452f8756968f14ba66d016053ec3aa27baa84d199",
+      "worker_seconds": 446.42116049499987,
+      "peak_allocated_bytes": 13289067520,
+      "observed_cu": 0.22364657109972086
+    },
+    {
+      "stage": "depthpilot2",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T01:28:57.891924+00:00",
+      "release_utc": "2026-11-12T01:41:29.838510+00:00",
+      "allocated_seconds": 751.946586,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "unstarted_idle_observation": {
+        "no_worker_marker": true,
+        "no_worker_directory": true,
+        "registered_kernel_idle": true,
+        "inputs_uploaded": true
+      },
+      "observed_cu": 0.3240844004953942
+    },
+    {
+      "stage": "fullverify",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T01:42:02.092862+00:00",
+      "release_utc": "2026-11-12T01:52:37.696588+00:00",
+      "allocated_seconds": 635.603726,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 2001370,
+      "result_sha256": "7ee573729c4d1b5d7f4d849b12f127e16c032f7748c5e1ca38222ff592857255",
+      "input_sha256": "b6ca39b41cdf00bca068c3f44192ef2354cb9a29387c049d33aeae14bb4baed4",
+      "worker_seconds": 572.58513984,
+      "peak_allocated_bytes": 9405286912,
+      "observed_cu": 0.22751667436648404
+    },
+    {
+      "stage": "depthpilot2b",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T01:55:44.406664+00:00",
+      "release_utc": "2026-11-12T02:17:11.372468+00:00",
+      "allocated_seconds": 1286.965804,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 69532149,
+      "result_sha256": "26aaaf2ce1acb91afd14a0591b7d23f152291a7b1fe884ed65d947cd349b71f9",
+      "input_sha256": "31667a73ca765e6c0d8ecc8e92d5f2113a92ef722119572715107d74edd83819",
+      "worker_seconds": 1160.663942735,
+      "peak_allocated_bytes": 13221753344,
+      "observed_cu": 0.59000712884108
+    },
+    {
+      "stage": "transplant",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T02:23:21.626847+00:00",
+      "release_utc": "2026-11-12T02:50:12.811218+00:00",
+      "allocated_seconds": 1611.184371,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 41198101,
+      "result_sha256": "d5c74dacbe3b6f641d2ee71187c1208a214128a483d75389346b1ca0e201c769",
+      "input_sha256": "7710e5e685aca6261303e36bccec2258e6e3a756bc57fde3e3f9ab53b64061f9",
+      "worker_seconds": 1530.800809516,
+      "peak_allocated_bytes": 9479992832,
+      "observed_cu": 0.829740673040817
+    },
+    {
+      "stage": "seenfit",
+      "device": "L4",
+      "allocation_utc": "2026-11-12T02:50:48.674095+00:00",
+      "release_utc": "2026-11-12T03:02:49.444532+00:00",
+      "allocated_seconds": 720.770437,
+      "active_after_release": 0,
+      "after_rate": 0.0,
+      "assignment_removed": true,
+      "worker_returncode": 0,
+      "result_bytes": 157953,
+      "result_sha256": "c2612085eae8676d6f7c129ce494f37238e0ed4d63cdb920a556e444a3fa11e8",
+      "input_sha256": "d428a70891dd99acb9157a1104c04d507e5c85b60f683729ff6356e162f40e82",
+      "worker_seconds": 604.915595056,
+      "peak_allocated_bytes": 9485496832,
+      "observed_cu": 0.2656888485481659
+    }
+  ],
+  "unallocated_attempts": [
+    {
+      "requested": "A100 standard",
+      "intended": "capture",
+      "failure": "read timeout 30s",
+      "later_list_empty_utc": "2026-11-12T00:50:55Z"
+    },
+    {
+      "requested": "A100 standard",
+      "intended": "depthpilot1",
+      "failure": "read timeout 120s",
+      "later_list_empty_utc": "2026-11-12T01:15:57Z"
+    }
+  ],
+  "cpu": {
+    "python": "3.13.5",
+    "numpy": "2.2.6",
+    "scipy": "1.16.2",
+    "torch": "2.14.1+cpu",
+    "openblas_threads": 1,
+    "torch_threads": "3 or 4 by stage"
+  },
+  "note": "Account balance differences are observations, not a finalized per-job invoice.",
+  "final_account": {
+    "at": "2026-11-12T03:03:29.422998+00:00",
+    "active": 0,
+    "rate": 0.0
+  }
+}
