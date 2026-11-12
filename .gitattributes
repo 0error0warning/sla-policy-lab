@@ -13,3 +13,4 @@ experiments/individual_life/** text eol=lf
 experiments/first_fatal/** text eol=lf
 # Retain the archived source's terminal blank line without suppressing other checks.
 experiments/social_closed_loop/core.py whitespace=-blank-at-eof
+experiments/health_baseline/** text eol=lf
