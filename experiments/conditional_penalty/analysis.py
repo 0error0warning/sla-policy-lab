@@ -226,6 +226,17 @@ def live_summary(roots, dest):
                 )
                 for q in ("fatal", "fatal_panel", "healthy_panel", "healthy_same")
             }
+        constant_own = {}
+        for arm in ("one_true", "two_true"):
+            own = [r for r in groups[arm] if r["reached"]]
+            constant_own[arm] = {
+                measure + "_vs_" + control: interval(
+                    own,
+                    [r[measure + "_current"] - r[measure + "_" + control] for r in own],
+                )
+                for measure in ("fatal", "fatal_panel", "healthy_panel")
+                for control in ("birth", "wrong", "other")
+            }
         free = {}
         for a, control in groups.items():
             if a == "gate_true":
@@ -272,6 +283,7 @@ def live_summary(roots, dest):
         result[birth] = {
             "arms": arms,
             "matched_gate_tape": matched,
+            "constant_own_tape": constant_own,
             "free": free,
             "criteria": criteria,
             "joint": bool(all(criteria.values()) and len(eligible) == 24),
