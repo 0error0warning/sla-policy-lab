@@ -20,7 +20,7 @@ REPLAY_NAMES = (
 )
 
 
-def build(roots, replays, dest):
+def build(roots, replays, dest, replay_names=REPLAY_NAMES):
     cases = []
     weights = {}
     expected = []
@@ -74,7 +74,7 @@ def build(roots, replays, dest):
         m = json.loads(f.read_bytes())
         w = m["witness"]
         with np.load(f.parent / "successor.npz") as z:
-            keys = [remember(z[n], w["hashes"][n]) for n in REPLAY_NAMES]
+            keys = [remember(z[n], w["hashes"][n]) for n in replay_names]
             expected.append(z["probs"])
         cases.append(
             {

@@ -34,7 +34,7 @@ def save_csv(path, rows):
         w.writerows(rows)
 
 
-def ci(ids, values, waves=WAVES):
+def ci(ids, values, waves=WAVES, adjusted_alpha=0.00625):
     ordered = sorted(zip(ids, values, strict=True))
     bins = [[v for seed, v in ordered if seed in wave] for wave in waves]
     assert len(set(ids)) == len(ids) == sum(map(len, bins))
@@ -42,7 +42,7 @@ def ci(ids, values, waves=WAVES):
     if len(a) == 0:
         return None
     means = a[resamples(tuple(map(len, bins)))].mean(axis=1)
-    qs = np.quantile(means, [0.00625, 0.025, 0.975, 0.99375])
+    qs = np.quantile(means, [adjusted_alpha, 0.025, 0.975, 1 - adjusted_alpha])
     return {
         "n": len(a),
         "mean": float(a.mean()),

@@ -11,11 +11,17 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from experiments.first_fatal.design import BIRTHS, PILOT, REPLICATION
 
 
-def build(parent, dest):
+def build(
+    parent,
+    dest,
+    stages=(("ffpilot", PILOT), ("ffconfirm", REPLICATION)),
+    source_rule="true1",
+    expected_answers=680,
+):
     pieces = {}
     sources = {}
     practice_answers = 0
-    for stage, seeds in (("ffpilot", PILOT), ("ffconfirm", REPLICATION)):
+    for stage, seeds in stages:
         d = parent / "gpu" / stage
         archive = (d / "results.zip").read_bytes()
         rec = json.loads((d / "receipt.json").read_bytes())
@@ -30,7 +36,7 @@ def build(parent, dest):
                 for birth in BIRTHS:
                     for name in ("events.jsonl.gz", "life.json"):
                         rel = f"s{seed}/{birth}/{name}"
-                        key = f"output/lives/s{seed}/{birth}/true1/{name}"
+                        key = f"output/lives/s{seed}/{birth}/{source_rule}/{name}"
                         raw = z.read(key)
                         assert sha256(raw).hexdigest() == measured[key]["sha256"]
                         pieces[rel] = raw
@@ -42,7 +48,10 @@ def build(parent, dest):
                             practice_answers += sum(
                                 x["practice"] and x["action"] >= 2 for x in ev
                             )
-    assert len(pieces) == 96 and practice_answers == 680
+    assert (
+        len(pieces) == 2 * len(BIRTHS) * sum(len(seeds) for _, seeds in stages)
+        and practice_answers == expected_answers
+    )
     meta = {
         "parent_archives": sources,
         "files": {k: sha256(v).hexdigest() for k, v in pieces.items()},
