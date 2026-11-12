@@ -2,7 +2,9 @@
 
 import argparse
 import json
+import sys
 from hashlib import sha256
+from importlib.metadata import version
 from pathlib import Path
 
 from experiments.direct_policy.protocol import write
@@ -80,6 +82,8 @@ def run(artifact, parent, dest):
             "backbone_restored"
         ]
     proof = {
+        "analysis_python": sys.version.split()[0],
+        "analysis_numpy": version("numpy"),
         "raw_transports_member_hashes_and_launch_inputs_verified": True,
         "stages": 6,
         "source_lives_replayed": 48,
