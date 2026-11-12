@@ -15,8 +15,11 @@ from experiments.individual_life.design import action_at
 def repeats(first, second):
     drift = []
     focused = []
+    steps = []
     for fp in sorted(first.glob("s*/*/life.json")):
-        json.loads(fp.read_bytes())
+        original = json.loads(fp.read_bytes())
+        repeated = json.loads((second / fp.relative_to(first)).read_bytes())
+        assert all(original[k] == repeated[k] for k in ("birth", "seed", "turns"))
         x = read_replay(fp.parent)
         y = read_replay(second / fp.parent.relative_to(first))
         for i, (a, b) in enumerate(zip(x, y, strict=True)):
@@ -50,6 +53,12 @@ def repeats(first, second):
                     flags[0] != flags[1],
                     choices[0] != choices[1],
                 )
+            steps.append(
+                [
+                    [v["actual_step_norm"] for v in group[i - 1]["updates"]]
+                    for group in (x, y)
+                ]
+            )
             focused.append((delta, dels))
     assert len(focused) == 680
     result = {}
@@ -62,6 +71,17 @@ def repeats(first, second):
             "different_source_or_destination_action": int(a[:, 3].sum()),
         }
     return {
+        "median_actual_steps": {
+            label: {
+                "global": float(g),
+                "local_own": float(l),
+                "local_common": float(c),
+                "common_to_global_ratio": float(c / g),
+            }
+            for label, (g, l, c) in zip(
+                ("primary", "repeat"), np.median(steps, axis=0), strict=True
+            )
+        },
         "all_turns": len(drift),
         "fully_equal_panels": sum(e == 0 for e in drift),
         "p95": float(np.quantile(drift, 0.95)),

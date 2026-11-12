@@ -27,3 +27,5 @@ In `{hbpilot,hbrepa,hbrepb}/output/lives/s<seed>/<birth>/<rule>/` the agent choo
 The other-baseline shadow sees the deployed individual’s actions and consequences. The separately acting other-baseline individual can receive different future outcomes. Both comparisons are present in the seed-level table and their interpretation differs.
 
 `hbrepeat` retrains the two replay paths from birth on the same source tapes on another assignment. `hbverify` reinstalls weights from the first run and performs ordinary full Qwen forwards with zero training. Neither adds independent environmental seeds.
+
+A service interruption during replication left a verified complete-seed backup. Its original assignment and the retry use identical input-package hashes. The release preserves the excluded backup under `interruptions/`. The reproduction command also compares its freely acting lives with the retry and counts the seed once in the primary analysis.
