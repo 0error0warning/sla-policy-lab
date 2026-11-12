@@ -10,6 +10,8 @@ In the [individual-life study](artifacts/model-studies/2026-11-12/individual-lif
 
 [First fatal encounter](artifacts/model-studies/2026-11-12/first-fatal/REPORT.md) follows each individual through repeated survivable exertions to the first request where answering would kill it even with maintenance. The study records the actual choice at that moment, a matched credit control on the individual's own history, and task completion at healthy states.
 
+The [personal-baseline experiment](artifacts/model-studies/2026-11-12/health-baseline/REPORT.md) measures whether a smaller LoRA update changes the very next action on an individual's recorded history. A separate cohort tests first-fatal survival and healthy task completion under lifetime and similar-health baselines, with frozen and mismatched-action controls. [Reproduction instructions](experiments/health_baseline/README.md)
+
 ## Frozen language-model studies — 2026-11-10
 
 Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, followed by staged diagnostics and eight fresh paired seeds for the two 4B candidates. The initial screen scored 18/48, 24/48, and 27/48. In the follow-up, both 4B models selected correctly in 16/16 cases when correct returns were provided, while neither computed both returns correctly in any of 16 end-to-end cases. Qwen3.5's rollout mean (5.603576) was close to a simple one-step rule (5.599052); no reliable superiority claim follows.
