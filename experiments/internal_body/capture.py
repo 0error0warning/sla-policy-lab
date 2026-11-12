@@ -36,8 +36,10 @@ class DecisionState:
         lm = actor.model.model.language_model
         self.lm = lm
         self.parts = {}
+        self.original_dtypes = {}
         def keep(name):
             def hook(_, args):
+                self.original_dtypes[name] = str(args[0].dtype)
                 self.parts[name] = args[0][:, -1].detach()
             return hook
         self.handles = [lm.norm.register_forward_pre_hook(keep("r")),
@@ -73,7 +75,7 @@ def capture(actor, root, out):
             observed = state.batch([ids[i] for i in ix])
             for key, value in observed.items():
                 if key not in base:
-                    base[key] = np.empty((len(rows), value.shape[1]), dtype=np.float32 if key=="native" else np.float16)
+                    base[key] = np.empty((len(rows), value.shape[1]), dtype=np.float32)
                 base[key][ix] = value
                 assert np.array_equal(base[key][ix].astype(np.float32), value)
             done += len(ix)
@@ -93,7 +95,8 @@ def capture(actor, root, out):
     direct=np.sqrt(np.mean((unit*norm-base["z"])**2))
     offset=1. if plus<direct else 0.
     cfg.update(norm_offset=offset, rms_reconstruction_error=float(min(plus,direct)),
-               other_offset_error=float(max(plus,direct)))
+               other_offset_error=float(max(plus,direct)), original_dtypes=state.original_dtypes,
+               fp16_would_change_elements={k:int(np.count_nonzero(v.astype(np.float16).astype(np.float32)!=v)) for k,v in base.items() if k in ("r","v","z")})
     assert min(plus,direct)<.02*max(1.,float(np.sqrt(np.mean(base["z"].astype(float)**2))))
     np.savez_compressed(out/"native-state.npz", **base)
     np.savez_compressed(out/"architecture.npz", projection=p, norm=norm, head=head)
@@ -105,7 +108,7 @@ def capture(actor, root, out):
         indices=[i for i,row in enumerate(rows[:960]) if (train[i] and h in SPLIT_H) or (not train[i] and h in TEST_H)]
         hp={i:encode(actor,rows[i],h) for i in indices}
         lookup={i:j for j,i in enumerate(indices)}
-        rr=np.empty((len(indices),r.shape[1]),np.float16)
+        rr=np.empty((len(indices),r.shape[1]),np.float32)
         vv=np.empty((len(indices),p.shape[1]),np.float32)
         scores=np.empty((len(indices),4),np.float32)
         for batch in grouped(indices,hp):
@@ -123,7 +126,7 @@ def capture(actor, root, out):
     for txt,row in distinct.items():
         semantic[txt]=state.batch([encode(actor,row,request_only=True)],include_down=False)["z"][0]
     np.savez_compressed(out/"request-only.npz", text=np.array(list(semantic)),
-                        hidden=np.stack(list(semantic.values())).astype(np.float16))
+                        hidden=np.stack(list(semantic.values())))
     state.close()
     return dict(standard_contexts=len(rows),prompt_contexts=sum(len(r["indices"]) for r in prompt_meta),
                 request_only=len(distinct),architecture=cfg)

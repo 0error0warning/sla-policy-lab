@@ -17,7 +17,7 @@ def main():
     out.mkdir(exist_ok=True,parents=True)
     start=time.monotonic()
     actor=FrozenQwen(args.root/"expected-weights.json",out)
-    if args.mode=="capture":
+    if args.mode.startswith("capture"):
         from experiments.internal_body.capture import capture
         result=capture(actor,args.root,out)
     elif args.mode.startswith("depth"):
