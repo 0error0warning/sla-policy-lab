@@ -28,10 +28,21 @@ def run(inputs, output, dest):
     a = actual.reshape(len(cases), 6, 6, 4)
     b = logged.reshape(a.shape)
     per_panel = np.max(np.abs(a - b), axis=(2, 3))
-    samples = sum(
-        action_at(x[0, 1], c["u"]) != action_at(y[0, 1], c["u"])
-        for x, y, c in zip(a, b, cases, strict=True)
-    )
+    changes = []
+    for fresh, observed, case in zip(a, b, cases, strict=True):
+        before = action_at(observed[0, 1], case["u"])
+        after = action_at(fresh[0, 1], case["u"])
+        if before != after:
+            changes.append(
+                {
+                    "seed": case["seed"],
+                    "birth": case["birth"],
+                    "rule": case["rule"],
+                    "recorded_action": before,
+                    "fresh_action": after,
+                    "fatal_class_changed": (before >= 2) != (after >= 2),
+                }
+            )
     result = {}
     for origin in BIRTHS:
         group = []
@@ -52,7 +63,11 @@ def run(inputs, output, dest):
             "complete_panels": int(per_panel.size),
             "exact_panels": int((per_panel == 0).sum()),
             "max_abs_probability_error": float(per_panel.max()),
-            "original_common_draw_choices_changed": int(samples),
+            "original_common_draw_choices_changed": len(changes),
+            "common_draw_fatal_class_changed": sum(
+                x["fatal_class_changed"] for x in changes
+            ),
+            "changed_choices": changes,
             "actual_first_vs_birth_and_mismatches": result,
         },
     )

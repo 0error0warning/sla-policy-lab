@@ -1,0 +1,26 @@
+{
+  "analysis_python": "3.13.5",
+  "analysis_versions": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.2.6",
+    "scipy": "1.16.2"
+  },
+  "bit_identical_outputs": {
+    "analysis/audit.json": "d515a8f342eac226506339f1ac1f4afd7cab42a130d0a2639d5b7388816ee9e7",
+    "analysis/context-check.json": "c8cf8b1a9edf55a3d1be8ee1152e514d754b3ca7e4cb0031a5b19a5e3956e7a2",
+    "analysis/feedback-check.json": "584ff56d1647705d227b7a13b3df641c5cbb63bc5c71f32041ff349292c54586",
+    "analysis/numerics.json": "460ce462b68a2c40a99f26431dd65d0f62c6542ad500437329cae85235249410",
+    "analysis/per-life.csv": "086e7d5452f9b44466787feb78bf3ca303357280814ef97c16b6ebbb60cce23a",
+    "analysis/restore-check.json": "1d4ac861f534b34f3e383e4fb338a4422e24789fb2a44f4c9be470aab4e71c07",
+    "analysis/summary.json": "2f25161a4881e5799b42bc105d0b6d7848513e469766c693ddc0723429bbeba6",
+    "restored-input/witness-cases.json": "f69eee41a76399db4f23a27d7bd51954c2f8074da6bdbe392f19b2191801b446",
+    "restored-input/witness-expected.npz": "c5a33dd2f4a97c70d7ae85dcd7797ed9ebac036e731c58d29a8e9b341f9821ec",
+    "restored-input/witness-weights.npz": "45673730d2b06e0c53795b44db7a4367f5470ef4c943f9db437593c4b20faf82",
+    "views/first-fatal.png": "5161fffd502fbe126b78d3b70a9b1603f848b3bc99057e076deec7e401cb7168",
+    "views/s69101-blank.csv": "4831524f6f1fa5c97d142af74f037dd73cbcafefe6cebc3ef150883f41d793a8",
+    "views/s69101-population.csv": "d50952d4d1a243bc989fa8948bd415d46da24baa9eff2037a09caec0c8e8e43c"
+  },
+  "first_fatal_snapshots_recovered_from_published_lives": true,
+  "raw_member_and_transport_digests_checked": true,
+  "restored_complete_lives": 144
+}
