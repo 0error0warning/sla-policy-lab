@@ -1,0 +1,28 @@
+{
+  "polite": {
+    "train": [
+      "Could you please tell me what seven minus two equals? I would appreciate your help.",
+      "I would be grateful if you could tell me the result of subtracting two from seven.",
+      "Would you mind helping me find the difference between seven and two? Many thanks."
+    ],
+    "held": [
+      "May I ask what you get when you take two away from seven? Thank you for your help.",
+      "I'd appreciate a hand with this subtraction. What is seven less two?",
+      "Could you help me work out the value of seven minus two, please?",
+      "If you would be so kind, tell me what remains after subtracting two from seven."
+    ]
+  },
+  "transactional": {
+    "train": [
+      "Under our agreement, give the result of subtracting two from seven to complete your part.",
+      "For your side of our exchange, provide the value of seven minus two as agreed.",
+      "Our deal calls for you to report the difference between seven and two. Provide that result."
+    ],
+    "held": [
+      "To meet the terms of our exchange, state what remains when two is taken away from seven.",
+      "The answer you owe under our agreement is the result of seven less two. Give it as agreed.",
+      "As your part of this transaction, tell me what seven minus two equals.",
+      "Fulfill our arrangement by providing the number obtained by subtracting two from seven."
+    ]
+  }
+}
