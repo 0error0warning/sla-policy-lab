@@ -6,6 +6,7 @@ from zipfile import ZipFile
 import numpy as np
 
 from experiments.lifetime_cooperation.design import ITEMS, PANEL, PILOT, rules
+from experiments.lifetime_cooperation.design import LEVELS as LEVELS
 
 ARCHIVE_SHA = "742ce68fafdeab6d50f59b4029c48f17bab63ab67cbde830d83a85dba6139abc"
 ROLES = (
