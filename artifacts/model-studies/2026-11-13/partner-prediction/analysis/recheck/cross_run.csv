@@ -1,0 +1,9 @@
+seed,birth_actual_max_pp,birth_held_max_pp,birth_held_mean_pp,first_update_hash_difference,identical_update_hashes,updates,first_actual_over_10pp,last_held_max_pp,last_held_argmax_disagreements,last_held_cells,last_held_body_max_over_90pct,last_held_true_h6_max_over_90pct
+77101,0.0,0.0,0.0,,61,61,,0.0,0,128,128,32
+77102,0.0,0.0,0.0,,63,63,,0.0,0,128,95,32
+77103,0.0,0.0,0.0,,63,63,,0.0,0,128,128,32
+77104,0.0,0.0,0.0,,69,69,,0.0,0,128,73,32
+77105,0.0,0.0,0.0,,68,68,,0.0,0,128,107,24
+77106,0.0,0.0,0.0,,59,59,,0.0,0,128,114,28
+77107,0.0,0.0,0.0,,63,63,,0.0,0,128,126,2
+77108,0.0,0.0,0.0,,65,65,,0.0,0,128,128,32

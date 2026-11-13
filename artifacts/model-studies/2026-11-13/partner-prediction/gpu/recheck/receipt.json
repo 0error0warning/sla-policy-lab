@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 96,
+  "bytes": 6092810,
+  "sha256": "d947f89aa7c687555109bc501f6b034ea0dd261218b965c671e229dd4509caee",
+  "study_stage": "partnerpred",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "914e4ca1117d69581a986287177e38fe4ff1aee683101c4e68b4d9e24d19831e"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 849930,
+      "sha256": "5fe652c0ec68f9a17ff3ef31025be9bbe45bfaf78d3735c417154f0444d79816"
+    }
+  ]
+}
