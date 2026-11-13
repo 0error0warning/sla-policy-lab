@@ -20,3 +20,5 @@ python -m experiments.partner_damage.figure work/pd-analysis work/paths.png
 要重跑 Qwen，用具备 BF16 的 NVIDIA GPU，在新的目录解压本轮 inputs.zip，安装归档内依赖并匹配 Qwen/PyTorch 版本。运行 `CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 python -m experiments.partner_damage.gpu --root . --mode socialdamage`。
 
 `factorial.npz` 保存每一格的参数、四个语义动作的概率、交换训练身份的面板和梯度，面板顺序为未更新、接受且低损伤、拒绝且低损伤、接受且高损伤、拒绝且高损伤。动作语义顺序为沉默拒绝、拒绝求维护、回答并恳求、回答并互惠。`swaps.npz` 的条件顺序见 `design.HYBRIDS`。`sites.npz` 保存对每层按来源请求匹配实际步长的全部候选及十六项全前向面板，`continuation.npz` 保存两个诊断个案对后续决策的影响。原始身份特征、分词差异和留出条件见根目录 representations.npz 和 representation-rows.json。
+
+独立 L4 技术复查保留在同一结果目录的 gpu/socialcheck。将它的结果解包后，可运行 `python -m experiments.partner_damage.repeat_audit --first work/pd-run/output --second work/pd-repeat/output --inputs work/pd-inputs --out work/pd-analysis` 复算原入口、当前入口与跨设备的差异。复查的个案与条件见 [技术复查方案](RECHECK.md)。
