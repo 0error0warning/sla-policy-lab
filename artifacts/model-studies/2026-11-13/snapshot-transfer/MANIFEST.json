@@ -1,0 +1,46 @@
+{
+  "REPORT.md": {
+    "bytes": 8794,
+    "sha256": "2cbe1785d6ee40fc2529529ae34e2050c2cbeccf28329e7117abf1b811c9a777"
+  },
+  "REPRODUCTION.json": {
+    "bytes": 834,
+    "sha256": "16e6a09d47ed4c72bec0e3b0f33008325f391d46438459cb13fc28719a0fc161"
+  },
+  "RESOURCES.json": {
+    "bytes": 336,
+    "sha256": "36d71097a05abbccdfbc8ffe0a9356e8dd4e8856e7e73371c23f42e4e5f06ccb"
+  },
+  "analysis/contexts.csv": {
+    "bytes": 182084,
+    "sha256": "00d6452bde3d42d0e720d6d44a3dc9e15040cc6129f36f4ed151b721442cfd76"
+  },
+  "analysis/paired-updates.csv": {
+    "bytes": 30675,
+    "sha256": "d19c2828d46485d5f77487196d8f8eee387e3e51dd1fcda142657a3ce71a7784"
+  },
+  "analysis/precision.csv": {
+    "bytes": 55010,
+    "sha256": "017a8fcb430a9a8364493427ab788110bb111874b5019f4a31d6506d06112a39"
+  },
+  "analysis/summary.json": {
+    "bytes": 76231,
+    "sha256": "23db1807f185b32206e48c0b0707e221bfa78e32b5751589687a89b1ed6d6cb8"
+  },
+  "contexts.png": {
+    "bytes": 171379,
+    "sha256": "efd3589ae28ef9b7e1c3d053fda50568c65f31e66e45c62abbb2bfbe95cb5fb0"
+  },
+  "gpu/stmap/inputs.zip": {
+    "bytes": 10578362,
+    "sha256": "7620d93e80a46c1048038122fbfbf83d4534712a7de0e3811cdc68f0355eb729"
+  },
+  "gpu/stmap/receipt.json": {
+    "bytes": 345,
+    "sha256": "c9ea996b16b6ca7786bcad572344f0a5093c1114a2d09a4ea204cb66e418e5f2"
+  },
+  "gpu/stmap/results.zip": {
+    "bytes": 43046,
+    "sha256": "a8152b5e1ccd768d3a2dfb9dc972e184afc305051233d7443797ad16ed24d033"
+  }
+}

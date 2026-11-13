@@ -18,6 +18,8 @@ The [conditional-penalty experiment](artifacts/model-studies/2026-11-13/conditio
 
 [Body-to-policy audit](artifacts/model-studies/2026-11-13/body-feedback-chain/REPORT.md) follows observed injuries through reference life, personal feedback, parameter changes and the next decision. It also evaluates the original and short-exposure bodies on identical encounters.
 
+[Single-update transfer](artifacts/model-studies/2026-11-13/snapshot-transfer/REPORT.md) reinstalls 48 saved LoRA updates on the original request, the injured body and the actual next request, tracking both the credited action and all answering.
+
 ## Frozen language-model studies — 2026-11-10
 
 Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, followed by staged diagnostics and eight fresh paired seeds for the two 4B candidates. The initial screen scored 18/48, 24/48, and 27/48. In the follow-up, both 4B models selected correctly in 16/16 cases when correct returns were provided, while neither computed both returns correctly in any of 16 end-to-end cases. Qwen3.5's rollout mean (5.603576) was close to a simple one-step rule (5.599052); no reliable superiority claim follows.
