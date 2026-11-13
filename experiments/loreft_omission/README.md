@@ -12,6 +12,7 @@
 ART=artifacts/model-studies/2026-11-13/loreft-omission
 python -m experiments.direct_policy.unpack --archive "$ART/gpu/omitstable/results.zip" --receipt "$ART/gpu/omitstable/receipt.json" --destination work/omitstable
 python -m experiments.loreft_omission.audit --root work/omitstable/output --inputs work/omission-inputs --out work/omission-analysis --archive "$ART/gpu/omitstable/results.zip"
+python -m experiments.loreft_omission.drivers --root work/omitstable/output --inputs work/omission-inputs --out work/omission-analysis
 python -m experiments.loreft_omission.figure work/omission-analysis work/onset.png
 ```
 
