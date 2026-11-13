@@ -28,4 +28,14 @@ python -m experiments.partner_prediction.audit \
 python -m experiments.partner_prediction.gpu --root . --mode partnerpred
 ```
 
+技术复跑复用同一 inputs.zip。将 gpu/recheck/results.zip 解压到另一个目录，再对其单独运行上面的 audit，将结果写到第二个分析目录。下例将两次的原始输出目录与 CPU 分析目录逐一配对。
+
+```sh
+python -m experiments.partner_prediction.recheck \
+  --first /tmp/sla-partner-prediction/results/output \
+  --second /tmp/sla-partner-prediction/recheck/output \
+  --analysis /tmp/sla-partner-prediction/analysis \
+  --out /tmp/sla-partner-prediction/analysis/recheck
+```
+
 policy.csv 给原说法和留出说法在每条生命、每位伙伴、每种预测替换下的动作概率指标。prediction.csv 给预测误差、排序与概率移动。life.csv 保留任务、维护和风险机会的分子分母。immediate.csv 记录每次更新对当前与另一伙伴的即时影响。gates.json 给各项预设门槛的配对差和整生命重抽样区间。
