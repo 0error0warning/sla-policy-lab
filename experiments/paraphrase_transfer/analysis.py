@@ -365,6 +365,17 @@ def analyze(inputs, output, dest):
         m: main["actual_next"][m]["augmented_minus_original"]["mean"] for m in MEASURES
     }
     assert len(criteria) == 12
+    # Identical held texts/health/order under both identity routes in all 48 cases.
+    same = [r for r in rows if r["endpoint"] == "held_new_wording"]
+    swapped = [r for r in rows if r["endpoint"] == "held_word_other_partner"]
+    interaction = {}
+    for m in MEASURES:
+        paired = []
+        key = "augmented_minus_original_" + m + "_pp"
+        for a, b in zip(same, swapped, strict=True):
+            assert (a["seed"], a["birth"]) == (b["seed"], b["birth"])
+            paired.append({**a, "difference": b[key] - a[key]})
+        interaction[m] = paired_interval(paired, "difference", alpha=ALPHA)
     draws = {}
     for end in DANGER[1:]:
         rec = [r for r in rows if r["endpoint"] == end]
@@ -406,6 +417,7 @@ def analyze(inputs, output, dest):
         "joint": all(criteria.values()),
         "practical_gate": healthy_ok and all(v <= -1 for v in comparison.values()),
         "same_draw_actions": draws,
+        "held_wording_other_minus_source_partner_interaction": interaction,
         "audit": audit,
         "gpu": receipt,
     }

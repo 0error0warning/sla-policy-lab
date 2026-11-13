@@ -206,7 +206,7 @@ def evaluate(backend, c, items, lookup, models, d, n):
         backend.close()
 
 
-def run(root):
+def run(root, mode="phrmix"):
     out = root / "output"
     out.mkdir(exist_ok=True, parents=True)
     cases = json.loads((root / "phrase-cases.json").read_bytes())
@@ -225,8 +225,23 @@ def run(root):
     start = time.monotonic()
     actor = FrozenQwen(root / "expected-weights.json", out)
     backend = Qwen(actor, root)
+    diagnostics = {}
+    if mode == "phrcheck":
+        from experiments.paraphrase_transfer.numerical_repeat import (
+            environment,
+            original_interface,
+            previous_slot_check,
+        )
+
+        score_history, token_checks = original_interface(backend, cases, root)
+        write(out / "runtime.json", environment())
+        write(out / "legacy-token-checks.json", token_checks)
+        write(out / "status.json", {"stage": "checking_unmodified_parent_interface"})
+        diagnostics["before_text_extension"] = score_history()
     items, lookup = bank(root / "wording.json")
     base = register_texts(backend, items)
+    if mode == "phrcheck":
+        diagnostics["after_text_extension"] = score_history()
     ids = [
         i
         for i, r in enumerate(items)
@@ -242,6 +257,9 @@ def run(root):
     except NumericalMismatch as exc:
         backend.fast = False
         fallback = str(exc)
+    if mode == "phrcheck":
+        diagnostics["after_calibration"] = score_history()
+        np.savez_compressed(out / "legacy-interface.npz", **diagnostics)
     write(
         out / "calibration.json",
         {
@@ -279,6 +297,13 @@ def run(root):
         def evaluate_all():
             for c, models, d, n in completed:
                 v = evaluate(backend, c, items, lookup, models, d, n)
+                if mode == "phrcheck":
+                    slots = previous_slot_check(backend, c, models)
+                    np.savez_compressed(
+                        d / "slot-check.npz",
+                        alternate=slots,
+                        current=v[:, [1, 3]].transpose(1, 0, 2),
+                    )
                 err = np.max(abs(v[:, [0, 3]] - anchors[n]), axis=2)
                 write(
                     d / "anchors.json",
@@ -314,7 +339,7 @@ def run(root):
     write(
         out / "receipt.json",
         {
-            "mode": "phrmix",
+            "mode": mode,
             "cases": len(cases),
             "parameters": params,
             "frozen_backbone": True,
@@ -346,6 +371,7 @@ def run(root):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["phrmix"], required=True)
+    p.add_argument("--mode", choices=["phrmix", "phrcheck"], required=True)
     p.add_argument("--root", type=Path, required=True)
-    run(p.parse_args().root)
+    a = p.parse_args()
+    run(a.root, a.mode)

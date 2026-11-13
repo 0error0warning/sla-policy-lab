@@ -8,12 +8,15 @@ import numpy as np
 
 from experiments.direct_policy.protocol import write
 from experiments.individual_life.release import unpack
+from experiments.order_transfer.analysis import load
 from experiments.paraphrase_transfer.analysis import analyze
 from experiments.paraphrase_transfer.inputs import PARENT, build
+from experiments.paraphrase_transfer.stability import compare
 
 
 def reproduce(artifact, parent, dest):
-    raw = unpack(artifact, dest / "raw") / "gpu" / "phrmix"
+    base = unpack(artifact, dest / "raw") / "gpu"
+    raw = base / "phrmix"
     recovered = dest / "recovered-inputs"
     build(parent, recovered)
     comparisons = {}
@@ -27,12 +30,35 @@ def reproduce(artifact, parent, dest):
         else:
             assert f.read_bytes() == original.read_bytes(), f.name
         comparisons[f.name] = sha256(original.read_bytes()).hexdigest()
-    out = dest / "analysis"
-    analyze(recovered, raw / "output", out)
     checked = {}
-    for f in sorted(out.iterdir()):
-        assert f.read_bytes() == (artifact / "analysis" / f.name).read_bytes(), f.name
-        checked[f.name] = sha256(f.read_bytes()).hexdigest()
+    runs = {}
+    for name, output in (("", raw), ("repeat", base / "phrcheck")):
+        out = dest / "analysis" / name
+        for f in recovered.iterdir():
+            assert (raw / "inputs" / f.name).read_bytes() == (
+                output / "inputs" / f.name
+            ).read_bytes(), f.name
+        analyze(recovered, output / "output", out)
+        runs[name] = load(out / "summary.json")
+        for f in sorted(out.iterdir()):
+            if f.is_file():
+                expected = artifact / "analysis" / name / f.name
+                assert f.read_bytes() == expected.read_bytes(), f.name
+                checked[f.relative_to(dest / "analysis").as_posix()] = sha256(
+                    f.read_bytes()
+                ).hexdigest()
+    st = dest / "analysis/stability.json"
+    compare(
+        recovered,
+        raw / "output",
+        base / "phrcheck/output",
+        parent,
+        st,
+        runs[""],
+        runs["repeat"],
+    )
+    assert st.read_bytes() == (artifact / "analysis/stability.json").read_bytes()
+    checked["stability.json"] = sha256(st.read_bytes()).hexdigest()
     result = {
         "transport_verified": True,
         "recovered_parent_inputs": comparisons,
