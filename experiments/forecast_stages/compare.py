@@ -14,13 +14,45 @@ from experiments.lifetime_cooperation.design import PILOT
 from .design import PARENT_RUNS, STAGES
 
 
+def concentration_sensitivity(z):
+    """Match earlier to later responses on the same held request, distinguished by later concentration."""
+    p = z["prob"][:, 1, 0].astype(float)
+    rates = z["q"][0, 1, :, 1, 1:]
+    sign = np.where(rates[:, 0] > rates[:, 1], 1.0, -1.0)
+    delta = p[:, :, 1] - p[:, :, 2]
+    pref = 100 * (delta[:, :, 2] - delta[:, :, 3]) * sign
+    tv = 50 * abs(delta).sum(-1)
+    concentrated = p[:, :, 2].max(-1) >= 0.9
+    groups = {
+        "already_concentrated": concentrated[1] & concentrated[3],
+        "newly_concentrated": ~concentrated[1] & concentrated[3],
+        "released": concentrated[1] & ~concentrated[3],
+        "never_at_endpoints": ~concentrated[1] & ~concentrated[3],
+    }
+    records = []
+    for name, mask in groups.items():
+        r = {"trajectory": name, "contexts": int(mask.sum())}
+        for k in (1, 3):
+            r[STAGES[k] + "_tv"] = float(tv[k, mask].mean()) if mask.any() else None
+            r[STAGES[k] + "_preference"] = (
+                float(pref[k, mask].mean()) if mask.any() else None
+            )
+        records.append(r)
+    return records
+
+
 def summarize(first, second, analysis):
-    dense, match, technical, stages = [], [], [], []
+    dense, match, technical, stages, concentration = [], [], [], [], []
     for tag, root in (("first", first), ("second", second)):
         with (analysis / tag / "dense.csv").open(encoding="utf8", newline="") as f:
             rows = list(csv.DictReader(f))
         g = json.loads((analysis / tag / "summary.json").read_bytes())
         for seed in PILOT:
+            with np.load(root / "lives" / f"s{seed}" / "stages.npz") as z:
+                concentration.extend(
+                    {"run": tag, "seed": seed, **r}
+                    for r in concentration_sensitivity(z)
+                )
             seq = [r for r in rows if int(r["seed"]) == seed]
             vals = np.array([float(r["oracle_preference"]) for r in seq])
             tv = np.array([float(r["oracle_tv"]) for r in seq])
@@ -115,6 +147,7 @@ def summarize(first, second, analysis):
         ("parent_anchors", match),
         ("between_runs", technical),
         ("stages_compared", stages),
+        ("concentration_by_context", concentration),
     ):
         csv_out(analysis / (name + ".csv"), rr)
     receipt = {

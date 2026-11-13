@@ -1,0 +1,34 @@
+{
+  "worker_returncode": 0,
+  "files": 40,
+  "bytes": 23209233,
+  "sha256": "ed728c7b04f8bf9775cfa9dff95870ee96e71315ab594ef438c42d96149b7bdd",
+  "study_stage": "forecaststages",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "e4145f5e0cff5728a26a173553ae79716e75406dce0aa14b2e47498fc006d755"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "f58f8c0f9176fda1c280ac911412bc91541ae9db65a87b72a8568838009df75e"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 5242880,
+      "sha256": "007e50067a32a42efd1177047c4a5fee705f0b17ce3e5d28c9ac3de37a84eaaf"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 5242880,
+      "sha256": "43db1bc08b2b9be5d0ee228b1c28d5107a5a508425982c4ca4b923294c79ae64"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 2237713,
+      "sha256": "2db928ca2dd1fddb8355bdc362df15024df0a92074c332f3a2c7954dca5e07ab"
+    }
+  ]
+}
