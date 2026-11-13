@@ -1,0 +1,70 @@
+{
+  "REPORT.md": {
+    "bytes": 13861,
+    "sha256": "a492727e6f3e4de9e2a15cf266ca30120ccc07ff25a0724b29d429b19936ca08"
+  },
+  "analysis/attribution.csv": {
+    "bytes": 2601,
+    "sha256": "3fed6153f7669105c062d832d76bcfbb28625c2acc23990f967390a8fcfefde8"
+  },
+  "analysis/audit.json": {
+    "bytes": 1201,
+    "sha256": "d9a79477690a3c39cbdd7fc887e51c503259014a763b46ecf683c2713309c97a"
+  },
+  "analysis/event-effects.csv": {
+    "bytes": 457246,
+    "sha256": "2498c25087d94f5b5def8744ac110bc42cd81871e57fb93f8d23466531c21b87"
+  },
+  "analysis/events.csv": {
+    "bytes": 2860,
+    "sha256": "4d86afec07a658a276520db511bd4a609227287aa36b0d5468eef007626637f9"
+  },
+  "analysis/largest-steps.csv": {
+    "bytes": 9836,
+    "sha256": "392bcf5efb924d7203434a27cff9c2b58972499719596653e45df6d31baddf3d"
+  },
+  "analysis/lives.csv": {
+    "bytes": 478,
+    "sha256": "c2d993c85bae6a974d8c129abfcee5fad004762c2e15f737311fc72f4d5ebee6"
+  },
+  "analysis/matched-ordinary.csv": {
+    "bytes": 22027,
+    "sha256": "e4b2dfb430227051edcc57386e72054493eac1078192bb779fbf3318fa68f522"
+  },
+  "analysis/normal-stepwise.csv": {
+    "bytes": 641008,
+    "sha256": "725350c22ec5a56587cc8989bf5c10463ad15a20beec37031919ad09cbfcf94b"
+  },
+  "analysis/prior-experiences.csv": {
+    "bytes": 38499,
+    "sha256": "83368278bb1230d5d4bd8bfdf491514f8a558117a00bc918f6b8df2420e2cc67"
+  },
+  "analysis/step-drivers.csv": {
+    "bytes": 292623,
+    "sha256": "5c389d5f1d6b572d2638e3473f61a0c48997c1df8b1069ca5964a29a7e0687ee"
+  },
+  "analysis/summary.json": {
+    "bytes": 39082,
+    "sha256": "37efdd7f7dc6a625243fb87cb123153b3bcd5a9519c9c1cf8455031ef23031dc"
+  },
+  "formation.png": {
+    "bytes": 65609,
+    "sha256": "5c8df2d4fd9520274b3c07d49d8b0890245a95c6d608cdeba0b6f2ba688d10d1"
+  },
+  "gpu/omitstable/inputs.zip": {
+    "bytes": 20243788,
+    "sha256": "8e0e88c6e3fc0ff740ef7b8b5ad8f5a5fa11df89383b4debe96108706fd72cb6"
+  },
+  "gpu/omitstable/receipt.json": {
+    "bytes": 1287,
+    "sha256": "312d7bac258f8d4845c780413e6baa63b7170a4f4c0393fb1bcd30bae632d6aa"
+  },
+  "gpu/omitstable/resources.json": {
+    "bytes": 259,
+    "sha256": "40a4a19c3ff7e839401398345d13ae19c3c32c07f8ce84d430e04b59716b839f"
+  },
+  "gpu/omitstable/results.zip": {
+    "bytes": 33311265,
+    "sha256": "bf40fadb5ed4c10e9a3f4a75761239b9719de68bedbb0e7ae6ce1d188b9942e8"
+  }
+}
