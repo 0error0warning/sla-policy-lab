@@ -1,0 +1,9 @@
+seed,states,first_actual,actual_target,first_panel,panel_target,last_mode,final_established,actual_rewrites,panel_rewrites,unique_forks
+77101,62,35,help,34,help,ask,38,46:ask,47:ask,31
+77102,64,,,,,help,60,,,12
+77103,64,35,help,26,help,help,26,,,16
+77104,70,64,wait,64,wait,wait,39,,,16
+77105,69,34,trade,34,trade,ask,56,66:ask,63:ask,32
+77106,60,45,trade,55,trade,trade,7,,,23
+77107,64,23,ask,24,ask,help,43,,44:help,26
+77108,66,27,help,5,help,ask,49,50:ask,51:ask,34
