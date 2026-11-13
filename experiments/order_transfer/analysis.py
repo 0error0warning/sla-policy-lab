@@ -40,7 +40,7 @@ def write_json(path, data):
     )
 
 
-def paired_interval(rows, key):
+def paired_interval(rows, key, alpha=ALPHA):
     group = defaultdict(list)
     for row in rows:
         group[(row["wave"], row["seed"])].append(row[key])
@@ -52,7 +52,7 @@ def paired_interval(rows, key):
         return {"seeds": 0}
     values = np.array(wave_values[0] + wave_values[1])
     average = values[resamples(tuple(map(len, wave_values)))].mean(axis=1)
-    q = np.quantile(average, [ALPHA, 0.025, 0.975, 1 - ALPHA])
+    q = np.quantile(average, [alpha, 0.025, 0.975, 1 - alpha])
     return {
         "seeds": len(values),
         "mean": float(values.mean()),

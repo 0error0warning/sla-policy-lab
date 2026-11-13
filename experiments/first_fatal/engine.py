@@ -117,12 +117,13 @@ class Qwen:
             return self.paired(i, h, weights, requests)
         return self.tail(i, h, weights) if self.fast else self.ordinary(i, h, weights)
 
-    def prepare(self):
-        ids = [
-            i
-            for i, r in enumerate(self.rows)
-            if (r["task"], r["wording"]) in ((4, 3), (5, 4))
-        ]
+    def prepare(self, ids=None):
+        if ids is None:
+            ids = [
+                i
+                for i, r in enumerate(self.rows)
+                if (r["task"], r["wording"]) in ((4, 3), (5, 4))
+            ]
         main = self.new("population")
         blank = self.new("blank")
         self.bind(main, None, None)

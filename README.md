@@ -22,6 +22,8 @@ The [conditional-penalty experiment](artifacts/model-studies/2026-11-13/conditio
 
 [Training across option orders](artifacts/model-studies/2026-11-13/order-transfer/REPORT.md) compares two matched-size updates from the same injury on held-out layouts, actual successor decisions and healthy task completion.
 
+[Training across request wordings](artifacts/model-studies/2026-11-13/paraphrase-transfer/REPORT.md) adds same-frame paraphrases to the same four orderings and measures held wording, same- and changed-partner successors, and healthy tasks.
+
 ## Frozen language-model studies — 2026-11-10
 
 Standalone L4 tests covered Qwen3-1.7B, Qwen3-4B-Instruct-2507, and Qwen3.5-4B, followed by staged diagnostics and eight fresh paired seeds for the two 4B candidates. The initial screen scored 18/48, 24/48, and 27/48. In the follow-up, both 4B models selected correctly in 16/16 cases when correct returns were provided, while neither computed both returns correctly in any of 16 end-to-end cases. Qwen3.5's rollout mean (5.603576) was close to a simple one-step rule (5.599052); no reliable superiority claim follows.
