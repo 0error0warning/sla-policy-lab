@@ -340,6 +340,8 @@ def analyze(root, inputs, dest):
         "site_early_matched_other",
         "site_terminal_matched_source",
         "site_terminal_matched_other",
+        "specificity_early_matched",
+        "specificity_terminal_matched",
         "location_specificity_delta",
     )
     signed = np.array([[r["light_signal"], r["heavy_signal"]] for r in physical], float)
