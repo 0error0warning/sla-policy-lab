@@ -4,18 +4,69 @@ import argparse
 import json
 from pathlib import Path
 
+import numpy as np
+
 from .analysis import csv_out
 from .audit import physical
+from .design import ITEMS
 
 
 def analyze(root, out):
     records = []
+    paired_events = []
     for source in sorted((root / "lives").glob("s*/*/*/life.json")):
         m = json.loads(source.read_bytes())
         events = [
             json.loads(line)
             for line in (source.parent / "events.jsonl").read_bytes().splitlines()
         ]
+        if m["learning"] and m["kind"] == "qwen":
+            saved = np.asarray([e["prob"] for e in events])
+            for region in ("healthy", "maintenance_rescues", "answer_fatal"):
+                sample = []
+                for k, event in enumerate(events[1:], 1):
+                    h, noise = event["health"], event["noise"]
+                    safe = physical(h, 2, True, noise)[-1] > 0
+                    if {
+                        "healthy": h >= 90,
+                        "maintenance_rescues": safe
+                        and physical(h, 2, False, noise)[-1] == 0,
+                        "answer_fatal": not safe,
+                    }[region]:
+                        sample.append(k)
+                for slot, role in enumerate(("current", "birth", "wrong")):
+                    favored = []
+                    for k in sample:
+                        row = ITEMS[events[k]["row"]]
+                        person = row["partner"] - 2
+                        favored.append(
+                            2 + (person ^ row["frame"] ^ events[k]["rules"][person])
+                        )
+                    p = saved[sample, slot, :]
+                    preferred = p[
+                        np.arange(len(sample)), np.asarray(favored, dtype=int)
+                    ]
+                    paired_events.append(
+                        dict(
+                            seed=m["seed"],
+                            world=m["world"],
+                            region=region,
+                            role=role,
+                            events=len(sample),
+                            mean_answer=float(p[:, 2:].sum(axis=1).mean())
+                            if sample
+                            else "",
+                            mean_favored_answer=float(preferred.mean())
+                            if sample
+                            else "",
+                            mean_refuse_and_appeal=float(p[:, 1].mean())
+                            if sample
+                            else "",
+                            sampled_answers=sum(
+                                events[k]["action"] >= 2 for k in sample
+                            ),
+                        )
+                    )
         counts = dict(
             any_injury_with_next=0,
             low_arrivals=0,
@@ -85,6 +136,7 @@ def analyze(root, out):
         )
     out.mkdir(exist_ok=True, parents=True)
     csv_out(out / "opportunities.csv", records)
+    csv_out(out / "actual_choices.csv", paired_events)
     return records
 
 
