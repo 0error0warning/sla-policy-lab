@@ -1,0 +1,39 @@
+{
+  "worker_returncode": 0,
+  "files": 147,
+  "bytes": 31413261,
+  "sha256": "d3b62d3cba93015ef74e5d2e2271a96cfbea130f026ed0ac23db2a2ec531cadb",
+  "study_stage": "socialdamage",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "b4d8fbe615e7d4ac90656cfae17974bb332ece33d86fe9995ad763143a6b5e30"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "9a7f8b15470423a0087b54c28e1e6e20ff6714a68ca0a7949642357cf5c8a75d"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 5242880,
+      "sha256": "3fa993f231cc08102b06f07600fc95e2478d329de728d2d85f6ee93efd4b89fe"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 5242880,
+      "sha256": "b65eda362d752c54078ac3e68009373cfa8bec72f9622ec63ae53b92a6a9b79a"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 5242880,
+      "sha256": "d73540d66b0f9322bfdf22bae2ac8517d13835e8e90ee7ddc331ebddf4b3b5c4"
+    },
+    {
+      "name": "part-005.bin",
+      "bytes": 5198861,
+      "sha256": "cb9822117193ddc42bb89a7bfb9bc962b4c3d51ddb10034b4e3fd5735251bff2"
+    }
+  ]
+}
