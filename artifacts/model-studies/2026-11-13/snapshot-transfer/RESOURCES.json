@@ -1,0 +1,11 @@
+{
+  "gpu": "NVIDIA L4",
+  "completed_assignments": 1,
+  "worker_seconds": 254.274656978,
+  "ordinary_forwards": 432,
+  "peak_device_bytes": 9548862976,
+  "recorded_account_credit_decrease": 0.09118365601403866,
+  "released_utc": "2026-11-13T02:37:16.134392+00:00",
+  "active_assignments_after_release": 0,
+  "rate_after_release": 0.0
+}
