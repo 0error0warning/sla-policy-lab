@@ -58,7 +58,7 @@ def draw(analysis, dest):
     axes[1].set_ylabel("Completion-rate difference (pp)")
     axes[1].set_xticks(pos, labels=["Reserved\nquestions", "Observed\nhealthy tasks"])
     axes[1].axhline(-2, color="#7f8189", ls=":", lw=1)
-    axes[1].legend(fontsize=8, frameon=False, loc="lower left")
+    axes[1].legend(fontsize=8, frameon=False, loc="center left")
     for ax in axes:
         ax.axhline(0, color="#676b74", lw=0.8)
         ax.spines[["right", "top"]].set_visible(False)

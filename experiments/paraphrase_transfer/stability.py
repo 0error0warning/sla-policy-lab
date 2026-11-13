@@ -1,6 +1,7 @@
 """Separate original-input transport, control retraining and within-allocation treatment effects."""
 
 from io import BytesIO
+from pathlib import Path
 from zipfile import ZipFile
 
 import numpy as np
@@ -92,6 +93,22 @@ def compare(inputs, primary, repeat, parent, dest, first_summary, repeat_summary
             for k, pairs in hist.items():
                 a, b = zip(*pairs, strict=True)
                 groups[label][k] = differences(np.stack(a), np.stack(b))
+    run_drift = {}
+    for name in ("own", "other", "original", "successor", "healthy"):
+        left, right = [], []
+        for c in cases:
+            suffix = Path("cases") / f"s{c['seed']}" / c["birth"] / "probabilities.npz"
+            with np.load(primary / suffix) as p, np.load(repeat / suffix) as q:
+                left.append(p[name])
+                right.append(q[name])
+        run_drift[name] = differences(np.stack(left), np.stack(right))
+    exact_lives = 0
+    for c in cases:
+        suffix = Path("cases") / f"s{c['seed']}" / c["birth"] / "healthy-lives.json"
+        exact_lives += sum(
+            a == b
+            for a, b in zip(load(primary / suffix), load(repeat / suffix), strict=True)
+        )
     results = {}
     for endpoint in (*DANGER, *SAFE, "held_word_other_partner"):
         results[endpoint] = {}
@@ -110,6 +127,8 @@ def compare(inputs, primary, repeat, parent, dest, first_summary, repeat_summary
     result = {
         "same_48_experiences": True,
         "additional_independent_lives": 0,
+        "complete_primary_vs_repeat_panels": run_drift,
+        "complete_primary_vs_repeat_identical_healthy_lives": exact_lives,
         "legacy_interface_on_repeat": legacy,
         "drift": groups,
         "identical_retrained_weights_across_allocations": {
