@@ -3,8 +3,10 @@
 import argparse
 import json
 from hashlib import sha256
+from io import BytesIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from zipfile import ZipFile
 
 import numpy as np
 from scipy.special import expit
@@ -12,6 +14,7 @@ from scipy.special import expit
 from experiments.direct_policy.protocol import write
 from experiments.individual_life.analysis import records
 from experiments.individual_life.design import action_at
+from experiments.lifetime_cooperation.analysis import csv_out
 from experiments.lifetime_cooperation.audit import physical
 from experiments.lifetime_cooperation.design import (
     ITEMS,
@@ -53,7 +56,8 @@ def audit_life(seed, phase, arm, rows, x, weights, panel, body, source):
     updates = {k: 0 for k in keys}
     last = {}
     for k, r in enumerate(rows):
-        assert r["health"] == h > 0 and r["turn"] == k + 1 and r["row"] == ids[k]
+        assert h > 0 and r["turn"] == k + 1 and r["row"] == ids[k]
+        same(r["health"], h)
         same([r["action_u"], r["partner_u"]], uniforms[k])
         same(r["noise"], noise[k])
         i, a, y = r["row"], r["action"], r["maintenance"]
@@ -75,9 +79,10 @@ def audit_life(seed, phase, arm, rows, x, weights, panel, body, source):
         bits = rules(seed, "stable", k)
         assert tuple(r["rules"]) == bits
         h2, _, m, rescued = physical_step(
-            h, a, ITEMS[i], bits, r["partner_u"], noise[k]
+            h, a, ITEMS[i], bits, r["partner_u"], r["noise"]
         )
-        assert h2 == r["after"] and m == y and r["rescued_answer"] == rescued
+        same(h2, r["after"])
+        assert m == y and r["rescued_answer"] == rescued
         same(physical(h, a, y, r["noise"])[-1], h2)
         reward = body.rul(h2) - body.rul(h)
         baseline = (total - 8) / (8 + k)
@@ -133,6 +138,71 @@ def audit_life(seed, phase, arm, rows, x, weights, panel, body, source):
         "body_updates_per_arm": len(rows) - 1,
         "supervised": updates,
     }
+
+
+def compare_archive(root, source19, out):
+    """Locate cross-run drift before birth, after online learning and across policy saturation."""
+    result = []
+    with ZipFile(source19) as archive:
+        for seed in PILOT:
+            folder = root / "lives" / f"s{seed}" / "replay"
+            prefix = f"output/lives/s{seed}/"
+            old_updates = [
+                json.loads(line)
+                for line in archive.read(prefix + "normal-updates.jsonl").splitlines()
+            ]
+            current = records(folder / "replay.jsonl")
+            actual = np.stack([e["policy"]["body"] for e in current])
+            with (
+                np.load(BytesIO(archive.read(prefix + "normal.npz"))) as old,
+                np.load(folder / "panel.npz") as new,
+            ):
+                actual_delta = abs(actual - old["actual"]).max(1)
+                births = new["policy"][MODES.index("birth"), 1]
+                birth_delta = abs(births - old["panels"][0])
+                terminal = new["policy"][0, 1]
+                previous = old["panels"][-1]
+                factual_matches = [
+                    e["updates"]["body"]["after"] == o["after"]
+                    for e, o in zip(current[:-1], old_updates, strict=True)
+                ]
+                assert (
+                    current[0]["updates"]["body"]["before"] == old_updates[0]["before"]
+                )
+                result.append(
+                    {
+                        "seed": seed,
+                        "birth_actual_max_pp": 100 * actual_delta[0],
+                        "birth_held_max_pp": 100 * birth_delta.max(),
+                        "birth_held_mean_pp": 100 * birth_delta.mean(),
+                        "first_update_hash_difference": next(
+                            (j + 1 for j, ok in enumerate(factual_matches) if not ok),
+                            None,
+                        ),
+                        "identical_update_hashes": sum(factual_matches),
+                        "updates": len(factual_matches),
+                        "first_actual_over_10pp": next(
+                            (
+                                j + 1
+                                for j, delta in enumerate(actual_delta)
+                                if delta > 0.10
+                            ),
+                            None,
+                        ),
+                        "last_held_max_pp": 100 * abs(terminal - previous).max(),
+                        "last_held_argmax_disagreements": int(
+                            (terminal.argmax(-1) != previous.argmax(-1)).sum()
+                        ),
+                        "last_held_cells": int(np.prod(terminal.shape[:-1])),
+                        "last_held_body_max_over_90pct": int(
+                            (terminal.max(-1) >= 0.9).sum()
+                        ),
+                        "last_held_true_h6_max_over_90pct": int(
+                            (new["policy"][1, 1, 1].max(-1) >= 0.9).sum()
+                        ),
+                    }
+                )
+    csv_out(out / "cross_run.csv", result)
 
 
 def audit(root, inputs, source17, source19, archive, out):
@@ -220,6 +290,7 @@ def audit(root, inputs, source17, source19, archive, out):
                                 ],
                             )
     result = analyze(root, out)
+    compare_archive(root, source19, out)
     evidence = {
         "lives": info,
         "hashes_verified": True,
