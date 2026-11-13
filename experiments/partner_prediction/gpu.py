@@ -59,11 +59,13 @@ def observe(heads, keys, x, e):
     return rows
 
 
-def replay(actor, seed, people, src, folder):
+def replay(actor, seed, people, src, folder, *, before_decision=None):
     logs = []
     # Lane 3 is the original LoReFT lane used in #19. Other lanes have the same frozen backbone.
     slots = {"body": 3, "true": 1, "wrong": 2}
     for k, e in enumerate(src):
+        if before_decision is not None:
+            before_decision(k, e, people)
         i, h, a = e["row"], e["health"], e["action"]
         heads = people.heads
         roles = [(None, None)] * 6
