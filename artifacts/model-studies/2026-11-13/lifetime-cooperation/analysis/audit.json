@@ -1,0 +1,12 @@
+{
+  "checkpoint_panels_verified": 210,
+  "checkpoint_primary_hashes_verified": 192,
+  "learning_events": 2065,
+  "matched_wording_pairs": 32,
+  "passed": true,
+  "physical_Qwen_decisions": 2044,
+  "physical_decisions": 4122,
+  "physical_lives": 64,
+  "replayed_gates": 13,
+  "replayed_world_prefix_turns": 24
+}
