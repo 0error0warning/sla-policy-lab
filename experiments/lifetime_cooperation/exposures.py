@@ -62,7 +62,7 @@ def analyze(root, out):
                             mean_refuse_and_appeal=float(p[:, 1].mean())
                             if sample
                             else "",
-                            sampled_answers=sum(
+                            factual_qwen_answers=sum(
                                 events[k]["action"] >= 2 for k in sample
                             ),
                         )
