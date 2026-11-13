@@ -1,0 +1,62 @@
+{
+  "REPORT.md": {
+    "bytes": 8935,
+    "sha256": "dcbe3461df075771a56bb54dfd4fd1891c1035aa2df19048bb17ca35a93fb803"
+  },
+  "analysis/action-concentration.csv": {
+    "bytes": 2516,
+    "sha256": "4ed288dfbeb45fae61f91df54a9d3b44d8d63eff263539a80427fd7db70515d9"
+  },
+  "analysis/audit.json": {
+    "bytes": 543,
+    "sha256": "cd4bf79d7e970a74744669dec4c84a375117da788db7dabfc4c060103701086b"
+  },
+  "analysis/behavior-by-seed.csv": {
+    "bytes": 6390,
+    "sha256": "5ceffefea8313c557519c81c6ace9431bde77f0fb8711aff5f463aae030c541f"
+  },
+  "analysis/decisions.json": {
+    "bytes": 8522,
+    "sha256": "ee98cbe43a3d679c2f6cecbf44f1441c68ab12956a5636ae5a78220e24acc80b"
+  },
+  "analysis/direction-alignment.csv": {
+    "bytes": 757,
+    "sha256": "1bc5e26e5943fbf683cd101725142a6cbc0024c11121360702561331adfbe290"
+  },
+  "analysis/methods.csv": {
+    "bytes": 9592,
+    "sha256": "15184866a36700f03922529f4302813d22cc0a3216828d12d519dc92f1fd2d8c"
+  },
+  "analysis/steering-by-seed.csv": {
+    "bytes": 1506,
+    "sha256": "a36b256f4398d394a2082836c8ec12d5b2ce41bf57a4974d722914257927cc2c"
+  },
+  "comparison.png": {
+    "bytes": 91349,
+    "sha256": "d6a74cf7c0dcade1d625de08775f62b64ae8000f1efce5503454261c5c379c9e"
+  },
+  "gpu/initial_start/receipt.json": {
+    "bytes": 349,
+    "sha256": "31f1794cc8cb2955e61c33543ebcdb7f3c78ed834326b8a961722fbb0cc3d8df"
+  },
+  "gpu/initial_start/results.zip": {
+    "bytes": 10696,
+    "sha256": "02f6c5adb6c0c5a3272d1bd2b0cc1187bc3f412174145cb773590308a5138b6c"
+  },
+  "gpu/sameresid/inputs.zip": {
+    "bytes": 9369406,
+    "sha256": "d3a4b4aad493499d6ecd2286206279b1bea746724ad77692a8598058f26c42e5"
+  },
+  "gpu/sameresid/receipt.json": {
+    "bytes": 665,
+    "sha256": "7cddf5b23c764b3c711fa023ec49ba9055f126fede5453abc5c0a505d774a3d4"
+  },
+  "gpu/sameresid/resources.json": {
+    "bytes": 594,
+    "sha256": "143ba7bac81ca88c9603dbfddbe80510fe00f5ae61e09cd04a0f426689aee81a"
+  },
+  "gpu/sameresid/results.zip": {
+    "bytes": 10872646,
+    "sha256": "d1a39a94b9a4adb7998149d1ef7c9a90bfb8705ab80150fb3f63fa0d4fff7a2a"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "active_after_release": 0,
+  "attempts": [
+    {
+      "debit_cu": 0.0318468794968112,
+      "released_utc": "2026-11-13T09:01:08.090915+00:00",
+      "scientific_result": false,
+      "supervised_seconds": 172.71
+    },
+    {
+      "debit_cu": 0.39137868907545226,
+      "released_utc": "2026-11-13T09:17:56.646571+00:00",
+      "scientific_result": true,
+      "supervised_seconds": 940.66
+    }
+  ],
+  "device": "NVIDIA L4",
+  "observed_debit_cu": 0.42322556857226346,
+  "peak_bytes": 9539508736,
+  "total_supervised_minutes": 18.556166666666666,
+  "worker_seconds": 762.2553397780001
+}

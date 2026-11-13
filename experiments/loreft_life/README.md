@@ -2,7 +2,7 @@
 
 [前瞻方案](PROTOCOL.md) · [实验报告与原始数据](../../artifacts/model-studies/2026-11-13/loreft-life/REPORT.md)
 
-从同一群体出生权重、同一个显式健康传感和同一张语义动作表开始。训练的经历来自上一轮 Qwen 自主选择的动作与实际后果。本波的 LoReFT 和配对 LoRA 逐步给动作打分并按同一记录更新。原位置 LoRA 训练第 17 轮模型已经具备的身体/伙伴参数，同位置加法和 LoReFT 共享冻结身体通路。LoReFT 两个子空间矩阵与偏置都接受实际后果的梯度。方向由留一环境种子的真实经历差异构造，测试只修改动作决策位置的激活。
+从同一群体出生权重、同一个显式健康传感和同一张语义动作表开始。训练的经历来自上一轮 Qwen 自主选择的动作与实际后果。本波的 LoReFT 和配对 LoRA 逐步给动作打分并按同一记录更新。原位置 LoRA 训练 PR #17 已有的身体/伙伴参数，同位置加法和 LoReFT 共享冻结身体通路。LoReFT 两个子空间矩阵与偏置都接受实际后果的梯度。方向由留一环境种子的真实经历差异构造，测试只修改动作决策位置的激活。
 
 ## 从归档复核
 
@@ -13,6 +13,7 @@ ART=artifacts/model-studies/2026-11-13/loreft-life
 SRC=artifacts/model-studies/2026-11-13/lifetime-cooperation/gpu/lcpilot/results.zip
 python -m experiments.direct_policy.unpack --archive "$ART/gpu/sameresid/results.zip" --receipt "$ART/gpu/sameresid/receipt.json" --destination work/loreft-run
 python -m experiments.loreft_life.audit --root work/loreft-run/output --source "$SRC" --out work/loreft-analysis
+python -m experiments.loreft_life.concentration --root work/loreft-run/output --out work/loreft-analysis
 python -m experiments.loreft_life.figure work/loreft-analysis work/loreft.png
 ```
 

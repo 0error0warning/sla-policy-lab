@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 1,
+  "files": 4,
+  "bytes": 10696,
+  "sha256": "02f6c5adb6c0c5a3272d1bd2b0cc1187bc3f412174145cb773590308a5138b6c",
+  "study_stage": "sameresid",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 10696,
+      "sha256": "02f6c5adb6c0c5a3272d1bd2b0cc1187bc3f412174145cb773590308a5138b6c"
+    }
+  ]
+}
