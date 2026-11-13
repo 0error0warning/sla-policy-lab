@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 18,
+  "bytes": 10462839,
+  "sha256": "8a4c326fdf9a6cd5e229231ca671841266c6ef87e0198e87e1afbbc65e539ec2",
+  "study_stage": "logitrecover",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "d8f6a64eb794139485e885ac46677438cac93b68f04acac41dd2ab71649515f0"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5219959,
+      "sha256": "bd3c576ac9969d4efd584ac30fae2be73ce358c5c5e9f4259f22e47b978cee14"
+    }
+  ]
+}

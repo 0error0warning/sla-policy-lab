@@ -3,7 +3,6 @@
 import argparse
 import csv
 import gzip
-import json
 from pathlib import Path
 
 import matplotlib
@@ -18,16 +17,7 @@ from .design import CASE_ID, TWIN_ID
 
 
 def draw(analysis, out):
-    tech = json.loads((analysis / "technical.json").read_bytes())
-    tag = next(
-        (
-            k
-            for k, v in tech["runs"].items()
-            if v["original_switch_and_twin"] and v["case_probability_drift_pp"] == 0
-        ),
-        "first",
-    )
-    base = analysis / tag
+    base = analysis / "first"
     with gzip.open(
         base / "native_contrasts.csv.gz", "rt", encoding="utf8", newline=""
     ) as f:
@@ -39,7 +29,9 @@ def draw(analysis, out):
             and r["target"] == "oracle"
             and r["reference"] == "neutral"
         ]
-    with (base / "case_views.csv").open(encoding="utf8", newline="") as f:
+    # The old sampling intervals are identified by the archived probabilities even
+    # on hardware where a new full forward falls on the other side of the draw.
+    with (base / "archived_case_boundaries.csv").open(encoding="utf8", newline="") as f:
         case = {(int(r["prompt"]), r["view"]): r for r in csv.DictReader(f)}
     xy = np.array([[float(r["d_help"]), float(r["d_trade"])] for r in rows])
     points, counts = np.unique(xy, axis=0, return_counts=True)
@@ -100,7 +92,7 @@ def draw(analysis, out):
     right.set_yticks([0, 1], ["Held wording\n#369", "Matched wording\n#345"])
     right.set_ylim(1.45, -0.45)
     right.set_title(
-        "P93 at midlife  |  appeal / reciprocal boundary",
+        "P93 at midlife  |  archived sampling boundary",
         loc="left",
         fontsize=11,
         weight="semibold",
