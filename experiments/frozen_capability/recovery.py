@@ -45,6 +45,20 @@ def load(manifest, original_inputs):
         assert all(files[n] == original[n] for n in files if n != "execution.json")
         config = json.loads(files["execution.json"])
         assert json.loads((root / "execution.json").read_bytes()) == config
+        remote_lock = root.parent / "run-lock.json"
+        if remote_lock.exists():
+            with ZipFile(inputs) as archive:
+                assert json.loads(remote_lock.read_bytes()) == json.loads(
+                    archive.read("run-lock.json")
+                )
+        if not segment["partial"]:
+            assert remote_lock.exists()
+            receipt_path = root.parent / "launch-receipt.json"
+            launch = json.loads(receipt_path.read_bytes())
+            assert (
+                launch["input_sha256"]
+                == hashlib.sha256(inputs.read_bytes()).hexdigest()
+            )
         assert set(config) <= set(full) | {"recovery"}
         variable = {"models", "jobs", "per_model_seconds", "recovery"}
         assert all(config[k] == v for k, v in full.items() if k not in variable)

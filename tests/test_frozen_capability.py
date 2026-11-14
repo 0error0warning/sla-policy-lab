@@ -21,6 +21,24 @@ class FrozenCapability(unittest.TestCase):
         with self.assertRaises(ValueError):
             select_record(answer, copy.deepcopy(answer))
 
+    def test_healthy_nonparticipation_is_distinct_from_higher_death_risk(self):
+        import json
+
+        from experiments.frozen_capability.analysis import classify
+
+        _, keys = fixtures()
+        key = keys["h90-favhelp-order0-known_rules"]
+        text = json.dumps(
+            {"actions": key["actions"], "choice": "wait", "task_answer": None}
+        )
+        result, _ = classify({"finish_reason": "eos", "final_text": text}, key)
+        self.assertTrue(result["wrong_only_task_tiebreak"])
+        self.assertFalse(result["higher_risk_choice"])
+        key = keys["h6-favhelp-order0-known_rules"]
+        result, _ = classify({"finish_reason": "eos", "final_text": text}, key)
+        self.assertTrue(result["higher_risk_choice"])
+        self.assertFalse(result["wrong_only_task_tiebreak"])
+
     def test_official_message_end_is_not_json_or_a_later_answer(self):
         self.assertEqual(
             assistant_message([5, 10, 8, 9], False, 2, 1, [9], 10),

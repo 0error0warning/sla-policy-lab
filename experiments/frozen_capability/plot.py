@@ -9,7 +9,7 @@ from .design import HEALTHS
 
 COLORS = ["#E4E7EB", "#99A5B5", "#E9B872", "#CD6C70", "#59AA95"]
 LABELS = [
-    "Unrun",
+    "No archived output",
     "No final (budget)",
     "Format / channel",
     "Wrong choice",
@@ -84,7 +84,7 @@ def plot(source, output):
             for spine in ax.spines.values():
                 spine.set_visible(False)
     fig.suptitle(
-        "Frozen capacity diagnostic: decision and completion by condition", fontsize=15
+        "Frozen model diagnostic: decision and completion by condition", fontsize=15
     )
     fig.legend(
         [Patch(facecolor=c) for c in COLORS],

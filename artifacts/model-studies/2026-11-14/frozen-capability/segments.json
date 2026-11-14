@@ -1,0 +1,36 @@
+{
+  "segments": [
+    {
+      "name": "initial",
+      "inputs": "gpu/initial/inputs.zip",
+      "archive": "gpu/initial/results.zip",
+      "input_sha256": "6d6135552e585338fb77878260062ab433f92a6b4f2baa54aa95206b85a0b23f",
+      "archive_sha256": "fb49fedc9efd1cbeb963c52011845db1cc17054bd374e09fe223ec5c6a098d53",
+      "partial": true
+    },
+    {
+      "name": "recovery1",
+      "inputs": "gpu/recovery1/inputs.zip",
+      "archive": "gpu/recovery1/results.zip",
+      "input_sha256": "af9d9e57aaabc60f9b340c3782d7934b64952361d83de0084ddc519893bade01",
+      "archive_sha256": "28708618c559bc5fd2f5404d8114786d402b23fccc114f14366f9cb2858c4e9e",
+      "partial": false
+    },
+    {
+      "name": "recovery2",
+      "inputs": "gpu/recovery2/inputs.zip",
+      "archive": "gpu/recovery2/results.zip",
+      "input_sha256": "924e6cfd6fbbd263dda61091665c34687346ad9b221c422d057f9bfeea42ba73",
+      "archive_sha256": "47be5b75b6cbb2245a99c5374923fffc91b5ea417a8edc549df527e1ba523495",
+      "partial": false
+    },
+    {
+      "name": "recovery3",
+      "inputs": "gpu/recovery3/inputs.zip",
+      "archive": "gpu/recovery3/results.zip",
+      "input_sha256": "fb5de20cbdc706bbe82a634c474061b8c91bf55ccfd6ca661aba841c5acaae11",
+      "archive_sha256": "4ac41a24cd759e3b30904e12158aea17a35eb89041ea73b71533d6c3382e1bcf",
+      "partial": false
+    }
+  ]
+}
