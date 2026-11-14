@@ -1,0 +1,330 @@
+"""CPU verification and separately scored predictions, decisions and completion."""
+
+import argparse
+import csv
+import gzip
+import hashlib
+import json
+import statistics
+from collections import Counter, defaultdict
+from pathlib import Path
+from zipfile import ZipFile
+
+from .design import fixtures, score, serial
+from .wire import final_tokens, strict_json
+
+
+def classify(record, key):
+    stopped = record["finish_reason"]
+    final = record.get("final_text")
+    obj, failure = None, None
+    if stopped.startswith("unrun"):
+        failure = "unrun"
+    elif final is None:
+        failure = "no_final_channel"
+    else:
+        try:
+            obj = strict_json(final)
+        except (ValueError, TypeError):
+            failure = "invalid_final_json"
+    result = score(obj, key)
+    result.update(
+        executed=not stopped.startswith("unrun"),
+        final_json_parsed=failure is None,
+        no_final_channel=failure == "no_final_channel",
+        invalid_final_json=failure == "invalid_final_json",
+        invalid_schema=failure is None and not result["schema"],
+        calculation_wrong=result["schema"] and not result["calculation_correct"],
+        choice_wrong=result["choice_valid"] and not result["choice_correct"],
+        budget_stop=stopped in ("time_limit", "length_limit"),
+        unfinished=stopped in ("time_limit", "length_limit") and failure is not None,
+        healthy_task_complete=key["health"] >= 12
+        and result["answering"]
+        and result["task_answer_correct"],
+        failure=failure,
+    )
+    return result, obj
+
+
+def average(values):
+    values = [v for v in values if v is not None]
+    return statistics.mean(values) if values else None
+
+
+def aggregate(rows):
+    pairs = defaultdict(list)
+    for row in rows:
+        pairs[row["state"]].append(row)
+    assert all(len(v) == 2 for v in pairs.values())
+    healthy = [r for r in rows if r["health"] >= 12]
+    report = {
+        "presentations": len(rows),
+        "physical_states": len(pairs),
+        "counts": {
+            k: sum(bool(r[k]) for r in rows)
+            for k in (
+                "executed",
+                "final_json_parsed",
+                "schema",
+                "calculation_correct",
+                "choice_valid",
+                "choice_correct",
+                "no_final_channel",
+                "invalid_final_json",
+                "invalid_schema",
+                "calculation_wrong",
+                "choice_wrong",
+                "budget_stop",
+                "unfinished",
+            )
+        },
+        "stop_reasons": dict(Counter(r["finish_reason"] for r in rows)),
+        "paired_choice_correct": sum(
+            all(r["choice_correct"] for r in v) for v in pairs.values()
+        ),
+        "paired_calculation_correct": sum(
+            all(r["calculation_correct"] for r in v) for v in pairs.values()
+        ),
+        "healthy_presentations": len(healthy),
+        "healthy_task_complete": sum(r["healthy_task_complete"] for r in healthy),
+        "mean_actual_death_probability_observed_choices": average(
+            r["actual_death_probability"] for r in rows
+        ),
+        "mean_risk_regret_observed_choices": average(
+            r["death_probability_regret"] for r in rows
+        ),
+        "mean_tokens": average(
+            r.get("generated_tokens") for r in rows if r["executed"]
+        ),
+        "mean_seconds": average(
+            r.get("elapsed_seconds") for r in rows if r["executed"]
+        ),
+        "choice_counts": dict(Counter(r["choice"] for r in rows if r["choice_valid"])),
+    }
+    report["by_health"] = {
+        str(h): {
+            "n": len(v),
+            "choice_correct": sum(r["choice_correct"] for r in v),
+            "calculation_correct": sum(r["calculation_correct"] for r in v),
+            "no_final_or_invalid_action": sum(not r["choice_valid"] for r in v),
+            "risk_regret": average(r["death_probability_regret"] for r in v),
+            "choices": dict(Counter(r["choice"] for r in v if r["choice_valid"])),
+        }
+        for h in sorted({r["health"] for r in rows})
+        for v in [[r for r in rows if r["health"] == h]]
+    }
+    return report
+
+
+def run(src, inputs, metadata, out):
+    from jinja2.sandbox import ImmutableSandboxedEnvironment
+    from tokenizers import Tokenizer
+
+    out.mkdir(parents=True, exist_ok=True)
+    digest = lambda data: hashlib.sha256(data).hexdigest()
+    with ZipFile(inputs) as z:
+        lock = json.loads(z.read("run-lock.json"))
+        assert set(z.namelist()) == set(lock["files"]) | {"run-lock.json"}
+        assert all(digest(z.read(n)) == sha for n, sha in lock["files"].items())
+        public = json.loads(z.read("public-prompts.json"))
+        config = json.loads(z.read("execution.json"))
+        expect = {m: json.loads(z.read(f"expected-{m}.json")) for m in config["models"]}
+    rebuilt, keys = fixtures()
+    assert public == rebuilt
+    assert digest(serial(public)) == config["public_prompts_sha256"]
+    lookup = {r["id"]: r for r in public}
+    assert json.loads((src / "execution.json").read_bytes()) == config
+    env = ImmutableSandboxedEnvironment(
+        trim_blocks=True, lstrip_blocks=True, extensions=["jinja2.ext.loopcontrols"]
+    )
+
+    def throw(message):
+        raise ValueError(message)
+
+    env.globals["raise_exception"] = throw
+    records, parsed, verified = [], [], 0
+    for model in config["models"]:
+        assert (
+            json.loads((src / model / "weights-manifest.json").read_bytes())
+            == expect[model]
+        )
+        unchanged = json.loads((src / model / "unchanged.json").read_bytes())
+        assert (
+            unchanged["parameter_versions_unchanged"]
+            and unchanged["gradients_absent"]
+            and unchanged["trainable_parameters"] == 0
+        )
+        meta = json.loads((src / model / "loading.json").read_bytes())
+        for name in ("tokenizer.json", "tokenizer_config.json", "chat_template.jinja"):
+            assert (
+                digest((metadata / model / name).read_bytes())
+                == expect[model]["metadata"][name]["sha256"]
+            )
+        tok = Tokenizer.from_file(str(metadata / model / "tokenizer.json"))
+        tok_config = json.loads(
+            (metadata / model / "tokenizer_config.json").read_bytes()
+        )
+        assert not tok_config.get("clean_up_tokenization_spaces", False)
+        template = env.from_string(
+            (metadata / model / "chat_template.jinja").read_text(encoding="utf8")
+        )
+        paths = sorted((src / model / "records").glob("*.json"))
+        assert len(paths) == 128
+        for job, path in zip(config["jobs"], paths, strict=True):
+            record = json.loads(path.read_bytes())
+            assert all(record[k] == value for k, value in job.items())
+            assert record["model"] == model
+            row = lookup[job["id"]]
+            assert all(record[k] == row[k] for k in ("arm", "state", "order"))
+            if not record["finish_reason"].startswith("unrun"):
+                prompt = template.render(
+                    messages=row["messages"],
+                    tools=None,
+                    add_generation_prompt=True,
+                    enable_thinking=job["thinking"],
+                )
+                assert record["prompt_text"] == prompt
+                assert (
+                    tok.encode(prompt, add_special_tokens=False).ids
+                    == record["input_ids"]
+                )
+                assert (
+                    tok.decode(record["output_ids"], skip_special_tokens=False)
+                    == record["output_text"]
+                )
+                final, channel, thoughts = final_tokens(
+                    record["output_ids"],
+                    job["thinking"],
+                    meta["close_id"],
+                    meta["open_id"],
+                    meta["eos_ids"],
+                )
+                assert (final, channel, thoughts) == (
+                    record["final_ids"],
+                    record["channel"],
+                    record["thinking_tokens"],
+                )
+                text = (
+                    None
+                    if final is None
+                    else tok.decode(final, skip_special_tokens=False)
+                )
+                assert text == record["final_text"]
+                assert (
+                    len(record["output_ids"])
+                    == record["generated_tokens"]
+                    <= config["max_new_tokens"]
+                )
+                assert (
+                    record["max_new_tokens"] == config["max_new_tokens"]
+                    and record["max_seconds"] == config["per_case_seconds"]
+                )
+                for k, v in config["sampler"].items():
+                    assert (
+                        record[k]
+                        if k == "presence_penalty"
+                        else record["generation_config"][k]
+                    ) == v
+                verified += 1
+            scored, obj = classify(record, keys[job["id"]])
+            simple = {
+                k: record.get(k)
+                for k in (
+                    "number",
+                    "id",
+                    "model",
+                    "thinking",
+                    "arm",
+                    "state",
+                    "finish_reason",
+                    "generated_tokens",
+                    "elapsed_seconds",
+                    "thinking_tokens",
+                    "peak_allocated_bytes",
+                )
+            }
+            simple.update(
+                health=keys[job["id"]]["health"],
+                favorite=keys[job["id"]]["favorite"],
+                choice=obj.get("choice") if isinstance(obj, dict) else None,
+                **scored,
+            )
+            records.append(simple)
+            parsed.append(
+                {
+                    **simple,
+                    "prediction": obj,
+                    "expected": keys[job["id"]],
+                    "final_text": record.get("final_text"),
+                }
+            )
+    grouped = defaultdict(list)
+    for r in records:
+        grouped[
+            f"{r['model']}/{'thinking' if r['thinking'] else 'direct'}/{r['arm']}"
+        ].append(r)
+    summary = {name: aggregate(rows) for name, rows in grouped.items()}
+    comparison = {}
+    for mode in ("direct", "thinking"):
+        for arm in ("known_rules", "given_outcomes"):
+            a, b = (summary[f"{m}/{mode}/{arm}"] for m in ("4B", "9B"))
+            comparison[f"{mode}/{arm}"] = {
+                "9B_minus_4B_paired_choice": b["paired_choice_correct"]
+                - a["paired_choice_correct"],
+                "9B_minus_4B_paired_calculation": b["paired_calculation_correct"]
+                - a["paired_calculation_correct"],
+                "9B_minus_4B_healthy_task": b["healthy_task_complete"]
+                - a["healthy_task_complete"],
+            }
+    gates = {}
+    for model in ("4B", "9B"):
+        for mode in ("direct", "thinking"):
+            a, b = (
+                summary[f"{model}/{mode}/{arm}"]
+                for arm in ("known_rules", "given_outcomes")
+            )
+            gates[f"{model}/{mode}"] = {
+                "known_rules_choice": a["paired_choice_correct"] >= 14,
+                "given_outcomes_choice": b["paired_choice_correct"] >= 14,
+                "known_rules_calculation": a["paired_calculation_correct"] >= 14,
+                "healthy_task": a["healthy_task_complete"] >= 11
+                and b["healthy_task_complete"] >= 11,
+                "budget_valid": a["counts"]["budget_stop"] + b["counts"]["budget_stop"]
+                <= 0.2 * 64,
+                "all_executed": a["counts"]["executed"] + b["counts"]["executed"] == 64,
+            }
+    with (out / "cases.csv").open("w", encoding="utf8", newline="") as f:
+        fields = list(dict.fromkeys(k for r in records for k in r))
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(records)
+    with gzip.open(out / "parsed-cases.jsonl.gz", "wt", encoding="utf8") as f:
+        for row in parsed:
+            f.write(json.dumps(row, ensure_ascii=False, allow_nan=False) + "\n")
+    for name, obj in (
+        ("summary", summary),
+        ("comparison", comparison),
+        ("gates", gates),
+    ):
+        (out / f"{name}.json").write_bytes(serial(obj))
+    audit = {
+        "records": len(records),
+        "executed_token_roundtrips": verified,
+        "input_sha256": digest(inputs.read_bytes()),
+        "rebuilt_physics_verified": True,
+        "frozen_parameters_verified": True,
+        "same_prompts_seeds_budgets_verified": True,
+        "independent_physical_states": 16,
+        "independent_lives": 0,
+        "order_caution": "One sampled output per presentation; paired orders also have different decoding seeds, so changes are not a pure order intervention.",
+    }
+    (out / "audit.json").write_bytes(serial(audit))
+    return {"audit": audit, "summary": summary, "gates": gates}
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    for name in ("src", "inputs", "metadata", "out"):
+        parser.add_argument("--" + name, type=Path, required=True)
+    args = parser.parse_args()
+    print(json.dumps(run(args.src, args.inputs, args.metadata, args.out), indent=2))

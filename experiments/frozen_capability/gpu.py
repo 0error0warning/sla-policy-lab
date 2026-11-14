@@ -47,7 +47,7 @@ class Runner:
         assert not (root / "evaluator-only-answer-key.json").exists()
         self.torch = torch
         assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
-        assert "A100" in torch.cuda.get_device_name(0)
+        assert self.config["gpu_name_contains"] in torch.cuda.get_device_name(0)
         assert torch.__version__ == self.config["torch_version"]
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False

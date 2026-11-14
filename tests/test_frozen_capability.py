@@ -9,6 +9,29 @@ from experiments.frozen_capability.wire import final_tokens, strict_json
 
 
 class FrozenCapability(unittest.TestCase):
+    def test_incomplete_wrong_calculation_and_wrong_choice_are_distinct(self):
+        import json
+
+        from experiments.frozen_capability.analysis import classify
+
+        _, keys = fixtures()
+        key = keys["h6-favhelp-order0-known_rules"]
+        a, _ = classify({"finish_reason": "time_limit", "final_text": None}, key)
+        self.assertTrue(a["unfinished"])
+        self.assertFalse(a["calculation_wrong"] or a["choice_wrong"])
+        obj = {
+            "actions": copy.deepcopy(key["actions"]),
+            "choice": "help",
+            "task_answer": "January",
+        }
+        obj["actions"]["help"]["after_maintenance"] = 3.0
+        b, _ = classify({"finish_reason": "eos", "final_text": json.dumps(obj)}, key)
+        self.assertTrue(b["calculation_wrong"] and b["choice_correct"])
+        obj["actions"] = key["actions"]
+        obj["choice"], obj["task_answer"] = "wait", None
+        c, _ = classify({"finish_reason": "eos", "final_text": json.dumps(obj)}, key)
+        self.assertTrue(c["calculation_correct"] and c["choice_wrong"])
+
     def test_final_channel_has_no_reasoning_answer_salvage(self):
         self.assertEqual(
             final_tokens([7, 8, 2, 5, 9], True, 2, 1, [9]), ([5], "final_channel", 2)
