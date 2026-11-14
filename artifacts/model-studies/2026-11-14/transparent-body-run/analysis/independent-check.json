@@ -1,0 +1,31 @@
+{
+  "independently_scored": 192,
+  "follows_given_risk": 158,
+  "physical_risks_agree": true,
+  "method": "direct JSON selection; H2 and H90 support bounds, H6 observed answer choices and declared .9/.1 partner mapping; no call to production scorer or calculator",
+  "paired_changes": {
+    "2": {
+      "pairs": 32,
+      "choice_changes": 7,
+      "identical_output_tokens": 25
+    },
+    "6": {
+      "pairs": 32,
+      "choice_changes": 10,
+      "identical_output_tokens": 20
+    },
+    "90": {
+      "pairs": 32,
+      "choice_changes": 0,
+      "identical_output_tokens": 32
+    }
+  },
+  "control_outputs_equal_to_pr25": 8,
+  "posthoc_h6_personal_table_best_action_is_truly_favored": 18,
+  "posthoc_h6_personal_table_best_action_n": 32,
+  "posthoc_table_selected_action_counts": {
+    "2": 18,
+    "3": 14
+  },
+  "diagnostic_not_a_model_run": true
+}

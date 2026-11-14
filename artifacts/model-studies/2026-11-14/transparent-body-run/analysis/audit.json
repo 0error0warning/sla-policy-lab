@@ -1,0 +1,8 @@
+{
+  "cpu_only": true,
+  "inputs_sha256": "66f68421709d3a82391f0de40cb635ea4fc36a3976b3360a270f94bf1b411a67",
+  "native_token_streams_and_prompts_verified": true,
+  "private_oracle_on_gpu": false,
+  "public_prompts_sha256": "47e792a20e49784467c23eddee4415c3ff731953485405db040ca479ba930707",
+  "verified_records": 200
+}

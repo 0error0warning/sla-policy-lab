@@ -7,9 +7,11 @@ the consequence-only Qwen message interface, and execution that never substitute
 safer action. The archived personal predictor is an external head on frozen Qwen
 features; it is not LoReFT or an updated language-model backbone.
 
-No new GPU inference, online training or complete life was run in this increment.
-`example-prompts.json` contains prepared messages, not model responses. The Qwen
-GPU runner and any later online controller remain separate execution work. The
+The initial CPU increment did not run new GPU inference, training or complete lives.
+The subsequently authorized [bounded GPU execution](RUN_README.md) is now complete:
+all 192 probes finished, but the joint gate failed and expansion stopped.
+`example-prompts.json` contains prepared messages, not model responses; GPU responses
+are in the separate run archive. Any later online controller remains separate work. The
 generic `diagnostic` calculator permits evaluator-side inputs; formal execution
 must go through `PersonalForecast` and `calculate`.
 

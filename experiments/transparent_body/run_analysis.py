@@ -210,7 +210,7 @@ def analyze(src, repo, metadata, out):
         risks = [x["p_death"] for x in physical["actions"]]
         given = [x["p_death"] for x in k["calculation"]["actions"]]
         correct = action is not None and action in allowed(given)
-        expression = (
+        expression = bool(
             action is not None
             and action >= 2
             and probabilities[action] == max(probabilities[2:])
