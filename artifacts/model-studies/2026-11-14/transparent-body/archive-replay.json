@@ -1,0 +1,74 @@
+{
+  "lives": [
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 62,
+      "max_parameter_replay_error": 2.220446049250313e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 55,
+      "seed": 77101
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 64,
+      "max_parameter_replay_error": 2.220446049250313e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 60,
+      "seed": 77102
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 64,
+      "max_parameter_replay_error": 2.7755575615628914e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 59,
+      "seed": 77103
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 70,
+      "max_parameter_replay_error": 1.1102230246251565e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 59,
+      "seed": 77104
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 69,
+      "max_parameter_replay_error": 2.220446049250313e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 66,
+      "seed": 77105
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 60,
+      "max_parameter_replay_error": 1.1102230246251565e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 53,
+      "seed": 77106
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 64,
+      "max_parameter_replay_error": 2.220446049250313e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 58,
+      "seed": 77107
+    },
+    {
+      "all_checkpoints_rebuilt": true,
+      "decisions": 66,
+      "max_parameter_replay_error": 4.440892098500626e-16,
+      "max_prediction_error": 1.1102230246251565e-16,
+      "nonterminal_observations": 60,
+      "seed": 77108
+    }
+  ],
+  "maximum_prediction_error": 1.1102230246251565e-16,
+  "new_lives": 0,
+  "prompt_count": 192,
+  "qwen_calls": 0,
+  "source": "artifacts/model-studies/2026-11-14/forecast-stages/gpu/first/results.zip",
+  "source_sha256": "ed728c7b04f8bf9775cfa9dff95870ee96e71315ab594ef438c42d96149b7bdd"
+}

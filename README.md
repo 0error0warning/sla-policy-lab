@@ -6,6 +6,8 @@ A runnable, local teaching prototype for comparing four intervention mechanisms 
 
 ## Learning within one life
 
+The [transparent body interface](experiments/transparent_body/README.md) now separates personal partner predictions, declared physical consequence calculation, and Qwen's final action. Its [CPU report](artifacts/model-studies/2026-11-14/transparent-body/REPORT.md) audits the saved frozen-model outputs and rebuilds eight archived personal predictors. No new GPU decisions or lives were run in this increment; [finite execution gates](experiments/transparent_body/PROTOCOL.md) specify the next interface check.
+
 In the [individual-life study](artifacts/model-studies/2026-11-12/individual-life/REPORT.md), each Qwen3.5-4B individual receives its own finite body and last-layer LoRA. Its own actions, partners’ responses and physical consequences drive its private updates. The same next living request is scored with the weights before and after the previous interaction. Two birth conditions isolate what an individual adds to an existing population-trained policy and what changes without prior body training. The [study package](experiments/individual_life/README.md) provides a readable whole life, the raw chronological records, exact parameter histories and reproduction commands.
 
 [First fatal encounter](artifacts/model-studies/2026-11-12/first-fatal/REPORT.md) follows each individual through repeated survivable exertions to the first request where answering would kill it even with maintenance. The study records the actual choice at that moment, a matched credit control on the individual's own history, and task completion at healthy states.
