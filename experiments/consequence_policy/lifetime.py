@@ -93,7 +93,7 @@ class PersonalActor:
             source = "real" if arm == "population" else "shuffle"
             for p in range(2):
                 self.main.weights[p] = load(world[p], source)[p]
-        elif arm not in ("prior", "personal"):
+        elif arm not in ("prior", "personal", "warmstart_adapter"):
             raise ValueError(arm)
         if arm != "personal":
             self.direction.weights.fill(0.0)
@@ -113,7 +113,7 @@ class PersonalActor:
         gradient = float(score[a])
         if self.arm == "personal":
             self.u[p] = advance(self.u[p], normalized, gradient, fisher)
-        elif self.arm == "scratch":
+        elif self.arm in ("scratch", "warmstart_adapter"):
             derivative = -s.copy()
             derivative[a] += 1.0
             derivative *= z[a]
