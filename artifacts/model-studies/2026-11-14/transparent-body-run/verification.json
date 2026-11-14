@@ -1,0 +1,17 @@
+{
+  "unit_tests": 171,
+  "unit_tests_passed": true,
+  "ruff_passed": true,
+  "compile_passed": true,
+  "native_record_replay_count": 200,
+  "complete_formal_groups": 48,
+  "matched_checkpoint_pairs": 96,
+  "replay_identical": true,
+  "independent_risk_and_choice_check": true,
+  "local_links_checked": 45,
+  "all_primary_gates_passed": false,
+  "stopped_without_expansion": true,
+  "active_assignments_after": 0,
+  "gpu_cap_respected": true,
+  "thinking_calls": 0
+}

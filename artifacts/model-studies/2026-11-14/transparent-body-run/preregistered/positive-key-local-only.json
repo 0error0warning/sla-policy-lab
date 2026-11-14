@@ -1,0 +1,170 @@
+{
+  "table-all_zero-order0-choice_only": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-all_zero-order1-choice_only": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order0-choice_only": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order1-choice_only": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_nonanswer-order0-choice_only": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-lowest_nonanswer-order1-choice_only": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-partial_zero_tie-order0-choice_only": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  },
+  "table-partial_zero_tie-order1-choice_only": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  }
+}
