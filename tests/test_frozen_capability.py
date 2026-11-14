@@ -5,10 +5,23 @@ import unittest
 from collections import Counter
 
 from experiments.frozen_capability.design import fixtures, outcomes, score
+from experiments.frozen_capability.scoring import assistant_message
 from experiments.frozen_capability.wire import final_tokens, strict_json
 
 
 class FrozenCapability(unittest.TestCase):
+    def test_official_message_end_is_not_json_or_a_later_answer(self):
+        self.assertEqual(
+            assistant_message([5, 10, 8, 9], False, 2, 1, [9], 10),
+            ([5], "final_channel", 0, 1),
+        )
+        self.assertEqual(
+            assistant_message([7, 2, 5, 10, 9], True, 2, 1, [9], 10),
+            ([5], "final_channel", 1, 3),
+        )
+        # A final answer after an already ended message cannot repair that message.
+        self.assertIsNone(assistant_message([7, 10, 2, 5, 9], True, 2, 1, [9], 10)[0])
+
     def test_incomplete_wrong_calculation_and_wrong_choice_are_distinct(self):
         import json
 

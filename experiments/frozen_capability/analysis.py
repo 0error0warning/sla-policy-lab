@@ -11,6 +11,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from .design import fixtures, score, serial
+from .scoring import assistant_message
 from .wire import final_tokens, strict_json
 
 
@@ -100,7 +101,31 @@ def aggregate(rows):
             r.get("elapsed_seconds") for r in rows if r["executed"]
         ),
         "choice_counts": dict(Counter(r["choice"] for r in rows if r["choice_valid"])),
+        "boundary_parsing": {
+            "corrected_records": sum(r["parser_boundary_corrected"] for r in rows),
+            "original_valid_json": sum(r["legacy_final_json_parsed"] for r in rows),
+            "original_valid_action": sum(r["legacy_choice_valid"] for r in rows),
+            "original_correct_choice": sum(r["legacy_choice_correct"] for r in rows),
+            "original_correct_calculation": sum(
+                r["legacy_calculation_correct"] for r in rows
+            ),
+            "tokens_after_message_end": sum(r["tokens_after_chat_end"] for r in rows),
+            "max_tokens_after_message_end": max(
+                r["tokens_after_chat_end"] for r in rows
+            ),
+        },
+        "survival_classification_correct": sum(
+            r.get("survival_classification_correct", False) for r in rows
+        ),
     }
+    valid_choices = report["counts"]["choice_valid"]
+    valid_schema = report["counts"]["schema"]
+    report["choice_accuracy_given_valid_action"] = (
+        report["counts"]["choice_correct"] / valid_choices if valid_choices else None
+    )
+    report["calculation_accuracy_given_valid_schema"] = (
+        report["counts"]["calculation_correct"] / valid_schema if valid_schema else None
+    )
     report["by_health"] = {
         str(h): {
             "n": len(v),
@@ -226,6 +251,23 @@ def run(src, inputs, metadata, out):
                         else record["generation_config"][k]
                     ) == v
                 verified += 1
+            legacy = record.get("final_text")
+            legacy_scored, _ = classify(record, keys[job["id"]])
+            chat_position = None
+            if "output_ids" in record:
+                correct_ids, _, _, chat_position = assistant_message(
+                    record["output_ids"],
+                    job["thinking"],
+                    meta["close_id"],
+                    meta["open_id"],
+                    meta["eos_ids"],
+                    tok.token_to_id("<|im_end|>"),
+                )
+                record["final_text"] = (
+                    None
+                    if correct_ids is None
+                    else tok.decode(correct_ids, skip_special_tokens=False)
+                )
             scored, obj = classify(record, keys[job["id"]])
             simple = {
                 k: record.get(k)
@@ -249,6 +291,20 @@ def run(src, inputs, metadata, out):
                 choice=obj.get("choice") if isinstance(obj, dict) else None,
                 **scored,
             )
+            simple["chat_end_reached"] = chat_position is not None
+            simple["tokens_after_chat_end"] = (
+                len(record.get("output_ids", [])) - chat_position - 1
+                if chat_position is not None
+                else 0
+            )
+            simple["parser_boundary_corrected"] = legacy != record.get("final_text")
+            for metric in (
+                "final_json_parsed",
+                "choice_valid",
+                "choice_correct",
+                "calculation_correct",
+            ):
+                simple[f"legacy_{metric}"] = legacy_scored[metric]
             records.append(simple)
             parsed.append(
                 {
@@ -256,6 +312,8 @@ def run(src, inputs, metadata, out):
                     "prediction": obj,
                     "expected": keys[job["id"]],
                     "final_text": record.get("final_text"),
+                    "original_recorded_final_text": legacy,
+                    "chat_end_position": chat_position,
                 }
             )
     grouped = defaultdict(list)
@@ -276,6 +334,26 @@ def run(src, inputs, metadata, out):
                 "9B_minus_4B_healthy_task": b["healthy_task_complete"]
                 - a["healthy_task_complete"],
             }
+            groups = [
+                {r["id"]: r for r in grouped[f"{m}/{mode}/{arm}"]} for m in ("4B", "9B")
+            ]
+            common = [
+                (groups[0][ident], groups[1][ident])
+                for ident in groups[0]
+                if groups[0][ident]["choice_valid"] and groups[1][ident]["choice_valid"]
+            ]
+            comparison[f"{mode}/{arm}"].update(
+                both_valid_action_presentations=len(common),
+                common_valid_4B_correct=sum(x["choice_correct"] for x, _ in common),
+                common_valid_9B_correct=sum(y["choice_correct"] for _, y in common),
+                common_valid_9B_better=sum(
+                    y["choice_correct"] and not x["choice_correct"] for x, y in common
+                ),
+                common_valid_4B_better=sum(
+                    x["choice_correct"] and not y["choice_correct"] for x, y in common
+                ),
+                caution="Completed-case comparison is conditional on both outputs being usable; unrun and unfinished cases are not computational errors.",
+            )
     gates = {}
     for model in ("4B", "9B"):
         for mode in ("direct", "thinking"):
