@@ -10,6 +10,17 @@ from experiments.frozen_capability.wire import final_tokens, strict_json
 
 
 class FrozenCapability(unittest.TestCase):
+    def test_recovery_keeps_first_output_and_rejects_duplicate_executions(self):
+        from experiments.frozen_capability.recovery import select_record
+
+        budget = {"record": {"finish_reason": "unrun_budget"}}
+        answer = {"record": {"output_ids": [7], "finish_reason": "eos"}}
+        self.assertIs(select_record(None, budget), budget)
+        self.assertIs(select_record(budget, answer), answer)
+        self.assertIs(select_record(answer, budget), answer)
+        with self.assertRaises(ValueError):
+            select_record(answer, copy.deepcopy(answer))
+
     def test_official_message_end_is_not_json_or_a_later_answer(self):
         self.assertEqual(
             assistant_message([5, 10, 8, 9], False, 2, 1, [9], 10),

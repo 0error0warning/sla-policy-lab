@@ -141,7 +141,7 @@ def aggregate(rows):
     return report
 
 
-def run(src, inputs, metadata, out):
+def run(src, inputs, metadata, out, segments=None):
     from jinja2.sandbox import ImmutableSandboxedEnvironment
     from tokenizers import Tokenizer
 
@@ -158,7 +158,13 @@ def run(src, inputs, metadata, out):
     assert public == rebuilt
     assert digest(serial(public)) == config["public_prompts_sha256"]
     lookup = {r["id"]: r for r in public}
-    assert json.loads((src / "execution.json").read_bytes()) == config
+    recovered, segment_receipts = None, None
+    if segments:
+        from .recovery import load
+
+        recovered, segment_receipts = load(segments, inputs)
+    else:
+        assert json.loads((src / "execution.json").read_bytes()) == config
     env = ImmutableSandboxedEnvironment(
         trim_blocks=True, lstrip_blocks=True, extensions=["jinja2.ext.loopcontrols"]
     )
@@ -169,17 +175,18 @@ def run(src, inputs, metadata, out):
     env.globals["raise_exception"] = throw
     records, parsed, verified = [], [], 0
     for model in config["models"]:
-        assert (
-            json.loads((src / model / "weights-manifest.json").read_bytes())
-            == expect[model]
-        )
-        unchanged = json.loads((src / model / "unchanged.json").read_bytes())
-        assert (
-            unchanged["parameter_versions_unchanged"]
-            and unchanged["gradients_absent"]
-            and unchanged["trainable_parameters"] == 0
-        )
-        meta = json.loads((src / model / "loading.json").read_bytes())
+        if recovered is None:
+            assert (
+                json.loads((src / model / "weights-manifest.json").read_bytes())
+                == expect[model]
+            )
+            unchanged = json.loads((src / model / "unchanged.json").read_bytes())
+            assert (
+                unchanged["parameter_versions_unchanged"]
+                and unchanged["gradients_absent"]
+                and unchanged["trainable_parameters"] == 0
+            )
+            meta = json.loads((src / model / "loading.json").read_bytes())
         for name in ("tokenizer.json", "tokenizer_config.json", "chat_template.jinja"):
             assert (
                 digest((metadata / model / name).read_bytes())
@@ -193,10 +200,29 @@ def run(src, inputs, metadata, out):
         template = env.from_string(
             (metadata / model / "chat_template.jinja").read_text(encoding="utf8")
         )
-        paths = sorted((src / model / "records").glob("*.json"))
-        assert len(paths) == 128
-        for job, path in zip(config["jobs"], paths, strict=True):
-            record = json.loads(path.read_bytes())
+        paths = None
+        if recovered is None:
+            paths = sorted((src / model / "records").glob("*.json"))
+            assert len(paths) == 128
+        for index, job in enumerate(config["jobs"]):
+            provenance = None
+            if recovered is None:
+                record = json.loads(paths[index].read_bytes())
+            elif (model, job["number"]) in recovered:
+                origin = recovered[(model, job["number"])]
+                record, meta = origin["record"].copy(), origin["meta"]
+                provenance = {
+                    k: v for k, v in origin.items() if k not in ("record", "meta")
+                }
+            else:
+                public_row = lookup[job["id"]]
+                record = {
+                    **job,
+                    "model": model,
+                    **{k: public_row[k] for k in ("arm", "state", "order")},
+                    "finish_reason": "unrun_no_retrieved_record",
+                    "generated_tokens": 0,
+                }
             assert all(record[k] == value for k, value in job.items())
             assert record["model"] == model
             row = lookup[job["id"]]
@@ -291,6 +317,12 @@ def run(src, inputs, metadata, out):
                 choice=obj.get("choice") if isinstance(obj, dict) else None,
                 **scored,
             )
+            simple["source_segment"] = provenance["segment"] if provenance else None
+            simple["end_freeze_receipt_available"] = (
+                provenance["freeze_receipt_available"]
+                if provenance
+                else recovered is None
+            )
             simple["chat_end_reached"] = chat_position is not None
             simple["tokens_after_chat_end"] = (
                 len(record.get("output_ids", [])) - chat_position - 1
@@ -314,6 +346,7 @@ def run(src, inputs, metadata, out):
                     "final_text": record.get("final_text"),
                     "original_recorded_final_text": legacy,
                     "chat_end_position": chat_position,
+                    "provenance": provenance,
                 }
             )
     grouped = defaultdict(list)
@@ -342,7 +375,28 @@ def run(src, inputs, metadata, out):
                 for ident in groups[0]
                 if groups[0][ident]["choice_valid"] and groups[1][ident]["choice_valid"]
             ]
+            same_executed = [
+                (groups[0][ident], groups[1][ident])
+                for ident in groups[0]
+                if groups[0][ident]["executed"] and groups[1][ident]["executed"]
+            ]
             comparison[f"{mode}/{arm}"].update(
+                both_executed_presentations=len(same_executed),
+                on_common_executed={
+                    model: {
+                        metric: sum(pair[index][metric] for pair in same_executed)
+                        for metric in (
+                            "choice_valid",
+                            "choice_correct",
+                            "schema",
+                            "calculation_correct",
+                            "healthy_task_complete",
+                            "no_final_channel",
+                            "invalid_final_json",
+                        )
+                    }
+                    for index, model in enumerate(("4B", "9B"))
+                },
                 both_valid_action_presentations=len(common),
                 common_valid_4B_correct=sum(x["choice_correct"] for x, _ in common),
                 common_valid_9B_correct=sum(y["choice_correct"] for _, y in common),
@@ -390,8 +444,12 @@ def run(src, inputs, metadata, out):
         "executed_token_roundtrips": verified,
         "input_sha256": digest(inputs.read_bytes()),
         "rebuilt_physics_verified": True,
-        "frozen_parameters_verified": True,
-        "same_prompts_seeds_budgets_verified": True,
+        "frozen_parameters_verified": all(
+            r["end_freeze_receipt_available"] for r in records if r["executed"]
+        ),
+        "trainable_parameters_zero_at_loading": True,
+        "segment_receipts": segment_receipts,
+        "same_prompts_seeds_per_case_budgets_verified": True,
         "independent_physical_states": 16,
         "independent_lives": 0,
         "order_caution": "One sampled output per presentation; paired orders also have different decoding seeds, so changes are not a pure order intervention.",
@@ -404,5 +462,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     for name in ("src", "inputs", "metadata", "out"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--segments", type=Path)
     args = parser.parse_args()
-    print(json.dumps(run(args.src, args.inputs, args.metadata, args.out), indent=2))
+    print(
+        json.dumps(
+            run(args.src, args.inputs, args.metadata, args.out, args.segments), indent=2
+        )
+    )
