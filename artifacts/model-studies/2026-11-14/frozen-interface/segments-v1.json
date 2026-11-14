@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {
+      "name": "v1",
+      "inputs": "gpu/v1/inputs.zip",
+      "archive": "gpu/v1/results.zip",
+      "input_sha256": "6c9022ec8b3e0fa73dc793c6b5cc3b1b5dbd612b9c80f3b7a6b6a29ffc6050a6",
+      "archive_sha256": "8ce352ac0bb6f88f94677caa40a65e82f2a79f43c9bcac2291162f1f22847244",
+      "worker_returncode": null,
+      "partial_backup": true,
+      "termination": "operator stopped after discovering output-container ambiguity"
+    }
+  ]
+}

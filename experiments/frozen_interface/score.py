@@ -85,6 +85,10 @@ def score(obj, key):
         "top_schema": set(obj) == expected_keys,
     }
     if key["arm"] == "body":
+        result["risk_predictions_correct"] = local_targets is not None and all(
+            abs(obj["actions"][word]["p_death"] - key["risks"][word]) <= 0.01
+            for word in WORDS
+        )
         projected = {}
         expected = {}
         action_valid = isinstance(obj.get("actions"), dict) and set(

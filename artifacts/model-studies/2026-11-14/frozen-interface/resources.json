@@ -1,0 +1,24 @@
+{
+  "allocated_minutes_cap": 180,
+  "segments": [
+    {
+      "name": "v1",
+      "start_utc": "2026-11-14T06:50:13.824789+00:00",
+      "end_utc": "2026-11-14T07:22:55.418524+00:00",
+      "supervised_seconds": 1961.65,
+      "active_after": 0,
+      "consumption_rate_after": 0.0,
+      "partial_backup": true
+    }
+  ],
+  "failed_allocation_attempts": [
+    {
+      "device": "A100",
+      "error": "ReadTimeout",
+      "supervised_seconds": 101.49,
+      "active_after": 0,
+      "consumption_rate_after": 0.0
+    }
+  ],
+  "all_attempts_supervised_seconds": 2063.14
+}

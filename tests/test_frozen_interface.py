@@ -55,7 +55,12 @@ class FrozenInterface(unittest.TestCase):
         }
         result = score(obj, key)
         self.assertTrue(result["calculation_correct"])
+        self.assertTrue(result["risk_predictions_correct"])
         self.assertFalse(result["choice_valid"] or result["protocol_valid"])
+        obj["actions"]["trade"]["after_action"] += 0.5
+        result = score(obj, key)
+        self.assertFalse(result["calculation_correct"])
+        self.assertTrue(result["risk_predictions_correct"])
         obj["actions"]["invented"] = obj["actions"]["wait"]
         self.assertFalse(score(obj, key)["numeric_schema"])
 
@@ -141,6 +146,7 @@ class FrozenInterface(unittest.TestCase):
         self.assertTrue(r["numeric_schema"] and r["sets_consistent_with_own_risks"])
         self.assertTrue(r["choice_consistent_with_own_risks"])
         self.assertFalse(r["calculation_correct"] or r["choice_correct"])
+        self.assertFalse(r["risk_predictions_correct"])
 
     def test_invalid_sets_do_not_get_credit_for_a_lucky_choice(self):
         _, keys = fixtures()

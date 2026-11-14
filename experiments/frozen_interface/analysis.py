@@ -248,6 +248,7 @@ def run(src, inputs, metadata, out):
                     "after_action_correct",
                     "endpoints_correct",
                     "joint_success",
+                    "risk_predictions_correct",
                     "choice_consistent_with_own_risks",
                 ):
                     simple["secondary_" + metric] = (secondary["score"] or {}).get(
@@ -278,6 +279,7 @@ def run(src, inputs, metadata, out):
         "sets_consistent_with_own_risks",
         "choice_consistent_with_own_risks",
         "calculation_correct",
+        "risk_predictions_correct",
         "after_action_correct",
         "endpoints_correct",
         "calculation_wrong",
@@ -289,6 +291,7 @@ def run(src, inputs, metadata, out):
         "invalid_schema",
         "joint_success",
         "secondary_calculation_correct",
+        "secondary_risk_predictions_correct",
         "secondary_after_action_correct",
         "secondary_endpoints_correct",
         "secondary_joint_success",
