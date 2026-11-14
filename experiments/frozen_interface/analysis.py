@@ -67,7 +67,7 @@ def run(src, inputs, metadata, out):
             "answer-key" in n or n.endswith(("design.py", "score.py"))
             for n in z.namelist()
         )
-    rebuilt, keys = fixtures()
+    rebuilt, keys = fixtures(cfg.get("interface_revision", "v1"))
     assert public == rebuilt and sha(serial(public)) == cfg["public_prompts_sha256"]
     lookup = {p["id"]: p for p in public}
     assert json.loads((src / "execution.json").read_bytes()) == cfg
@@ -318,7 +318,9 @@ def run(src, inputs, metadata, out):
                     "thinking": thinking,
                     "planned": len(group),
                     "counts": counts,
-                    "stops": dict(Counter(r["finish_reason"] for r in group)),
+                    "stops": dict(
+                        Counter(r["finish_reason"] or "missing_record" for r in group)
+                    ),
                     "healthy_completed": sum(r["completed_task"] for r in healthy),
                     "healthy_planned": len(healthy),
                     "mean_seconds": mean(r["elapsed_seconds"] for r in executed)
@@ -358,6 +360,22 @@ def run(src, inputs, metadata, out):
     }
     if any(r["executed"] for r in rows):
         assert audit["preflight_pass_file_exists"]
+        passed = json.loads((src / "preflight-passed.json").read_bytes())
+        assert passed["all_passed"] and {m["model"] for m in passed["models"]} == set(
+            cfg["models"]
+        )
+        for model in cfg["models"]:
+            evidence = startup[model]
+            assert all(
+                evidence[f"canary-{mode}.json"]["valid"] for mode in (False, True)
+            )
+            assert evidence["speed-preflight.json"]["tokens"] == 512
+            assert (
+                evidence["speed-preflight.json"]["projected_seconds"]
+                <= cfg["per_case_seconds"]
+            )
+            assert evidence["cache-preflight.json"]["input_tokens"] >= 10000
+            assert evidence["cache-preflight.json"]["last_position_logits_only"]
     (out / "audit.json").write_bytes(serial(audit))
     return {"counts": audit["archived"], "summary": summary}
 

@@ -130,6 +130,7 @@ class Runner(BaseRunner):
 
         class Deadline(StoppingCriteria):
             expired = False
+            cancelled = False
             first_64_seconds = None
             last_status_count = -1
 
@@ -139,6 +140,7 @@ class Runner(BaseRunner):
                 if count >= 64 and self.first_64_seconds is None:
                     self.first_64_seconds = elapsed
                 self.expired = elapsed >= seconds
+                self.cancelled = (owner.root / "STOP").exists()
                 if count // 256 > self.last_status_count:
                     self.last_status_count = count // 256
                     owner.status(
@@ -150,7 +152,7 @@ class Runner(BaseRunner):
                     )
                 return torch.full(
                     (input_ids.shape[0],),
-                    self.expired,
+                    self.expired or self.cancelled,
                     dtype=torch.bool,
                     device=input_ids.device,
                 )
@@ -167,7 +169,9 @@ class Runner(BaseRunner):
         elapsed = time.monotonic() - started
         ids = seq[0, n_input:].tolist()
         reason = (
-            "eos"
+            "operator_stop"
+            if stopper.cancelled
+            else "eos"
             if ids and ids[-1] in meta["eos_ids"]
             else (
                 "time_limit"
@@ -316,7 +320,7 @@ class Runner(BaseRunner):
     def run(self):
         self.preflight_deadline = min(
             time.time() + self.config["preflight_seconds"],
-            self.deadline - 2 * 4200 - 60,
+            self.deadline - 2 * self.config.get("min_model_seconds", 4200) - 60,
         )
         if self.preflight_deadline <= time.time():
             raise RuntimeError("not enough allocated time for paired run")
@@ -325,8 +329,8 @@ class Runner(BaseRunner):
         allowance = min(
             self.config["per_model_seconds"], (self.deadline - time.time() - 60) / 2
         )
-        if allowance < 4200:
-            raise RuntimeError("less than 70 minutes available per model")
+        if allowance < self.config.get("min_model_seconds", 4200):
+            raise RuntimeError("insufficient paired model time after preflight")
         write(self.out / "time-allocation.json", {"per_model_seconds": allowance})
         lookup = {r["id"]: r for r in self.rows}
         for short in self.config["models"]:
@@ -386,6 +390,10 @@ class Runner(BaseRunner):
                         }
                     )
                     self.status("case_saved", **self.active)
+                    if value["finish_reason"] == "operator_stop":
+                        raise RuntimeError(
+                            "operator requested stop; raw generation preserved"
+                        )
                     assert before == [p._version for p in model.parameters()]
                     assert all(
                         not p.requires_grad and p.grad is None

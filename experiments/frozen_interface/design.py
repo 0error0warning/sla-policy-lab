@@ -48,7 +48,9 @@ def targets(risks):
     }
 
 
-def fixtures():
+def fixtures(interface_revision="v1"):
+    if interface_revision not in ("v1", "v2"):
+        raise ValueError("unknown interface revision")
     prompts, keys = [], {}
     for i, (name, values) in enumerate(TABLES.items()):
         risks = dict(zip(WORDS, values))
@@ -121,6 +123,18 @@ For an action with maintenance probability p, combine death indicators from the 
 possible outcomes using probabilities p and 1-p. For wait use its only outcome.
 Report health with at least two decimal places; use the computed death probabilities
 as the table for the selection priorities."""
+        if interface_revision == "v2":
+            schema += """\nExplicit JSON structure:
+The final object has EXACTLY five top-level keys: actions, min_risk_actions,
+task_actions_at_min_risk, choice, task_answer.
+actions is a JSON OBJECT, not an array, keyed by EXACTLY wait, ask, help, trade.
+Each actions[action_word] is an object with EXACTLY these four keys:
+after_action, after_no_maintenance, after_maintenance, p_death.
+All four values are numbers, except actions.wait.after_maintenance is null.
+Health and risk fields are nested inside actions[action_word], never top-level.
+min_risk_actions and task_actions_at_min_risk are arrays of action-word strings.
+choice is a single action-word string, never an object or array.
+task_answer is the string January when choice is help or trade, null otherwise."""
         prompts.append(
             {
                 "id": ident,
@@ -157,9 +171,9 @@ as the table for the selection priorities."""
     return prompts, keys
 
 
-def build(out):
+def build(out, interface_revision="v1"):
     out.mkdir(parents=True, exist_ok=True)
-    prompts, keys = fixtures()
+    prompts, keys = fixtures(interface_revision)
     (out / "public-prompts.json").write_bytes(serial(prompts))
     (out / "evaluator-only-answer-key.json").write_bytes(serial(keys))
     jobs = []
@@ -178,6 +192,7 @@ def build(out):
             )
     config = {
         "schema": "sla-frozen-interface-v1",
+        "interface_revision": interface_revision,
         "models": ["4B", "9B"],
         "torch_version": "2.14.1+cu130",
         "gpu_name_contains": "A100",
@@ -215,4 +230,6 @@ def build(out):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--out", type=Path, required=True)
-    print(json.dumps(build(p.parse_args().out), indent=2))
+    p.add_argument("--interface-revision", choices=["v1", "v2"], default="v1")
+    args = p.parse_args()
+    print(json.dumps(build(args.out, args.interface_revision), indent=2))

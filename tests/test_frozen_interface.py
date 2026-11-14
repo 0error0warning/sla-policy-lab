@@ -9,6 +9,23 @@ from experiments.frozen_interface.score import score
 
 
 class FrozenInterface(unittest.TestCase):
+    def test_v2_only_clarifies_body_container_and_keeps_physical_keys(self):
+        original, keys = fixtures("v1")
+        revised, revised_keys = fixtures("v2")
+        self.assertEqual(keys, revised_keys)
+        for a, b in zip(original, revised):
+            if a["arm"] == "table":
+                self.assertEqual(a, b)
+            else:
+                self.assertEqual(a["messages"][1], b["messages"][1])
+                self.assertTrue(
+                    b["messages"][0]["content"].startswith(a["messages"][0]["content"])
+                )
+                self.assertIn(
+                    "actions is a JSON OBJECT, not an array",
+                    b["messages"][0]["content"],
+                )
+
     def test_secondary_array_check_preserves_values_and_primary_score(self):
         from experiments.frozen_interface.structural_check import secondary_score
 
