@@ -1,0 +1,87 @@
+{
+  "cpu_environment": {
+    "Jinja2": "3.1.6",
+    "python": "3.13.5",
+    "tokenizers": "0.22.2"
+  },
+  "distinct_physical_states": 16,
+  "executed_token_roundtrips": 146,
+  "execution_count_semantics": "Executed counts archived non-placeholder generations. Missing output after runtime loss does not prove that a call was never executed.",
+  "frozen_parameters_verified": false,
+  "independent_lives": 0,
+  "input_sha256": "6d6135552e585338fb77878260062ab433f92a6b4f2baa54aa95206b85a0b23f",
+  "order_caution": "One sampled output per presentation; paired orders also have different decoding seeds, so changes are not a pure order intervention.",
+  "rebuilt_physics_verified": true,
+  "records": 256,
+  "same_prompts_seeds_per_case_budgets_verified": true,
+  "segment_receipts": [
+    {
+      "completed": false,
+      "input_sha256": "6d6135552e585338fb77878260062ab433f92a6b4f2baa54aa95206b85a0b23f",
+      "models": {
+        "4B": {
+          "executed": 20,
+          "freeze_receipt": null,
+          "records": 20
+        }
+      },
+      "name": "initial",
+      "source_partial": true
+    },
+    {
+      "completed": true,
+      "input_sha256": "af9d9e57aaabc60f9b340c3782d7934b64952361d83de0084ddc519893bade01",
+      "models": {
+        "9B": {
+          "executed": 15,
+          "freeze_receipt": {
+            "elapsed_seconds": 1087.6248228599998,
+            "gradients_absent": true,
+            "parameter_versions_unchanged": true,
+            "trainable_parameters": 0
+          },
+          "records": 128
+        }
+      },
+      "name": "recovery1",
+      "source_partial": false
+    },
+    {
+      "completed": true,
+      "input_sha256": "924e6cfd6fbbd263dda61091665c34687346ad9b221c422d057f9bfeea42ba73",
+      "models": {
+        "4B": {
+          "executed": 54,
+          "freeze_receipt": {
+            "elapsed_seconds": 734.5726910489993,
+            "gradients_absent": true,
+            "parameter_versions_unchanged": true,
+            "trainable_parameters": 0
+          },
+          "records": 54
+        }
+      },
+      "name": "recovery2",
+      "source_partial": false
+    },
+    {
+      "completed": true,
+      "input_sha256": "fb5de20cbdc706bbe82a634c474061b8c91bf55ccfd6ca661aba841c5acaae11",
+      "models": {
+        "9B": {
+          "executed": 57,
+          "freeze_receipt": {
+            "elapsed_seconds": 948.658701087,
+            "gradients_absent": true,
+            "parameter_versions_unchanged": true,
+            "trainable_parameters": 0
+          },
+          "records": 57
+        }
+      },
+      "name": "recovery3",
+      "source_partial": false
+    }
+  ],
+  "trainable_parameters_zero_at_loading": true
+}

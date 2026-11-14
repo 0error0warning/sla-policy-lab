@@ -1,0 +1,1 @@
+{"launch": {"stage": "worker", "input_sha256": "6d6135552e585338fb77878260062ab433f92a6b4f2baa54aa95206b85a0b23f", "started_utc": "2026-11-14T04:25:10Z"}, "status": {"stage": "inference", "finished": 21, "elapsed_seconds": 1774.1565916660002, "model": "4B", "thinking": false, "case": "h300-favhelp-order0-known_rules", "remaining_model_seconds": 1540.6772433449999}}
