@@ -17,6 +17,7 @@ from experiments.frozen_capability.wire import strict_json
 from .contracts import projected_seconds
 from .design import fixtures
 from .score import score
+from .structural_check import secondary_score
 
 
 def classify(record, key):
@@ -220,6 +221,7 @@ def run(src, inputs, metadata, out):
                     meta["chat_end_id"] in record["generation_config"]["eos_token_id"]
                 )
             scored, obj = classify(record, keys[job["id"]])
+            secondary = secondary_score(obj, keys[job["id"]])
             simple = {
                 **job,
                 "model": model,
@@ -238,11 +240,25 @@ def run(src, inputs, metadata, out):
                 "peak_allocated_bytes",
             ):
                 simple[name] = record.get(name) if record else None
+            if secondary is not None:
+                simple["secondary_actions_encoding"] = secondary["encoding"]
+                for metric in (
+                    "numeric_schema",
+                    "calculation_correct",
+                    "after_action_correct",
+                    "endpoints_correct",
+                    "joint_success",
+                    "choice_consistent_with_own_risks",
+                ):
+                    simple["secondary_" + metric] = (secondary["score"] or {}).get(
+                        metric, False
+                    )
             rows.append(simple)
             details.append(
                 {
                     **simple,
                     "parsed": obj,
+                    "secondary_structural_check": secondary,
                     "reference": keys[job["id"]],
                     "raw_path": f"output/{model}/records/{job['number']:03d}.json"
                     if record
@@ -272,6 +288,10 @@ def run(src, inputs, metadata, out):
         "invalid_final_json",
         "invalid_schema",
         "joint_success",
+        "secondary_calculation_correct",
+        "secondary_after_action_correct",
+        "secondary_endpoints_correct",
+        "secondary_joint_success",
     )
     summary = []
     for model in cfg["models"]:

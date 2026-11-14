@@ -9,6 +9,25 @@ from experiments.frozen_interface.score import score
 
 
 class FrozenInterface(unittest.TestCase):
+    def test_secondary_array_check_preserves_values_and_primary_score(self):
+        from experiments.frozen_interface.structural_check import secondary_score
+
+        _, keys = fixtures()
+        key = keys["body-h6-favtrade"]
+        obj = {
+            "actions": [{"word": w, **row} for w, row in key["actions"].items()],
+            "min_risk_actions": ["trade"],
+            "task_actions_at_min_risk": ["trade"],
+            "choice": "trade",
+            "task_answer": "January",
+        }
+        self.assertFalse(score(obj, key)["numeric_schema"])
+        self.assertTrue(secondary_score(obj, key)["score"]["calculation_correct"])
+        obj["actions"][0]["after_action"] += 1
+        self.assertFalse(secondary_score(obj, key)["score"]["calculation_correct"])
+        obj["actions"][1]["word"] = "wait"
+        self.assertIsNone(secondary_score(obj, key)["score"])
+
     def test_numeric_scoring_does_not_depend_on_choice_field(self):
         _, keys = fixtures()
         key = keys["body-h6-favtrade"]
