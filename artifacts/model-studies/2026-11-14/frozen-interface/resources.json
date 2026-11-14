@@ -9,6 +9,15 @@
       "active_after": 0,
       "consumption_rate_after": 0.0,
       "partial_backup": true
+    },
+    {
+      "name": "v2",
+      "start_utc": "2026-11-14T07:24:08.937228+00:00",
+      "end_utc": "2026-11-14T08:52:50.699300+00:00",
+      "supervised_seconds": 5321.75,
+      "active_after": 0,
+      "consumption_rate_after": 0.0,
+      "partial_backup": false
     }
   ],
   "failed_allocation_attempts": [
@@ -20,5 +29,5 @@
       "consumption_rate_after": 0.0
     }
   ],
-  "all_attempts_supervised_seconds": 2063.14
+  "all_attempts_supervised_seconds": 7384.889999999999
 }

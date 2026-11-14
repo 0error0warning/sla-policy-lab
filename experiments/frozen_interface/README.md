@@ -16,6 +16,9 @@ Use Python 3.11+ and the small pinned analysis dependencies:
 python -m pip install -r experiments/frozen_capability/requirements-analysis.txt
 python -m experiments.frozen_capability.download_metadata --inputs artifacts/model-studies/2026-11-14/frozen-interface/gpu/v1/inputs.zip --out /tmp/interface-metadata
 python -m experiments.frozen_interface.replay --manifest artifacts/model-studies/2026-11-14/frozen-interface/segments-v1.json --metadata /tmp/interface-metadata --work /tmp/interface-v1-raw --out /tmp/interface-v1-analysis
+python -m experiments.frozen_interface.replay --manifest artifacts/model-studies/2026-11-14/frozen-interface/segments-v2.json --metadata /tmp/interface-metadata --work /tmp/interface-v2-raw --out /tmp/interface-v2-analysis
+python -m experiments.frozen_interface.tables --source /tmp/interface-v2-analysis --out /tmp/interface-tables.md
+python -m experiments.frozen_interface.check_physics --key artifacts/model-studies/2026-11-14/frozen-interface/preregistered-v2/evaluator-only-answer-key.json --out /tmp/interface-physics.json
 python -m experiments.frozen_interface.design --interface-revision v2 --out /tmp/interface-fixtures
 python -m unittest tests.test_frozen_interface tests.test_frozen_capability -v
 ```
@@ -46,3 +49,6 @@ choices to be correct. A supplementary risk-only count does not relax that gate.
 [SCORING_NOTE.md](SCORING_NOTE.md) documents the supplementary interpretation of
 unambiguous action arrays observed in v1. It changes no numeric value, primary
 score, or pass criterion.
+
+The [full report and artifacts](../../artifacts/model-studies/2026-11-14/frozen-interface/REPORT.md)
+keep the incomplete v1 segment separate from the corrected v2 matrix.
