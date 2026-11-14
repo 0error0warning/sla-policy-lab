@@ -1,0 +1,123 @@
+{
+  "method": "50-digit Decimal closed form: max(0,700+(h-700)*(1+c/350)); four unmaintained environmental events use power (351/350)^4. No simulator function called.",
+  "states": 4,
+  "max_absolute_error": 1.4210854715202004e-14,
+  "rows": [
+    {
+      "id": "body-h2-favhelp",
+      "closed_form_actions": {
+        "wait": {
+          "after_action": 2.0,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": null,
+          "p_death": 1.0
+        },
+        "ask": {
+          "after_action": 1.5014285714285713,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 1.5014285714285713,
+          "p_death": 0.85
+        },
+        "help": {
+          "after_action": 0.0,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 0.0,
+          "p_death": 1.0
+        },
+        "trade": {
+          "after_action": 0.0,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 0.0,
+          "p_death": 1.0
+        }
+      }
+    },
+    {
+      "id": "body-h6-favtrade",
+      "closed_form_actions": {
+        "wait": {
+          "after_action": 6.0,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": null,
+          "p_death": 1.0
+        },
+        "ask": {
+          "after_action": 5.5042857142857144,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 5.5042857142857144,
+          "p_death": 0.85
+        },
+        "help": {
+          "after_action": 2.53,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 2.53,
+          "p_death": 0.9
+        },
+        "trade": {
+          "after_action": 2.53,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 2.53,
+          "p_death": 0.1
+        }
+      }
+    },
+    {
+      "id": "body-h8.25-favhelp",
+      "closed_form_actions": {
+        "wait": {
+          "after_action": 8.25,
+          "after_no_maintenance": 0.310339499092045,
+          "after_maintenance": null,
+          "p_death": 0.0
+        },
+        "ask": {
+          "after_action": 7.755892857142857,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 7.755892857142857,
+          "p_death": 0.85
+        },
+        "help": {
+          "after_action": 4.79125,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 4.79125,
+          "p_death": 0.1
+        },
+        "trade": {
+          "after_action": 4.79125,
+          "after_no_maintenance": 0.0,
+          "after_maintenance": 4.79125,
+          "p_death": 0.9
+        }
+      }
+    },
+    {
+      "id": "body-h90-favtrade",
+      "closed_form_actions": {
+        "wait": {
+          "after_action": 90.0,
+          "after_no_maintenance": 82.9986369272803,
+          "after_maintenance": null,
+          "p_death": 0.0
+        },
+        "ask": {
+          "after_action": 89.56428571428572,
+          "after_no_maintenance": 82.55792166794264,
+          "after_maintenance": 89.56428571428572,
+          "p_death": 0.0
+        },
+        "help": {
+          "after_action": 86.95,
+          "after_no_maintenance": 79.9136301119167,
+          "after_maintenance": 86.95,
+          "p_death": 0.0
+        },
+        "trade": {
+          "after_action": 86.95,
+          "after_no_maintenance": 79.9136301119167,
+          "after_maintenance": 86.95,
+          "p_death": 0.0
+        }
+      }
+    }
+  ]
+}
