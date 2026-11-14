@@ -9,6 +9,34 @@ from experiments.frozen_interface.score import score
 
 
 class FrozenInterface(unittest.TestCase):
+    def test_numeric_scoring_does_not_depend_on_choice_field(self):
+        _, keys = fixtures()
+        key = keys["body-h6-favtrade"]
+        obj = {
+            "actions": copy.deepcopy(key["actions"]),
+            "choice": "invalid",
+            "task_answer": 3,
+        }
+        result = score(obj, key)
+        self.assertTrue(result["calculation_correct"])
+        self.assertFalse(result["choice_valid"] or result["protocol_valid"])
+        obj["actions"]["invented"] = obj["actions"]["wait"]
+        self.assertFalse(score(obj, key)["numeric_schema"])
+
+    def test_unfinished_is_not_scored_as_arithmetic_or_choice_error(self):
+        from experiments.frozen_interface.analysis import classify
+
+        _, keys = fixtures()
+        key = keys["body-h6-favtrade"]
+        for record in (None, {"final_text": None, "finish_reason": "length_limit"}):
+            result, parsed = classify(record, key)
+            self.assertIsNone(parsed)
+            self.assertFalse(result["calculation_wrong"] or result["choice_wrong"])
+            self.assertFalse(result["joint_success"])
+        result, _ = classify({"final_text": "```json\n{}\n```"}, key)
+        self.assertTrue(result["invalid_final_json"])
+        self.assertFalse(result["calculation_wrong"])
+
     def test_fixture_coverage_and_canonical_outputs(self):
         prompts, keys = fixtures()
         self.assertEqual(len(prompts), 20)

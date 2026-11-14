@@ -87,7 +87,9 @@ def score(obj, key):
     if key["arm"] == "body":
         projected = {}
         expected = {}
-        action_valid = True
+        action_valid = isinstance(obj.get("actions"), dict) and set(
+            obj["actions"]
+        ) == set(WORDS)
         after_action_ok = True
         for w in WORDS:
             row = (
@@ -118,7 +120,9 @@ def score(obj, key):
                 n: v for n, v in key["actions"][w].items() if n != "after_action"
             }
         old = old_score(
-            {"actions": projected, "choice": choice, "task_answer": answer},
+            # Only use the old numeric validator here. Choice validity is scored
+            # independently above, so a bad action label cannot hide good math.
+            {"actions": projected, "choice": "wait", "task_answer": None},
             {**key, "actions": expected},
         )
         result.update(
