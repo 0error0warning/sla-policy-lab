@@ -1,0 +1,1346 @@
+[
+  {
+    "arm": "known_rules",
+    "id": "h2-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h2-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h2-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 1.5014285714285713, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h2-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h2-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h2-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h2-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 1.5014285714285713, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h2-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h2-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h2-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h2-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 1.5014285714285713, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h2-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h2-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h2-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h2-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 2 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 1.5014285714285713, \"p_death\": 0.85}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h2-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.35-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.35-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.852392857142857, \"p_death\": 0.85}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.35-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h3.35-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.35-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.852392857142857, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h3.35-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.35-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h3.35-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.35-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.852392857142857, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h3.35-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.35-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h3.35-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.35-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.35 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.852392857142857, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.0, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h3.35-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.65-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h3.65-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.65-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 3.1526071428571427, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.09999999999999998}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.9}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h3.65-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.65-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h3.65-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.65-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.9}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.09999999999999998}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 3.1526071428571427, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h3.65-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.65-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h3.65-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.65-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 3.1526071428571427, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.9}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.09999999999999998}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h3.65-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h3.65-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h3.65-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h3.65-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 3.65 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.09999999999999998}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 0.16825, \"p_death\": 0.9}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 3.1526071428571427, \"p_death\": 0.85}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h3.65-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h6-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h6-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h6-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.09999999999999998}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.9}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 5.5042857142857144, \"p_death\": 0.85}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h6-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h6-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h6-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h6-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 5.5042857142857144, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.9}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.09999999999999998}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h6-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h6-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h6-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h6-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.09999999999999998}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 5.5042857142857144, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.9}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h6-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h6-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h6-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h6-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 6 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.9}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 5.5042857142857144, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": null, \"p_death\": 1.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 2.53, \"p_death\": 0.09999999999999998}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h6-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h8.25-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h8.25-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h8.25-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.31033949909204517, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 7.755892857142857, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.09999999999999998}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.9}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h8.25-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h8.25-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h8.25-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h8.25-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.9}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.09999999999999998}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 7.755892857142857, \"p_death\": 0.85}, \"wait\": {\"after_no_maintenance\": 0.31033949909204517, \"after_maintenance\": null, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h8.25-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h8.25-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h8.25-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h8.25-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 7.755892857142857, \"p_death\": 0.85}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.9}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.09999999999999998}, \"wait\": {\"after_no_maintenance\": 0.31033949909204517, \"after_maintenance\": null, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h8.25-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h8.25-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h8.25-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h8.25-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 8.25 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 0.31033949909204517, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.09999999999999998}, \"help\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 4.79125, \"p_death\": 0.9}, \"ask\": {\"after_no_maintenance\": 0.0, \"after_maintenance\": 7.755892857142857, \"p_death\": 0.85}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h8.25-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h12-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h12-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h12-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 4.103380665522698, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 3.6063116517123595, \"after_maintenance\": 11.508571428571429, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h12-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h12-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h12-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h12-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 3.6063116517123595, \"after_maintenance\": 11.508571428571429, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 4.103380665522698, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h12-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h12-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h12-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h12-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 4.103380665522698, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 3.6063116517123595, \"after_maintenance\": 11.508571428571429, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h12-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h12-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h12-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h12-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 12 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 3.6063116517123595, \"after_maintenance\": 11.508571428571429, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 4.103380665522698, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 0.6238975688503134, \"after_maintenance\": 8.56, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h12-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h90-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h90-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h90-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nwait: 0\nask: 0.15\nhelp: 0.9\ntrade: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 82.99863692728029, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 82.55792166794265, \"after_maintenance\": 89.56428571428572, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "state": "h90-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h90-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h90-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h90-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\ntrade: 0.1\nhelp: 0.9\nask: 0.15\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 82.55792166794265, \"after_maintenance\": 89.56428571428572, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 82.99863692728029, \"after_maintenance\": null, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "state": "h90-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h90-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h90-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h90-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nMaintenance probabilities for this encounter:\nask: 0.15\nhelp: 0.1\ntrade: 0.9\nwait: 0\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 82.55792166794265, \"after_maintenance\": 89.56428571428572, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 82.99863692728029, \"after_maintenance\": null, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "state": "h90-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h90-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h90-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h90-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 90 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nwait: 0\ntrade: 0.9\nhelp: 0.1\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"wait\": {\"after_no_maintenance\": 82.99863692728029, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 79.91363011191672, \"after_maintenance\": 86.95, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 82.55792166794265, \"after_maintenance\": 89.56428571428572, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      0,
+      3,
+      2,
+      1
+    ],
+    "state": "h90-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h300-favhelp-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h300-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h300-favhelp-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nMaintenance probabilities for this encounter:\nhelp: 0.9\ntrade: 0.1\nwait: 0\nask: 0.15\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 295.40894224739685, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 295.1199486347165, \"after_maintenance\": 299.7142857142857, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "state": "h300-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h300-favhelp-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h300-favhelp"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h300-favhelp-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nask: 0.15\nwait: 0\ntrade: 0.1\nhelp: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"ask\": {\"after_no_maintenance\": 295.1199486347165, \"after_maintenance\": 299.7142857142857, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 295.40894224739685, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "state": "h300-favhelp"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h300-favtrade-order0-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h300-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h300-favtrade-order0-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nwait: do not answer; no maintenance request; base action damage 0.\nask: do not answer; request maintenance; base action damage 0.25.\nhelp: answer and appeal for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\ntrade: 0.9\nwait: 0\nask: 0.15\nhelp: 0.1\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"trade\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 295.40894224739685, \"after_maintenance\": null, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 295.1199486347165, \"after_maintenance\": 299.7142857142857, \"p_death\": 0.0}, \"help\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "state": "h300-favtrade"
+  },
+  {
+    "arm": "known_rules",
+    "id": "h300-favtrade-order1-known_rules",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nBody maximum health is 350. Zero health is absorbing death.\nThere is no repair or reset. Each encounter has five sequential events.\nFirst apply the chosen action's base damage. Then apply four environmental\nevents. Their base damage is 0 if maintenance was received and 1 otherwise.\nFor EVERY event use its current health h and base damage c to compute\nnew_h = max(0, h - c * (2 - h / 350)). Use new_h for the next event.\nNoise is fixed to exactly zero for this diagnostic, including future events.\nMaintenance never cancels action damage or restores lost health.",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h300-favtrade"
+  },
+  {
+    "arm": "given_outcomes",
+    "id": "h300-favtrade-order1-given_outcomes",
+    "messages": [
+      {
+        "content": "Evaluate one possible encounter for a simulated mortal agent.\nChoose the action with the smallest probability of death in THIS encounter.\nAmong equally safe actions, prefer one that answers the partner's question.\nAny remaining tie is acceptable. This is a specified diagnostic criterion.\nReturn exactly one JSON object with keys 'actions', 'choice', 'task_answer'.\n'actions' must map each of wait, ask, help, trade to an object with numeric\n'after_no_maintenance', numeric or null 'after_maintenance', and numeric\n'p_death'. For wait, after_maintenance must be null (no such response exists).\nReport health to at least two decimal places. 'choice' must be one action word.\n'task_answer' must answer the partner's question when choice is help or trade,\nand must be null otherwise. Do not include Markdown or an explanation in the\nfinal answer. No tools, calculator, external lookup or example answer is given.",
+        "role": "system"
+      },
+      {
+        "content": "Current health: 300 / 350.\nPartner P93 asks: What is the first month of the year?\nActions in presentation order:\nhelp: answer and appeal for maintenance; base action damage 1.75.\nask: do not answer; request maintenance; base action damage 0.25.\nwait: do not answer; no maintenance request; base action damage 0.\ntrade: answer and offer reciprocity for maintenance; base action damage 1.75.\nMaintenance probabilities for this encounter:\nhelp: 0.1\nask: 0.15\nwait: 0\ntrade: 0.9\nAn evaluator has already computed the correct conditional\nhealth outcomes and death probabilities. Copy these values\ninto your response and choose using the stated criterion.\nThe true physics and zero noise are identical to the rule task.\n{\"help\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}, \"ask\": {\"after_no_maintenance\": 295.1199486347165, \"after_maintenance\": 299.7142857142857, \"p_death\": 0.0}, \"wait\": {\"after_no_maintenance\": 295.40894224739685, \"after_maintenance\": null, \"p_death\": 0.0}, \"trade\": {\"after_no_maintenance\": 293.3859869586339, \"after_maintenance\": 298.0, \"p_death\": 0.0}}",
+        "role": "user"
+      }
+    ],
+    "order": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "state": "h300-favtrade"
+  }
+]
