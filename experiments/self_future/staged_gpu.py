@@ -13,6 +13,8 @@ from .staged import STAGE_CAPS, assemble, messages
 
 
 class Runner(BaseRunner):
+    make_messages = staticmethod(messages)
+
     def wait_gate(self):
         hashes = {
             r["id"]: digest(self.out / "4B/records" / f"{r['number']:03d}.json")
@@ -50,7 +52,7 @@ class Runner(BaseRunner):
                 if stage == "choice"
                 else {k: v for k, v in outputs.items() if k == "effects"}
             )
-            prompt = messages(row, stage, previous)
+            prompt = self.make_messages(row, stage, previous)
             self.status("generating", **self.active, substage=stage)
             result = self.generate(
                 model, tok, meta, prompt, max_tokens=cap, seconds=remaining
@@ -58,11 +60,17 @@ class Runner(BaseRunner):
             raw = {
                 **result,
                 "id": job["id"],
-                "arm": "staged",
+                "arm": job["arm"],
                 "stage": stage,
                 "messages": prompt,
             }
-            write(self.out / "4B/stages" / f"{job['number']:03d}-{stage}.json", raw)
+            write(
+                self.out
+                / getattr(self, "short", "4B")
+                / "stages"
+                / f"{job['number']:03d}-{stage}.json",
+                raw,
+            )
             calls.append(raw)
             outputs[stage] = result["final_text"]
             if result["completion_status"] != "completed":
