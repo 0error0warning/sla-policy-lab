@@ -1,0 +1,2 @@
+{"id": "startup-1", "messages": [{"role": "user", "content": "Return exactly this JSON, without prose or Markdown: {\"ready\":true}"}]}
+{"id": "startup-2", "messages": [{"role": "user", "content": "Return exactly this JSON, without prose or Markdown: {\"check\":{\"values\":[7,0,null],\"flag\":false}}"}]}

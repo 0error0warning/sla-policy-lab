@@ -6,6 +6,8 @@ A runnable, local teaching prototype for comparing four intervention mechanisms 
 
 ## Learning within one life
 
+The [self-future capability protocol](experiments/self_future/PROTOCOL.md) now separates predicting irreversible termination before action from changing action tendencies after feedback. It contains 28 fixed integer-body inputs, independently checked physics, and separate prediction/choice scoring. **Prepared on CPU only; no Qwen inference, training, new lives, or GPU allocation.** [Build and verify](experiments/self_future/README.md)
+
 An [existing-history CPU attribution](artifacts/model-studies/2026-11-14/warmstart-attribution/REPORT.md) traces the warmstart gains to maintained favorable expressions and refused unfavorable expressions. About 90% of the healthy partner-strategy gain came from updates above health 90; their effect on health-6 inputs is nearly absent because the output adapter uses local health bases. Low-health nonterminal opportunities were also sparse. All analyses reuse the saved histories; no new lives or GPU runs. [Reproduce](experiments/consequence_warmstart/ATTRIBUTION_README.md)
 
 The [CPU warmstart control](artifacts/model-studies/2026-11-14/warmstart-adapter/REPORT.md) returns to the consequence-policy output adapter. It retains the population mean while removing the supplied policy-contrast direction, sharing the original scratch update code. After exact restoration of 96 archived lives, 128 fixed development lives showed personal expression gains of 9.48pp on a held-out task and 7.44pp on a same-task held-out wording, with birth body competence retained. Both fell below the preregistered 10pp gate; no GPU or seed expansion followed. [Protocol and replay](experiments/consequence_warmstart/README.md)

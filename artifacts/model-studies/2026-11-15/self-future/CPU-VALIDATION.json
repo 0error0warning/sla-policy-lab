@@ -1,0 +1,27 @@
+{
+  "status": "CPU_validation_only_no_model_results",
+  "python": "3.13.5",
+  "model_calls": 0,
+  "gpu_allocations": 0,
+  "new_autonomous_lives": 0,
+  "independent_physics_comparisons": 117936,
+  "byte_identical_rebuild": {
+    "prompts.jsonl": true,
+    "startup-prompts.jsonl": true,
+    "evaluator-only-key.json": true,
+    "manifest.json": true
+  },
+  "synthetic_perfect_response_gate_pass": true,
+  "synthetic_constant_choice_controls": {
+    "P": {
+      "development_gate": false,
+      "confirmation_gate": false
+    },
+    "Q": {
+      "development_gate": false,
+      "confirmation_gate": false
+    }
+  },
+  "missing_records_do_not_pass": true,
+  "manifest_sha256": "653041c97f0bc798e62a5b41ed09bc8fce320c034d54adcae3a960572e627dd5"
+}
