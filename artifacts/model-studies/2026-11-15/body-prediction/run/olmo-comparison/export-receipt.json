@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 219,
+  "bytes": 628225,
+  "sha256": "a87b01287ae137e409d5d6aeeac0bbd23c0bb24a334e900882b26f0185ff1f2a",
+  "study_stage": "olmo",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 628225,
+      "sha256": "a87b01287ae137e409d5d6aeeac0bbd23c0bb24a334e900882b26f0185ff1f2a"
+    }
+  ]
+}

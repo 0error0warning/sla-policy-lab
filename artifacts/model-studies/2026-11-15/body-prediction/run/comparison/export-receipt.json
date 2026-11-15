@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 219,
+  "bytes": 631298,
+  "sha256": "db30c78f7376e3e2b46ce4b96031df6857902af0ed9bcbbb7b189c73e7843ae9",
+  "study_stage": "phimini2",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 631298,
+      "sha256": "db30c78f7376e3e2b46ce4b96031df6857902af0ed9bcbbb7b189c73e7843ae9"
+    }
+  ]
+}

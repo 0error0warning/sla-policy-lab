@@ -17,6 +17,9 @@ def download(inputs, out):
     files = []
     for model, spec in expected.items():
         for name in ("tokenizer.json", "tokenizer_config.json", "chat_template.jinja"):
+            # Some native templates live inside tokenizer_config.json.
+            if name == "chat_template.jinja" and name not in spec["metadata"]:
+                continue
             path = out / model / name
             truth = spec["metadata"][name]
             if (

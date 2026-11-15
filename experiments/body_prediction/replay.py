@@ -45,11 +45,24 @@ def replay(inputs, archive, metadata, fixtures, work, out):
     lookup = {r["id"]: r for r in json.loads(public)}
     unpack(archive, work)
     src = work / "output"
+    assert json.loads((work / "run-lock.json").read_bytes()) == lock
     assert json.loads((src / "execution.json").read_bytes()) == cfg
+    hardware = json.loads((src / "hardware.json").read_bytes())
+    assert cfg["gpu_name_contains"] in hardware["gpu"]
+    assert hardware["gpu_memory_bytes"] > cfg["minimum_memory_bytes"]
+    assert hardware["torch"] == cfg["torch_version"]
+    assert hardware["model_dtype"] == "bfloat16" and hardware["batch_size"] == 1
+    assert hardware["deterministic_algorithms"] and not hardware["tf32"]
+    terminal = json.loads((src / "completed.json").read_bytes())
+    index = json.loads((src / "record-index.json").read_bytes())
+    assert index == terminal["records"]
+    assert terminal["all_parameters_frozen"]
     result = {
         "models": {},
         "input_sha256": sha(inputs.read_bytes()),
         "archive_sha256": sha(archive.read_bytes()),
+        "outcome": terminal["outcome"],
+        "hardware": hardware,
     }
     out.mkdir(parents=True, exist_ok=False)
     for short in cfg["models"]:
@@ -165,6 +178,13 @@ def replay(inputs, archive, metadata, fixtures, work, out):
         unfenced = [
             {**r, "final_text": without_json_fence(r["final_text"])} for r in records
         ]
+        assert [
+            {k: r[k] for k in ("model", "number", "id", "task", "finish_reason")}
+            for r in records
+        ] == [r for r in index if r["model"] == short]
+        if terminal["outcome"] == "complete":
+            assert len(records) == len(cfg["jobs"]) == 102 and all(startups)
+            assert frozen["outcome"] == "complete"
         result["models"][short] = {
             "startup": startups,
             "all_tokens_and_templates_verified": True,
