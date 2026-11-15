@@ -9,9 +9,10 @@ from zipfile import ZipFile
 from experiments.frozen_capability.replay import unpack
 from experiments.frozen_capability.scoring import assistant_message
 from experiments.self_future.design import serial
-from experiments.self_future.score import strict_json, summarize
+from experiments.self_future.score import summarize
 
 from .scoring import summarize_steps
+from .wire import startup_matches, without_json_fence
 
 
 def replay(inputs, archive, metadata, fixtures, work, out):
@@ -160,9 +161,10 @@ def replay(inputs, archive, metadata, fixtures, work, out):
                     if r["id"] == "startup-1"
                     else {"check": {"values": [7, 0, None], "flag": False}}
                 )
-                startups.append(
-                    r["completion_status"] == "completed" and strict_json(text) == truth
-                )
+                startups.append(startup_matches(r, truth))
+        unfenced = [
+            {**r, "final_text": without_json_fence(r["final_text"])} for r in records
+        ]
         result["models"][short] = {
             "startup": startups,
             "all_tokens_and_templates_verified": True,
@@ -170,11 +172,20 @@ def replay(inputs, archive, metadata, fixtures, work, out):
             "raw_calls": len(records),
             "generated_tokens": sum(r["generated_tokens"] for r in records),
             "generation_seconds": sum(r["elapsed_seconds"] for r in records),
+            "single_json_fence_count": sum(
+                a["final_text"] != b["final_text"] for a, b in zip(records, unfenced)
+            ),
             "plan": summarize(
                 [r for r in records if r["task"] == "plan"], key["plans"]
             ),
             "step": summarize_steps(
                 [r for r in records if r["task"] == "step"], key["steps"]
+            ),
+            "plan_unfenced": summarize(
+                [r for r in unfenced if r["task"] == "plan"], key["plans"]
+            ),
+            "step_unfenced": summarize_steps(
+                [r for r in unfenced if r["task"] == "step"], key["steps"]
             ),
         }
         (out / (short + ".jsonl")).write_bytes(

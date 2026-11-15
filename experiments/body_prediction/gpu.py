@@ -9,8 +9,9 @@ from importlib.metadata import version
 from pathlib import Path
 
 from experiments.frozen_capability.gpu import digest, write
-from experiments.frozen_capability.wire import strict_json
 from experiments.self_future.gpu import Runner as SelfFutureRunner
+
+from .wire import startup_matches
 
 
 class Runner(SelfFutureRunner):
@@ -192,10 +193,7 @@ class Runner(SelfFutureRunner):
                             if job["id"] == "startup-1"
                             else {"check": {"values": [7, 0, None], "flag": False}}
                         )
-                        if (
-                            result["completion_status"] != "completed"
-                            or strict_json(result["final_text"]) != truth
-                        ):
+                        if not startup_matches(result, truth):
                             model_outcome = "startup_failed"
                             break
                 else:
