@@ -14,6 +14,26 @@ from experiments.self_future.gpu import Runner as SelfFutureRunner
 
 
 class Runner(SelfFutureRunner):
+    def generate(self, model, tok, meta, messages, max_tokens=None, seconds=None):
+        row = super().generate(model, tok, meta, messages, max_tokens, seconds)
+        if meta["open_id"] is None:
+            # Phi has no thinking channel; either official EOS ends its answer.
+            ids = row["output_ids"]
+            end = next(
+                (i for i, token in enumerate(ids) if token in meta["eos_ids"]), None
+            )
+            final = ids if end is None else ids[:end]
+            row.update(
+                final_ids=final,
+                final_text=tok.decode(final, skip_special_tokens=False),
+                message_end_position=end,
+                channel="final_channel",
+                thinking_tokens=0,
+            )
+            if row["finish_reason"] == "eos" and end is not None:
+                row["completion_status"] = "completed"
+        return row
+
     def __init__(self, root):
         import torch
 
@@ -27,8 +47,11 @@ class Runner(SelfFutureRunner):
         assert len(self.rows) == 102 and len({r["id"] for r in self.rows}) == 102
         assert not any(root.glob("*key*.json"))
         assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
-        assert "A100" in torch.cuda.get_device_name(0)
-        assert torch.cuda.get_device_properties(0).total_memory > 35 * 1024**3
+        assert self.config["gpu_name_contains"] in torch.cuda.get_device_name(0)
+        assert (
+            torch.cuda.get_device_properties(0).total_memory
+            > self.config["minimum_memory_bytes"]
+        )
         assert torch.__version__ == self.config["torch_version"]
         self.torch = torch
         torch.backends.cuda.matmul.allow_tf32 = False
@@ -98,8 +121,9 @@ class Runner(SelfFutureRunner):
         tok = AutoTokenizer.from_pretrained(
             self.paths[short], local_files_only=True, trust_remote_code=False
         )
-        chat_end = tok.encode("<|im_end|>", add_special_tokens=False)
-        assert len(chat_end) == 1 and tok.decode(chat_end) == "<|im_end|>"
+        delimiter = self.config["chat_end_text"][short]
+        chat_end = tok.encode(delimiter, add_special_tokens=False)
+        assert len(chat_end) == 1 and tok.decode(chat_end) == delimiter
         eos = model.generation_config.eos_token_id or tok.eos_token_id
         eos = [eos] if isinstance(eos, int) else list(eos)
         meta = {
