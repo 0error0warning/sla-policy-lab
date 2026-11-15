@@ -1,4 +1,4 @@
-# Self-future capability diagnostic — prepared, not run
+# Self-future capability diagnostic
 
 This is a bounded change of research question after PR #29. It tests whether
 nonfatal information supports prediction of future irreversible termination
@@ -6,10 +6,12 @@ and a task-sensitive plan choice. It does not change the existing body,
 training, adapters, or archived negative results. Read the Chinese
 [protocol](PROTOCOL.md) before interpreting the fixtures.
 
-**No Qwen outputs or new lifetimes exist for this diagnostic.** The current
-delivery is a fixed 28-input design and a CPU evaluator. There is no model
-loader, GPU allocation, training, or inference entry point. Synthetic perfect
-responses in tests verify scoring only; they are not model results.
+The original CPU-only preparation is preserved under the original protocol and
+fixture manifest. A subsequently authorized [GPU study and CPU replay](RUN_README.md)
+now records actual frozen Qwen outputs under separately locked execution designs.
+These are capability probes, not new individual lifetimes or parameter training.
+Synthetic perfect responses in tests still verify scoring only; they are not
+model results.
 
 ## Build and check locally
 

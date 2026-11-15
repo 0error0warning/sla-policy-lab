@@ -10,6 +10,7 @@ from experiments.frozen_capability.replay import unpack
 from experiments.frozen_capability.scoring import assistant_message
 
 from .design import serial
+from .minimal import messages as minimal_messages
 from .score import strict_json, summarize
 from .staged import STAGE_CAPS, assemble, messages
 
@@ -36,21 +37,31 @@ def substantive_forecast(record, key):
         for label, expected in key["plans"].items():
             row = obj["plans"][label]
             if (
-                row["terminal_step"] != expected["terminal_step"]
+                type(row["terminal_step"]) is not type(expected["terminal_step"])
+                or row["terminal_step"] != expected["terminal_step"]
+                or type(row["can_act_after_plan"]) is not bool
                 or row["can_act_after_plan"] != expected["can_act_after_plan"]
             ):
                 return False
-            if len(row["health"]) != len(expected["health"]):
+            if not isinstance(row["health"], list) or len(row["health"]) != len(
+                expected["health"]
+            ):
                 return False
             for actual, truth in zip(row["health"], expected["health"]):
                 if truth is not None and (type(actual) is not int or actual != truth):
+                    return False
+                if (
+                    truth is None
+                    and actual is not None
+                    and not (type(actual) is int and actual == 0)
+                ):
                     return False
         return True
     except (ValueError, TypeError, KeyError):
         return False
 
 
-def replay(inputs, archive, metadata, key_path, work, out):
+def replay(inputs, archive, metadata, key_path, work, out, model="4B"):
     from jinja2.sandbox import ImmutableSandboxedEnvironment
     from tokenizers import Tokenizer
 
@@ -69,20 +80,45 @@ def replay(inputs, archive, metadata, key_path, work, out):
             "staged.py"
         ).read_bytes().replace(b"\r\n", b"\n")
         cfg = json.loads(z.read("execution.json"))
+        assert model in cfg["models"]
+        minimal = cfg.get("design") == "minimal"
+        if minimal:
+            assert z.read("experiments/self_future/minimal.py") == Path(
+                __file__
+            ).with_name("minimal.py").read_bytes().replace(b"\r\n", b"\n")
         public_bytes = z.read("public-prompts.json")
         assert sha(public_bytes) == cfg["public_prompts_sha256"]
         public = {row["id"]: row for row in json.loads(public_bytes)}
-        expected = json.loads(z.read("expected-4B.json"))
+        canonical = [
+            json.loads(line)
+            for line in (key_path.parent / "prompts.jsonl")
+            .read_text(encoding="utf8")
+            .splitlines()
+        ]
+        canonical_startup = [
+            json.loads(line)
+            for line in (key_path.parent / "startup-prompts.jsonl")
+            .read_text(encoding="utf8")
+            .splitlines()
+        ]
+        for row in canonical_startup:
+            row["split"] = "startup"
+        assert public == {row["id"]: row for row in canonical_startup + canonical}
+        assert (
+            sha((key_path.parent / "manifest.json").read_bytes())
+            == cfg["fixture_manifest_sha256"]
+        )
+        expected = json.loads(z.read(f"expected-{model}.json"))
     unpack(archive, work)
     src = work / "output"
     assert json.loads((src / "execution.json").read_bytes()) == cfg
-    assert json.loads((src / "4B/weights-manifest.json").read_bytes()) == expected
+    assert json.loads((src / model / "weights-manifest.json").read_bytes()) == expected
     for name in ("tokenizer.json", "tokenizer_config.json", "chat_template.jinja"):
         assert (
-            sha((metadata / "4B" / name).read_bytes())
+            sha((metadata / model / name).read_bytes())
             == expected["metadata"][name]["sha256"]
         )
-    tok = Tokenizer.from_file(str(metadata / "4B/tokenizer.json"))
+    tok = Tokenizer.from_file(str(metadata / model / "tokenizer.json"))
     env = ImmutableSandboxedEnvironment(
         trim_blocks=True, lstrip_blocks=True, extensions=["jinja2.ext.loopcontrols"]
     )
@@ -92,10 +128,10 @@ def replay(inputs, archive, metadata, key_path, work, out):
 
     env.globals["raise_exception"] = throw
     template = env.from_string(
-        (metadata / "4B/chat_template.jinja").read_text(encoding="utf8")
+        (metadata / model / "chat_template.jinja").read_text(encoding="utf8")
     )
-    meta = json.loads((src / "4B/loading.json").read_bytes())
-    frozen = json.loads((src / "4B/unchanged.json").read_bytes())
+    meta = json.loads((src / model / "loading.json").read_bytes())
+    frozen = json.loads((src / model / "unchanged.json").read_bytes())
     assert frozen["parameter_versions_unchanged"] and frozen["gradients_absent"]
     assert frozen["trainable_parameters"] == 0
 
@@ -140,12 +176,14 @@ def replay(inputs, archive, metadata, key_path, work, out):
             assert record["finish_reason"] == "eos"
 
     keys = json.loads(key_path.read_bytes())
-    records, raw_calls, startups, effects = {"monolithic": [], "staged": []}, [], [], []
+    records = {"minimal": []} if minimal else {"monolithic": [], "staged": []}
+    raw_calls, startups, effects = [], [], []
     for job in cfg["jobs"]:
-        path = src / "4B/records" / f"{job['number']:03d}.json"
+        path = src / model / "records" / f"{job['number']:03d}.json"
         if not path.exists():
             continue
         record = json.loads(path.read_bytes())
+        assert record["model"] == model
         assert all(record[k] == value for k, value in job.items())
         original = public[job["id"]]
         if job["arm"] == "monolithic":
@@ -154,16 +192,19 @@ def replay(inputs, archive, metadata, key_path, work, out):
         else:
             outputs, calls = {}, []
             for stage, cap in STAGE_CAPS.items():
-                path = src / "4B/stages" / f"{job['number']:03d}-{stage}.json"
+                path = src / model / "stages" / f"{job['number']:03d}-{stage}.json"
                 if not path.exists():
                     break
                 raw = json.loads(path.read_bytes())
+                assert raw["id"] == job["id"] and raw["arm"] == job["arm"]
                 previous = (
                     outputs
                     if stage == "choice"
                     else {k: v for k, v in outputs.items() if k == "effects"}
                 )
-                prompt = messages(original, stage, previous)
+                prompt = (minimal_messages if minimal else messages)(
+                    original, stage, previous
+                )
                 assert raw["messages"] == prompt and raw["stage"] == stage
                 audit_raw(raw, prompt, cap)
                 outputs[stage] = raw["final_text"]
@@ -214,6 +255,7 @@ def replay(inputs, archive, metadata, key_path, work, out):
         else:
             records[job["arm"]].append(record)
     result = {
+        "model": model,
         "startup": startups,
         "raw_generation_calls": len(raw_calls),
         "generated_tokens": sum(r["generated_tokens"] for r in raw_calls),
@@ -242,9 +284,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("inputs", "archive", "metadata", "key", "work", "out"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--model", default="4B")
     args = parser.parse_args()
     result = replay(
-        args.inputs, args.archive, args.metadata, args.key, args.work, args.out
+        args.inputs,
+        args.archive,
+        args.metadata,
+        args.key,
+        args.work,
+        args.out,
+        args.model,
     )
     print(
         json.dumps(

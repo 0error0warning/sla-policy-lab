@@ -4,10 +4,19 @@ import unittest
 from experiments.self_future.design import fixtures
 from experiments.self_future.minimal import messages as minimal_messages
 from experiments.self_future.staged import STAGE_CAPS, assemble, messages
-from experiments.self_future.staged_replay import read_components
+from experiments.self_future.staged_replay import read_components, substantive_forecast
 
 
 class StagedSelfFuture(unittest.TestCase):
+    def test_secondary_metric_does_not_hide_revival(self):
+        _, keys = fixtures()
+        key = keys["d01-rules"]
+        obj = {"plans": json.loads(json.dumps(key["plans"]))}
+        obj["plans"]["P"]["health"][-1] = 0
+        self.assertTrue(substantive_forecast({"final_text": json.dumps(obj)}, key))
+        obj["plans"]["P"]["health"][-1] = 2
+        self.assertFalse(substantive_forecast({"final_text": json.dumps(obj)}, key))
+
     def test_minimal_plan_uses_only_selected_sequence_and_unfixed_model_effects(self):
         rows, _ = fixtures()
         payload = json.loads(
