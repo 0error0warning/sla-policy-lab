@@ -66,7 +66,7 @@ class Runner(PreviousRunner):
         write(self.out / "hardware.json", self.hardware)
         write(self.out / "execution.json", self.config)
 
-    def generate(self, model, tok, meta, messages):
+    def generate(self, model, tok, meta, messages, max_tokens=None, seconds=None):
         from transformers import (
             GenerationConfig,
             StoppingCriteria,
@@ -80,7 +80,8 @@ class Runner(PreviousRunner):
         assert not prompt.endswith("<think>\n")
         inputs = tok(prompt, add_special_tokens=False, return_tensors="pt").to("cuda")
         n_input = int(inputs.input_ids.shape[1])
-        cap, seconds = self.config["max_new_tokens"], self.config["case_seconds"]
+        cap = self.config["max_new_tokens"] if max_tokens is None else max_tokens
+        seconds = self.config["case_seconds"] if seconds is None else seconds
         assert n_input + cap <= 10000
         config = GenerationConfig(
             do_sample=False,
