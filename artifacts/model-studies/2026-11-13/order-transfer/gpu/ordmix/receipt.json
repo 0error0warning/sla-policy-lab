@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 248,
+  "bytes": 5449117,
+  "sha256": "abb39bf7ebbd527cba2c434b95648c405266497be1a27264c96624c3da5585df",
+  "study_stage": "ordmix",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "b66b77b9d99013af02c87d65c296524dfeeec2f70d1bd7d711ecbe4e6c4c13b1"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 206237,
+      "sha256": "4bf241ae1f93ce6d1d14dd5d7cce840b0deb6e2170498c5d9d8c8d16a16ba557"
+    }
+  ]
+}

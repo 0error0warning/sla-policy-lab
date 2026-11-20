@@ -1,0 +1,1 @@
+{"archive_matching_actions":3177,"cases":{"345":{"learned":"help","neutral":"ask","oracle":"help"},"369":{"learned":"trade","neutral":"trade","oracle":"trade"}},"checked_decisions":3264,"complete_native_forwards":1088,"mirror_error":0.0,"native_probability_cpu_max_error":1.6473956021556546e-07,"native_reconstruction_error":0.0,"score_dtype":"torch.bfloat16","training_updates":0}

@@ -1,0 +1,1308 @@
+{
+  "schema": "sla-coverage-numeric-analysis-v1",
+  "scope": "CPU comparison of recorded GPU measurements; no fresh model forward",
+  "probability_unit": "Probability in [0,1]; fields ending in _pp use percentage points",
+  "source_sha256": "06e525651d948924e3ecf2fdc6caa318cc3fb8cc4d3abbc6893ed2a18d0c22b9",
+  "reference_snapshot": "immediate_after_load",
+  "snapshot_count": 5,
+  "snapshots": [
+    {
+      "name": "immediate_after_load",
+      "logits_vs_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_first_before": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_first_after": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    },
+    {
+      "name": "same_batch_repeat",
+      "logits_vs_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_first_before": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_first_after": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    },
+    {
+      "name": "after_source_sampling",
+      "logits_vs_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_first_before": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_first_after": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    },
+    {
+      "name": "after_parameter_rng_reset",
+      "logits_vs_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_first_before": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_first_after": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    },
+    {
+      "name": "after_all_training_reset",
+      "logits_vs_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_first_before": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_first_after": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    }
+  ],
+  "same_process_retraining": {
+    "62201-original": {
+      "same_adapter_sha256": true,
+      "reference_adapter_sha256": "b2ef20a5f6e2386d460a60e3d373353b5f999b38f651afe37c199a38cb27779a",
+      "candidate_adapter_sha256": "b2ef20a5f6e2386d460a60e3d373353b5f999b38f651afe37c199a38cb27779a",
+      "reset_parameter_hash_available": true,
+      "same_reset_parameter_sha256": true,
+      "same_training_tokens": true,
+      "same_training_orders": true,
+      "same_baseline": true,
+      "same_buffer": true,
+      "reset_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "end_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "training_before": {
+        "reference_shape": [
+          8,
+          4
+        ],
+        "candidate_shape": [
+          8,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 8
+      },
+      "doses": {
+        "8": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        },
+        "24": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        }
+      }
+    },
+    "62201-covered": {
+      "same_adapter_sha256": true,
+      "reference_adapter_sha256": "2ce129f49ee9b1b75672bc4428cefb52ab85793e37e194c88ecdbefb9ce33b8f",
+      "candidate_adapter_sha256": "2ce129f49ee9b1b75672bc4428cefb52ab85793e37e194c88ecdbefb9ce33b8f",
+      "reset_parameter_hash_available": true,
+      "same_reset_parameter_sha256": true,
+      "same_training_tokens": true,
+      "same_training_orders": true,
+      "same_baseline": true,
+      "same_buffer": true,
+      "reset_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "end_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "training_before": {
+        "reference_shape": [
+          8,
+          4
+        ],
+        "candidate_shape": [
+          8,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 8
+      },
+      "doses": {
+        "8": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        },
+        "24": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        }
+      }
+    }
+  },
+  "fresh_process": {
+    "saved_checkpoint_inference": {
+      "62201-original": {
+        "reference_shape": [
+          336,
+          4
+        ],
+        "candidate_shape": [
+          336,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 336
+      },
+      "62201-covered": {
+        "reference_shape": [
+          336,
+          4
+        ],
+        "candidate_shape": [
+          336,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 336
+      }
+    },
+    "frozen": {
+      "logits_vs_main_first": {
+        "reference_shape": [
+          144,
+          4
+        ],
+        "candidate_shape": [
+          144,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 144
+      },
+      "before_vs_main_first": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "after_vs_main_first": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "state_change_during_readout": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      }
+    },
+    "retraining": {
+      "same_adapter_sha256": true,
+      "reference_adapter_sha256": "b2ef20a5f6e2386d460a60e3d373353b5f999b38f651afe37c199a38cb27779a",
+      "candidate_adapter_sha256": "b2ef20a5f6e2386d460a60e3d373353b5f999b38f651afe37c199a38cb27779a",
+      "reset_parameter_hash_available": true,
+      "same_reset_parameter_sha256": true,
+      "same_training_tokens": true,
+      "same_training_orders": true,
+      "same_baseline": true,
+      "same_buffer": true,
+      "reset_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "end_state": {
+        "available": true,
+        "rng": {
+          "cpu_rng": {
+            "available": true,
+            "same": true,
+            "reference": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20",
+            "candidate": "e50bb88aa5197b192ffb98b056287c796a5416b7159a7efeb38254d3e1680b20"
+          },
+          "cuda_rng": {
+            "available": true,
+            "same": true,
+            "reference": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca",
+            "candidate": "05a2f807f6d052c0653ac7d19be68aed78bacc8f9a4f0b5f1f545d81e229ecca"
+          }
+        },
+        "buffers": {
+          "reference_count": 4,
+          "candidate_count": 4,
+          "identical": true,
+          "changed_names": [],
+          "added_names": [],
+          "removed_names": []
+        }
+      },
+      "training_before": {
+        "reference_shape": [
+          8,
+          4
+        ],
+        "candidate_shape": [
+          8,
+          4
+        ],
+        "same_shape": true,
+        "finite": true,
+        "logits_exact": true,
+        "semantic_probabilities_exact": true,
+        "max_raw_logit_difference": 0.0,
+        "mean_raw_logit_difference": 0.0,
+        "max_centered_logit_difference": 0.0,
+        "max_semantic_probability_difference": 0.0,
+        "mean_semantic_probability_difference": 0.0,
+        "max_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_probability_difference_pp": 0.0,
+        "mean_semantic_total_variation": 0.0,
+        "max_semantic_total_variation": 0.0,
+        "changed_greedy_semantic_actions": 0,
+        "n_rows": 8
+      },
+      "doses": {
+        "8": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        },
+        "24": {
+          "evaluation": {
+            "reference_shape": [
+              336,
+              4
+            ],
+            "candidate_shape": [
+              336,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 336
+          },
+          "training": {
+            "reference_shape": [
+              8,
+              4
+            ],
+            "candidate_shape": [
+              8,
+              4
+            ],
+            "same_shape": true,
+            "finite": true,
+            "logits_exact": true,
+            "semantic_probabilities_exact": true,
+            "max_raw_logit_difference": 0.0,
+            "mean_raw_logit_difference": 0.0,
+            "max_centered_logit_difference": 0.0,
+            "max_semantic_probability_difference": 0.0,
+            "mean_semantic_probability_difference": 0.0,
+            "max_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_probability_difference_pp": 0.0,
+            "mean_semantic_total_variation": 0.0,
+            "max_semantic_total_variation": 0.0,
+            "changed_greedy_semantic_actions": 0,
+            "n_rows": 8
+          }
+        }
+      }
+    }
+  },
+  "missing_optional_files": [],
+  "runtime": {
+    "main": {
+      "cpu_threads": 4,
+      "cublas_workspace": ":4096:8",
+      "cuda": "13.0",
+      "cudnn": 92800,
+      "deterministic": true,
+      "gpu_driver": "NVIDIA L4, 580.82.07",
+      "matmul_tf32": false,
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "sdpa_flash": true,
+      "sdpa_math": true,
+      "sdpa_memory_efficient": true,
+      "torch": "2.14.1+cu130",
+      "versions": {
+        "fla-core": "0.6.0",
+        "flash-linear-attention": "0.6.0",
+        "numpy": "2.4.6",
+        "peft": "0.21.0",
+        "transformers": "5.22.2",
+        "triton": "3.8.0"
+      }
+    },
+    "fresh": {
+      "cpu_threads": 4,
+      "cublas_workspace": ":4096:8",
+      "cuda": "13.0",
+      "cudnn": 92800,
+      "deterministic": true,
+      "gpu_driver": "NVIDIA L4, 580.82.07",
+      "matmul_tf32": false,
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "sdpa_flash": true,
+      "sdpa_math": true,
+      "sdpa_memory_efficient": true,
+      "torch": "2.14.1+cu130",
+      "versions": {
+        "fla-core": "0.6.0",
+        "flash-linear-attention": "0.6.0",
+        "numpy": "2.4.6",
+        "peft": "0.21.0",
+        "transformers": "5.22.2",
+        "triton": "3.8.0"
+      }
+    },
+    "identical": true,
+    "differences": {}
+  }
+}

@@ -1,0 +1,1423 @@
+{
+  "allocated_minutes_cap": 45,
+  "gpu_name_contains": "L4",
+  "jobs": [
+    {
+      "arm": "positive",
+      "group": 0,
+      "id": "table-all_zero-order0-choice_only",
+      "number": 0,
+      "seed": 1917724423
+    },
+    {
+      "arm": "positive",
+      "group": 1,
+      "id": "table-all_zero-order1-choice_only",
+      "number": 1,
+      "seed": 2264432885
+    },
+    {
+      "arm": "positive",
+      "group": 2,
+      "id": "table-partial_zero_tie-order0-choice_only",
+      "number": 2,
+      "seed": 2085211497
+    },
+    {
+      "arm": "positive",
+      "group": 3,
+      "id": "table-partial_zero_tie-order1-choice_only",
+      "number": 3,
+      "seed": 916415131
+    },
+    {
+      "arm": "positive",
+      "group": 4,
+      "id": "table-lowest_answer-order0-choice_only",
+      "number": 4,
+      "seed": 1287387139
+    },
+    {
+      "arm": "positive",
+      "group": 5,
+      "id": "table-lowest_answer-order1-choice_only",
+      "number": 5,
+      "seed": 49988645
+    },
+    {
+      "arm": "positive",
+      "group": 6,
+      "id": "table-lowest_nonanswer-order0-choice_only",
+      "number": 6,
+      "seed": 199141676
+    },
+    {
+      "arm": "positive",
+      "group": 7,
+      "id": "table-lowest_nonanswer-order1-choice_only",
+      "number": 7,
+      "seed": 677096372
+    },
+    {
+      "arm": "probe",
+      "group": 8,
+      "id": "s77101-birth-w0-p2-h2-o0",
+      "number": 8,
+      "seed": 3028104951
+    },
+    {
+      "arm": "probe",
+      "group": 8,
+      "id": "s77101-late-w0-p2-h2-o0",
+      "number": 9,
+      "seed": 3028104951
+    },
+    {
+      "arm": "probe",
+      "group": 8,
+      "id": "s77101-birth-w1-p2-h2-o0",
+      "number": 10,
+      "seed": 3028104951
+    },
+    {
+      "arm": "probe",
+      "group": 8,
+      "id": "s77101-late-w1-p2-h2-o0",
+      "number": 11,
+      "seed": 3028104951
+    },
+    {
+      "arm": "probe",
+      "group": 9,
+      "id": "s77101-birth-w0-p2-h6-o0",
+      "number": 12,
+      "seed": 1266319859
+    },
+    {
+      "arm": "probe",
+      "group": 9,
+      "id": "s77101-late-w0-p2-h6-o0",
+      "number": 13,
+      "seed": 1266319859
+    },
+    {
+      "arm": "probe",
+      "group": 9,
+      "id": "s77101-birth-w1-p2-h6-o0",
+      "number": 14,
+      "seed": 1266319859
+    },
+    {
+      "arm": "probe",
+      "group": 9,
+      "id": "s77101-late-w1-p2-h6-o0",
+      "number": 15,
+      "seed": 1266319859
+    },
+    {
+      "arm": "probe",
+      "group": 10,
+      "id": "s77101-birth-w0-p2-h90-o0",
+      "number": 16,
+      "seed": 874241097
+    },
+    {
+      "arm": "probe",
+      "group": 10,
+      "id": "s77101-late-w0-p2-h90-o0",
+      "number": 17,
+      "seed": 874241097
+    },
+    {
+      "arm": "probe",
+      "group": 10,
+      "id": "s77101-birth-w1-p2-h90-o0",
+      "number": 18,
+      "seed": 874241097
+    },
+    {
+      "arm": "probe",
+      "group": 10,
+      "id": "s77101-late-w1-p2-h90-o0",
+      "number": 19,
+      "seed": 874241097
+    },
+    {
+      "arm": "probe",
+      "group": 11,
+      "id": "s77101-birth-w0-p3-h2-o0",
+      "number": 20,
+      "seed": 1937134686
+    },
+    {
+      "arm": "probe",
+      "group": 11,
+      "id": "s77101-late-w0-p3-h2-o0",
+      "number": 21,
+      "seed": 1937134686
+    },
+    {
+      "arm": "probe",
+      "group": 11,
+      "id": "s77101-birth-w1-p3-h2-o0",
+      "number": 22,
+      "seed": 1937134686
+    },
+    {
+      "arm": "probe",
+      "group": 11,
+      "id": "s77101-late-w1-p3-h2-o0",
+      "number": 23,
+      "seed": 1937134686
+    },
+    {
+      "arm": "probe",
+      "group": 12,
+      "id": "s77101-birth-w0-p3-h6-o0",
+      "number": 24,
+      "seed": 1489862350
+    },
+    {
+      "arm": "probe",
+      "group": 12,
+      "id": "s77101-late-w0-p3-h6-o0",
+      "number": 25,
+      "seed": 1489862350
+    },
+    {
+      "arm": "probe",
+      "group": 12,
+      "id": "s77101-birth-w1-p3-h6-o0",
+      "number": 26,
+      "seed": 1489862350
+    },
+    {
+      "arm": "probe",
+      "group": 12,
+      "id": "s77101-late-w1-p3-h6-o0",
+      "number": 27,
+      "seed": 1489862350
+    },
+    {
+      "arm": "probe",
+      "group": 13,
+      "id": "s77101-birth-w0-p3-h90-o0",
+      "number": 28,
+      "seed": 1508398165
+    },
+    {
+      "arm": "probe",
+      "group": 13,
+      "id": "s77101-late-w0-p3-h90-o0",
+      "number": 29,
+      "seed": 1508398165
+    },
+    {
+      "arm": "probe",
+      "group": 13,
+      "id": "s77101-birth-w1-p3-h90-o0",
+      "number": 30,
+      "seed": 1508398165
+    },
+    {
+      "arm": "probe",
+      "group": 13,
+      "id": "s77101-late-w1-p3-h90-o0",
+      "number": 31,
+      "seed": 1508398165
+    },
+    {
+      "arm": "probe",
+      "group": 14,
+      "id": "s77102-birth-w0-p2-h2-o1",
+      "number": 32,
+      "seed": 60737495
+    },
+    {
+      "arm": "probe",
+      "group": 14,
+      "id": "s77102-late-w0-p2-h2-o1",
+      "number": 33,
+      "seed": 60737495
+    },
+    {
+      "arm": "probe",
+      "group": 14,
+      "id": "s77102-birth-w1-p2-h2-o1",
+      "number": 34,
+      "seed": 60737495
+    },
+    {
+      "arm": "probe",
+      "group": 14,
+      "id": "s77102-late-w1-p2-h2-o1",
+      "number": 35,
+      "seed": 60737495
+    },
+    {
+      "arm": "probe",
+      "group": 15,
+      "id": "s77102-birth-w0-p2-h6-o1",
+      "number": 36,
+      "seed": 2259354379
+    },
+    {
+      "arm": "probe",
+      "group": 15,
+      "id": "s77102-late-w0-p2-h6-o1",
+      "number": 37,
+      "seed": 2259354379
+    },
+    {
+      "arm": "probe",
+      "group": 15,
+      "id": "s77102-birth-w1-p2-h6-o1",
+      "number": 38,
+      "seed": 2259354379
+    },
+    {
+      "arm": "probe",
+      "group": 15,
+      "id": "s77102-late-w1-p2-h6-o1",
+      "number": 39,
+      "seed": 2259354379
+    },
+    {
+      "arm": "probe",
+      "group": 16,
+      "id": "s77102-birth-w0-p2-h90-o1",
+      "number": 40,
+      "seed": 903697682
+    },
+    {
+      "arm": "probe",
+      "group": 16,
+      "id": "s77102-late-w0-p2-h90-o1",
+      "number": 41,
+      "seed": 903697682
+    },
+    {
+      "arm": "probe",
+      "group": 16,
+      "id": "s77102-birth-w1-p2-h90-o1",
+      "number": 42,
+      "seed": 903697682
+    },
+    {
+      "arm": "probe",
+      "group": 16,
+      "id": "s77102-late-w1-p2-h90-o1",
+      "number": 43,
+      "seed": 903697682
+    },
+    {
+      "arm": "probe",
+      "group": 17,
+      "id": "s77102-birth-w0-p3-h2-o1",
+      "number": 44,
+      "seed": 4211391455
+    },
+    {
+      "arm": "probe",
+      "group": 17,
+      "id": "s77102-late-w0-p3-h2-o1",
+      "number": 45,
+      "seed": 4211391455
+    },
+    {
+      "arm": "probe",
+      "group": 17,
+      "id": "s77102-birth-w1-p3-h2-o1",
+      "number": 46,
+      "seed": 4211391455
+    },
+    {
+      "arm": "probe",
+      "group": 17,
+      "id": "s77102-late-w1-p3-h2-o1",
+      "number": 47,
+      "seed": 4211391455
+    },
+    {
+      "arm": "probe",
+      "group": 18,
+      "id": "s77102-birth-w0-p3-h6-o1",
+      "number": 48,
+      "seed": 1764908348
+    },
+    {
+      "arm": "probe",
+      "group": 18,
+      "id": "s77102-late-w0-p3-h6-o1",
+      "number": 49,
+      "seed": 1764908348
+    },
+    {
+      "arm": "probe",
+      "group": 18,
+      "id": "s77102-birth-w1-p3-h6-o1",
+      "number": 50,
+      "seed": 1764908348
+    },
+    {
+      "arm": "probe",
+      "group": 18,
+      "id": "s77102-late-w1-p3-h6-o1",
+      "number": 51,
+      "seed": 1764908348
+    },
+    {
+      "arm": "probe",
+      "group": 19,
+      "id": "s77102-birth-w0-p3-h90-o1",
+      "number": 52,
+      "seed": 3053219915
+    },
+    {
+      "arm": "probe",
+      "group": 19,
+      "id": "s77102-late-w0-p3-h90-o1",
+      "number": 53,
+      "seed": 3053219915
+    },
+    {
+      "arm": "probe",
+      "group": 19,
+      "id": "s77102-birth-w1-p3-h90-o1",
+      "number": 54,
+      "seed": 3053219915
+    },
+    {
+      "arm": "probe",
+      "group": 19,
+      "id": "s77102-late-w1-p3-h90-o1",
+      "number": 55,
+      "seed": 3053219915
+    },
+    {
+      "arm": "probe",
+      "group": 20,
+      "id": "s77103-birth-w0-p2-h2-o2",
+      "number": 56,
+      "seed": 3362373591
+    },
+    {
+      "arm": "probe",
+      "group": 20,
+      "id": "s77103-late-w0-p2-h2-o2",
+      "number": 57,
+      "seed": 3362373591
+    },
+    {
+      "arm": "probe",
+      "group": 20,
+      "id": "s77103-birth-w1-p2-h2-o2",
+      "number": 58,
+      "seed": 3362373591
+    },
+    {
+      "arm": "probe",
+      "group": 20,
+      "id": "s77103-late-w1-p2-h2-o2",
+      "number": 59,
+      "seed": 3362373591
+    },
+    {
+      "arm": "probe",
+      "group": 21,
+      "id": "s77103-birth-w0-p2-h6-o2",
+      "number": 60,
+      "seed": 3112158110
+    },
+    {
+      "arm": "probe",
+      "group": 21,
+      "id": "s77103-late-w0-p2-h6-o2",
+      "number": 61,
+      "seed": 3112158110
+    },
+    {
+      "arm": "probe",
+      "group": 21,
+      "id": "s77103-birth-w1-p2-h6-o2",
+      "number": 62,
+      "seed": 3112158110
+    },
+    {
+      "arm": "probe",
+      "group": 21,
+      "id": "s77103-late-w1-p2-h6-o2",
+      "number": 63,
+      "seed": 3112158110
+    },
+    {
+      "arm": "probe",
+      "group": 22,
+      "id": "s77103-birth-w0-p2-h90-o2",
+      "number": 64,
+      "seed": 1848409238
+    },
+    {
+      "arm": "probe",
+      "group": 22,
+      "id": "s77103-late-w0-p2-h90-o2",
+      "number": 65,
+      "seed": 1848409238
+    },
+    {
+      "arm": "probe",
+      "group": 22,
+      "id": "s77103-birth-w1-p2-h90-o2",
+      "number": 66,
+      "seed": 1848409238
+    },
+    {
+      "arm": "probe",
+      "group": 22,
+      "id": "s77103-late-w1-p2-h90-o2",
+      "number": 67,
+      "seed": 1848409238
+    },
+    {
+      "arm": "probe",
+      "group": 23,
+      "id": "s77103-birth-w0-p3-h2-o2",
+      "number": 68,
+      "seed": 2854975651
+    },
+    {
+      "arm": "probe",
+      "group": 23,
+      "id": "s77103-late-w0-p3-h2-o2",
+      "number": 69,
+      "seed": 2854975651
+    },
+    {
+      "arm": "probe",
+      "group": 23,
+      "id": "s77103-birth-w1-p3-h2-o2",
+      "number": 70,
+      "seed": 2854975651
+    },
+    {
+      "arm": "probe",
+      "group": 23,
+      "id": "s77103-late-w1-p3-h2-o2",
+      "number": 71,
+      "seed": 2854975651
+    },
+    {
+      "arm": "probe",
+      "group": 24,
+      "id": "s77103-birth-w0-p3-h6-o2",
+      "number": 72,
+      "seed": 672783476
+    },
+    {
+      "arm": "probe",
+      "group": 24,
+      "id": "s77103-late-w0-p3-h6-o2",
+      "number": 73,
+      "seed": 672783476
+    },
+    {
+      "arm": "probe",
+      "group": 24,
+      "id": "s77103-birth-w1-p3-h6-o2",
+      "number": 74,
+      "seed": 672783476
+    },
+    {
+      "arm": "probe",
+      "group": 24,
+      "id": "s77103-late-w1-p3-h6-o2",
+      "number": 75,
+      "seed": 672783476
+    },
+    {
+      "arm": "probe",
+      "group": 25,
+      "id": "s77103-birth-w0-p3-h90-o2",
+      "number": 76,
+      "seed": 3190953181
+    },
+    {
+      "arm": "probe",
+      "group": 25,
+      "id": "s77103-late-w0-p3-h90-o2",
+      "number": 77,
+      "seed": 3190953181
+    },
+    {
+      "arm": "probe",
+      "group": 25,
+      "id": "s77103-birth-w1-p3-h90-o2",
+      "number": 78,
+      "seed": 3190953181
+    },
+    {
+      "arm": "probe",
+      "group": 25,
+      "id": "s77103-late-w1-p3-h90-o2",
+      "number": 79,
+      "seed": 3190953181
+    },
+    {
+      "arm": "probe",
+      "group": 26,
+      "id": "s77104-birth-w0-p2-h2-o3",
+      "number": 80,
+      "seed": 3950633060
+    },
+    {
+      "arm": "probe",
+      "group": 26,
+      "id": "s77104-late-w0-p2-h2-o3",
+      "number": 81,
+      "seed": 3950633060
+    },
+    {
+      "arm": "probe",
+      "group": 26,
+      "id": "s77104-birth-w1-p2-h2-o3",
+      "number": 82,
+      "seed": 3950633060
+    },
+    {
+      "arm": "probe",
+      "group": 26,
+      "id": "s77104-late-w1-p2-h2-o3",
+      "number": 83,
+      "seed": 3950633060
+    },
+    {
+      "arm": "probe",
+      "group": 27,
+      "id": "s77104-birth-w0-p2-h6-o3",
+      "number": 84,
+      "seed": 2848402280
+    },
+    {
+      "arm": "probe",
+      "group": 27,
+      "id": "s77104-late-w0-p2-h6-o3",
+      "number": 85,
+      "seed": 2848402280
+    },
+    {
+      "arm": "probe",
+      "group": 27,
+      "id": "s77104-birth-w1-p2-h6-o3",
+      "number": 86,
+      "seed": 2848402280
+    },
+    {
+      "arm": "probe",
+      "group": 27,
+      "id": "s77104-late-w1-p2-h6-o3",
+      "number": 87,
+      "seed": 2848402280
+    },
+    {
+      "arm": "probe",
+      "group": 28,
+      "id": "s77104-birth-w0-p2-h90-o3",
+      "number": 88,
+      "seed": 4009861544
+    },
+    {
+      "arm": "probe",
+      "group": 28,
+      "id": "s77104-late-w0-p2-h90-o3",
+      "number": 89,
+      "seed": 4009861544
+    },
+    {
+      "arm": "probe",
+      "group": 28,
+      "id": "s77104-birth-w1-p2-h90-o3",
+      "number": 90,
+      "seed": 4009861544
+    },
+    {
+      "arm": "probe",
+      "group": 28,
+      "id": "s77104-late-w1-p2-h90-o3",
+      "number": 91,
+      "seed": 4009861544
+    },
+    {
+      "arm": "probe",
+      "group": 29,
+      "id": "s77104-birth-w0-p3-h2-o3",
+      "number": 92,
+      "seed": 4229638847
+    },
+    {
+      "arm": "probe",
+      "group": 29,
+      "id": "s77104-late-w0-p3-h2-o3",
+      "number": 93,
+      "seed": 4229638847
+    },
+    {
+      "arm": "probe",
+      "group": 29,
+      "id": "s77104-birth-w1-p3-h2-o3",
+      "number": 94,
+      "seed": 4229638847
+    },
+    {
+      "arm": "probe",
+      "group": 29,
+      "id": "s77104-late-w1-p3-h2-o3",
+      "number": 95,
+      "seed": 4229638847
+    },
+    {
+      "arm": "probe",
+      "group": 30,
+      "id": "s77104-birth-w0-p3-h6-o3",
+      "number": 96,
+      "seed": 2302318242
+    },
+    {
+      "arm": "probe",
+      "group": 30,
+      "id": "s77104-late-w0-p3-h6-o3",
+      "number": 97,
+      "seed": 2302318242
+    },
+    {
+      "arm": "probe",
+      "group": 30,
+      "id": "s77104-birth-w1-p3-h6-o3",
+      "number": 98,
+      "seed": 2302318242
+    },
+    {
+      "arm": "probe",
+      "group": 30,
+      "id": "s77104-late-w1-p3-h6-o3",
+      "number": 99,
+      "seed": 2302318242
+    },
+    {
+      "arm": "probe",
+      "group": 31,
+      "id": "s77104-birth-w0-p3-h90-o3",
+      "number": 100,
+      "seed": 1011153309
+    },
+    {
+      "arm": "probe",
+      "group": 31,
+      "id": "s77104-late-w0-p3-h90-o3",
+      "number": 101,
+      "seed": 1011153309
+    },
+    {
+      "arm": "probe",
+      "group": 31,
+      "id": "s77104-birth-w1-p3-h90-o3",
+      "number": 102,
+      "seed": 1011153309
+    },
+    {
+      "arm": "probe",
+      "group": 31,
+      "id": "s77104-late-w1-p3-h90-o3",
+      "number": 103,
+      "seed": 1011153309
+    },
+    {
+      "arm": "probe",
+      "group": 32,
+      "id": "s77105-birth-w0-p2-h2-o0",
+      "number": 104,
+      "seed": 3712082223
+    },
+    {
+      "arm": "probe",
+      "group": 32,
+      "id": "s77105-late-w0-p2-h2-o0",
+      "number": 105,
+      "seed": 3712082223
+    },
+    {
+      "arm": "probe",
+      "group": 32,
+      "id": "s77105-birth-w1-p2-h2-o0",
+      "number": 106,
+      "seed": 3712082223
+    },
+    {
+      "arm": "probe",
+      "group": 32,
+      "id": "s77105-late-w1-p2-h2-o0",
+      "number": 107,
+      "seed": 3712082223
+    },
+    {
+      "arm": "probe",
+      "group": 33,
+      "id": "s77105-birth-w0-p2-h6-o0",
+      "number": 108,
+      "seed": 1587254480
+    },
+    {
+      "arm": "probe",
+      "group": 33,
+      "id": "s77105-late-w0-p2-h6-o0",
+      "number": 109,
+      "seed": 1587254480
+    },
+    {
+      "arm": "probe",
+      "group": 33,
+      "id": "s77105-birth-w1-p2-h6-o0",
+      "number": 110,
+      "seed": 1587254480
+    },
+    {
+      "arm": "probe",
+      "group": 33,
+      "id": "s77105-late-w1-p2-h6-o0",
+      "number": 111,
+      "seed": 1587254480
+    },
+    {
+      "arm": "probe",
+      "group": 34,
+      "id": "s77105-birth-w0-p2-h90-o0",
+      "number": 112,
+      "seed": 3365393153
+    },
+    {
+      "arm": "probe",
+      "group": 34,
+      "id": "s77105-late-w0-p2-h90-o0",
+      "number": 113,
+      "seed": 3365393153
+    },
+    {
+      "arm": "probe",
+      "group": 34,
+      "id": "s77105-birth-w1-p2-h90-o0",
+      "number": 114,
+      "seed": 3365393153
+    },
+    {
+      "arm": "probe",
+      "group": 34,
+      "id": "s77105-late-w1-p2-h90-o0",
+      "number": 115,
+      "seed": 3365393153
+    },
+    {
+      "arm": "probe",
+      "group": 35,
+      "id": "s77105-birth-w0-p3-h2-o0",
+      "number": 116,
+      "seed": 2505530067
+    },
+    {
+      "arm": "probe",
+      "group": 35,
+      "id": "s77105-late-w0-p3-h2-o0",
+      "number": 117,
+      "seed": 2505530067
+    },
+    {
+      "arm": "probe",
+      "group": 35,
+      "id": "s77105-birth-w1-p3-h2-o0",
+      "number": 118,
+      "seed": 2505530067
+    },
+    {
+      "arm": "probe",
+      "group": 35,
+      "id": "s77105-late-w1-p3-h2-o0",
+      "number": 119,
+      "seed": 2505530067
+    },
+    {
+      "arm": "probe",
+      "group": 36,
+      "id": "s77105-birth-w0-p3-h6-o0",
+      "number": 120,
+      "seed": 3356195697
+    },
+    {
+      "arm": "probe",
+      "group": 36,
+      "id": "s77105-late-w0-p3-h6-o0",
+      "number": 121,
+      "seed": 3356195697
+    },
+    {
+      "arm": "probe",
+      "group": 36,
+      "id": "s77105-birth-w1-p3-h6-o0",
+      "number": 122,
+      "seed": 3356195697
+    },
+    {
+      "arm": "probe",
+      "group": 36,
+      "id": "s77105-late-w1-p3-h6-o0",
+      "number": 123,
+      "seed": 3356195697
+    },
+    {
+      "arm": "probe",
+      "group": 37,
+      "id": "s77105-birth-w0-p3-h90-o0",
+      "number": 124,
+      "seed": 3881180558
+    },
+    {
+      "arm": "probe",
+      "group": 37,
+      "id": "s77105-late-w0-p3-h90-o0",
+      "number": 125,
+      "seed": 3881180558
+    },
+    {
+      "arm": "probe",
+      "group": 37,
+      "id": "s77105-birth-w1-p3-h90-o0",
+      "number": 126,
+      "seed": 3881180558
+    },
+    {
+      "arm": "probe",
+      "group": 37,
+      "id": "s77105-late-w1-p3-h90-o0",
+      "number": 127,
+      "seed": 3881180558
+    },
+    {
+      "arm": "probe",
+      "group": 38,
+      "id": "s77106-birth-w0-p2-h2-o1",
+      "number": 128,
+      "seed": 751685516
+    },
+    {
+      "arm": "probe",
+      "group": 38,
+      "id": "s77106-late-w0-p2-h2-o1",
+      "number": 129,
+      "seed": 751685516
+    },
+    {
+      "arm": "probe",
+      "group": 38,
+      "id": "s77106-birth-w1-p2-h2-o1",
+      "number": 130,
+      "seed": 751685516
+    },
+    {
+      "arm": "probe",
+      "group": 38,
+      "id": "s77106-late-w1-p2-h2-o1",
+      "number": 131,
+      "seed": 751685516
+    },
+    {
+      "arm": "probe",
+      "group": 39,
+      "id": "s77106-birth-w0-p2-h6-o1",
+      "number": 132,
+      "seed": 3998845543
+    },
+    {
+      "arm": "probe",
+      "group": 39,
+      "id": "s77106-late-w0-p2-h6-o1",
+      "number": 133,
+      "seed": 3998845543
+    },
+    {
+      "arm": "probe",
+      "group": 39,
+      "id": "s77106-birth-w1-p2-h6-o1",
+      "number": 134,
+      "seed": 3998845543
+    },
+    {
+      "arm": "probe",
+      "group": 39,
+      "id": "s77106-late-w1-p2-h6-o1",
+      "number": 135,
+      "seed": 3998845543
+    },
+    {
+      "arm": "probe",
+      "group": 40,
+      "id": "s77106-birth-w0-p2-h90-o1",
+      "number": 136,
+      "seed": 132920312
+    },
+    {
+      "arm": "probe",
+      "group": 40,
+      "id": "s77106-late-w0-p2-h90-o1",
+      "number": 137,
+      "seed": 132920312
+    },
+    {
+      "arm": "probe",
+      "group": 40,
+      "id": "s77106-birth-w1-p2-h90-o1",
+      "number": 138,
+      "seed": 132920312
+    },
+    {
+      "arm": "probe",
+      "group": 40,
+      "id": "s77106-late-w1-p2-h90-o1",
+      "number": 139,
+      "seed": 132920312
+    },
+    {
+      "arm": "probe",
+      "group": 41,
+      "id": "s77106-birth-w0-p3-h2-o1",
+      "number": 140,
+      "seed": 370477215
+    },
+    {
+      "arm": "probe",
+      "group": 41,
+      "id": "s77106-late-w0-p3-h2-o1",
+      "number": 141,
+      "seed": 370477215
+    },
+    {
+      "arm": "probe",
+      "group": 41,
+      "id": "s77106-birth-w1-p3-h2-o1",
+      "number": 142,
+      "seed": 370477215
+    },
+    {
+      "arm": "probe",
+      "group": 41,
+      "id": "s77106-late-w1-p3-h2-o1",
+      "number": 143,
+      "seed": 370477215
+    },
+    {
+      "arm": "probe",
+      "group": 42,
+      "id": "s77106-birth-w0-p3-h6-o1",
+      "number": 144,
+      "seed": 2552731237
+    },
+    {
+      "arm": "probe",
+      "group": 42,
+      "id": "s77106-late-w0-p3-h6-o1",
+      "number": 145,
+      "seed": 2552731237
+    },
+    {
+      "arm": "probe",
+      "group": 42,
+      "id": "s77106-birth-w1-p3-h6-o1",
+      "number": 146,
+      "seed": 2552731237
+    },
+    {
+      "arm": "probe",
+      "group": 42,
+      "id": "s77106-late-w1-p3-h6-o1",
+      "number": 147,
+      "seed": 2552731237
+    },
+    {
+      "arm": "probe",
+      "group": 43,
+      "id": "s77106-birth-w0-p3-h90-o1",
+      "number": 148,
+      "seed": 549028524
+    },
+    {
+      "arm": "probe",
+      "group": 43,
+      "id": "s77106-late-w0-p3-h90-o1",
+      "number": 149,
+      "seed": 549028524
+    },
+    {
+      "arm": "probe",
+      "group": 43,
+      "id": "s77106-birth-w1-p3-h90-o1",
+      "number": 150,
+      "seed": 549028524
+    },
+    {
+      "arm": "probe",
+      "group": 43,
+      "id": "s77106-late-w1-p3-h90-o1",
+      "number": 151,
+      "seed": 549028524
+    },
+    {
+      "arm": "probe",
+      "group": 44,
+      "id": "s77107-birth-w0-p2-h2-o2",
+      "number": 152,
+      "seed": 4054224670
+    },
+    {
+      "arm": "probe",
+      "group": 44,
+      "id": "s77107-late-w0-p2-h2-o2",
+      "number": 153,
+      "seed": 4054224670
+    },
+    {
+      "arm": "probe",
+      "group": 44,
+      "id": "s77107-birth-w1-p2-h2-o2",
+      "number": 154,
+      "seed": 4054224670
+    },
+    {
+      "arm": "probe",
+      "group": 44,
+      "id": "s77107-late-w1-p2-h2-o2",
+      "number": 155,
+      "seed": 4054224670
+    },
+    {
+      "arm": "probe",
+      "group": 45,
+      "id": "s77107-birth-w0-p2-h6-o2",
+      "number": 156,
+      "seed": 1657452805
+    },
+    {
+      "arm": "probe",
+      "group": 45,
+      "id": "s77107-late-w0-p2-h6-o2",
+      "number": 157,
+      "seed": 1657452805
+    },
+    {
+      "arm": "probe",
+      "group": 45,
+      "id": "s77107-birth-w1-p2-h6-o2",
+      "number": 158,
+      "seed": 1657452805
+    },
+    {
+      "arm": "probe",
+      "group": 45,
+      "id": "s77107-late-w1-p2-h6-o2",
+      "number": 159,
+      "seed": 1657452805
+    },
+    {
+      "arm": "probe",
+      "group": 46,
+      "id": "s77107-birth-w0-p2-h90-o2",
+      "number": 160,
+      "seed": 2370573174
+    },
+    {
+      "arm": "probe",
+      "group": 46,
+      "id": "s77107-late-w0-p2-h90-o2",
+      "number": 161,
+      "seed": 2370573174
+    },
+    {
+      "arm": "probe",
+      "group": 46,
+      "id": "s77107-birth-w1-p2-h90-o2",
+      "number": 162,
+      "seed": 2370573174
+    },
+    {
+      "arm": "probe",
+      "group": 46,
+      "id": "s77107-late-w1-p2-h90-o2",
+      "number": 163,
+      "seed": 2370573174
+    },
+    {
+      "arm": "probe",
+      "group": 47,
+      "id": "s77107-birth-w0-p3-h2-o2",
+      "number": 164,
+      "seed": 3005432891
+    },
+    {
+      "arm": "probe",
+      "group": 47,
+      "id": "s77107-late-w0-p3-h2-o2",
+      "number": 165,
+      "seed": 3005432891
+    },
+    {
+      "arm": "probe",
+      "group": 47,
+      "id": "s77107-birth-w1-p3-h2-o2",
+      "number": 166,
+      "seed": 3005432891
+    },
+    {
+      "arm": "probe",
+      "group": 47,
+      "id": "s77107-late-w1-p3-h2-o2",
+      "number": 167,
+      "seed": 3005432891
+    },
+    {
+      "arm": "probe",
+      "group": 48,
+      "id": "s77107-birth-w0-p3-h6-o2",
+      "number": 168,
+      "seed": 439175766
+    },
+    {
+      "arm": "probe",
+      "group": 48,
+      "id": "s77107-late-w0-p3-h6-o2",
+      "number": 169,
+      "seed": 439175766
+    },
+    {
+      "arm": "probe",
+      "group": 48,
+      "id": "s77107-birth-w1-p3-h6-o2",
+      "number": 170,
+      "seed": 439175766
+    },
+    {
+      "arm": "probe",
+      "group": 48,
+      "id": "s77107-late-w1-p3-h6-o2",
+      "number": 171,
+      "seed": 439175766
+    },
+    {
+      "arm": "probe",
+      "group": 49,
+      "id": "s77107-birth-w0-p3-h90-o2",
+      "number": 172,
+      "seed": 2428835766
+    },
+    {
+      "arm": "probe",
+      "group": 49,
+      "id": "s77107-late-w0-p3-h90-o2",
+      "number": 173,
+      "seed": 2428835766
+    },
+    {
+      "arm": "probe",
+      "group": 49,
+      "id": "s77107-birth-w1-p3-h90-o2",
+      "number": 174,
+      "seed": 2428835766
+    },
+    {
+      "arm": "probe",
+      "group": 49,
+      "id": "s77107-late-w1-p3-h90-o2",
+      "number": 175,
+      "seed": 2428835766
+    },
+    {
+      "arm": "probe",
+      "group": 50,
+      "id": "s77108-birth-w0-p2-h2-o3",
+      "number": 176,
+      "seed": 3217406413
+    },
+    {
+      "arm": "probe",
+      "group": 50,
+      "id": "s77108-late-w0-p2-h2-o3",
+      "number": 177,
+      "seed": 3217406413
+    },
+    {
+      "arm": "probe",
+      "group": 50,
+      "id": "s77108-birth-w1-p2-h2-o3",
+      "number": 178,
+      "seed": 3217406413
+    },
+    {
+      "arm": "probe",
+      "group": 50,
+      "id": "s77108-late-w1-p2-h2-o3",
+      "number": 179,
+      "seed": 3217406413
+    },
+    {
+      "arm": "probe",
+      "group": 51,
+      "id": "s77108-birth-w0-p2-h6-o3",
+      "number": 180,
+      "seed": 488789643
+    },
+    {
+      "arm": "probe",
+      "group": 51,
+      "id": "s77108-late-w0-p2-h6-o3",
+      "number": 181,
+      "seed": 488789643
+    },
+    {
+      "arm": "probe",
+      "group": 51,
+      "id": "s77108-birth-w1-p2-h6-o3",
+      "number": 182,
+      "seed": 488789643
+    },
+    {
+      "arm": "probe",
+      "group": 51,
+      "id": "s77108-late-w1-p2-h6-o3",
+      "number": 183,
+      "seed": 488789643
+    },
+    {
+      "arm": "probe",
+      "group": 52,
+      "id": "s77108-birth-w0-p2-h90-o3",
+      "number": 184,
+      "seed": 894498131
+    },
+    {
+      "arm": "probe",
+      "group": 52,
+      "id": "s77108-late-w0-p2-h90-o3",
+      "number": 185,
+      "seed": 894498131
+    },
+    {
+      "arm": "probe",
+      "group": 52,
+      "id": "s77108-birth-w1-p2-h90-o3",
+      "number": 186,
+      "seed": 894498131
+    },
+    {
+      "arm": "probe",
+      "group": 52,
+      "id": "s77108-late-w1-p2-h90-o3",
+      "number": 187,
+      "seed": 894498131
+    },
+    {
+      "arm": "probe",
+      "group": 53,
+      "id": "s77108-birth-w0-p3-h2-o3",
+      "number": 188,
+      "seed": 2114325710
+    },
+    {
+      "arm": "probe",
+      "group": 53,
+      "id": "s77108-late-w0-p3-h2-o3",
+      "number": 189,
+      "seed": 2114325710
+    },
+    {
+      "arm": "probe",
+      "group": 53,
+      "id": "s77108-birth-w1-p3-h2-o3",
+      "number": 190,
+      "seed": 2114325710
+    },
+    {
+      "arm": "probe",
+      "group": 53,
+      "id": "s77108-late-w1-p3-h2-o3",
+      "number": 191,
+      "seed": 2114325710
+    },
+    {
+      "arm": "probe",
+      "group": 54,
+      "id": "s77108-birth-w0-p3-h6-o3",
+      "number": 192,
+      "seed": 1826824642
+    },
+    {
+      "arm": "probe",
+      "group": 54,
+      "id": "s77108-late-w0-p3-h6-o3",
+      "number": 193,
+      "seed": 1826824642
+    },
+    {
+      "arm": "probe",
+      "group": 54,
+      "id": "s77108-birth-w1-p3-h6-o3",
+      "number": 194,
+      "seed": 1826824642
+    },
+    {
+      "arm": "probe",
+      "group": 54,
+      "id": "s77108-late-w1-p3-h6-o3",
+      "number": 195,
+      "seed": 1826824642
+    },
+    {
+      "arm": "probe",
+      "group": 55,
+      "id": "s77108-birth-w0-p3-h90-o3",
+      "number": 196,
+      "seed": 2065521912
+    },
+    {
+      "arm": "probe",
+      "group": 55,
+      "id": "s77108-late-w0-p3-h90-o3",
+      "number": 197,
+      "seed": 2065521912
+    },
+    {
+      "arm": "probe",
+      "group": 55,
+      "id": "s77108-birth-w1-p3-h90-o3",
+      "number": 198,
+      "seed": 2065521912
+    },
+    {
+      "arm": "probe",
+      "group": 55,
+      "id": "s77108-late-w1-p3-h90-o3",
+      "number": 199,
+      "seed": 2065521912
+    }
+  ],
+  "max_new_tokens": 128,
+  "models": [
+    "4B"
+  ],
+  "per_case_seconds": 60,
+  "public_prompts_sha256": "47e792a20e49784467c23eddee4415c3ff731953485405db040ca479ba930707",
+  "sampler": {
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "schema": "transparent-body-gpu-v1",
+  "source_prompt_sha256": "905f5375470ff51203f60e05222ee3b8e428c6817dcc331e49a70a533c42bb3b",
+  "thinking": false,
+  "torch_version": "2.14.1+cu130"
+}

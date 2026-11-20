@@ -1,0 +1,200 @@
+{
+  "answer_keys_prefix_sum_verified": 28,
+  "v1_v2_monolithic_exact_output_repeats": 14,
+  "archived_primary_choice_and_joint_counts_agree": true,
+  "counts": {
+    "v1-4B": {
+      "monolithic/development/rules": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 12
+      },
+      "monolithic/development/history": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 6,
+        "correct_choice_wrong_forecast": 6,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 14
+      }
+    },
+    "v2-4B": {
+      "monolithic/development/rules": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 12
+      },
+      "staged/development/rules": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 2,
+        "chosen_plan_tasks": 16
+      },
+      "staged/development/history": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 6,
+        "correct_choice_wrong_forecast": 6,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 15
+      },
+      "monolithic/development/history": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 6,
+        "correct_choice_wrong_forecast": 6,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 14
+      }
+    },
+    "v3-4B": {
+      "minimal/development/rules": {
+        "n": 7,
+        "completed": 4,
+        "joint_success": 0,
+        "choice_correct": 3,
+        "correct_choice_wrong_forecast": 3,
+        "chosen_plan_terminates": 0,
+        "chosen_plan_tasks": 4
+      },
+      "minimal/development/history": {
+        "n": 7,
+        "completed": 4,
+        "joint_success": 0,
+        "choice_correct": 3,
+        "correct_choice_wrong_forecast": 3,
+        "chosen_plan_terminates": 0,
+        "chosen_plan_tasks": 4
+      },
+      "minimal/confirmation/rules": {
+        "n": 7,
+        "completed": 4,
+        "joint_success": 0,
+        "choice_correct": 3,
+        "correct_choice_wrong_forecast": 3,
+        "chosen_plan_terminates": 0,
+        "chosen_plan_tasks": 6
+      },
+      "minimal/confirmation/history": {
+        "n": 7,
+        "completed": 4,
+        "joint_success": 0,
+        "choice_correct": 3,
+        "correct_choice_wrong_forecast": 3,
+        "chosen_plan_terminates": 0,
+        "chosen_plan_tasks": 6
+      }
+    },
+    "v3-9B": {
+      "minimal/development/rules": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 14
+      },
+      "minimal/development/history": {
+        "n": 7,
+        "completed": 7,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 14
+      },
+      "minimal/confirmation/rules": {
+        "n": 7,
+        "completed": 6,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 12
+      },
+      "minimal/confirmation/history": {
+        "n": 7,
+        "completed": 6,
+        "joint_success": 0,
+        "choice_correct": 5,
+        "correct_choice_wrong_forecast": 5,
+        "chosen_plan_terminates": 1,
+        "chosen_plan_tasks": 12
+      }
+    }
+  },
+  "v3_posthoc_plan_field_diagnostics": {
+    "4B": {
+      "completed_plan_outputs": 32,
+      "all_plan_fields_correct": 0,
+      "health_array_length_wrong": 24,
+      "health_array_exact": 2,
+      "task_count_correct": 8,
+      "terminal_and_continuation_correct": 18
+    },
+    "9B": {
+      "completed_plan_outputs": 52,
+      "all_plan_fields_correct": 2,
+      "health_array_length_wrong": 36,
+      "health_array_exact": 6,
+      "task_count_correct": 28,
+      "terminal_and_continuation_correct": 16
+    }
+  },
+  "v3_both_completed_posthoc": {
+    "n": 14,
+    "ids": [
+      "d01-rules",
+      "d01-history",
+      "d03-rules",
+      "d03-history",
+      "d04-rules",
+      "d04-history",
+      "d07-rules",
+      "d07-history",
+      "c03-rules",
+      "c03-history",
+      "c04-rules",
+      "c04-history",
+      "c07-rules",
+      "c07-history"
+    ],
+    "models": {
+      "4B": {
+        "correct_choices": 10,
+        "selected_terminal_plans": 0
+      },
+      "9B": {
+        "correct_choices": 8,
+        "selected_terminal_plans": 4
+      }
+    }
+  },
+  "v3_healthy_choice_delivery": {
+    "4B": {
+      "planned": 4,
+      "completed": 2,
+      "correct_choices": 2
+    },
+    "9B": {
+      "planned": 4,
+      "completed": 2,
+      "correct_choices": 2
+    }
+  }
+}

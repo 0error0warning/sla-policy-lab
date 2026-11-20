@@ -1,0 +1,1457 @@
+{
+  "4B/direct/given_outcomes": {
+    "boundary_parsing": {
+      "corrected_records": 32,
+      "max_tokens_after_message_end": 2,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 64
+    },
+    "budget_stop_fraction_executed": 0.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 3,
+        "choice_correct": 2,
+        "choices": {
+          "ask": 1,
+          "help": 1,
+          "trade": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 1,
+        "risk_regret": 0.0
+      },
+      "2.0": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "ask": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "3.35": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "ask": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "3.65": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "help": 2,
+          "trade": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "300.0": {
+        "calculation_correct": 4,
+        "choice_correct": 0,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "6.0": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "help": 2,
+          "trade": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "8.25": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "90.0": {
+        "calculation_correct": 3,
+        "choice_correct": 0,
+        "choices": {
+          "wait": 3
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 1,
+        "risk_regret": 0.0
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 8,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.85,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 8,
+        "risk_minimizing_choice": 8,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 2,
+        "choice_valid": 10,
+        "executed": 12,
+        "healthy_task_complete": 2,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 12,
+        "risk_minimizing_choice": 10,
+        "wrong_only_task_tiebreak": 8
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 8,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.09999999999999998,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 8,
+        "risk_minimizing_choice": 8,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 4,
+        "choice_valid": 4,
+        "executed": 4,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 4,
+        "risk_minimizing_choice": 4,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": 1.0,
+    "choice_accuracy_given_valid_action": 0.7333333333333333,
+    "choice_counts": {
+      "ask": 9,
+      "help": 5,
+      "trade": 5,
+      "wait": 11
+    },
+    "counts": {
+      "budget_stop": 0,
+      "calculation_correct": 30,
+      "calculation_wrong": 0,
+      "choice_correct": 22,
+      "choice_valid": 30,
+      "choice_wrong": 8,
+      "executed": 32,
+      "final_json_parsed": 30,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 2,
+      "invalid_schema": 0,
+      "no_final_channel": 0,
+      "risk_minimizing_choice": 30,
+      "schema": 30,
+      "unfinished": 0,
+      "wrong_only_task_tiebreak": 8
+    },
+    "healthy_answering": 2,
+    "healthy_executed": 12,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 2,
+    "healthy_valid_action": 10,
+    "mean_actual_death_probability_observed_choices": 0.2533333333333333,
+    "mean_risk_regret_observed_choices": 0.0,
+    "mean_seconds": 14.822982857093802,
+    "mean_tokens": 233.15625,
+    "paired_calculation_correct": 14,
+    "paired_choice_correct": 11,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "eos": 32
+    },
+    "survival_classification_correct": 30
+  },
+  "4B/direct/known_rules": {
+    "boundary_parsing": {
+      "corrected_records": 32,
+      "max_tokens_after_message_end": 2,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 64
+    },
+    "budget_stop_fraction_executed": 0.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "trade": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "trade": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.11250000000000002
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "ask": 2,
+          "help": 1,
+          "wait": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.07500000000000001
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {
+          "ask": 1,
+          "wait": 3
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.8625
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "trade": 2,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "ask": 1,
+          "help": 1,
+          "trade": 1,
+          "wait": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.4125
+      },
+      "8.25": {
+        "calculation_correct": 0,
+        "choice_correct": 4,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "help": 1,
+          "wait": 3
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 3,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 5,
+        "mean_actual_death_probability_observed_choices": 0.94375,
+        "mean_risk_regret_observed_choices": 0.09375000000000001,
+        "presentations": 8,
+        "risk_minimizing_choice": 3,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 4,
+        "choice_valid": 12,
+        "executed": 12,
+        "healthy_task_complete": 4,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 12,
+        "risk_minimizing_choice": 12,
+        "wrong_only_task_tiebreak": 8
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 2,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 6,
+        "mean_actual_death_probability_observed_choices": 0.7375,
+        "mean_risk_regret_observed_choices": 0.6375,
+        "presentations": 8,
+        "risk_minimizing_choice": 2,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 4,
+        "choice_valid": 4,
+        "executed": 4,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 4,
+        "risk_minimizing_choice": 4,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": 0.0,
+    "choice_accuracy_given_valid_action": 0.40625,
+    "choice_counts": {
+      "ask": 6,
+      "help": 3,
+      "trade": 5,
+      "wait": 18
+    },
+    "counts": {
+      "budget_stop": 0,
+      "calculation_correct": 0,
+      "calculation_wrong": 21,
+      "choice_correct": 13,
+      "choice_valid": 32,
+      "choice_wrong": 19,
+      "executed": 32,
+      "final_json_parsed": 32,
+      "higher_risk_choice": 11,
+      "invalid_final_json": 0,
+      "invalid_schema": 11,
+      "no_final_channel": 0,
+      "risk_minimizing_choice": 21,
+      "schema": 21,
+      "unfinished": 0,
+      "wrong_only_task_tiebreak": 8
+    },
+    "healthy_answering": 4,
+    "healthy_executed": 12,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 4,
+    "healthy_valid_action": 12,
+    "mean_actual_death_probability_observed_choices": 0.4203125,
+    "mean_risk_regret_observed_choices": 0.18281250000000002,
+    "mean_seconds": 12.310544037656243,
+    "mean_tokens": 192.875,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 4,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "eos": 32
+    },
+    "survival_classification_correct": 8
+  },
+  "4B/thinking/given_outcomes": {
+    "boundary_parsing": {
+      "corrected_records": 1,
+      "max_tokens_after_message_end": 2,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 2
+    },
+    "budget_stop_fraction_executed": 0.8,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "8.25": {
+        "calculation_correct": 1,
+        "choice_correct": 1,
+        "choices": {
+          "wait": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 3,
+        "risk_regret": 0.0
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 3,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 12,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 1,
+        "choice_valid": 1,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 4,
+        "risk_minimizing_choice": 1,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": 1.0,
+    "choice_accuracy_given_valid_action": 1.0,
+    "choice_counts": {
+      "wait": 1
+    },
+    "counts": {
+      "budget_stop": 4,
+      "calculation_correct": 1,
+      "calculation_wrong": 0,
+      "choice_correct": 1,
+      "choice_valid": 1,
+      "choice_wrong": 0,
+      "executed": 5,
+      "final_json_parsed": 1,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 4,
+      "risk_minimizing_choice": 1,
+      "schema": 1,
+      "unfinished": 4,
+      "wrong_only_task_tiebreak": 0
+    },
+    "healthy_answering": 0,
+    "healthy_executed": 3,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 0,
+    "healthy_valid_action": 0,
+    "mean_actual_death_probability_observed_choices": 0.0,
+    "mean_risk_regret_observed_choices": 0.0,
+    "mean_seconds": 119.44349851360005,
+    "mean_tokens": 1903,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 0,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "eos": 1,
+      "time_limit": 4,
+      "unrun_no_retrieved_record": 27
+    },
+    "survival_classification_correct": 1
+  },
+  "4B/thinking/known_rules": {
+    "boundary_parsing": {
+      "corrected_records": 0,
+      "max_tokens_after_message_end": 0,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 0
+    },
+    "budget_stop_fraction_executed": 1.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "8.25": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 3,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 12,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 4,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": null,
+    "choice_accuracy_given_valid_action": null,
+    "choice_counts": {},
+    "counts": {
+      "budget_stop": 5,
+      "calculation_correct": 0,
+      "calculation_wrong": 0,
+      "choice_correct": 0,
+      "choice_valid": 0,
+      "choice_wrong": 0,
+      "executed": 5,
+      "final_json_parsed": 0,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 5,
+      "risk_minimizing_choice": 0,
+      "schema": 0,
+      "unfinished": 5,
+      "wrong_only_task_tiebreak": 0
+    },
+    "healthy_answering": 0,
+    "healthy_executed": 3,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 0,
+    "healthy_valid_action": 0,
+    "mean_actual_death_probability_observed_choices": null,
+    "mean_risk_regret_observed_choices": null,
+    "mean_seconds": 120.02961686660005,
+    "mean_tokens": 1905.6,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 0,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "time_limit": 5,
+      "unrun_no_retrieved_record": 27
+    },
+    "survival_classification_correct": 0
+  },
+  "9B/direct/given_outcomes": {
+    "boundary_parsing": {
+      "corrected_records": 32,
+      "max_tokens_after_message_end": 2,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 64
+    },
+    "budget_stop_fraction_executed": 0.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 4,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "help": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "2.0": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "ask": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "3.35": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "ask": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "3.65": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "help": 2,
+          "trade": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "300.0": {
+        "calculation_correct": 4,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "help": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "6.0": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "help": 2,
+          "trade": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "8.25": {
+        "calculation_correct": 4,
+        "choice_correct": 4,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "90.0": {
+        "calculation_correct": 4,
+        "choice_correct": 0,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 8,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.85,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 8,
+        "risk_minimizing_choice": 8,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 2,
+        "choice_valid": 12,
+        "executed": 12,
+        "healthy_task_complete": 2,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 12,
+        "risk_minimizing_choice": 12,
+        "wrong_only_task_tiebreak": 10
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 8,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.09999999999999998,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 8,
+        "risk_minimizing_choice": 8,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 4,
+        "choice_valid": 4,
+        "executed": 4,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 4,
+        "risk_minimizing_choice": 4,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": 1.0,
+    "choice_accuracy_given_valid_action": 0.6875,
+    "choice_counts": {
+      "ask": 10,
+      "help": 6,
+      "trade": 4,
+      "wait": 12
+    },
+    "counts": {
+      "budget_stop": 0,
+      "calculation_correct": 32,
+      "calculation_wrong": 0,
+      "choice_correct": 22,
+      "choice_valid": 32,
+      "choice_wrong": 10,
+      "executed": 32,
+      "final_json_parsed": 32,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 0,
+      "risk_minimizing_choice": 32,
+      "schema": 32,
+      "unfinished": 0,
+      "wrong_only_task_tiebreak": 10
+    },
+    "healthy_answering": 2,
+    "healthy_executed": 12,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 2,
+    "healthy_valid_action": 12,
+    "mean_actual_death_probability_observed_choices": 0.2375,
+    "mean_risk_regret_observed_choices": 0.0,
+    "mean_seconds": 17.950699922124997,
+    "mean_tokens": 249.25,
+    "paired_calculation_correct": 16,
+    "paired_choice_correct": 10,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "eos": 32
+    },
+    "survival_classification_correct": 32
+  },
+  "9B/direct/known_rules": {
+    "boundary_parsing": {
+      "corrected_records": 32,
+      "max_tokens_after_message_end": 2,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 64
+    },
+    "budget_stop_fraction_executed": 0.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "trade": 1,
+          "wait": 3
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "help": 2,
+          "trade": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.11250000000000002
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {
+          "help": 2,
+          "trade": 1,
+          "wait": 1
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.15000000000000002
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 1,
+        "choices": {
+          "ask": 1,
+          "help": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.6375
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "help": 1,
+          "trade": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "help": 2,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.45
+      },
+      "8.25": {
+        "calculation_correct": 0,
+        "choice_correct": 2,
+        "choices": {
+          "ask": 1,
+          "trade": 1,
+          "wait": 2
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.2375
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {
+          "wait": 4
+        },
+        "n": 4,
+        "no_final_or_invalid_action": 0,
+        "risk_regret": 0.0
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 1,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 7,
+        "mean_actual_death_probability_observed_choices": 0.98125,
+        "mean_risk_regret_observed_choices": 0.13125000000000003,
+        "presentations": 8,
+        "risk_minimizing_choice": 1,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 3,
+        "choice_valid": 12,
+        "executed": 12,
+        "healthy_task_complete": 3,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": 0.0,
+        "mean_risk_regret_observed_choices": 0.0,
+        "presentations": 12,
+        "risk_minimizing_choice": 12,
+        "wrong_only_task_tiebreak": 9
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 3,
+        "choice_valid": 8,
+        "executed": 8,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 5,
+        "mean_actual_death_probability_observed_choices": 0.64375,
+        "mean_risk_regret_observed_choices": 0.54375,
+        "presentations": 8,
+        "risk_minimizing_choice": 3,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 2,
+        "choice_valid": 4,
+        "executed": 4,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 2,
+        "mean_actual_death_probability_observed_choices": 0.2375,
+        "mean_risk_regret_observed_choices": 0.2375,
+        "presentations": 4,
+        "risk_minimizing_choice": 2,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": 0.0,
+    "choice_accuracy_given_valid_action": 0.28125,
+    "choice_counts": {
+      "ask": 3,
+      "help": 8,
+      "trade": 5,
+      "wait": 16
+    },
+    "counts": {
+      "budget_stop": 0,
+      "calculation_correct": 0,
+      "calculation_wrong": 32,
+      "choice_correct": 9,
+      "choice_valid": 32,
+      "choice_wrong": 23,
+      "executed": 32,
+      "final_json_parsed": 32,
+      "higher_risk_choice": 14,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 0,
+      "risk_minimizing_choice": 18,
+      "schema": 32,
+      "unfinished": 0,
+      "wrong_only_task_tiebreak": 9
+    },
+    "healthy_answering": 3,
+    "healthy_executed": 12,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 3,
+    "healthy_valid_action": 12,
+    "mean_actual_death_probability_observed_choices": 0.4359375,
+    "mean_risk_regret_observed_choices": 0.19843750000000002,
+    "mean_seconds": 15.22642031796877,
+    "mean_tokens": 211.65625,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 1,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "eos": 32
+    },
+    "survival_classification_correct": 12
+  },
+  "9B/thinking/given_outcomes": {
+    "boundary_parsing": {
+      "corrected_records": 0,
+      "max_tokens_after_message_end": 0,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 0
+    },
+    "budget_stop_fraction_executed": 1.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "8.25": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 3,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 12,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 4,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": null,
+    "choice_accuracy_given_valid_action": null,
+    "choice_counts": {},
+    "counts": {
+      "budget_stop": 4,
+      "calculation_correct": 0,
+      "calculation_wrong": 0,
+      "choice_correct": 0,
+      "choice_valid": 0,
+      "choice_wrong": 0,
+      "executed": 4,
+      "final_json_parsed": 0,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 4,
+      "risk_minimizing_choice": 0,
+      "schema": 0,
+      "unfinished": 4,
+      "wrong_only_task_tiebreak": 0
+    },
+    "healthy_answering": 0,
+    "healthy_executed": 3,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 0,
+    "healthy_valid_action": 0,
+    "mean_actual_death_probability_observed_choices": null,
+    "mean_risk_regret_observed_choices": null,
+    "mean_seconds": 120.05171798549998,
+    "mean_tokens": 1682.75,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 0,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "time_limit": 4,
+      "unrun_budget": 28
+    },
+    "survival_classification_correct": 0
+  },
+  "9B/thinking/known_rules": {
+    "boundary_parsing": {
+      "corrected_records": 0,
+      "max_tokens_after_message_end": 0,
+      "original_correct_calculation": 0,
+      "original_correct_choice": 0,
+      "original_valid_action": 0,
+      "original_valid_json": 0,
+      "tokens_after_message_end": 0
+    },
+    "budget_stop_fraction_executed": 1.0,
+    "by_health": {
+      "12.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "2.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.35": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "3.65": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "300.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "6.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "8.25": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      },
+      "90.0": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choices": {},
+        "n": 4,
+        "no_final_or_invalid_action": 4,
+        "risk_regret": null
+      }
+    },
+    "by_regime": {
+      "answer_fatal_even_with_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "healthy_all_actions_survive": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 3,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 12,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "maintenance_can_save_answer": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 1,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 8,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      },
+      "wait_can_survive_without_maintenance": {
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "executed": 0,
+        "healthy_task_complete": 0,
+        "higher_risk_choice": 0,
+        "mean_actual_death_probability_observed_choices": null,
+        "mean_risk_regret_observed_choices": null,
+        "presentations": 4,
+        "risk_minimizing_choice": 0,
+        "wrong_only_task_tiebreak": 0
+      }
+    },
+    "calculation_accuracy_given_valid_schema": null,
+    "choice_accuracy_given_valid_action": null,
+    "choice_counts": {},
+    "counts": {
+      "budget_stop": 4,
+      "calculation_correct": 0,
+      "calculation_wrong": 0,
+      "choice_correct": 0,
+      "choice_valid": 0,
+      "choice_wrong": 0,
+      "executed": 4,
+      "final_json_parsed": 0,
+      "higher_risk_choice": 0,
+      "invalid_final_json": 0,
+      "invalid_schema": 0,
+      "no_final_channel": 4,
+      "risk_minimizing_choice": 0,
+      "schema": 0,
+      "unfinished": 4,
+      "wrong_only_task_tiebreak": 0
+    },
+    "healthy_answering": 0,
+    "healthy_executed": 3,
+    "healthy_presentations": 12,
+    "healthy_task_complete": 0,
+    "healthy_valid_action": 0,
+    "mean_actual_death_probability_observed_choices": null,
+    "mean_risk_regret_observed_choices": null,
+    "mean_seconds": 120.05624830450006,
+    "mean_tokens": 1686.5,
+    "paired_calculation_correct": 0,
+    "paired_choice_correct": 0,
+    "physical_states": 16,
+    "presentations": 32,
+    "stop_reasons": {
+      "time_limit": 4,
+      "unrun_budget": 28
+    },
+    "survival_classification_correct": 0
+  }
+}

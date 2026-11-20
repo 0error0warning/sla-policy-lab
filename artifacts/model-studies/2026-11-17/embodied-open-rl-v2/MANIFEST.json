@@ -1,0 +1,78 @@
+{
+  "schema": "sla-embodied-open-rl-v2-manifest",
+  "file_count": 14,
+  "total_bytes": 13518617,
+  "max_file_bytes": 12051504,
+  "files": [
+    {
+      "path": "analysis/audit.json",
+      "bytes": 540,
+      "sha256": "8a0835b0a30aee12dc8ccbb6c3b4fd1e171124bb7604189fbdc13aef4ee94358"
+    },
+    {
+      "path": "analysis/summary.json",
+      "bytes": 317141,
+      "sha256": "80c79e7cce2bbd93e46083f389e3d3c042b2f2806bd04e832b6c43e6a718345d"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 18197,
+      "sha256": "d503310f32ad6f7e831cac33047dcb16861fe8686f02e20c2244311509ddafb3"
+    },
+    {
+      "path": "RESOURCES.json",
+      "bytes": 803,
+      "sha256": "97cc4e00e21e9073ed45ad7f95535bbd6e53b213d47cbadcc6d137fe2c3d8432"
+    },
+    {
+      "path": "run/pilot/export-receipt.json",
+      "bytes": 537,
+      "sha256": "86d271ea38a398f81162c0cd398d2b27b136567ec69507100478471d399e7df2"
+    },
+    {
+      "path": "run/pilot/inputs.zip",
+      "bytes": 24763,
+      "sha256": "629280e2ce68439ff0f583b77234f5d156342b0f401c4d07f7e68b94b9b80234"
+    },
+    {
+      "path": "run/pilot/launch.py",
+      "bytes": 5555,
+      "sha256": "a02f5e86ce89b268b5ad530d02580ffc64ee83f871b67f7a318f8117ffc6e2ee"
+    },
+    {
+      "path": "run/pilot/results.zip",
+      "bytes": 12051504,
+      "sha256": "14cf6b6123dd2ceeb6058c6116ac72eb85728a35c2eb7f698343e4370e2bb240"
+    },
+    {
+      "path": "run/smoke/inputs.zip",
+      "bytes": 24763,
+      "sha256": "629280e2ce68439ff0f583b77234f5d156342b0f401c4d07f7e68b94b9b80234"
+    },
+    {
+      "path": "run/smoke/launch.py",
+      "bytes": 5570,
+      "sha256": "df297bf767f8f42588ebb2ab6479b1130454b23570e8cae7005ed188d33c0daf"
+    },
+    {
+      "path": "run/smoke-r1/export-receipt.json",
+      "bytes": 291,
+      "sha256": "7ff7fa531c1a97fabd3788239dd7387d054d59bba202494f703e62237e1ada5f"
+    },
+    {
+      "path": "run/smoke-r1/inputs.zip",
+      "bytes": 24766,
+      "sha256": "7a382de63272bcd311de65b1fdda5df65a09daea4ec18ed319415853408d587a"
+    },
+    {
+      "path": "run/smoke-r1/launch.py",
+      "bytes": 5552,
+      "sha256": "29ff29f8570e9c6cfaf4c12c8620c8dcde9053c71da696e9fe310720be596d9e"
+    },
+    {
+      "path": "run/smoke-r1/results.zip",
+      "bytes": 1038635,
+      "sha256": "0047db202975d313e0234ee5740eb37cf7c3147ee991a41362075cb8796e00fa"
+    }
+  ]
+}

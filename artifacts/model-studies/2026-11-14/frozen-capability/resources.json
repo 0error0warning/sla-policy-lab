@@ -1,0 +1,67 @@
+{
+  "allocated_minutes_cap": 120,
+  "supervised_seconds_upper_bound": 5439.26,
+  "failed_provisioning_attempts": [
+    {
+      "name": "a100_attempt1",
+      "observed_successful_assignment": false,
+      "error": "ReadTimeout",
+      "supervised_seconds": 51.87,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.0
+    },
+    {
+      "name": "a100_attempt2",
+      "observed_successful_assignment": false,
+      "error": "ReadTimeout",
+      "supervised_seconds": 100.71,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.0
+    }
+  ],
+  "all_attempts_supervised_seconds_upper_bound": 5591.84,
+  "segments": [
+    {
+      "name": "initial",
+      "start_usage_utc": "2026-11-14T04:24:34.343863+00:00",
+      "end_usage_utc": "2026-11-14T04:55:45.185497+00:00",
+      "supervised_seconds_upper_bound": 1870.87,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.9654450637594323,
+      "complete_export": false
+    },
+    {
+      "name": "recovery1",
+      "start_usage_utc": "2026-11-14T04:58:47.312217+00:00",
+      "end_usage_utc": "2026-11-14T05:21:58.666848+00:00",
+      "supervised_seconds_upper_bound": 1391.36,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.6457074271213514,
+      "complete_export": true
+    },
+    {
+      "name": "recovery2",
+      "start_usage_utc": "2026-11-14T05:22:06.779445+00:00",
+      "end_usage_utc": "2026-11-14T05:38:05.121064+00:00",
+      "supervised_seconds_upper_bound": 958.28,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.3984140019450706,
+      "complete_export": true
+    },
+    {
+      "name": "recovery3",
+      "start_usage_utc": "2026-11-14T05:38:08.701113+00:00",
+      "end_usage_utc": "2026-11-14T05:58:27.426779+00:00",
+      "supervised_seconds_upper_bound": 1218.75,
+      "active_assignments_after": 0,
+      "consumption_rate_after": 0.0,
+      "debit_cu": 0.5230866140302624,
+      "complete_export": true
+    }
+  ]
+}

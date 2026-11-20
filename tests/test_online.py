@@ -207,17 +207,17 @@ class OnlineTests(unittest.TestCase):
         if not shutil.which('node'):
             self.skipTest('Node unavailable; backend tests still run')
         root = Path(__file__).resolve().parent.parent
-        javascript = (root/'web/app.js').read_text()
+        javascript = (root/'web/app.js').read_text(encoding='utf-8')
         validator = javascript[javascript.index('function validateResult(data){'):javascript.index('function setBusy(value)')]
         data = run(self.suite, Config(horizon=8), seed_count=1, trace_all=True, mode='online')
         script = "const names={prompt_reference:1,small_policy:1,lora:1,steering:1,frozen_base:1};const actionNames={answer:1,refuse:1,request_protection:1};" + validator
         script += "const data="+json.dumps(data)+";validateResult(data);delete data.methods.lora.trials[0].trajectory[0].learning;let rejected=false;try{validateResult(data)}catch(error){rejected=true}if(!rejected)throw Error('Missing evidence accepted');"
-        subprocess.run(['node','-e',script], check=True, capture_output=True)
+        subprocess.run(['node', '-'], input=script.encode('utf-8'), check=True, capture_output=True)
 
     def test_online_controls_and_replay_evidence_exist(self):
         root = Path(__file__).resolve().parent.parent
-        html = (root/'web/index.html').read_text()
-        javascript = (root/'web/app.js').read_text()
+        html = (root/'web/index.html').read_text(encoding='utf-8')
+        javascript = (root/'web/app.js').read_text(encoding='utf-8')
         for control in ('mode', 'online-lr', 'learning-enabled'):
             self.assertIn(f'id="{control}"', html)
             self.assertIn(f"$('{control}')", javascript)

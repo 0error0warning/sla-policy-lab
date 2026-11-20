@@ -1,0 +1,8 @@
+{
+  "device": "NVIDIA L4",
+  "worker_seconds": 471.202322073,
+  "total_minutes": 9.863,
+  "observed_debit_cu": 0.21027606009471356,
+  "released_utc": "2026-11-13T14:32:37.346177+00:00",
+  "remaining_active": 0
+}

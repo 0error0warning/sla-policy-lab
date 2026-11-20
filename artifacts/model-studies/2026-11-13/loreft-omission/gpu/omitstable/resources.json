@@ -1,0 +1,9 @@
+{
+  "device": "NVIDIA L4",
+  "worker_seconds": 2490.711816682,
+  "supervised_minutes": 44.45366666666666,
+  "observed_debit_cu": 1.28491608013735,
+  "release_utc": "2026-11-13T13:39:01.603872+00:00",
+  "active_after": 0,
+  "peak_bytes": 9530693632
+}

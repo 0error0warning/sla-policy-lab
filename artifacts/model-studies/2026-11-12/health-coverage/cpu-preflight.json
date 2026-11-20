@@ -1,0 +1,30 @@
+[
+  {
+    "seed": 61151,
+    "coverage_start": 57.792423494065986,
+    "covered_end": 1.000000000000001,
+    "min_action_health": 9.943512993215823,
+    "cumulative_reward_change": -0.4272325004154549
+  },
+  {
+    "seed": 61152,
+    "coverage_start": 66.02943296133066,
+    "covered_end": 1.0000000000000144,
+    "min_action_health": 12.863431957694095,
+    "cumulative_reward_change": -0.3688165815569695
+  },
+  {
+    "seed": 61153,
+    "coverage_start": 63.59330868835961,
+    "covered_end": 1.0000000000000067,
+    "min_action_health": 12.755700225679549,
+    "cumulative_reward_change": -0.3895815843720478
+  },
+  {
+    "seed": 61154,
+    "coverage_start": 46.22939165933521,
+    "covered_end": 1.0000000000000107,
+    "min_action_health": 4.387884489287721,
+    "cumulative_reward_change": -0.4542230782212777
+  }
+]

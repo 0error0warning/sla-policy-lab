@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "method": "Local pinned official tokenizer.json via tokenizers.Tokenizer; original HF skip-special decode byte equivalence checked; only EOS/pad in terminal control-and-whitespace suffix removed, every whitespace byte retained",
+  "calls_checked": 112,
+  "trailing_stop_ids": [
+    248044,
+    248046
+  ],
+  "canonical_differs_from_skip_special_tokens": []
+}

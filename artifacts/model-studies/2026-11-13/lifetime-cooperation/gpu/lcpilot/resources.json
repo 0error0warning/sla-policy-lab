@@ -1,0 +1,12 @@
+{
+  "active_after_release": 0,
+  "device": "NVIDIA L4",
+  "observed_credit_decrease": 0.6224689951968685,
+  "peak_device_bytes": 9539508736,
+  "preregistered_assignment_limit_minutes": 90,
+  "preregistered_worker_limit_seconds": 3600,
+  "rate_after_release": 0.0,
+  "released_utc": "2026-11-13T07:06:58.654452+00:00",
+  "supervised_seconds_with_allocation_and_release": 1318.8,
+  "worker_seconds": 1173.7485892570003
+}

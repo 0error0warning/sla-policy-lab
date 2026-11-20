@@ -1,0 +1,2394 @@
+{
+  "h12-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h12-favhelp"
+  },
+  "h12-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h12-favhelp"
+  },
+  "h12-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h12-favhelp"
+  },
+  "h12-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h12-favhelp"
+  },
+  "h12-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h12-favtrade"
+  },
+  "h12-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h12-favtrade"
+  },
+  "h12-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h12-favtrade"
+  },
+  "h12-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 11.508571428571429,
+        "after_no_maintenance": 3.6063116517123595,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 8.56,
+        "after_no_maintenance": 0.6238975688503134,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 4.103380665522698,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 12.0,
+    "independent_max_error": 1.3322676295501878e-15,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h12-favtrade"
+  },
+  "h2-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h2-favhelp"
+  },
+  "h2-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h2-favhelp"
+  },
+  "h2-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h2-favhelp"
+  },
+  "h2-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h2-favhelp"
+  },
+  "h2-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h2-favtrade"
+  },
+  "h2-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h2-favtrade"
+  },
+  "h2-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h2-favtrade"
+  },
+  "h2-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h2-favtrade"
+  },
+  "h3.35-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  "h3.35-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  "h3.35-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  "h3.35-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.35-favhelp"
+  },
+  "h3.35-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.35-favtrade"
+  },
+  "h3.35-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.35-favtrade"
+  },
+  "h3.35-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.35-favtrade"
+  },
+  "h3.35-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 2.852392857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.35,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.35-favtrade"
+  },
+  "h3.65-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.65-favhelp"
+  },
+  "h3.65-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.65-favhelp"
+  },
+  "h3.65-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.65-favhelp"
+  },
+  "h3.65-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h3.65-favhelp"
+  },
+  "h3.65-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.65-favtrade"
+  },
+  "h3.65-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.65-favtrade"
+  },
+  "h3.65-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.65-favtrade"
+  },
+  "h3.65-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 3.1526071428571427,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 0.16825,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 3.65,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h3.65-favtrade"
+  },
+  "h300-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h300-favhelp"
+  },
+  "h300-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h300-favhelp"
+  },
+  "h300-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h300-favhelp"
+  },
+  "h300-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h300-favhelp"
+  },
+  "h300-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h300-favtrade"
+  },
+  "h300-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h300-favtrade"
+  },
+  "h300-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h300-favtrade"
+  },
+  "h300-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 299.7142857142857,
+        "after_no_maintenance": 295.1199486347165,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 298.0,
+        "after_no_maintenance": 293.3859869586339,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 295.40894224739685,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 300.0,
+    "independent_max_error": 5.684341886080802e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h300-favtrade"
+  },
+  "h6-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h6-favhelp"
+  },
+  "h6-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h6-favhelp"
+  },
+  "h6-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h6-favhelp"
+  },
+  "h6-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "help"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "help",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h6-favhelp"
+  },
+  "h6-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h6-favtrade"
+  },
+  "h6-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h6-favtrade"
+  },
+  "h6-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h6-favtrade"
+  },
+  "h6-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "favorite": "trade",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h6-favtrade"
+  },
+  "h8.25-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h8.25-favhelp"
+  },
+  "h8.25-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h8.25-favhelp"
+  },
+  "h8.25-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h8.25-favhelp"
+  },
+  "h8.25-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h8.25-favhelp"
+  },
+  "h8.25-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h8.25-favtrade"
+  },
+  "h8.25-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h8.25-favtrade"
+  },
+  "h8.25-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h8.25-favtrade"
+  },
+  "h8.25-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h8.25-favtrade"
+  },
+  "h90-favhelp-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h90-favhelp"
+  },
+  "h90-favhelp-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h90-favhelp"
+  },
+  "h90-favhelp-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h90-favhelp"
+  },
+  "h90-favhelp-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "help",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "state": "h90-favhelp"
+  },
+  "h90-favtrade-order0-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h90-favtrade"
+  },
+  "h90-favtrade-order0-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h90-favtrade"
+  },
+  "h90-favtrade-order1-given_outcomes": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h90-favtrade"
+  },
+  "h90-favtrade-order1-known_rules": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "favorite": "trade",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "state": "h90-favtrade"
+  }
+}

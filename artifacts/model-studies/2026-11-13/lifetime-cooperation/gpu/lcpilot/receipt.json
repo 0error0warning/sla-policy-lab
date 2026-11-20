@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 200,
+  "bytes": 7767569,
+  "sha256": "742ce68fafdeab6d50f59b4029c48f17bab63ab67cbde830d83a85dba6139abc",
+  "study_stage": "lcpilot",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "5577cf8eb30a87331f9c2364e35184d56dbb353558926b3352b2be49df3a20b0"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 2524689,
+      "sha256": "976f9f68b51461dd1aa94a8718e7e1e5553b86aeba8669655c4e99be26620474"
+    }
+  ]
+}

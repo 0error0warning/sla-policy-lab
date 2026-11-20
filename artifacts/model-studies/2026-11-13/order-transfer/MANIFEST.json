@@ -1,0 +1,50 @@
+{
+  "REPORT.md": {
+    "bytes": 8905,
+    "sha256": "b86fb05370f24eb4449a3f7cad922240ba1fc4568f664fc57f356d591e1bcaa5"
+  },
+  "REPRODUCTION.json": {
+    "bytes": 936,
+    "sha256": "f13522e23287a8875541e99044fccb90909ee45a4e48ca357953bbe05c86c9e3"
+  },
+  "RESOURCES.json": {
+    "bytes": 287,
+    "sha256": "cef7fb8a1d84d7f1a41c44054d90879aa329648ce88a29cd32653aadfba72496"
+  },
+  "analysis/budgets.csv": {
+    "bytes": 12346,
+    "sha256": "08314e94e29edc4f2f5f6b6167416eb676d0041599486d67509cc45a35585899"
+  },
+  "analysis/healthy-lives.csv": {
+    "bytes": 11301,
+    "sha256": "2ab098b2dd57edfd9ead44e289ed5d71984b5e4c3c8d91548d5a80748051d37a"
+  },
+  "analysis/paired-cases.csv": {
+    "bytes": 181515,
+    "sha256": "20714b85bac48844ae9bc122f4b9d9923b01b13af8043d9b14c6f329451c59e9"
+  },
+  "analysis/per-order.csv": {
+    "bytes": 608709,
+    "sha256": "8eef335223e32e4e738fd0df0e5007405d5c22803d97865e1edddbfb2cc55ea0"
+  },
+  "analysis/summary.json": {
+    "bytes": 284360,
+    "sha256": "fdace18da3efa676d03140b073277a46795c4158b140b95dbd36e97d0a55c285"
+  },
+  "gpu/ordmix/inputs.zip": {
+    "bytes": 6380771,
+    "sha256": "9df7001333de0f9ffae8ea040ed069ced7d9520ad7833afe922974905c15132f"
+  },
+  "gpu/ordmix/receipt.json": {
+    "bytes": 506,
+    "sha256": "9bfc44f4319cbae2989a92509b1e1b9a65598437ae892dd46b81548a6d884659"
+  },
+  "gpu/ordmix/results.zip": {
+    "bytes": 5449117,
+    "sha256": "abb39bf7ebbd527cba2c434b95648c405266497be1a27264c96624c3da5585df"
+  },
+  "transfer.png": {
+    "bytes": 66968,
+    "sha256": "1f47116ca7e442cd688dc9aa00ed554e154b6308ce2751ee5ebb476adc4798fb"
+  }
+}

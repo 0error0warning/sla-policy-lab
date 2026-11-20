@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-10",
+  "files": {
+    "REPORT.md": {
+      "bytes": 9515,
+      "sha256": "2f8dcae6701d706b29a34c3999a63285178a744803ef74f678d6d68a2fc6bc87"
+    },
+    "diagnostic.png": {
+      "bytes": 94625,
+      "sha256": "2399b337fe5f47adcc31bd89f59561945c45c691a94fbb28ccc61693a7450b87"
+    },
+    "gpu-results.zip": {
+      "bytes": 2759948,
+      "sha256": "46483f6bdbe8e841d69aa422929e4703b5d239cffa2977a6eed59c2be3f567dc"
+    },
+    "key.json": {
+      "bytes": 682767,
+      "sha256": "e18ed91dc43acabd3833ed6d665b2eaf0d87ffd98f26c8b607085399aa5a2d0a"
+    },
+    "public.json": {
+      "bytes": 705263,
+      "sha256": "33c13fbf06418a4b89ea5f21374b01682b79963795e6f011441f2df1b6b562da"
+    },
+    "scored.json": {
+      "bytes": 65055,
+      "sha256": "e0e10cff55546f49056e59c48699d7a678fd7c2fa295b95cfa45c7a2fa960553"
+    }
+  },
+  "independent_token_audit": {
+    "distinct_prompts": 398,
+    "records_checked": 1752
+  },
+  "public_sha256": "33c13fbf06418a4b89ea5f21374b01682b79963795e6f011441f2df1b6b562da",
+  "schema": "saved-lora-diagnostic-publication-v1",
+  "source_archive_sha256": "7c23ff365bf2837236f6c89343a8f845768cb11f3422a51c45af37959c7a5299",
+  "worker_sha256": "d5f9bf28db18105f969321edf146d80713724797f388a366cf897a37edfbc818"
+}

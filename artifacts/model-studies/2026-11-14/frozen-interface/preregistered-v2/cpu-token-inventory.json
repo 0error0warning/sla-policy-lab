@@ -1,0 +1,12 @@
+{
+  "4B": {
+    "max_input_tokens": 853,
+    "max_total_tokens": 9045,
+    "count": 24
+  },
+  "9B": {
+    "max_input_tokens": 853,
+    "max_total_tokens": 9045,
+    "count": 24
+  }
+}

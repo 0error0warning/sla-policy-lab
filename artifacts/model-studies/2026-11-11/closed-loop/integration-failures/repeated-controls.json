@@ -1,0 +1,7 @@
+{
+  "identical_completed_control_traces": [
+    "closed-s61131-m0-fast\\result.json",
+    "closed-s61131-m0-frozen\\result.json",
+    "closed-s61131-m0-hierarchical\\result.json"
+  ]
+}

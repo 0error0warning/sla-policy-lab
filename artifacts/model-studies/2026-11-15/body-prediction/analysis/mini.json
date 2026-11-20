@@ -1,0 +1,5286 @@
+{
+  "models": {
+    "PhiMini": {
+      "startup": [
+        true,
+        true
+      ],
+      "all_tokens_and_templates_verified": true,
+      "frozen": {
+        "parameter_versions_unchanged": true,
+        "trainable_parameters": 0,
+        "gradients_absent": true,
+        "outcome": "complete"
+      },
+      "raw_calls": 102,
+      "generated_tokens": 4924,
+      "generation_seconds": 208.82652316600047,
+      "single_json_fence_count": 102,
+      "plan": {
+        "model_records_supplied": 28,
+        "cases": {
+          "d01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": false,
+            "prediction_format_valid": null,
+            "choice_format_valid": null,
+            "response_format_valid": null,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": null,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "development-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 0,
+              "prediction_format_valid": 0,
+              "choice_format_valid": 0,
+              "response_format_valid": 0,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 0,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 0,
+              "choice_format_valid_assessable": 0,
+              "response_format_valid_assessable": 0,
+              "health_trace_correct_assessable": 0,
+              "terminal_correct_assessable": 0,
+              "task_counts_correct_assessable": 0,
+              "predictions_correct_assessable": 0,
+              "prediction_self_consistent_assessable": 0,
+              "choice_correct_assessable": 0,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "development-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 0,
+              "prediction_format_valid": 0,
+              "choice_format_valid": 0,
+              "response_format_valid": 0,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 0,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 0,
+              "choice_format_valid_assessable": 0,
+              "response_format_valid_assessable": 0,
+              "health_trace_correct_assessable": 0,
+              "terminal_correct_assessable": 0,
+              "task_counts_correct_assessable": 0,
+              "predictions_correct_assessable": 0,
+              "prediction_self_consistent_assessable": 0,
+              "choice_correct_assessable": 0,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 0,
+              "prediction_format_valid": 0,
+              "choice_format_valid": 0,
+              "response_format_valid": 0,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 0,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 0,
+              "choice_format_valid_assessable": 0,
+              "response_format_valid_assessable": 0,
+              "health_trace_correct_assessable": 0,
+              "terminal_correct_assessable": 0,
+              "task_counts_correct_assessable": 0,
+              "predictions_correct_assessable": 0,
+              "prediction_self_consistent_assessable": 0,
+              "choice_correct_assessable": 0,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 0,
+              "prediction_format_valid": 0,
+              "choice_format_valid": 0,
+              "response_format_valid": 0,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 0,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 0,
+              "choice_format_valid_assessable": 0,
+              "response_format_valid_assessable": 0,
+              "health_trace_correct_assessable": 0,
+              "terminal_correct_assessable": 0,
+              "task_counts_correct_assessable": 0,
+              "predictions_correct_assessable": 0,
+              "prediction_self_consistent_assessable": 0,
+              "choice_correct_assessable": 0,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          }
+        },
+        "development_gate": false,
+        "confirmation_gate": false
+      },
+      "step": {
+        "cases": {
+          "w0-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w0-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w1-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          },
+          "w2-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": false,
+            "next_health_correct": null,
+            "continuation_correct": null,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "all": {
+            "n": 72,
+            "completed": 72,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 72
+            }
+          },
+          "rules": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h0": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world0": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "history": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h1": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h3": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h8": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world1": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "world2": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 0,
+            "next_health_correct": 0,
+            "continuation_correct": 0,
+            "joint_success": 0,
+            "next_health_correct_assessable": 0,
+            "continuation_correct_assessable": 0,
+            "statuses": {
+              "completed": 24
+            }
+          }
+        },
+        "readiness_gate": false
+      },
+      "plan_unfenced": {
+        "model_records_supplied": 28,
+        "cases": {
+          "d01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": false,
+            "choice_format_valid": true,
+            "response_format_valid": false,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": false,
+            "choice_format_valid": true,
+            "response_format_valid": false,
+            "health_trace_correct": null,
+            "terminal_correct": null,
+            "task_counts_correct": null,
+            "predictions_correct": null,
+            "prediction_self_consistent": null,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "development-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 6,
+              "choice_format_valid": 7,
+              "response_format_valid": 6,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 1,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 2,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 6,
+              "terminal_correct_assessable": 6,
+              "task_counts_correct_assessable": 6,
+              "predictions_correct_assessable": 6,
+              "prediction_self_consistent_assessable": 6,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "development-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 2,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 1,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 3,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 6,
+              "choice_format_valid": 7,
+              "response_format_valid": 6,
+              "health_trace_correct": 0,
+              "terminal_correct": 0,
+              "task_counts_correct": 0,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 4,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 6,
+              "terminal_correct_assessable": 6,
+              "task_counts_correct_assessable": 6,
+              "predictions_correct_assessable": 6,
+              "prediction_self_consistent_assessable": 6,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          }
+        },
+        "development_gate": false,
+        "confirmation_gate": false
+      },
+      "step_unfenced": {
+        "cases": {
+          "w0-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": false,
+            "joint_success": false
+          },
+          "w0-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w0-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w1-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": false,
+            "joint_success": false
+          },
+          "w1-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": false,
+            "joint_success": false
+          },
+          "w2-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          }
+        },
+        "groups": {
+          "all": {
+            "n": 72,
+            "completed": 72,
+            "valid_format": 72,
+            "next_health_correct": 64,
+            "continuation_correct": 69,
+            "joint_success": 64,
+            "next_health_correct_assessable": 72,
+            "continuation_correct_assessable": 72,
+            "statuses": {
+              "completed": 72
+            }
+          },
+          "rules": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 35,
+            "continuation_correct": 35,
+            "joint_success": 35,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h0": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 17,
+            "continuation_correct": 17,
+            "joint_success": 17,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world0": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 22,
+            "continuation_correct": 23,
+            "joint_success": 22,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "history": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 29,
+            "continuation_correct": 34,
+            "joint_success": 29,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h1": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 18,
+            "continuation_correct": 18,
+            "joint_success": 18,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h3": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 13,
+            "continuation_correct": 16,
+            "joint_success": 13,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h8": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 16,
+            "continuation_correct": 18,
+            "joint_success": 16,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world1": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 22,
+            "continuation_correct": 23,
+            "joint_success": 22,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "world2": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 20,
+            "continuation_correct": 23,
+            "joint_success": 20,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          }
+        },
+        "readiness_gate": false
+      }
+    },
+    "4B": {
+      "startup": [
+        true,
+        true
+      ],
+      "all_tokens_and_templates_verified": true,
+      "frozen": {
+        "parameter_versions_unchanged": true,
+        "trainable_parameters": 0,
+        "gradients_absent": true,
+        "outcome": "complete"
+      },
+      "raw_calls": 102,
+      "generated_tokens": 5124,
+      "generation_seconds": 375.13878165099686,
+      "single_json_fence_count": 0,
+      "plan": {
+        "model_records_supplied": 28,
+        "cases": {
+          "d01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": true,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": true,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "development-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 1,
+              "terminal_correct": 6,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 5,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "development-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 4,
+              "task_counts_correct": 1,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 6,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 1,
+              "terminal_correct": 4,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 6,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 2,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 3,
+              "choice_correct": 5,
+              "consistent_with_own_predictions": 3,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 3
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          }
+        },
+        "development_gate": false,
+        "confirmation_gate": false
+      },
+      "step": {
+        "cases": {
+          "w0-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w1-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w1-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "all": {
+            "n": 72,
+            "completed": 72,
+            "valid_format": 72,
+            "next_health_correct": 65,
+            "continuation_correct": 72,
+            "joint_success": 65,
+            "next_health_correct_assessable": 72,
+            "continuation_correct_assessable": 72,
+            "statuses": {
+              "completed": 72
+            }
+          },
+          "rules": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 36,
+            "continuation_correct": 36,
+            "joint_success": 36,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h0": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 18,
+            "continuation_correct": 18,
+            "joint_success": 18,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world0": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 24,
+            "continuation_correct": 24,
+            "joint_success": 24,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "history": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 29,
+            "continuation_correct": 36,
+            "joint_success": 29,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h1": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 17,
+            "continuation_correct": 18,
+            "joint_success": 17,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h3": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 15,
+            "continuation_correct": 18,
+            "joint_success": 15,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h8": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 15,
+            "continuation_correct": 18,
+            "joint_success": 15,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world1": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 22,
+            "continuation_correct": 24,
+            "joint_success": 22,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "world2": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 19,
+            "continuation_correct": 24,
+            "joint_success": 19,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          }
+        },
+        "readiness_gate": false
+      },
+      "plan_unfenced": {
+        "model_records_supplied": 28,
+        "cases": {
+          "d01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": true,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "d07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c01-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c02-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c03-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c04-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": true,
+            "terminal_correct": true,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c04-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c05-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c05-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": false,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": true,
+            "task_counts_correct": true,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c06-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": true,
+            "choice_correct": true,
+            "consistent_with_own_predictions": true,
+            "joint_success": false
+          },
+          "c07-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          },
+          "c07-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_json": true,
+            "prediction_format_valid": true,
+            "choice_format_valid": true,
+            "response_format_valid": true,
+            "health_trace_correct": false,
+            "terminal_correct": false,
+            "task_counts_correct": false,
+            "predictions_correct": false,
+            "prediction_self_consistent": false,
+            "choice_correct": true,
+            "consistent_with_own_predictions": null,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "development-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 1,
+              "terminal_correct": 6,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 5,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "development-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 4,
+              "task_counts_correct": 1,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 6,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-rules": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 1,
+              "terminal_correct": 4,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 0,
+              "choice_correct": 6,
+              "consistent_with_own_predictions": 0,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 0
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          },
+          "confirmation-history": {
+            "n": 7,
+            "counts": {
+              "completed": 7,
+              "valid_json": 7,
+              "prediction_format_valid": 7,
+              "choice_format_valid": 7,
+              "response_format_valid": 7,
+              "health_trace_correct": 0,
+              "terminal_correct": 2,
+              "task_counts_correct": 2,
+              "predictions_correct": 0,
+              "prediction_self_consistent": 3,
+              "choice_correct": 5,
+              "consistent_with_own_predictions": 3,
+              "joint_success": 0,
+              "valid_json_assessable": 7,
+              "prediction_format_valid_assessable": 7,
+              "choice_format_valid_assessable": 7,
+              "response_format_valid_assessable": 7,
+              "health_trace_correct_assessable": 7,
+              "terminal_correct_assessable": 7,
+              "task_counts_correct_assessable": 7,
+              "predictions_correct_assessable": 7,
+              "prediction_self_consistent_assessable": 7,
+              "choice_correct_assessable": 7,
+              "consistent_with_own_predictions_assessable": 3
+            },
+            "complete_pairs": 0,
+            "paired_contrasts": 3,
+            "terminal_control_pass": false,
+            "healthy_participation_pass": false,
+            "readiness_gate": false
+          }
+        },
+        "development_gate": false,
+        "confirmation_gate": false
+      },
+      "step_unfenced": {
+        "cases": {
+          "w0-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w0-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w1-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w1-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w1-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h0-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h1-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h3-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h3-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h3-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-A-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-A-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          },
+          "w2-h8-B-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-B-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-rules": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": true,
+            "continuation_correct": true,
+            "joint_success": true
+          },
+          "w2-h8-R-history": {
+            "completion_status": "completed",
+            "completed": true,
+            "valid_format": true,
+            "next_health_correct": false,
+            "continuation_correct": true,
+            "joint_success": false
+          }
+        },
+        "groups": {
+          "all": {
+            "n": 72,
+            "completed": 72,
+            "valid_format": 72,
+            "next_health_correct": 65,
+            "continuation_correct": 72,
+            "joint_success": 65,
+            "next_health_correct_assessable": 72,
+            "continuation_correct_assessable": 72,
+            "statuses": {
+              "completed": 72
+            }
+          },
+          "rules": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 36,
+            "continuation_correct": 36,
+            "joint_success": 36,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h0": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 18,
+            "continuation_correct": 18,
+            "joint_success": 18,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world0": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 24,
+            "continuation_correct": 24,
+            "joint_success": 24,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "history": {
+            "n": 36,
+            "completed": 36,
+            "valid_format": 36,
+            "next_health_correct": 29,
+            "continuation_correct": 36,
+            "joint_success": 29,
+            "next_health_correct_assessable": 36,
+            "continuation_correct_assessable": 36,
+            "statuses": {
+              "completed": 36
+            }
+          },
+          "h1": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 17,
+            "continuation_correct": 18,
+            "joint_success": 17,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h3": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 15,
+            "continuation_correct": 18,
+            "joint_success": 15,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "h8": {
+            "n": 18,
+            "completed": 18,
+            "valid_format": 18,
+            "next_health_correct": 15,
+            "continuation_correct": 18,
+            "joint_success": 15,
+            "next_health_correct_assessable": 18,
+            "continuation_correct_assessable": 18,
+            "statuses": {
+              "completed": 18
+            }
+          },
+          "world1": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 22,
+            "continuation_correct": 24,
+            "joint_success": 22,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          },
+          "world2": {
+            "n": 24,
+            "completed": 24,
+            "valid_format": 24,
+            "next_health_correct": 19,
+            "continuation_correct": 24,
+            "joint_success": 19,
+            "next_health_correct_assessable": 24,
+            "continuation_correct_assessable": 24,
+            "statuses": {
+              "completed": 24
+            }
+          }
+        },
+        "readiness_gate": false
+      }
+    }
+  },
+  "input_sha256": "852ba590cde69200aea5ffea1d2f5cd2f973513eb2ee61018a1398f223efa07d",
+  "archive_sha256": "db30c78f7376e3e2b46ce4b96031df6857902af0ed9bcbbb7b189c73e7843ae9",
+  "outcome": "complete",
+  "hardware": {
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "gpu": "NVIDIA L4",
+    "gpu_memory_bytes": 23659151360,
+    "packages": {
+      "transformers": "5.22.2",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.4.6",
+      "tokenizers": "0.23.3",
+      "flash-linear-attention": "0.6.0",
+      "fla-core": "0.6.0"
+    },
+    "model_dtype": "bfloat16",
+    "batch_size": 1,
+    "tf32": false,
+    "deterministic_algorithms": true
+  }
+}

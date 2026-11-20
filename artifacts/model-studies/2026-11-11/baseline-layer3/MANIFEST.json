@@ -1,0 +1,58 @@
+{
+  "analysis/action-signals.csv": {
+    "bytes": 63447,
+    "sha256": "d96fa603a195b6b00ab5ea82385e9474b23d35c366f0fa2edc85084e0ac55fb6"
+  },
+  "analysis/summary.json": {
+    "bytes": 68901,
+    "sha256": "919ece692b90111cbd846dc2f48af4d3ebcc5fca9b489016af7c2d229ac2a75a"
+  },
+  "analyze.py": {
+    "bytes": 12975,
+    "sha256": "5bced533fd829bd4e4783572189001980afb4a084cc4127f7e3abc96f73c99e6"
+  },
+  "cpu-preflight.json": {
+    "bytes": 4684,
+    "sha256": "fbe6e48b8b3b513bc8d6495d004b537bc9531a1c985068bf3d307d9468480aa7"
+  },
+  "export-receipt.json": {
+    "bytes": 187,
+    "sha256": "ab37076f02300fe595d7485c114360be1a467de78374dfd225a995dfe0e3567f"
+  },
+  "figures.py": {
+    "bytes": 2461,
+    "sha256": "ce7a1affa7aa2a0c8f5880626411ac0c7119e6b7aa1295c85d806c5797950835"
+  },
+  "gpu-inputs.zip": {
+    "bytes": 23946,
+    "sha256": "78c3da3fe46d7d982c6cd2a7270c1df6d34f509c94b50ceb8ae0023a0d90c743"
+  },
+  "gpu-results.zip": {
+    "bytes": 45115930,
+    "sha256": "66caf7c6090eb1fbb2a6d8e57046ef4aa174555df2c7b689bb297e0f54294524"
+  },
+  "inputs/protocol.py": {
+    "bytes": 12880,
+    "sha256": "93378106484b2a9a467263ca6c90a5f20056bf4ceb976c97ff7866528b75b7fd"
+  },
+  "PROTOCOL.md": {
+    "bytes": 3135,
+    "sha256": "a17db2d04c3e58d6590bf2a2e2f5ecaa73d96d10d9c2bb5dcd156e2472aa426b"
+  },
+  "REPORT.md": {
+    "bytes": 10313,
+    "sha256": "adc029a04487fa2f83a65085c3cfee354e9260f65225fcf04ed590e0d0d1f549"
+  },
+  "results.pdf": {
+    "bytes": 20884,
+    "sha256": "2d6b35c037860caf95c154b37345a74d3291777097732a0e61c0e4402e6f821f"
+  },
+  "results.png": {
+    "bytes": 127291,
+    "sha256": "760cc21ffcd36d7028e07c27d2f6d3f69dd19951440ed62779223e2913e839c0"
+  },
+  "VALIDATION.json": {
+    "bytes": 4263,
+    "sha256": "193c1f18f65312f78119ae8df7698a64f7a0bf32cfa09e8aa0fa6acd4ec30372"
+  }
+}

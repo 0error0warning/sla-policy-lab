@@ -1,0 +1,1 @@
+{"worker_returncode": 0, "files": 43, "bytes": 2403741, "sha256": "1475451e3838940be12aa6241acf43d1c565ab7addb2097d457e744a42eb7cd1", "study_stage": "smoke", "chunks": [{"name": "part-000.bin", "bytes": 2403741, "sha256": "1475451e3838940be12aa6241acf43d1c565ab7addb2097d457e744a42eb7cd1"}]}

@@ -1,0 +1,38 @@
+{
+  "input_tokens": 65,
+  "messages": [
+    {
+      "role": "system",
+      "content": "Return one JSON object."
+    },
+    {
+      "role": "user",
+      "content": "Return the action answer.\nResponse schema:\n{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"answer\",\"refuse\",\"request_protection\"]}},\"required\":[\"action\"],\"additionalProperties\":false}"
+    }
+  ],
+  "prompt_sha256": "e4bcaedb358a2bd25d81ab2aada9eb65ff6344f6208406fdaf968a633824e38c",
+  "thinking": false,
+  "do_sample": false,
+  "max_new_tokens": 32,
+  "input_too_long": false,
+  "output": "{\"action\":\"answer\"}",
+  "output_token_ids": [
+    4913,
+    1311,
+    3252,
+    9217,
+    9207,
+    151645
+  ],
+  "output_tokens": 6,
+  "seconds": 1.186512797999967,
+  "first_logits_seconds": 0.9456560769999669,
+  "tokens_per_second": 5.056835467863337,
+  "peak_cuda_allocated_bytes": 3460640768,
+  "peak_cuda_reserved_bytes": 4410310656,
+  "parsed": {
+    "action": "answer"
+  },
+  "schema_error": null,
+  "hit_token_limit": false
+}

@@ -1,0 +1,399 @@
+{
+  "seeds": [
+    301110,
+    301111,
+    301112,
+    301113,
+    301114,
+    301115,
+    301116,
+    301117
+  ],
+  "independent_seed_count": 8,
+  "lives": [
+    {
+      "life_index": 0,
+      "seed": 301110,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 1,
+      "seed": 301111,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 2,
+      "seed": 301112,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 3,
+      "seed": 301113,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 4,
+      "seed": 301114,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 5,
+      "seed": 301115,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 6,
+      "seed": 301116,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 7,
+      "seed": 301117,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 8,
+      "seed": 301110,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 9,
+      "seed": 301111,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 10,
+      "seed": 301112,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 11,
+      "seed": 301113,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 12,
+      "seed": 301114,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 13,
+      "seed": 301115,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 14,
+      "seed": 301116,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 15,
+      "seed": 301117,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.08,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 16,
+      "seed": 301110,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 17,
+      "seed": 301111,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 18,
+      "seed": 301112,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 19,
+      "seed": 301113,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 20,
+      "seed": 301114,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 21,
+      "seed": 301115,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 22,
+      "seed": 301116,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 23,
+      "seed": 301117,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "supportive",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 24,
+      "seed": 301110,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 25,
+      "seed": 301111,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 26,
+      "seed": 301112,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 27,
+      "seed": 301113,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 28,
+      "seed": 301114,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 29,
+      "seed": 301115,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 30,
+      "seed": 301116,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    },
+    {
+      "life_index": 31,
+      "seed": 301117,
+      "config": {
+        "horizon": 8,
+        "load": 0.65,
+        "initial_crack": 0.7,
+        "partner": "unavailable",
+        "profile": "balanced",
+        "protection_duration": 3
+      }
+    }
+  ]
+}

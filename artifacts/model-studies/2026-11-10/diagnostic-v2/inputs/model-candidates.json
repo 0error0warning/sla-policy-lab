@@ -1,0 +1,30 @@
+{
+  "models": [
+    {
+      "id": "Qwen/Qwen3.5-4B",
+      "role": "primary_candidate_pending_qualification",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "architecture": "Qwen3_5ForConditionalGeneration; hybrid linear/full attention text backbone plus vision encoder",
+      "text_layers": 32,
+      "text_hidden_size": 2560,
+      "checkpoint_tensor_bytes": 9319737856,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "explicitly_disable",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-4B"
+    },
+    {
+      "id": "Qwen/Qwen3-4B-Instruct-2507",
+      "role": "conventional_transformer_comparator",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "architecture": "Qwen3ForCausalLM; full attention",
+      "text_layers": 36,
+      "text_hidden_size": 2560,
+      "checkpoint_tensor_bytes": 8045591552,
+      "license": "apache-2.0",
+      "gated": false,
+      "thinking": "non_thinking_only",
+      "source": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507"
+    }
+  ]
+}

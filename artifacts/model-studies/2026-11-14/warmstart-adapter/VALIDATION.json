@@ -1,0 +1,39 @@
+{
+  "preregistered_commit": "f5ada0b",
+  "source_archived_files_verified": 107,
+  "restoration_lives": 96,
+  "restoration_turns": 6637,
+  "new_autonomous_lives": 128,
+  "new_autonomous_encounters": 9441,
+  "independent_audit": {
+    "encounters": 9441,
+    "lives": 128,
+    "max_errors": {
+      "checkpoint_weights": 0.0,
+      "choice_probability": 0.0,
+      "panel_mean": 1.3526296127608362e-07
+    },
+    "passed": true,
+    "recipient_updates": 22848,
+    "scope": "CPU raw arrays; independent update/body formulas, shared fixed RUL table and cached features"
+  },
+  "local_unit_tests": {
+    "run": 176,
+    "passed": 174,
+    "skipped": 2,
+    "failed": 0
+  },
+  "ruff": "passed for new modules and modified lifetime module",
+  "preregistered_runtime_and_thresholds_unchanged": true,
+  "gpu_allocations": 0,
+  "model_or_thinking_expansion": false,
+  "public_archive_replay": {
+    "raw_members_identical": 160,
+    "byte_identical_reconstructed": [
+      "index.json",
+      "analysis.json",
+      "panels.csv"
+    ],
+    "checked_local_document_links": 14
+  }
+}

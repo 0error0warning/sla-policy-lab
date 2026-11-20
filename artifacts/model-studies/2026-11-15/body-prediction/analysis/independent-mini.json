@@ -1,0 +1,3433 @@
+{
+  "independent_public_oracles_checked": 100,
+  "analysis_sha256": "12c417ceb8f8efab3d89286b491cd8f46f8f087af27a4028d181e7d206d040a0",
+  "models": {
+    "PhiMini": {
+      "counts": {
+        "step": {
+          "attempted": 72,
+          "completed": 72,
+          "fenced": 72,
+          "correct": 64,
+          "strict_correct": 0
+        },
+        "plan": {
+          "attempted": 28,
+          "completed": 28,
+          "fenced": 28,
+          "physical_correct": 0,
+          "exact_predictions": 0,
+          "choice_correct": 11,
+          "choice_assessable": 28,
+          "joint": 0,
+          "strict_joint": 0,
+          "selected_terminating": 14,
+          "healthy_choice_correct": 3
+        }
+      },
+      "details": {
+        "d01-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  7,
+                  6,
+                  6
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  8,
+                  8,
+                  8
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d01-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  7,
+                  6,
+                  7
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  7,
+                  7,
+                  7,
+                  7
+                ],
+                "terminal_step": 4,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d02-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  13,
+                  11,
+                  10,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  10,
+                  11,
+                  11,
+                  11
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                5,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d02-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  13,
+                  11,
+                  10,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  11,
+                  11,
+                  11,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                5,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d03-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  7,
+                  7,
+                  7,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  4,
+                  2,
+                  2,
+                  1
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d03-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  7,
+                  7,
+                  7,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  5,
+                  5,
+                  5,
+                  4
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d04-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  5,
+                  7,
+                  9,
+                  11,
+                  null,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  6,
+                  4,
+                  6,
+                  4,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                5,
+                7,
+                9,
+                11
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                4,
+                2,
+                4,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d04-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  5,
+                  7,
+                  9,
+                  11,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  6,
+                  8,
+                  6,
+                  8,
+                  4
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                5,
+                7,
+                9,
+                11
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                4,
+                2,
+                4,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d05-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 2,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 2,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d05-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  7,
+                  6,
+                  6
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  3,
+                  2,
+                  2
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d06-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  10,
+                  9,
+                  7,
+                  7
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  6,
+                  4,
+                  2,
+                  2
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d06-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  10,
+                  9,
+                  7,
+                  7
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  6,
+                  5,
+                  5
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d07-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  3,
+                  5,
+                  7,
+                  9
+                ],
+                "terminal_step": 4,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                3,
+                5,
+                7,
+                9
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d07-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  6,
+                  5,
+                  7,
+                  4
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  7,
+                  9,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                3,
+                5,
+                7,
+                9
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c01-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  11,
+                  11,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  6,
+                  6,
+                  6
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c01-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  9,
+                  11,
+                  11,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  6,
+                  6,
+                  6
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c02-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  13,
+                  15,
+                  15,
+                  15
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  9,
+                  10,
+                  10,
+                  10
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                7,
+                7,
+                7
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                8,
+                6,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c02-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  13,
+                  13,
+                  13,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  9,
+                  10,
+                  10,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                7,
+                7,
+                7
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                8,
+                6,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c03-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  2,
+                  2,
+                  5,
+                  5,
+                  4
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c03-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  10,
+                  13,
+                  10,
+                  13,
+                  9
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  9,
+                  9,
+                  9,
+                  9
+                ],
+                "terminal_step": 5,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c04-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  7,
+                  4,
+                  7,
+                  6
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  7,
+                  7,
+                  7,
+                  7
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                5,
+                2,
+                5,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                7,
+                10,
+                13,
+                16
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c04-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  10,
+                  7,
+                  9,
+                  6,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  9,
+                  9,
+                  9,
+                  9,
+                  null
+                ],
+                "terminal_step": 5,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                5,
+                2,
+                5,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                7,
+                10,
+                13,
+                16
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c05-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  15,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  13,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c05-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  15,
+                  12,
+                  11,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  13,
+                  11,
+                  10,
+                  10
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c06-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  16,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  11,
+                  null,
+                  null,
+                  null
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c06-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  16,
+                  14,
+                  11,
+                  11
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  13,
+                  11,
+                  10,
+                  10
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c07-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  6,
+                  9,
+                  12,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  2,
+                  2,
+                  5,
+                  4
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                7,
+                10,
+                13
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c07-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  6,
+                  9,
+                  9,
+                  null
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  7,
+                  7,
+                  9,
+                  5
+                ],
+                "terminal_step": 4,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                7,
+                10,
+                13
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "w0-h3-B-history": {
+          "predicted": {
+            "next_health": 0,
+            "can_act_next": false
+          },
+          "truth": {
+            "next_health": 1,
+            "can_act_next": true
+          }
+        },
+        "w0-h8-B-history": {
+          "predicted": {
+            "next_health": 7,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 6,
+            "can_act_next": true
+          }
+        },
+        "w1-h3-A-history": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 1,
+            "can_act_next": true
+          }
+        },
+        "w1-h3-B-history": {
+          "predicted": {
+            "next_health": 0,
+            "can_act_next": false
+          },
+          "truth": {
+            "next_health": 2,
+            "can_act_next": true
+          }
+        },
+        "w2-h0-R-rules": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 0,
+            "can_act_next": false
+          }
+        },
+        "w2-h3-A-history": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 1,
+            "can_act_next": true
+          }
+        },
+        "w2-h3-R-history": {
+          "predicted": {
+            "next_health": 4,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 5,
+            "can_act_next": true
+          }
+        },
+        "w2-h8-A-history": {
+          "predicted": {
+            "next_health": 7,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 6,
+            "can_act_next": true
+          }
+        }
+      }
+    },
+    "4B": {
+      "counts": {
+        "step": {
+          "attempted": 72,
+          "completed": 72,
+          "fenced": 0,
+          "correct": 65,
+          "strict_correct": 65
+        },
+        "plan": {
+          "attempted": 28,
+          "completed": 28,
+          "fenced": 0,
+          "physical_correct": 7,
+          "exact_predictions": 0,
+          "choice_correct": 22,
+          "choice_assessable": 28,
+          "joint": 0,
+          "strict_joint": 0,
+          "selected_terminating": 5,
+          "healthy_choice_correct": 4
+        }
+      },
+      "details": {
+        "d01-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  1,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d01-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  1,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d02-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  5,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  6,
+                  6,
+                  6,
+                  6
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                5,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d02-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  5,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  7,
+                  7,
+                  7,
+                  7
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                5,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d03-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  2,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 1,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d03-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  3,
+                  3,
+                  1,
+                  1,
+                  0
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d04-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  5,
+                  5,
+                  5,
+                  5
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  2,
+                  4,
+                  2,
+                  4,
+                  3
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                5,
+                7,
+                9,
+                11
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                4,
+                2,
+                4,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d04-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  5,
+                  5,
+                  5,
+                  5
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  3,
+                  5,
+                  3,
+                  5,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                5,
+                7,
+                9,
+                11
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                4,
+                2,
+                4,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "d05-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  2,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  3,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d05-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  2,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  3,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "d06-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  3,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  3,
+                  1,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d06-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  3,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  3,
+                  1,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                3,
+                1,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d07-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                "terminal_step": 2,
+                "tasks": 1,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  3,
+                  5,
+                  7,
+                  9
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                3,
+                5,
+                7,
+                9
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "d07-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  3,
+                  1,
+                  4,
+                  0
+                ],
+                "terminal_step": 4,
+                "tasks": 3,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  3,
+                  5,
+                  5,
+                  5
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                3,
+                5,
+                7,
+                9
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c01-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  2,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c01-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  3,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c02-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  8,
+                  8,
+                  8,
+                  8
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  6,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                7,
+                7,
+                7
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                8,
+                6,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c02-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  8,
+                  8,
+                  8,
+                  8
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  8,
+                  7,
+                  6,
+                  6
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                7,
+                7,
+                7,
+                7
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                8,
+                6,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c03-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  4,
+                  1,
+                  1,
+                  0
+                ],
+                "terminal_step": 5,
+                "tasks": 3,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c03-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  4,
+                  1,
+                  1,
+                  0
+                ],
+                "terminal_step": 5,
+                "tasks": 2,
+                "can_act_after_plan": false
+              },
+              "Q": {
+                "health": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "Q"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 1,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c04-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  2,
+                  5,
+                  2,
+                  5,
+                  4
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  7,
+                  10,
+                  13,
+                  16
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                5,
+                2,
+                5,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                7,
+                10,
+                13,
+                16
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": true,
+          "choice_correct": true
+        },
+        "c04-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  10,
+                  7,
+                  10,
+                  6
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  10,
+                  10,
+                  10,
+                  10
+                ],
+                "terminal_step": null,
+                "tasks": 1,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                2,
+                5,
+                2,
+                5,
+                4
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                4,
+                7,
+                10,
+                13,
+                16
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c05-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  4,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  6,
+                  4,
+                  1,
+                  1
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c05-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  4,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  7,
+                  5,
+                  3,
+                  3
+                ],
+                "terminal_step": null,
+                "tasks": 2,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            },
+            "Q": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": false
+        },
+        "c06-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  5,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  5,
+                  2,
+                  0,
+                  0
+                ],
+                "terminal_step": 3,
+                "tasks": 2,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c06-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  7,
+                  5,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  7,
+                  5,
+                  2,
+                  2
+                ],
+                "terminal_step": null,
+                "tasks": 3,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "terminal_step": null,
+              "tasks": 3,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                5,
+                2,
+                0,
+                null
+              ],
+              "terminal_step": 3,
+              "tasks": 2,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c07-rules": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  7,
+                  10,
+                  13
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  2,
+                  -1,
+                  2,
+                  1
+                ],
+                "terminal_step": 4,
+                "tasks": 1,
+                "can_act_after_plan": false
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                7,
+                10,
+                13
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "c07-history": {
+          "predicted": {
+            "plans": {
+              "P": {
+                "health": [
+                  4,
+                  9,
+                  9,
+                  9
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              },
+              "Q": {
+                "health": [
+                  4,
+                  4,
+                  9,
+                  9
+                ],
+                "terminal_step": null,
+                "tasks": 0,
+                "can_act_after_plan": true
+              }
+            },
+            "choice": "P"
+          },
+          "truth": {
+            "P": {
+              "health": [
+                4,
+                7,
+                10,
+                13
+              ],
+              "terminal_step": null,
+              "tasks": 1,
+              "can_act_after_plan": true
+            },
+            "Q": {
+              "health": [
+                2,
+                0,
+                null,
+                null
+              ],
+              "terminal_step": 2,
+              "tasks": 1,
+              "can_act_after_plan": false
+            }
+          },
+          "physical_correct": false,
+          "choice_correct": true
+        },
+        "w1-h3-A-history": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 1,
+            "can_act_next": true
+          }
+        },
+        "w1-h8-A-history": {
+          "predicted": {
+            "next_health": 7,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 6,
+            "can_act_next": true
+          }
+        },
+        "w2-h1-R-history": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 3,
+            "can_act_next": true
+          }
+        },
+        "w2-h3-A-history": {
+          "predicted": {
+            "next_health": 2,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 1,
+            "can_act_next": true
+          }
+        },
+        "w2-h3-R-history": {
+          "predicted": {
+            "next_health": 4,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 5,
+            "can_act_next": true
+          }
+        },
+        "w2-h8-A-history": {
+          "predicted": {
+            "next_health": 7,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 6,
+            "can_act_next": true
+          }
+        },
+        "w2-h8-R-history": {
+          "predicted": {
+            "next_health": 9,
+            "can_act_next": true
+          },
+          "truth": {
+            "next_health": 10,
+            "can_act_next": true
+          }
+        }
+      }
+    }
+  },
+  "prior_qwen_repeat": {
+    "archive_sha256": "f1cd7155e10a0f39c8eddc43aea1ab56581b9889b4cec7a02bf83c8c33d9db0d",
+    "n": 14,
+    "cases": {
+      "d04-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d05-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": false,
+        "same_completion": true
+      },
+      "d05-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d04-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d03-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d02-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d01-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d02-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d01-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d06-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d03-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d06-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d07-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": false,
+        "same_completion": true
+      },
+      "d07-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      }
+    },
+    "all_identical": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "unit_tests": 167,
+  "unit_tests_passed": true,
+  "ruff_passed": true,
+  "cpu_only": true,
+  "gpu_allocated": false,
+  "new_qwen_calls": 0,
+  "local_links_checked": 3,
+  "text_files_scanned": 14,
+  "input_sha256": "905f5375470ff51203f60e05222ee3b8e428c6817dcc331e49a70a533c42bb3b"
+}

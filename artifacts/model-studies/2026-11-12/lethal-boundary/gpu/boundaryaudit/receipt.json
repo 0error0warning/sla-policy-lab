@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 9,
+  "bytes": 1306371,
+  "sha256": "c99e4d65cee5ab534922f70fb92d0a74761e6fddf9ec9e04091d366b5fd0d053",
+  "study_stage": "boundaryaudit",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 1306371,
+      "sha256": "c99e4d65cee5ab534922f70fb92d0a74761e6fddf9ec9e04091d366b5fd0d053"
+    }
+  ]
+}

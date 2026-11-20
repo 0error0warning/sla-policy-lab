@@ -1,0 +1,15 @@
+{
+  "scope": "CPU audit of failed v1 duplicate reward controls; no fresh GPU inference",
+  "repeat_controls": [
+    {
+      "optimizer": "adam",
+      "duplicate_social_parameter_l2": 0.058881235641697366,
+      "max_abs_difference": 0.0016446011140942574
+    },
+    {
+      "optimizer": "sgd",
+      "duplicate_social_parameter_l2": 0.0002721283352463234,
+      "max_abs_difference": 7.458237632818054e-06
+    }
+  ]
+}

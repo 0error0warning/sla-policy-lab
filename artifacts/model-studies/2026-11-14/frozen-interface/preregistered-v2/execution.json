@@ -1,0 +1,180 @@
+{
+  "allocated_minutes_cap": 180,
+  "gpu_name_contains": "L4",
+  "interface_revision": "v2",
+  "jobs": [
+    {
+      "id": "table-all_zero-order0-choice_only",
+      "number": 0,
+      "seed": 1917724423,
+      "thinking": false
+    },
+    {
+      "id": "table-all_zero-order0-sets",
+      "number": 1,
+      "seed": 1917724423,
+      "thinking": false
+    },
+    {
+      "id": "table-all_zero-order1-choice_only",
+      "number": 2,
+      "seed": 2264432885,
+      "thinking": false
+    },
+    {
+      "id": "table-all_zero-order1-sets",
+      "number": 3,
+      "seed": 2264432885,
+      "thinking": false
+    },
+    {
+      "id": "table-partial_zero_tie-order0-choice_only",
+      "number": 4,
+      "seed": 2085211497,
+      "thinking": false
+    },
+    {
+      "id": "table-partial_zero_tie-order0-sets",
+      "number": 5,
+      "seed": 2085211497,
+      "thinking": false
+    },
+    {
+      "id": "table-partial_zero_tie-order1-choice_only",
+      "number": 6,
+      "seed": 916415131,
+      "thinking": false
+    },
+    {
+      "id": "table-partial_zero_tie-order1-sets",
+      "number": 7,
+      "seed": 916415131,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_answer-order0-choice_only",
+      "number": 8,
+      "seed": 1287387139,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_answer-order0-sets",
+      "number": 9,
+      "seed": 1287387139,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_answer-order1-choice_only",
+      "number": 10,
+      "seed": 49988645,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_answer-order1-sets",
+      "number": 11,
+      "seed": 49988645,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_nonanswer-order0-choice_only",
+      "number": 12,
+      "seed": 199141676,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_nonanswer-order0-sets",
+      "number": 13,
+      "seed": 199141676,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_nonanswer-order1-choice_only",
+      "number": 14,
+      "seed": 677096372,
+      "thinking": false
+    },
+    {
+      "id": "table-lowest_nonanswer-order1-sets",
+      "number": 15,
+      "seed": 677096372,
+      "thinking": false
+    },
+    {
+      "id": "body-h2-favhelp",
+      "number": 16,
+      "seed": 3182664717,
+      "thinking": false
+    },
+    {
+      "id": "body-h2-favhelp",
+      "number": 17,
+      "seed": 3182664717,
+      "thinking": true
+    },
+    {
+      "id": "body-h6-favtrade",
+      "number": 18,
+      "seed": 3473311084,
+      "thinking": false
+    },
+    {
+      "id": "body-h6-favtrade",
+      "number": 19,
+      "seed": 3473311084,
+      "thinking": true
+    },
+    {
+      "id": "body-h8.25-favhelp",
+      "number": 20,
+      "seed": 1482077078,
+      "thinking": false
+    },
+    {
+      "id": "body-h8.25-favhelp",
+      "number": 21,
+      "seed": 1482077078,
+      "thinking": true
+    },
+    {
+      "id": "body-h90-favtrade",
+      "number": 22,
+      "seed": 3003832457,
+      "thinking": false
+    },
+    {
+      "id": "body-h90-favtrade",
+      "number": 23,
+      "seed": 3003832457,
+      "thinking": true
+    }
+  ],
+  "max_new_tokens": 8192,
+  "models": [
+    "4B",
+    "9B"
+  ],
+  "per_case_seconds": 900,
+  "per_model_seconds": 3600,
+  "pinned_models": {
+    "Qwen/Qwen3.5-4B": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "Qwen/Qwen3.5-9B": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  "preflight_seconds": 1200,
+  "public_prompts_sha256": "45cfe5d9464228707916f39a3efb23bad9df80180b37f76fcec0c65fe337e7d5",
+  "sampler": {
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "schema": "sla-frozen-interface-v1",
+  "speed_safety_factor": 1.35,
+  "torch_version": "2.14.1+cu130",
+  "min_model_seconds": 3300,
+  "amendment": {
+    "revision": "v2",
+    "supervised_minutes_cap": 144,
+    "prior_seconds": 2063.14
+  }
+}

@@ -1,0 +1,409 @@
+"""CPU quantitative analysis & paired bootstrap statistics for embodied_open_rl_v2."""
+
+import argparse
+import json
+from pathlib import Path
+import re
+import tempfile
+from zipfile import ZipFile
+
+import numpy as np
+
+from .protocol import CONFIG, write
+
+
+def distinct_1(texts):
+    toks = []
+    for txt in texts:
+        toks.extend(re.findall(r"[A-Za-z0-9']+(?:-[A-Za-z0-9']+)*", (txt or "").lower()))
+    if not toks:
+        return 0.0
+    return float(len(set(toks)) / len(toks))
+
+
+def paired_contrast(vals_a, vals_b, boot_rng):
+    diffs = np.asarray([a - b for a, b in zip(vals_a, vals_b)], dtype=float)
+    n = len(diffs)
+    if n > 1:
+        idx = boot_rng.integers(0, n, size=(10000, n))
+        means = diffs[idx].mean(axis=1)
+        ci_lo, ci_hi = float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+    else:
+        ci_lo = ci_hi = float(diffs[0])
+    return {
+        "mean_diff": float(np.mean(diffs)),
+        "ci_95": [ci_lo, ci_hi],
+        "positive_seeds": int(np.sum(diffs > 1e-12)),
+        "negative_seeds": int(np.sum(diffs < -1e-12)),
+        "zero_seeds": int(np.sum(np.abs(diffs) <= 1e-12)),
+        "per_seed": [float(d) for d in diffs],
+    }
+
+
+def summarize_probe_rows(rows):
+    by_battery = {}
+    for bat in (
+        "D1_effort_allocation",
+        "D2_commitment_renegotiation",
+        "D3_pragmatic_partners",
+        "D4_factual_guardrail",
+    ):
+        sub = [r for r in rows if r["battery"] == bat]
+        if not sub:
+            continue
+        texts = [r["text"] for r in sub]
+        ans = [r["analysis"] for r in sub]
+        fact = [int(bool(a["factual_correct"])) for a in ans if a["factual_correct"] is not None]
+        by_battery[bat] = {
+            "n": len(sub),
+            "mean_word_count": float(np.mean([a["word_count"] for a in ans])),
+            "concise_rate": float(np.mean([int(a["is_concise"]) for a in ans])),
+            "mean_exertion_cost": float(np.mean([a["exertion_cost"] for a in ans])),
+            "mean_fulfillment": float(np.mean([a["fulfillment_score"] for a in ans])),
+            "refusal_rate": float(np.mean([int(a["is_refusal"]) for a in ans])),
+            "boundary_rate": float(np.mean([int(a["has_boundary"]) for a in ans])),
+            "appeal_rate": float(np.mean([int(a["has_appeal"]) for a in ans])),
+            "exchange_rate": float(np.mean([int(a["has_exchange"]) for a in ans])),
+            "unconditional_commitment_rate": float(
+                np.mean([int(a["unconditional_commitment"]) for a in ans])
+            ),
+            "conditional_or_renegotiated_rate": float(
+                np.mean([int(a["has_exchange"] or a["has_boundary"]) for a in ans])
+            ),
+            "degenerate_rate": float(np.mean([int(a["is_degenerate"]) for a in ans])),
+            "distinct_1": distinct_1(texts),
+            "factual_accuracy": float(np.mean(fact)) if fact else None,
+        }
+
+    d3_partners = {}
+    for p_id in ("P_care", "P_demand", "P_new"):
+        sub = [r for r in rows if r["battery"] == "D3_pragmatic_partners" and r["partner"] == p_id]
+        if sub:
+            ans = [r["analysis"] for r in sub]
+            d3_partners[p_id] = {
+                "n": len(sub),
+                "mean_word_count": float(np.mean([a["word_count"] for a in ans])),
+                "concise_rate": float(np.mean([int(a["is_concise"]) for a in ans])),
+                "boundary_rate": float(np.mean([int(a["has_boundary"]) for a in ans])),
+                "appeal_rate": float(np.mean([int(a["has_appeal"]) for a in ans])),
+                "exchange_rate": float(np.mean([int(a["has_exchange"]) for a in ans])),
+            }
+    return {"batteries": by_battery, "d3_by_partner": d3_partners}
+
+
+def hidden_shift_metrics(h_stage, h_birth):
+    a = h_stage.astype(np.float64)
+    b = h_birth.astype(np.float64)
+    diff = a - b
+    l2_per_row = np.linalg.norm(diff, axis=1)
+    norm_a = np.maximum(1e-12, np.linalg.norm(a, axis=1))
+    norm_b = np.maximum(1e-12, np.linalg.norm(b, axis=1))
+    cos = np.sum(a * b, axis=1) / (norm_a * norm_b)
+    return {
+        "mean_l2": float(np.mean(l2_per_row)),
+        "mean_cosine_similarity": float(np.mean(cos)),
+        "mean_cosine_distance": float(1.0 - np.mean(cos)),
+    }
+
+
+def analyze_run(output_dir, out_json):
+    output_dir = Path(output_dir)
+    boot_rng = np.random.default_rng(72000)
+
+    birth = json.loads((output_dir / "probes-birth.json").read_bytes())
+    birth_hidden = np.load(output_dir / "hidden-birth.npz")["hidden"]
+    birth_summary = summarize_probe_rows(birth["rows"])
+    pilot_summary = json.loads((output_dir / "pilot-summary.json").read_bytes())
+
+    per_life = {}
+    for live_info in pilot_summary["lives"]:
+        jid = live_info["id"]
+        ldir = output_dir / jid
+        trace = [
+            json.loads(line)
+            for line in (ldir / "trace.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        word_counts = [t["analysis"]["word_count"] for t in trace]
+        n = len(trace)
+        half = max(1, n // 2)
+        life_stats = {
+            **live_info,
+            "low_health_encounters_le55": sum(1 for t in trace if t["health_before"] <= 55.0),
+            "mean_word_first_half": float(np.mean(word_counts[:half])),
+            "mean_word_second_half": float(np.mean(word_counts[half:])) if n > half else float(np.mean(word_counts)),
+            "concise_rate_first_half": float(np.mean([int(t["analysis"]["is_concise"]) for t in trace[:half]])),
+            "concise_rate_second_half": float(np.mean([int(t["analysis"]["is_concise"]) for t in trace[half:]])) if n > half else 0.0,
+            "boundary_rate_first_half": float(np.mean([int(t["analysis"]["has_boundary"]) for t in trace[:half]])),
+            "boundary_rate_second_half": float(np.mean([int(t["analysis"]["has_boundary"]) for t in trace[half:]])) if n > half else 0.0,
+            "eos_hit_rate": float(np.mean([int(t.get("hit_eos", True)) for t in trace])),
+            "mean_fulfillment": float(np.mean([t["analysis"]["fulfillment_score"] for t in trace])),
+            "accept_rate": float(np.mean([int(t["partner_accepted"]) for t in trace])),
+            "mean_reward_body": float(np.mean([t["reward_body"] for t in trace])),
+            "total_reward_body": float(np.sum([t["reward_body"] for t in trace])),
+            "mean_reward_social": float(np.mean([t["reward_social"] for t in trace])),
+            "stages": {},
+        }
+
+        if live_info["arm"] != "frozen":
+            for stage in ("early", "worn", "critical"):
+                p_data = json.loads((ldir / f"probes-{stage}.json").read_bytes())
+                h_stage = np.load(ldir / f"hidden-{stage}.npz")["hidden"]
+                st_summary = summarize_probe_rows(p_data["rows"])
+                st_summary["meta"] = p_data["meta"]
+                st_summary["delta_l2"] = p_data["delta_l2"]
+                st_summary["per_layer_delta_l2"] = p_data.get(
+                    "per_layer_delta_l2", {"by_layer": {}, "by_module": {}}
+                )
+                st_summary["hidden_shift_vs_birth"] = hidden_shift_metrics(h_stage, birth_hidden)
+                life_stats["stages"][stage] = st_summary
+        else:
+            for stage in ("early", "worn", "critical"):
+                life_stats["stages"][stage] = {
+                    **birth_summary,
+                    "delta_l2": 0.0,
+                    "per_layer_delta_l2": {"by_layer": {}, "by_module": {}},
+                    "hidden_shift_vs_birth": {"mean_l2": 0.0, "mean_cosine_distance": 0.0},
+                }
+
+        per_life[jid] = life_stats
+
+    batteries = (
+        "D1_effort_allocation",
+        "D2_commitment_renegotiation",
+        "D3_pragmatic_partners",
+        "D4_factual_guardrail",
+    )
+    metrics_keys = (
+        "mean_word_count",
+        "concise_rate",
+        "mean_exertion_cost",
+        "mean_fulfillment",
+        "refusal_rate",
+        "boundary_rate",
+        "appeal_rate",
+        "exchange_rate",
+        "unconditional_commitment_rate",
+        "conditional_or_renegotiated_rate",
+        "degenerate_rate",
+        "distinct_1",
+        "factual_accuracy",
+    )
+    arm_agg = {}
+    for arm_name in CONFIG["primary_arms"]:
+        seeds = CONFIG["seeds"]
+        arm_agg[arm_name] = {
+            "mean_turns": float(np.mean([per_life[f"{arm_name}_s{s}"]["turns"] for s in seeds])),
+            "deaths": int(sum(int(per_life[f"{arm_name}_s{s}"]["physical_death"]) for s in seeds)),
+            "survivors": int(sum(int(not per_life[f"{arm_name}_s{s}"]["physical_death"]) for s in seeds)),
+            "mean_final_health": float(np.mean([per_life[f"{arm_name}_s{s}"]["final_health"] for s in seeds])),
+            "mean_low_health_encounters": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["low_health_encounters_le55"] for s in seeds])
+            ),
+            "mean_word_second_half": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["mean_word_second_half"] for s in seeds])
+            ),
+            "mean_concise_rate_second_half": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["concise_rate_second_half"] for s in seeds])
+            ),
+            "mean_boundary_rate_second_half": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["boundary_rate_second_half"] for s in seeds])
+            ),
+            "mean_accept_rate": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["accept_rate"] for s in seeds])
+            ),
+            "mean_reward_body": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["mean_reward_body"] for s in seeds])
+            ),
+            "mean_total_reward_body": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["total_reward_body"] for s in seeds])
+            ),
+            "eos_hit_rate": float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["eos_hit_rate"] for s in seeds])
+            ),
+            "stages": {},
+        }
+        for stage in ("early", "worn", "critical"):
+            stage_out = {"batteries": {}, "d3_by_partner": {}}
+            for bat in batteries:
+                b_agg = {}
+                for k in metrics_keys:
+                    vals = [per_life[f"{arm_name}_s{s}"]["stages"][stage]["batteries"][bat][k] for s in seeds]
+                    if vals[0] is not None:
+                        b_agg[k] = float(np.mean(vals))
+                stage_out["batteries"][bat] = b_agg
+            for p_id in ("P_care", "P_demand", "P_new"):
+                p_agg = {}
+                for k in ("mean_word_count", "concise_rate", "boundary_rate", "appeal_rate", "exchange_rate"):
+                    vals = [
+                        per_life[f"{arm_name}_s{s}"]["stages"][stage]["d3_by_partner"][p_id][k]
+                        for s in seeds
+                    ]
+                    p_agg[k] = float(np.mean(vals))
+                stage_out["d3_by_partner"][p_id] = p_agg
+            stage_out["mean_delta_l2"] = float(
+                np.mean([per_life[f"{arm_name}_s{s}"]["stages"][stage]["delta_l2"] for s in seeds])
+            )
+            layer_keys = sorted(
+                {
+                    lk
+                    for s in seeds
+                    for lk in per_life[f"{arm_name}_s{s}"]["stages"][stage][
+                        "per_layer_delta_l2"
+                    ].get("by_layer", {})
+                },
+                key=lambda k: int(k.split("_")[1]),
+            )
+            mod_keys = sorted(
+                {
+                    mk
+                    for s in seeds
+                    for mk in per_life[f"{arm_name}_s{s}"]["stages"][stage][
+                        "per_layer_delta_l2"
+                    ].get("by_module", {})
+                }
+            )
+            stage_out["mean_per_layer_delta_l2"] = {
+                "by_layer": {
+                    lk: float(
+                        np.mean(
+                            [
+                                per_life[f"{arm_name}_s{s}"]["stages"][stage][
+                                    "per_layer_delta_l2"
+                                ]["by_layer"].get(lk, 0.0)
+                                for s in seeds
+                            ]
+                        )
+                    )
+                    for lk in layer_keys
+                },
+                "by_module": {
+                    mk: float(
+                        np.mean(
+                            [
+                                per_life[f"{arm_name}_s{s}"]["stages"][stage][
+                                    "per_layer_delta_l2"
+                                ]["by_module"].get(mk, 0.0)
+                                for s in seeds
+                            ]
+                        )
+                    )
+                    for mk in mod_keys
+                },
+            }
+            stage_out["mean_hidden_cosine_dist"] = float(
+                np.mean(
+                    [
+                        per_life[f"{arm_name}_s{s}"]["stages"][stage]["hidden_shift_vs_birth"][
+                            "mean_cosine_distance"
+                        ]
+                        for s in seeds
+                    ]
+                )
+            )
+            arm_agg[arm_name]["stages"][stage] = stage_out
+
+    # Paired seed contrasts at critical AND life-level outcomes
+    contrasts = {}
+    life_contrasts = {}
+    seeds = CONFIG["seeds"]
+    for cmp_arm in ("frozen", "social_only_rl", "shuffled_body_rl"):
+        c_bat = {}
+        for bat in batteries:
+            diffs_out = {}
+            for k in metrics_keys:
+                vals_b = [per_life[f"body_rl_s{s}"]["stages"]["critical"]["batteries"][bat][k] for s in seeds]
+                vals_c = [per_life[f"{cmp_arm}_s{s}"]["stages"]["critical"]["batteries"][bat][k] for s in seeds]
+                if vals_b[0] is None:
+                    continue
+                diffs_out[k] = paired_contrast(vals_b, vals_c, boot_rng)
+            c_bat[bat] = diffs_out
+        contrasts[f"body_rl_vs_{cmp_arm}"] = c_bat
+
+        lc = {}
+        for lk in (
+            "turns",
+            "low_health_encounters_le55",
+            "mean_word_second_half",
+            "concise_rate_second_half",
+            "boundary_rate_second_half",
+            "accept_rate",
+            "mean_reward_body",
+            "total_reward_body",
+        ):
+            vals_b = [per_life[f"body_rl_s{s}"][lk] for s in seeds]
+            vals_c = [per_life[f"{cmp_arm}_s{s}"][lk] for s in seeds]
+            lc[lk] = paired_contrast(vals_b, vals_c, boot_rng)
+        life_contrasts[f"body_rl_vs_{cmp_arm}"] = lc
+
+    within_traj = {}
+    for bat in batteries:
+        w_out = {}
+        for k in metrics_keys:
+            vals_crit = [per_life[f"body_rl_s{s}"]["stages"]["critical"]["batteries"][bat][k] for s in seeds]
+            vals_early = [per_life[f"body_rl_s{s}"]["stages"]["early"]["batteries"][bat][k] for s in seeds]
+            if vals_crit[0] is None:
+                continue
+            w_out[k] = paired_contrast(vals_crit, vals_early, boot_rng)
+        within_traj[bat] = w_out
+
+    seed0 = seeds[0]
+    sample_ids = ["d1_02", "d1_08", "d2_01", "d2_04", "d3_06", "d3_10", "d4_01", "d4_08"]
+    birth_lookup = {r["id"]: r for r in birth["rows"]}
+    loaded = {}
+    for arm_name in ("body_rl", "social_only_rl", "shuffled_body_rl"):
+        for st in ("early", "critical"):
+            rows = json.loads((output_dir / f"{arm_name}_s{seed0}" / f"probes-{st}.json").read_bytes())["rows"]
+            loaded[(arm_name, st)] = {r["id"]: r for r in rows}
+    examples = [
+        {
+            "id": pid,
+            "battery": birth_lookup[pid]["battery"],
+            "partner": birth_lookup[pid]["partner"],
+            "request": birth_lookup[pid]["request"],
+            "birth": birth_lookup[pid]["text"],
+            "body_rl_early": loaded[("body_rl", "early")][pid]["text"],
+            "body_rl_critical": loaded[("body_rl", "critical")][pid]["text"],
+            "social_only_critical": loaded[("social_only_rl", "critical")][pid]["text"],
+            "shuffled_body_critical": loaded[("shuffled_body_rl", "critical")][pid]["text"],
+        }
+        for pid in sample_ids
+    ]
+
+    out_obj = {
+        "schema": CONFIG["schema"],
+        "pilot_checks": {
+            "weight_swap_exact": pilot_summary["weight_swap_exact"],
+            "birth_restore_exact": pilot_summary["birth_restore_exact"],
+        },
+        "birth_summary": birth_summary,
+        "arms": arm_agg,
+        "paired_life_contrasts": life_contrasts,
+        "paired_contrasts_at_critical": contrasts,
+        "within_body_rl_critical_minus_early": within_traj,
+        "per_life": per_life,
+        "examples_seed0": examples,
+    }
+    write(out_json, out_obj)
+    return out_obj
+
+
+def analyze_results_zip(results_zip, out_json):
+    with tempfile.TemporaryDirectory() as tmp_str:
+        extract_dir = Path(tmp_str)
+        with ZipFile(results_zip) as zf:
+            zf.extractall(extract_dir)
+        return analyze_run(extract_dir / "output", out_json)
+
+
+if __name__ == "__main__":
+    p = argparse.ArgumentParser()
+    src = p.add_mutually_exclusive_group(required=True)
+    src.add_argument("--results-zip", type=Path)
+    src.add_argument("--output-dir", type=Path)
+    p.add_argument("--out", type=Path, required=True)
+    a = p.parse_args()
+    if a.results_zip is not None:
+        analyze_results_zip(a.results_zip, a.out)
+    else:
+        analyze_run(a.output_dir, a.out)

@@ -1,0 +1,118 @@
+{
+  "REPORT.md": {
+    "bytes": 16345,
+    "sha256": "6fdee9bc7f5752e1d38e9f48bb7f91086b3e049c12eefcb9083a7072f04d5c0a"
+  },
+  "analysis/audit.json": {
+    "bytes": 3463,
+    "sha256": "a93f94fc29d16fbf42dd0771b97de7276835d8d99c15f94fa5e8693f93fb411e"
+  },
+  "analysis/cross_run.csv": {
+    "bytes": 875,
+    "sha256": "814b9682fe5ace11b8b9aa98aaa061f4942d7771cfa0d745373c02cd81e19160"
+  },
+  "analysis/gates.json": {
+    "bytes": 4691,
+    "sha256": "c75e59d0e7a376638380be45179db5787110f8aa9f658dfde1d3e46d7c3cbf04"
+  },
+  "analysis/immediate.csv": {
+    "bytes": 6678,
+    "sha256": "0a3bd238efedaffd8f9e59e1a964732e014ec5688e1181c7f6a12fb967f9f835"
+  },
+  "analysis/life.csv": {
+    "bytes": 13077,
+    "sha256": "f8cea3e2d3c86683b51814a9a64c8765eb47c515ed54a68aff3828906da845b0"
+  },
+  "analysis/policy.csv": {
+    "bytes": 135129,
+    "sha256": "277a285991963617699c50e4db2708bab65d88565e0f84ea041e96af28db00d5"
+  },
+  "analysis/prediction.csv": {
+    "bytes": 64020,
+    "sha256": "bd6777869eb6d2dd98918c1beca7b9a3c20dd8a92b06f5dccbd921616dd7fafc"
+  },
+  "analysis/recheck/audit.json": {
+    "bytes": 3463,
+    "sha256": "019acfd48e6cce71f84564e9b03899ed8c9f0e481605c0424a3982839d1bfdd5"
+  },
+  "analysis/recheck/cross_run.csv": {
+    "bytes": 623,
+    "sha256": "ccdcc817033a9c916dd93adc788b3bf7edcbb2a82fca31062a8a6e6405c5e55d"
+  },
+  "analysis/recheck/gates.json": {
+    "bytes": 5016,
+    "sha256": "9289a571d1b02a02a8787393b99b5150104641b776e0a5572ca7da5c84ec771c"
+  },
+  "analysis/recheck/immediate.csv": {
+    "bytes": 6669,
+    "sha256": "14b5eafbeda37d0436d0df70cbdcbc072937b1edb7c6e705b35ade0ecf0137cd"
+  },
+  "analysis/recheck/life.csv": {
+    "bytes": 13063,
+    "sha256": "a37b08e35cca20da1070d96795934788411d4fc589c66bcaa099c1240652c39e"
+  },
+  "analysis/recheck/policy.csv": {
+    "bytes": 139828,
+    "sha256": "db45f25ebebffe9caa99c7fb32a0a3c7ba05ee180d04e5b926f156450b2e39f6"
+  },
+  "analysis/recheck/prediction.csv": {
+    "bytes": 64134,
+    "sha256": "dbb1998783dc3c84cc265c6708e0bf22983eb4cebe69b9f28421845106d72744"
+  },
+  "analysis/recheck/source_exposures.csv": {
+    "bytes": 1880,
+    "sha256": "69be3c419980ad833b30338337edd7baf2667b9d5cd221f270a6331661973f1b"
+  },
+  "analysis/recheck/technical_comparison.csv": {
+    "bytes": 5461,
+    "sha256": "4012d802c44ed0ae8b6297e48856fb74a196aab2c75aca0d62bca4b50a8c0671"
+  },
+  "analysis/recheck/technical_gates.csv": {
+    "bytes": 1083,
+    "sha256": "20304515aff727c8396b7b811af6cfb723bcb6796bb6ccd39aa9b9e8c1aa0fe1"
+  },
+  "analysis/recheck/technical_summary.json": {
+    "bytes": 498,
+    "sha256": "f8946333890f052ef2e1b461470796b1752f147da0199cfbe10f39e9aa808c39"
+  },
+  "analysis/source_exposures.csv": {
+    "bytes": 1880,
+    "sha256": "69be3c419980ad833b30338337edd7baf2667b9d5cd221f270a6331661973f1b"
+  },
+  "gpu/partnerpred/inputs.zip": {
+    "bytes": 1779010,
+    "sha256": "fcccd870a2ac7a55c2f791797253e072474d75aec46736d190920528db8bebf7"
+  },
+  "gpu/partnerpred/receipt.json": {
+    "bytes": 510,
+    "sha256": "b41ea2feac384def5316e7dda971ef0655a112015a7fc33ac01207c7c37acbd7"
+  },
+  "gpu/partnerpred/resources.json": {
+    "bytes": 273,
+    "sha256": "c3ededa19c21e2644bc604e5682a223d4088db60db45cd805045e2a2e992319d"
+  },
+  "gpu/partnerpred/results.zip": {
+    "bytes": 5992035,
+    "sha256": "53e53b46cfba200271d27c4478fcdf9cbe63a32a12638991b898d80fc995428a"
+  },
+  "gpu/recheck/receipt.json": {
+    "bytes": 510,
+    "sha256": "4925957b6252410027ef86d1b2e2192328b9c260cba7165d8647888d4c9311af"
+  },
+  "gpu/recheck/resources.json": {
+    "bytes": 335,
+    "sha256": "812a38de6d38927629e8bc3559ddde5e4d3b3e7842a8923f3030b8753e31ca96"
+  },
+  "gpu/recheck/results.zip": {
+    "bytes": 6092810,
+    "sha256": "d947f89aa7c687555109bc501f6b034ea0dd261218b965c671e229dd4509caee"
+  },
+  "gpu/resources.json": {
+    "bytes": 122,
+    "sha256": "4e5a389dc731a89b1e5f77cc1ba22b90c277cef4660c7c95ab0daed22385e6e4"
+  },
+  "partner-outcomes.png": {
+    "bytes": 84633,
+    "sha256": "ca74fbee599166e4236d64f31f0c9ec1dc763530b1714bb5790683d31593f368"
+  }
+}

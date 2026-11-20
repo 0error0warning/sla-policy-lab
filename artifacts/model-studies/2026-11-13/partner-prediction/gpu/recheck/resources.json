@@ -1,0 +1,9 @@
+{
+  "device": "NVIDIA L4",
+  "worker_seconds": 984.947984871,
+  "allocated_minutes_upper_bound": 18.520666666666667,
+  "observed_debit_cu": 0.4288549007340521,
+  "released_utc": "2026-11-13T16:14:34.402071+00:00",
+  "remaining_active": 0,
+  "input_sha256": "fcccd870a2ac7a55c2f791797253e072474d75aec46736d190920528db8bebf7"
+}

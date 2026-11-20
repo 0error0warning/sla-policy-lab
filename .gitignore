@@ -5,7 +5,27 @@ artifacts/*.json
 artifacts/*.png
 
 *.npz
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.tmp
+*.gz
 benchmark-results/
 results.json
 
 tests/dashboard/generated/
+
+# Raw GPU chunks, weights, and large intermediate archives (summaries, reports,
+# figures, JSON configs, and CI-verified test bundles stay tracked in Git).
+**/checkpoints/
+**/*_chunks/
+**/chunks/
+**/partial/
+artifacts/model-studies/2026-11-1[1-8]/**/*.zip
+!artifacts/model-studies/2026-11-11/closed-loop/gpu-inputs.zip
+!artifacts/model-studies/2026-11-11/closed-loop/gpu-results.zip
+!artifacts/model-studies/2026-11-11/closed-loop/integration-failures/attempt-1.zip
+!artifacts/model-studies/2026-11-11/closed-loop/integration-failures/attempt-2.zip
+!artifacts/model-studies/2026-11-18/embodied-open-rl-v4/run/pilot-r7-segments/merged.zip

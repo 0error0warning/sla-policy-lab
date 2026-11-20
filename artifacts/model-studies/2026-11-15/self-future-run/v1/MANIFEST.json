@@ -1,0 +1,26 @@
+{
+  "analysis.json": {
+    "bytes": 21112,
+    "sha256": "009b379da8c4ec879f403657939c1032091d3ca7ebce579ffc26d1a5caef0dbd"
+  },
+  "inputs.zip": {
+    "bytes": 19286,
+    "sha256": "3b98de37dfb482e6ff22a001b1f929056bceaa68c44f6ae2e9a6bc5f20750f54"
+  },
+  "launch.py": {
+    "bytes": 3426,
+    "sha256": "bbcf94384925c8a97333abcc79eae7b6fedad97f403ef504eda67b961fa24915"
+  },
+  "receipt.json": {
+    "bytes": 351,
+    "sha256": "1be561922f6f445a48627fb70240a7bffc444997dbd718f67912c03f963eb2d6"
+  },
+  "resources.json": {
+    "bytes": 165,
+    "sha256": "ffb307aefdb92ac419883cfa5f435d33bfff85c1c59ab428af9796b38c1d538c"
+  },
+  "results.zip": {
+    "bytes": 68202,
+    "sha256": "f1cd7155e10a0f39c8eddc43aea1ab56581b9889b4cec7a02bf83c8c33d9db0d"
+  }
+}

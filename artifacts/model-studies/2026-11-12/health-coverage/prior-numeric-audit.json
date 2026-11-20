@@ -1,0 +1,265 @@
+{
+  "schema": "sla-prior-numerical-audit-v1",
+  "created_utc": "2026-11-11T15:55:14.527207+00:00",
+  "audit_scope": "CPU comparison of archived GPU measurements; no fresh inference",
+  "source_revision": {
+    "repository": "H:/sla-policy-lab",
+    "git_head": "ca8e141d8327c5c6804be4ce228dbb4983e66774",
+    "branch": "codex/direct-body-policy",
+    "note": "Measured studies are local uncommitted artifacts. Actual executed source is identified by archive/source hashes."
+  },
+  "sources": {
+    "old_root": "H:\\SLA-HCI\\tmp\\sla-mechanisms\\recovery\\replay-download\\downloaded",
+    "new_root": "H:\\SLA-HCI\\tmp\\sla-baseline-layer3\\download\\downloaded",
+    "old_export": {
+      "worker_returncode": 0,
+      "files": 70,
+      "bytes": 13511898,
+      "sha256": "4e15720fb625a043eadf8e5434a0a528e7d938ecd26662dd99319f893d77c45b",
+      "study_stage": "fixed-feedback"
+    },
+    "new_export": {
+      "worker_returncode": 0,
+      "files": 135,
+      "bytes": 45115930,
+      "sha256": "66caf7c6090eb1fbb2a6d8e57046ef4aa174555df2c7b689bb297e0f54294524",
+      "study_stage": "baseline-layer3"
+    },
+    "old_worker_sha256": "e613e4915d35f271a8a6cb7b8c74ca3a8c63e13e031f27bf76c475fe330fba21",
+    "new_worker_sha256": "f1bce5a85266f26264e76112c97bc1cbab3160b6949cdf72bcc10377cca49eb4"
+  },
+  "facts": {
+    "file_comparisons": {
+      "run_gpu.py": {
+        "old_sha256": "31495dcfa6558b698e5f3789ef0fa7c396867315dc661879e7fcb9c2d2df31ec",
+        "new_sha256": "31495dcfa6558b698e5f3789ef0fa7c396867315dc661879e7fcb9c2d2df31ec",
+        "same_bytes": true
+      },
+      "protocol.py": {
+        "old_sha256": "93378106484b2a9a467263ca6c90a5f20056bf4ceb976c97ff7866528b75b7fd",
+        "new_sha256": "93378106484b2a9a467263ca6c90a5f20056bf4ceb976c97ff7866528b75b7fd",
+        "same_bytes": true
+      },
+      "mechanisms.py": {
+        "old_sha256": "1a370794fdd231b1c9428368e9544f415dbfa4779d4e37aa55585dcaefb4d826",
+        "new_sha256": "1a370794fdd231b1c9428368e9544f415dbfa4779d4e37aa55585dcaefb4d826",
+        "same_bytes": true
+      },
+      "requirements-gpu.txt": {
+        "old_sha256": "f9a0b2c8c920e07c79d404f85a9b5e44a9cfb6004b4dcfe7d0ed0df5de872459",
+        "new_sha256": "f9a0b2c8c920e07c79d404f85a9b5e44a9cfb6004b4dcfe7d0ed0df5de872459",
+        "same_bytes": true
+      },
+      "expected-weights.json": {
+        "old_sha256": "c1e3fb47cab9fda0dfa5b7412c9d15e630e977b25e7dc38a944a321d3b983cb3",
+        "new_sha256": "c1e3fb47cab9fda0dfa5b7412c9d15e630e977b25e7dc38a944a321d3b983cb3",
+        "same_bytes": true
+      },
+      "output/initial-early.safetensors": {
+        "old_sha256": "1e18265673b47791de5fe9d5d550b3eb7799c45b172f60266fc95cad6ec5e958",
+        "new_sha256": "1e18265673b47791de5fe9d5d550b3eb7799c45b172f60266fc95cad6ec5e958",
+        "same_bytes": true
+      },
+      "output/initial-tail.safetensors": {
+        "old_sha256": "c02fb2cdeaf9cb5a48a32c618ac58afa59742fbeca1dd9ebfdae29269742092c",
+        "new_sha256": "c02fb2cdeaf9cb5a48a32c618ac58afa59742fbeca1dd9ebfdae29269742092c",
+        "same_bytes": true
+      },
+      "output/weights-manifest.json": {
+        "old_sha256": "33bf7c544a9c0a6eb1b80ca478facac5fa2a09baab2b27dc420c6eafc85f47f1",
+        "new_sha256": "33bf7c544a9c0a6eb1b80ca478facac5fa2a09baab2b27dc420c6eafc85f47f1",
+        "same_bytes": true
+      },
+      "output/panel.json": {
+        "old_sha256": "3d408d74546d9dd2870f826cc2e8637ebab30e5a1405248563aa0e5cbb5cd738",
+        "new_sha256": "3d408d74546d9dd2870f826cc2e8637ebab30e5a1405248563aa0e5cbb5cd738",
+        "same_bytes": true
+      }
+    },
+    "frozen_initial": {
+      "logits_shape": [
+        144,
+        4
+      ],
+      "changed_rows": 144,
+      "max_absolute_logit_difference": 0.22934913635253906,
+      "max_centered_logit_difference": 0.13877296447753906,
+      "max_action_probability_difference": 0.014672503503017575,
+      "mean_absolute_action_probability_difference": 0.00291497440660721,
+      "old_initial_sha256": "dbe39f89506840d3b7408f965cdfe82fc1a6e7982fb321686659546a7b0fc9e8",
+      "new_initial_sha256": "c35e2376919153e9d567672bd646ebf2dac08ab959de50c51efe0fd4f11ac155"
+    },
+    "training_cases": [
+      {
+        "seed": 61151,
+        "damage": "light",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.015300743868187805,
+        "max_final_action_probability_difference": 0.028621474026992888,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61151,
+        "damage": "heavy",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.015300743868187805,
+        "max_final_action_probability_difference": 0.026913423472485126,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61152,
+        "damage": "light",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.020663433448930846,
+        "max_final_action_probability_difference": 0.02724214775341577,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61152,
+        "damage": "heavy",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.020663433448930846,
+        "max_final_action_probability_difference": 0.03402256510385093,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61153,
+        "damage": "light",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.018507636320574727,
+        "max_final_action_probability_difference": 0.026713103896306156,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61153,
+        "damage": "heavy",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.018507636320574727,
+        "max_final_action_probability_difference": 0.052523593899395815,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61154,
+        "damage": "light",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.02093487479755818,
+        "max_final_action_probability_difference": 0.024562945341226106,
+        "adapter_sha256_equal": false
+      },
+      {
+        "seed": 61154,
+        "damage": "heavy",
+        "training_tokens_equal": true,
+        "rewards_equal": true,
+        "minibatch_order_equal": true,
+        "max_behavior_log_probability_difference": 0.02093487479755818,
+        "max_final_action_probability_difference": 0.042319614299351715,
+        "adapter_sha256_equal": false
+      }
+    ],
+    "parsed_versions_equal": true,
+    "parsed_versions": {
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.4.6",
+      "packaging": "26.3",
+      "pyyaml": "6.0.3",
+      "regex": "2025.11.3",
+      "tokenizers": "0.23.3",
+      "typer": "0.27.3",
+      "tqdm": "4.67.3",
+      "click": "8.5.0",
+      "filelock": "4.2.7",
+      "fsspec": "2025.12.0",
+      "hf-xet": "1.8.0",
+      "httpx": "0.28.1",
+      "typing-extensions": "4.16.0",
+      "psutil": "5.9.5",
+      "torch": "2.14.1+cu130",
+      "einops": "0.8.2",
+      "anyio": "4.16.0",
+      "certifi": "2026.10.23",
+      "httpcore": "1.0.9",
+      "idna": "3.20",
+      "h11": "0.16.0",
+      "setuptools": "80.10.2",
+      "sympy": "1.14.0",
+      "networkx": "3.7",
+      "jinja2": "3.1.6",
+      "cuda-toolkit": "13.0.3.0",
+      "cuda-bindings": "13.0.3",
+      "nvidia-cudnn-cu13": "9.24.0.43",
+      "nvidia-cusparselt-cu13": "0.8.1",
+      "nvidia-nccl-cu13": "2.30.7",
+      "nvidia-nvshmem-cu13": "3.4.5",
+      "triton": "3.8.0",
+      "nvidia-cublas": "13.1.1.3",
+      "nvidia-cuda-nvrtc": "13.0.88",
+      "nvidia-cuda-runtime": "13.0.96",
+      "nvidia-cufft": "12.0.0.61",
+      "nvidia-nvjitlink": "13.4.92",
+      "nvidia-cufile": "1.15.1.6",
+      "nvidia-cuda-cupti": "13.0.85",
+      "nvidia-curand": "10.4.0.35",
+      "nvidia-cusolver": "12.0.4.66",
+      "nvidia-cusparse": "12.6.3.3",
+      "nvidia-nvtx": "13.0.85",
+      "cuda-pathfinder": "1.8.5",
+      "mpmath": "1.3.0",
+      "MarkupSafe": "3.0.4",
+      "shellingham": "1.5.4",
+      "rich": "13.9.4",
+      "annotated-doc": "0.0.5",
+      "markdown-it-py": "4.2.0",
+      "pygments": "2.21.0",
+      "mdurl": "0.1.2",
+      "fla-core": "0.6.0",
+      "flash-linear-attention": "0.6.0",
+      "peft": "0.21.0",
+      "transformers": "5.22.2"
+    },
+    "launcher_environment_equal": true,
+    "old_frozen_readout_order": "Immediately after Actor init, before training-data forwards",
+    "new_frozen_readout_order": "After new frozen source collection and all body-buffer forwards",
+    "old_condition_reset": "actor.install(initial)",
+    "new_condition_reset": "actor.reset(early), including torch.manual_seed",
+    "verify_base_scope": "Named parameters and their version counters; named_buffers are not hashed",
+    "previous_interrupted_vs_recovery_first_seed": "All four adapter hashes and outputs matched exactly in prior checks"
+  },
+  "interpretation": {
+    "verified": "A 1.4673 percentage-point maximum frozen-policy deviation existed before updates despite matching recorded weights, source and parsed versions.",
+    "unresolved_causes": [
+      "Forward-call-order-dependent implementation state or kernel autotuning",
+      "RNG consumption by underlying execution path",
+      "Unrecorded model buffers",
+      "Different CUDA driver, binary builds or runtime kernel choices"
+    ],
+    "excluded_as_sole_explanation": [
+      "New baseline training effect",
+      "Different recorded base or initial LoRA weights",
+      "Different recorded old-seed training token IDs, reward values or minibatch order",
+      "Different package version strings observed in install logs"
+    ]
+  },
+  "minimal_next_checks": [
+    "Canonical fixed tokens and batch padding before warmup, immediate repeat, after matched warmup, after source collection, after RNG reset",
+    "Hash CPU/CUDA RNG and named_buffers around each readout",
+    "Repeat same-case fresh optimizer and full reset training within one process",
+    "Fresh Python process on same GPU with canonical forward, saved-checkpoint inference and same-case training"
+  ]
+}

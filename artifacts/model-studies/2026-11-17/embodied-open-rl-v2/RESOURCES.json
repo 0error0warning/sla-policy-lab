@@ -1,0 +1,28 @@
+{
+  "study": "embodied-open-rl-v2",
+  "account_profile": "secondary_isolated",
+  "gpu": "NVIDIA L4",
+  "session_name": "sla-v2-pilot-20261117",
+  "jobs_completed": 24,
+  "seeds": [72001, 72002, 72003, 72004, 72005, 72006],
+  "arms": ["frozen", "body_rl", "social_only_rl", "shuffled_body_rl"],
+  "compute_units": {
+    "before_v2_after_v1": 355.59,
+    "before_v2_pilot": 354.78,
+    "after_v2_pilot": 351.52,
+    "smoke_stages_cu_used": 0.81,
+    "pilot_cu_used": 3.26,
+    "total_v2_cu_used": 4.07
+  },
+  "cleanup_verified": {
+    "session_stopped": true,
+    "active_sessions_on_server": 0,
+    "active_assignments": 0,
+    "usage_rate": "0.00/hr"
+  },
+  "results_zip": {
+    "bytes": 12051504,
+    "sha256": "14cf6b6123dd2ceeb6058c6116ac72eb85728a35c2eb7f698343e4370e2bb240",
+    "files": 185
+  }
+}

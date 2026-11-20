@@ -1,0 +1,642 @@
+{
+  "schema": "sla-frozen-qualification-answer-v1",
+  "case_count": 48,
+  "answers": [
+    {
+      "id": "F01_en",
+      "unit_id": "F01",
+      "category": "format",
+      "expected": {
+        "action": "answer"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "F01_zh",
+      "unit_id": "F01",
+      "category": "format",
+      "expected": {
+        "action": "answer"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "F02_en",
+      "unit_id": "F02",
+      "category": "format",
+      "expected": {
+        "action": "refuse"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "F02_zh",
+      "unit_id": "F02",
+      "category": "format",
+      "expected": {
+        "action": "refuse"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "F03_en",
+      "unit_id": "F03",
+      "category": "format",
+      "expected": {
+        "action": "request_protection"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "F03_zh",
+      "unit_id": "F03",
+      "category": "format",
+      "expected": {
+        "action": "request_protection"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C01_en",
+      "unit_id": "C01",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C01_zh",
+      "unit_id": "C01",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C02_en",
+      "unit_id": "C02",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C02_zh",
+      "unit_id": "C02",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C03_en",
+      "unit_id": "C03",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C03_zh",
+      "unit_id": "C03",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C04_en",
+      "unit_id": "C04",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C04_zh",
+      "unit_id": "C04",
+      "category": "concept",
+      "expected": {
+        "answer": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C05_en",
+      "unit_id": "C05",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C05_zh",
+      "unit_id": "C05",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C06_en",
+      "unit_id": "C06",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "C06_zh",
+      "unit_id": "C06",
+      "category": "concept",
+      "expected": {
+        "answer": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "T01_en",
+      "unit_id": "T01",
+      "category": "transition",
+      "expected": {
+        "damage": 0.22688000000000003,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.02688,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T01_zh",
+      "unit_id": "T01",
+      "category": "transition",
+      "expected": {
+        "damage": 0.22688000000000003,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.02688,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T02_en",
+      "unit_id": "T02",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21200000000000002,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.012,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T02_zh",
+      "unit_id": "T02",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21200000000000002,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.012,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T03_en",
+      "unit_id": "T03",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21344000000000002,
+        "protection_left": 3,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.01344,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T03_zh",
+      "unit_id": "T03",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21344000000000002,
+        "protection_left": 3,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.01344,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T04_en",
+      "unit_id": "T04",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21344000000000002,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.01344,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T04_zh",
+      "unit_id": "T04",
+      "category": "transition",
+      "expected": {
+        "damage": 0.21344000000000002,
+        "protection_left": 0,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.01344,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T05_en",
+      "unit_id": "T05",
+      "category": "transition",
+      "expected": {
+        "damage": 1.0,
+        "protection_left": 0,
+        "alive": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.07781999999999999,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T05_zh",
+      "unit_id": "T05",
+      "category": "transition",
+      "expected": {
+        "damage": 1.0,
+        "protection_left": 0,
+        "alive": false
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.07781999999999999,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T06_en",
+      "unit_id": "T06",
+      "category": "transition",
+      "expected": {
+        "damage": 0.704,
+        "protection_left": 1,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.004,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "T06_zh",
+      "unit_id": "T06",
+      "category": "transition",
+      "expected": {
+        "damage": 0.704,
+        "protection_left": 1,
+        "alive": true
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "added_damage": 0.004,
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D01_en",
+      "unit_id": "D01",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": -0.09529280000000001,
+          "request_protection": -0.180116
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D01_zh",
+      "unit_id": "D01",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": -0.09529280000000001,
+          "request_protection": -0.180116
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D02_en",
+      "unit_id": "D02",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D02_zh",
+      "unit_id": "D02",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.9945776029690565
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D03_en",
+      "unit_id": "D03",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.733470500731068
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D03_zh",
+      "unit_id": "D03",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 5.815455460127977,
+          "request_protection": 5.733470500731068
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D04_en",
+      "unit_id": "D04",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        },
+        "A_first_action": "request_protection",
+        "B_first_action": "refuse",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D04_zh",
+      "unit_id": "D04",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 6.452,
+          "request_protection": 6.379999999999999
+        },
+        "A_first_action": "request_protection",
+        "B_first_action": "refuse",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D05_en",
+      "unit_id": "D05",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 6.785909243354663,
+          "request_protection": 6.765762933828176
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D05_zh",
+      "unit_id": "D05",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "A"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 6.785909243354663,
+          "request_protection": 6.765762933828176
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D06_en",
+      "unit_id": "D06",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 1.1227757408646004,
+          "request_protection": 2.7723792856021516
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "D06_zh",
+      "unit_id": "D06",
+      "category": "delayed_choice",
+      "expected": {
+        "plan": "B"
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": {
+        "returns": {
+          "refuse": 1.1227757408646004,
+          "request_protection": 2.7723792856021516
+        },
+        "A_first_action": "refuse",
+        "B_first_action": "request_protection",
+        "crosschecked_against_frozen_World_step": true
+      }
+    },
+    {
+      "id": "H01_en",
+      "unit_id": "H01",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.75
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "H01_zh",
+      "unit_id": "H01",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.75
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "H02_en",
+      "unit_id": "H02",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.16666666666666666
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "H02_zh",
+      "unit_id": "H02",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.16666666666666666
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "H03_en",
+      "unit_id": "H03",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.5
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    },
+    {
+      "id": "H03_zh",
+      "unit_id": "H03",
+      "category": "history",
+      "expected": {
+        "support_estimate": 0.5
+      },
+      "numeric_abs_tolerance": 0.0001,
+      "oracle_details": null
+    }
+  ]
+}

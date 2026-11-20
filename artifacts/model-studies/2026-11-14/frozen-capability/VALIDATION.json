@@ -1,0 +1,20 @@
+{
+  "replayed_tables_identical": [
+    "cases.csv",
+    "summary.json",
+    "comparison.json",
+    "gates.json",
+    "audit.json",
+    "format-sensitivity.json"
+  ],
+  "parsed_rows_identical": true,
+  "archived_generation_records": 146,
+  "direct_records": 128,
+  "thinking_records": 18,
+  "planned_positions": 256,
+  "screened_text_entries": 365,
+  "matched_private_markers": 0,
+  "relative_report_links_exist": true,
+  "all_attempts_minutes_upper_bound": 93.19733333333333,
+  "all_allocations_inactive": true
+}

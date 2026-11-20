@@ -1,0 +1,30 @@
+{
+  "analysis-4B.json": {
+    "bytes": 27166,
+    "sha256": "4113d569d5045c087e2dfa109f59d55533b2cd2e2aaeec05b60be4570f1b741d"
+  },
+  "analysis-9B.json": {
+    "bytes": 27152,
+    "sha256": "9344de3629e90b54862398c4590d090429cb6ddac98cc37cb2071126c3ff54d1"
+  },
+  "inputs.zip": {
+    "bytes": 26857,
+    "sha256": "5d2df5ea6ede5e216c8e6a844257abd8548121b9ce77bfb5a67363a6df0d5a0d"
+  },
+  "launch.py": {
+    "bytes": 3455,
+    "sha256": "e532b807f975eca4e8115f9f686975d1efb22b8c72ed6a40427dd5af10ef2537"
+  },
+  "receipt.json": {
+    "bytes": 361,
+    "sha256": "713010fd89e69f95c272a39e0674038fce543e28ec27c4c0df8121f63363a090"
+  },
+  "resources.json": {
+    "bytes": 166,
+    "sha256": "cefbbeebe10d11e08c7a25c729a7397e4d718a1287c12c68845c7d0dec870ec3"
+  },
+  "results.zip": {
+    "bytes": 598067,
+    "sha256": "0dea14f3f32910c5e41c6cb26e89363df8f346e4e0c0abc29fe5eb918efee3bf"
+  }
+}

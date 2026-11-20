@@ -1,0 +1,10 @@
+{
+  "schema": "transparent-body-run-v1",
+  "input_sha256": "66f68421709d3a82391f0de40cb635ea4fc36a3976b3360a270f94bf1b411a67",
+  "results_sha256": "a3017f1d56195c21a5c4a26498cc4de6cd30b2d88c11c5931498a3aaeb49ddae",
+  "protocol_commit": "cf7c88c",
+  "records": "gpu/results.zip",
+  "inputs": "gpu/inputs.zip",
+  "gpu_runs": 1,
+  "thinking_calls": 0
+}
