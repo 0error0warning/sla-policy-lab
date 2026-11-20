@@ -1,0 +1,20 @@
+{
+  "independent_max_error": 5.684341886080802e-14,
+  "information_conditions": 2,
+  "models": {
+    "Qwen/Qwen3.5-4B": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "Qwen/Qwen3.5-9B": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  "noise": "fixed zero, explicitly disclosed; not the stochastic life experiment",
+  "paired_presentations": 2,
+  "physical_states": 16,
+  "prompts": 64,
+  "proposed_four_model_mode_cells": 4,
+  "proposed_model_calls": 256,
+  "sha256": {
+    "evaluator-only-answer-key.json": "191969c15a79982d8a66f4af2157944693f5a5c589c88475df10f25c4aef33fb",
+    "public-prompts.json": "1522ea7254a64dab854791e62de72fe110792bd5e6e280f8dc291ca71c5b2640"
+  },
+  "status": "CPU fixtures only; no GPU or model inference executed",
+  "task": "one-encounter prediction and stated-risk criterion; not remaining lifetime"
+}

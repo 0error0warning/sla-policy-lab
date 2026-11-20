@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-10",
+  "environment_commit": "71e69b697790310bb45079603bf92f948e11852c",
+  "training": false,
+  "studies": {
+    "frozen-v1": {
+      "main_model_calls": 286,
+      "model_lives": 24,
+      "qualification_questions_per_model": 48,
+      "independent_problem_units": 24,
+      "consumed_cu": 0.6439879465036711
+    },
+    "diagnostic-v2": {
+      "complete_recovery_main_model_calls": 612,
+      "model_lives": 64,
+      "rule_baseline_lives": 128,
+      "independent_seeds": 8,
+      "complete_recovery_consumed_cu": 0.6450893012798247,
+      "interrupted_attempt_consumed_cu": 0.5213851230262208,
+      "total_consumed_cu": 1.1664744243060454,
+      "first_attempt_pooled_as_samples": false
+    }
+  },
+  "release": {
+    "all_task_allocations_ended": true,
+    "last_verified_utc": "2026-11-10T06:33:12.854954+00:00",
+    "last_consumption_rate_cu_per_hour": 0.0
+  },
+  "scope": "Standalone frozen-model experiments; CPU web demo remains unchanged; no pretrained weights, LoRA, steering, or long-term training included.",
+  "interruption": "First diagnostic instance disappeared for an unknown reason. Both 48-case outputs and two thinking outputs survived locally; complete rollout logs did not. The exact frozen matrix was repeated once in a foreground job with local checkpoints. All 96 preserved diagnostic outputs and two thinking token sequences match the complete recovery. Only the recovery is scored.",
+  "publication": "Raw simulated prompts, model outputs, scores, model revisions and weight hashes are public. Account identifiers, balances, credentials, allocation wrappers, local paths, tokenizer binaries and redundant local archives are omitted."
+}

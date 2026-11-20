@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 9,
+  "bytes": 254571,
+  "sha256": "777017585f0c039f2e24271904b01c72bcc34e6793c35f1e19441fc819859854",
+  "study_stage": "lifeprobes",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 254571,
+      "sha256": "777017585f0c039f2e24271904b01c72bcc34e6793c35f1e19441fc819859854"
+    }
+  ]
+}

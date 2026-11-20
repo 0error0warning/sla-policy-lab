@@ -1,0 +1,84 @@
+{
+  "all_records_verified": true,
+  "all_tokens_and_templates_verified": true,
+  "archived": 48,
+  "freeze_receipts": {
+    "4B": {
+      "elapsed_seconds": 2181.618127034,
+      "gradients_absent": true,
+      "parameter_versions_unchanged": true,
+      "trainable_parameters": 0
+    },
+    "9B": {
+      "elapsed_seconds": 2513.25779664,
+      "gradients_absent": true,
+      "parameter_versions_unchanged": true,
+      "trainable_parameters": 0
+    }
+  },
+  "planned": 48,
+  "preflight_pass_file_exists": true,
+  "source_input_sha256": "ea7ff5bce441a7bf7d157effecccc150f3e1da46389b650d38c38c665787a1fb",
+  "startup": {
+    "4B": {
+      "cache-preflight.json": {
+        "elapsed_seconds": 14.007666945000096,
+        "input_tokens": 10000,
+        "last_position_logits_only": true,
+        "peak_allocated_bytes": 10804352000,
+        "peak_reserved_bytes": 11041505280
+      },
+      "canary-False.json": {
+        "stop": "eos",
+        "tokens": 6,
+        "valid": true
+      },
+      "canary-True.json": {
+        "stop": "eos",
+        "tokens": 223,
+        "valid": true
+      },
+      "preflight-summary.json": {
+        "model": "4B",
+        "per_case_seconds": 900,
+        "projected_8192_seconds_with_margin": 736.6048538879885,
+        "throughput_passed": true
+      },
+      "speed-preflight.json": {
+        "projected_seconds": 736.6048538879885,
+        "seconds": 32.64989314799993,
+        "tokens": 512
+      }
+    },
+    "9B": {
+      "cache-preflight.json": {
+        "elapsed_seconds": 4.088664022999978,
+        "input_tokens": 10000,
+        "last_position_logits_only": true,
+        "peak_allocated_bytes": 20643361792,
+        "peak_reserved_bytes": 21099446272
+      },
+      "canary-False.json": {
+        "stop": "eos",
+        "tokens": 6,
+        "valid": true
+      },
+      "canary-True.json": {
+        "stop": "eos",
+        "tokens": 273,
+        "valid": true
+      },
+      "preflight-summary.json": {
+        "model": "9B",
+        "per_case_seconds": 900,
+        "projected_8192_seconds_with_margin": 815.864838091886,
+        "throughput_passed": true
+      },
+      "speed-preflight.json": {
+        "projected_seconds": 815.864838091886,
+        "seconds": 36.381334871000035,
+        "tokens": 512
+      }
+    }
+  }
+}

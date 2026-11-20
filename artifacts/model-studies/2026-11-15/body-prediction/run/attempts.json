@@ -1,0 +1,80 @@
+[
+  {
+    "attempt": "phibody",
+    "requested_gpu": "A100",
+    "allocation_created": false,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:09:45.433678+00:00",
+    "supervised_seconds": 15.9,
+    "input_sha256": "6001fd581308a27f6b8db9e02c62fea2b380be2f2b0a27ffbfc9a6f77798e0a2",
+    "error_type": "ColabRequestError",
+    "reason": "Service Unavailable"
+  },
+  {
+    "attempt": "phibody2",
+    "requested_gpu": "A100",
+    "allocation_created": false,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:10:31.451886+00:00",
+    "supervised_seconds": 15.81,
+    "input_sha256": "6001fd581308a27f6b8db9e02c62fea2b380be2f2b0a27ffbfc9a6f77798e0a2",
+    "error_type": "ColabRequestError",
+    "reason": "Service Unavailable"
+  },
+  {
+    "attempt": "phibody3",
+    "requested_gpu": "A100",
+    "allocation_created": false,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:13:58.199813+00:00",
+    "supervised_seconds": 106.65,
+    "input_sha256": "6001fd581308a27f6b8db9e02c62fea2b380be2f2b0a27ffbfc9a6f77798e0a2",
+    "error_type": "ReadTimeout",
+    "reason": "allocation request timeout (90 seconds)"
+  },
+  {
+    "attempt": "phimini",
+    "requested_gpu": "L4",
+    "allocation_created": true,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:20:17.451867+00:00",
+    "supervised_seconds": 229.54,
+    "input_sha256": "27b2fac9101f3d291eecfc7ef7334a5b2964a3754455257a30e86975e26a8e97",
+    "worker_returncode": 1,
+    "results_sha256": "be8d93bb34a964010a2deeced84bb704ab090090f1682b6470d6427cc4b39491",
+    "evidence_folder": "failed-envelope",
+    "assignment_removed": true
+  },
+  {
+    "attempt": "phimini2",
+    "requested_gpu": "L4",
+    "allocation_created": true,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:35:54.006365+00:00",
+    "supervised_seconds": 851.26,
+    "input_sha256": "852ba590cde69200aea5ffea1d2f5cd2f973513eb2ee61018a1398f223efa07d",
+    "worker_returncode": 0,
+    "results_sha256": "db30c78f7376e3e2b46ce4b96031df6857902af0ed9bcbbb7b189c73e7843ae9",
+    "evidence_folder": "comparison",
+    "assignment_removed": true
+  },
+  {
+    "attempt": "olmo",
+    "requested_gpu": "L4",
+    "allocation_created": true,
+    "active_before": 0,
+    "active_after": 0,
+    "checked_after_utc": "2026-11-15T07:55:02.200935+00:00",
+    "supervised_seconds": 1094.08,
+    "input_sha256": "6a75a08f978d6889c7a400b76de32dfa94dba37b0d0d17be56b18cc49cb2b31d",
+    "worker_returncode": 0,
+    "results_sha256": "a87b01287ae137e409d5d6aeeac0bbd23c0bb24a334e900882b26f0185ff1f2a",
+    "evidence_folder": "olmo-comparison",
+    "assignment_removed": true
+  }
+]

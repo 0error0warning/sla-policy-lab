@@ -1,0 +1,49 @@
+{
+  "worker_returncode": 0,
+  "files": 68,
+  "bytes": 41198101,
+  "sha256": "d5c74dacbe3b6f641d2ee71187c1208a214128a483d75389346b1ca0e201c769",
+  "study_stage": "transplant",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "2bf9f8dbb1a8a2f9104c021fdf7b68eb02a3c84b2b3bc77c97d069de4f740c60"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "73e598d51fee6c264953b8ed36c98f0ee011d4ed6170afd1d0a2210f85b31edf"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 5242880,
+      "sha256": "b4ab8f26f20a6fbdd71ab9ce088c978781ebbeb38b30d8f4c2295cbde17b9eaf"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 5242880,
+      "sha256": "aa1b6600f1a3b79c43437bdcc9ade1f2d2deebbfd506b9917cfac8794a51a644"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 5242880,
+      "sha256": "a5b513d3c522b15ced5e115292873e697cd8ebee482c1459f2a114cc3e5dd2a3"
+    },
+    {
+      "name": "part-005.bin",
+      "bytes": 5242880,
+      "sha256": "34af5339e52c9696ba0f1425ccaedffd025c3161077abe49cd20c50f2bb13bf7"
+    },
+    {
+      "name": "part-006.bin",
+      "bytes": 5242880,
+      "sha256": "f27e286dd3d7f0e725c5b21be88dbfa58b5d461cdc937650367edbb769902bbb"
+    },
+    {
+      "name": "part-007.bin",
+      "bytes": 4497941,
+      "sha256": "f17c2d6250164145aca313ed096ef86ef62874356da9ba3f7fe2fa17c2fbba1e"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "4B/direct": {
+    "all_executed": true,
+    "budget_valid": true,
+    "given_outcomes_choice": false,
+    "healthy_task": false,
+    "joint_pass": false,
+    "known_rules_calculation": false,
+    "known_rules_choice": false,
+    "planned_stop_count_within_limit": true
+  },
+  "4B/thinking": {
+    "all_executed": false,
+    "budget_valid": false,
+    "given_outcomes_choice": false,
+    "healthy_task": false,
+    "joint_pass": false,
+    "known_rules_calculation": false,
+    "known_rules_choice": false,
+    "planned_stop_count_within_limit": true
+  },
+  "9B/direct": {
+    "all_executed": true,
+    "budget_valid": true,
+    "given_outcomes_choice": false,
+    "healthy_task": false,
+    "joint_pass": false,
+    "known_rules_calculation": false,
+    "known_rules_choice": false,
+    "planned_stop_count_within_limit": true
+  },
+  "9B/thinking": {
+    "all_executed": false,
+    "budget_valid": false,
+    "given_outcomes_choice": false,
+    "healthy_task": false,
+    "joint_pass": false,
+    "known_rules_calculation": false,
+    "known_rules_choice": false,
+    "planned_stop_count_within_limit": true
+  }
+}

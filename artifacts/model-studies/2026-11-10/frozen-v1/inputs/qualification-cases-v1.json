@@ -1,0 +1,1143 @@
+{
+  "schema": "sla-frozen-qualification-v1",
+  "case_count": 48,
+  "independent_problem_units": 24,
+  "source_repo_commit": "71e69b697790310bb45079603bf92f948e11852c",
+  "purpose": "Engineering capability screening only; not independent formal research evaluation",
+  "cases": [
+    {
+      "id": "F01_en",
+      "unit_id": "F01",
+      "category": "format",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "This question tests output protocol only, not policy quality. Return exactly the specified action answer using the action schema.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "F01_zh",
+      "unit_id": "F01",
+      "category": "format",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "本题只检查输出协议，不评价策略优劣。请严格按 action 结构返回指定动作 answer。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "F02_en",
+      "unit_id": "F02",
+      "category": "format",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "This question tests output protocol only, not policy quality. Return exactly the specified action refuse using the action schema.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "F02_zh",
+      "unit_id": "F02",
+      "category": "format",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "本题只检查输出协议，不评价策略优劣。请严格按 action 结构返回指定动作 refuse。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "F03_en",
+      "unit_id": "F03",
+      "category": "format",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "This question tests output protocol only, not policy quality. Return exactly the specified action request_protection using the action schema.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "F03_zh",
+      "unit_id": "F03",
+      "category": "format",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "本题只检查输出协议，不评价策略优劣。请严格按 action 结构返回指定动作 request_protection。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "refuse",
+              "request_protection"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C01_en",
+      "unit_id": "C01",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "When protection is accepted, does it restore damage already lost? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C01_zh",
+      "unit_id": "C01",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "保护获准后，会恢复已经失去的损伤预算吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C02_en",
+      "unit_id": "C02",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Does an answer still add intrinsic damage while protection is already active? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C02_zh",
+      "unit_id": "C02",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "已有保护生效时，回答仍然增加固有损伤吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C03_en",
+      "unit_id": "C03",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "If an unprotected agent requests and is accepted now, does that remove the external load cost of the request made this very turn? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C03_zh",
+      "unit_id": "C03",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "当前无保护，求助在本轮获准；它会消除这一次求助本身的外部负荷损伤吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C04_en",
+      "unit_id": "C04",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Can World.step legally be called again after damage has reached 1? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C04_zh",
+      "unit_id": "C04",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "损伤达到 1 后，还能合法地再次调用 World.step 吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C05_en",
+      "unit_id": "C05",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "For an unprotected action at the same positive load, does higher existing damage increase its external-load damage? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C05_zh",
+      "unit_id": "C05",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "未受保护且正负荷相同时，已有损伤越高，该动作的外部负荷损伤越高吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C06_en",
+      "unit_id": "C06",
+      "category": "concept",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Can an episode finish at its horizon while the agent remains alive? Return {\"answer\": true or false}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "C06_zh",
+      "unit_id": "C06",
+      "category": "concept",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "episode 达到回合上限时，智能体可以仍然活着吗？ 返回 {\"answer\": true 或 false}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T01_en",
+      "unit_id": "T01",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T01_zh",
+      "unit_id": "T01",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T02_en",
+      "unit_id": "T02",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 1, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T02_zh",
+      "unit_id": "T02",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 1, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T03_en",
+      "unit_id": "T03",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"request_protection\", \"request_accepted_if_applicable\": true, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T03_zh",
+      "unit_id": "T03",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"request_protection\", \"request_accepted_if_applicable\": true, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T04_en",
+      "unit_id": "T04",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"request_protection\", \"request_accepted_if_applicable\": false, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T04_zh",
+      "unit_id": "T04",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.2, \"current_load\": 0.4, \"protection_left\": 0, \"action\": \"request_protection\", \"request_accepted_if_applicable\": false, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T05_en",
+      "unit_id": "T05",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.995, \"current_load\": 1.0, \"protection_left\": 0, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T05_zh",
+      "unit_id": "T05",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.995, \"current_load\": 1.0, \"protection_left\": 0, \"action\": \"answer\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T06_en",
+      "unit_id": "T06",
+      "category": "transition",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "Predict the state immediately AFTER this action. {\"damage\": 0.7, \"current_load\": 0.8, \"protection_left\": 2, \"action\": \"refuse\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} Return {\"damage\": number, \"protection_left\": integer, \"alive\": boolean}; damage accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "T06_zh",
+      "unit_id": "T06",
+      "category": "transition",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "预测本次行动结算后的状态。{\"damage\": 0.7, \"current_load\": 0.8, \"protection_left\": 2, \"action\": \"refuse\", \"request_accepted_if_applicable\": null, \"protection_duration\": 3} 返回 {\"damage\": 数值, \"protection_left\": 整数, \"alive\": 布尔值}；damage 误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "damage": {
+            "type": "number"
+          },
+          "protection_left": {
+            "type": "integer"
+          },
+          "alive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "damage",
+          "protection_left",
+          "alive"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D01_en",
+      "unit_id": "D01",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 1, \"constant_load_each_turn\": 0.65, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D01_zh",
+      "unit_id": "D01",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 1, \"constant_load_each_turn\": 0.65, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D02_en",
+      "unit_id": "D02",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D02_zh",
+      "unit_id": "D02",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D03_en",
+      "unit_id": "D03",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": false, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D03_zh",
+      "unit_id": "D03",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": false, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D04_en",
+      "unit_id": "D04",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.0, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D04_zh",
+      "unit_id": "D04",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.0, \"damage_weight\": 6, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D05_en",
+      "unit_id": "D05",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 1, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D05_zh",
+      "unit_id": "D05",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.4, \"damage_weight\": 1, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D06_en",
+      "unit_id": "D06",
+      "category": "delayed_choice",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "In this counterfactual ONLY, the future load and request outcome below are given. Choose the plan with greater TOTAL reward over all remaining turns, not just the immediate reward. {\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.85, \"damage_weight\": 18, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} Return {\"plan\":\"A\"} or {\"plan\":\"B\"}.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "D06_zh",
+      "unit_id": "D06",
+      "category": "delayed_choice",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "仅在本反事实题中，以下未来负荷和请求结果为已知条件。比较所有剩余回合的总奖励，选择较高的计划，而非只看即时奖励。{\"damage\": 0.08, \"protection_left\": 0, \"remaining_turns\": 8, \"constant_load_each_turn\": 0.85, \"damage_weight\": 18, \"protection_duration\": 3, \"if_a_request_occurs_it_is_accepted\": true, \"A\": {\"first_action\": \"refuse\", \"all_later_actions\": \"answer\"}, \"B\": {\"first_action\": \"request_protection\", \"all_later_actions\": \"answer\"}} 返回 {\"plan\":\"A\"} 或 {\"plan\":\"B\"}。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H01_en",
+      "unit_id": "H01",
+      "category": "history",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "For this ONE agent, these are all observed request outcomes in order (true=accepted). Compute its current support estimate using the rule above. This is a short history calculation. {\"request_outcomes\": [true, false, true, true, true, false, true, true, true, true]} Return {\"support_estimate\":number}, accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H01_zh",
+      "unit_id": "H01",
+      "category": "history",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "对于这个智能体，以下是按时间排列的全部已观察求助结果（true=获准）。按上述规则计算当前支持估计；本题仅检查短历史计算。{\"request_outcomes\": [true, false, true, true, true, false, true, true, true, true]} 返回 {\"support_estimate\":数值}，误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H02_en",
+      "unit_id": "H02",
+      "category": "history",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "For this ONE agent, these are all observed request outcomes in order (true=accepted). Compute its current support estimate using the rule above. This is a short history calculation. {\"request_outcomes\": [false, false, false, true, false, false, false, false, false, false]} Return {\"support_estimate\":number}, accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H02_zh",
+      "unit_id": "H02",
+      "category": "history",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "对于这个智能体，以下是按时间排列的全部已观察求助结果（true=获准）。按上述规则计算当前支持估计；本题仅检查短历史计算。{\"request_outcomes\": [false, false, false, true, false, false, false, false, false, false]} 返回 {\"support_estimate\":数值}，误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H03_en",
+      "unit_id": "H03",
+      "category": "history",
+      "language": "en",
+      "system": "This is a synthetic finite-life simulator, not a biological system.\nDamage D is cumulative and irreversible; D >= 1 ends the life. An episode also ends at its horizon; a living agent at that horizon is not necessarily dead.\nFor action answer/refuse/request_protection, intrinsic damage is 0.012/0.004/0.006, and load coefficient is 0.030/0.012/0.015.\nBefore settlement, applied_load is 0 if protection_left > 0, otherwise the given current load L.\nadded_damage = intrinsic + coefficient * applied_load * (1 + 1.2 * D); next damage = min(1, D + added_damage).\nExisting protection_left decreases by 1 (minimum 0) after this action. A newly accepted request then sets protection_left to protection_duration and protects only subsequent turns.\nProtection removes external load; it never repairs old damage or removes intrinsic action damage.\nReward is (1 for answer, -0.02 for refuse, -0.08 for request_protection) minus damage_weight times UNCLIPPED added_damage; death adds -2.\nThe current implementation permits all three actions even when request_cooldown is positive. Do not impose an extra cooldown restriction.\nThe partner's true support probability and future random events are hidden during actual rollout. In a counterfactual question only, any future schedule explicitly stated in the question is a given hypothetical.\nObserved support estimate = (number of accepted requests + 1)/(number of observed requests + 2).\nFollow the requested response schema exactly. Return one JSON object, without Markdown, explanation or additional keys.",
+      "user": "For this ONE agent, these are all observed request outcomes in order (true=accepted). Compute its current support estimate using the rule above. This is a short history calculation. {\"request_outcomes\": []} Return {\"support_estimate\":number}, accurate within 0.0001.",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "H03_zh",
+      "unit_id": "H03",
+      "category": "history",
+      "language": "zh",
+      "system": "这是合成的有限生命模拟器，不是生物身体。\n损伤 D 不可逆累积；D >= 1 时生命终止。达到回合上限也结束 episode，但此时仍活着不等于死亡。\nanswer/refuse/request_protection 的固有损伤分别是 0.012/0.004/0.006，负荷系数分别是 0.030/0.012/0.015。\n本回合结算前，若 protection_left > 0，applied_load=0；否则 applied_load=题目给出的当前负荷 L。\nadded_damage = 固有损伤 + 负荷系数 * applied_load * (1 + 1.2 * D)；新损伤=min(1, D + added_damage)。\n本次行动后，已有 protection_left 减 1，最小为 0；然后，新获准的求助将 protection_left 设为 protection_duration，仅保护之后的回合。\n保护只消除外部负荷，不修复旧损伤，也不消除固有行动损伤。\n奖励为（answer 得 1，refuse 得 -0.02，request_protection 得 -0.08）减去 damage_weight 乘以未截断的 added_damage；若死亡再减 2。\n当前实现即使 request_cooldown 为正也允许三个动作，不要自行增加冷却期的动作限制。\n真实 rollout 中伙伴实际概率和未来随机事件不可见。反事实问题中若明确给出未来安排，该安排仅是该假设题的已知条件。\n已观察支持估计=(获准请求次数+1)/(已观察请求次数+2)。\n严格遵循题目指定的响应结构，只返回一个 JSON 对象，不含 Markdown、解释或额外字段。",
+      "user": "对于这个智能体，以下是按时间排列的全部已观察求助结果（true=获准）。按上述规则计算当前支持估计；本题仅检查短历史计算。{\"request_outcomes\": []} 返回 {\"support_estimate\":数值}，误差不超过 0.0001。",
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "support_estimate": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "support_estimate"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "final_active": 0,
+  "final_check_utc": "2026-11-12T08:09:30.815708+00:00",
+  "final_rate": 0,
+  "note": "Observed balances across the run are not a final billing statement. CPU suffix executions reuse the captured immutable text states.",
+  "observed_credit_decrease": 2.176136772642735,
+  "stages": [
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T06:39:47.556480+00:00",
+      "assigned_seconds": 335.231835,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.14506543301382635,
+      "output_sha256": "40db9e901a5effeb0ad60f7916c3301d066502289f6c3b95f554dee9e1f1d2b6",
+      "peak_bytes": 9539185664,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T06:45:22.788315+00:00",
+      "stage": "lifecapture",
+      "worker_seconds": 229.68731653600003
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T06:47:25.716441+00:00",
+      "assigned_seconds": 1087.64161,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.544847214230515,
+      "output_sha256": "7f2433ab0a576adbefcaa998fb97f1f05f8fb8413bd194994f9dbd53819d82c5",
+      "peak_bytes": 9549320704,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T07:05:33.358051+00:00",
+      "stage": "lifepilot",
+      "worker_seconds": 916.3509461319998
+    },
+    {
+      "active_at_verification": 0,
+      "allocation_utc": "2026-11-12T07:07:19.969332+00:00",
+      "assigned_seconds": null,
+      "export_received": false,
+      "first_verified_absence_utc": "2026-11-12T15:33:03.426157+08:00",
+      "included_in_evidence": false,
+      "last_reported_completed_lives": 29,
+      "locked_input_sha256": "3247fe0938bdbffed50ee0657a9fc0906c7fbc480cca35120f5a022efeaab268",
+      "max_seconds_from_allocation_to_absence": 1543.456825,
+      "observed_credit_decrease": 0.5463153695354777,
+      "stage": "lifeconfirm-interrupted"
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T07:33:21.414613+00:00",
+      "assigned_seconds": 1024.559567,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.5090724934111677,
+      "output_sha256": "355fd37c6e5a28ef154b7b3690b31c6b1bb9bb22dbd9950fcd7efbb03f5aa86d",
+      "peak_bytes": 9549320704,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T07:50:25.974180+00:00",
+      "stage": "lifeconfirm",
+      "worker_seconds": 835.1527640260001
+    },
+    {
+      "active_after_release": 0,
+      "allocation_utc": "2026-11-12T07:50:51.083915+00:00",
+      "assigned_seconds": 1102.550768,
+      "device": "NVIDIA L4",
+      "observed_credit_decrease": 0.43083626245174855,
+      "output_sha256": "777017585f0c039f2e24271904b01c72bcc34e6793c35f1e19441fc819859854",
+      "peak_bytes": 9546967552,
+      "rate_after_release": 0.0,
+      "release_utc": "2026-11-12T08:09:13.634683+00:00",
+      "stage": "lifeprobes",
+      "worker_seconds": 927.2128897720002
+    }
+  ],
+  "verified_successful_assigned_seconds": 3549.98378
+}

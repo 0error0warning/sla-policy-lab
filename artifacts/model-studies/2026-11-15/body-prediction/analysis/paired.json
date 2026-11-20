@@ -1,0 +1,547 @@
+{
+  "paired_cases": {
+    "PhiMini_vs_4B": {
+      "step_unfenced": {
+        "both_correct": 61,
+        "qwen_only_correct": 4,
+        "neither_correct": 4,
+        "candidate_only_correct": 3
+      },
+      "plan_unfenced": {
+        "neither_correct": 28
+      }
+    },
+    "Olmo7B_vs_4B": {
+      "step_unfenced": {
+        "both_correct": 55,
+        "qwen_only_correct": 10,
+        "neither_correct": 3,
+        "candidate_only_correct": 4
+      },
+      "plan_unfenced": {
+        "neither_correct": 28
+      }
+    }
+  },
+  "source_sha256": {
+    "first": "12c417ceb8f8efab3d89286b491cd8f46f8f087af27a4028d181e7d206d040a0",
+    "second": "f80a3b0881ffcc76b86e0d6af1ab89381f8fda996745f4f3fcf8af6b9ae3ef79"
+  },
+  "qwen_repeat": {
+    "n": 102,
+    "identical_output_count": 100,
+    "all_inputs_identical": true,
+    "cases": {
+      "startup-1": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "startup-2": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d01-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d01-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d02-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d02-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d03-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d03-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d04-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d04-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d05-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d05-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": false,
+        "same_completion": true
+      },
+      "d06-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d06-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d07-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "d07-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": false,
+        "same_completion": true
+      },
+      "c01-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c01-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c02-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c02-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c03-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c03-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c04-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c04-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c05-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c05-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c06-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c06-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c07-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "c07-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h0-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h1-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h3-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w0-h8-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h0-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h1-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h3-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w1-h8-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h0-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h1-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h3-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-A-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-A-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-B-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-B-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-R-rules": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      },
+      "w2-h8-R-history": {
+        "same_input_tokens": true,
+        "same_output_tokens": true,
+        "same_completion": true
+      }
+    }
+  }
+}

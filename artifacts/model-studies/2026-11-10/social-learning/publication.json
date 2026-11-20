@@ -1,0 +1,44 @@
+{
+  "files": {
+    "LICENSE-QWEN.txt": {
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    "REPORT.md": {
+      "bytes": 9620,
+      "sha256": "25498d7332aff7fe42c147957881dba71938bc3b57214e1fcdf18a741e427f4e"
+    },
+    "body-continuation.png": {
+      "bytes": 181652,
+      "sha256": "522adc3b22805e7c31ed5d728506091b70d736fc069f9077b8c1802b7c1aad81"
+    },
+    "failed-startup-inputs.zip": {
+      "bytes": 57995,
+      "sha256": "0782f79102c18504aa362ea96d17a74abe9adf3cb1215bd7dfd9bfe2db9865f3"
+    },
+    "failed-startup.zip": {
+      "bytes": 55336,
+      "sha256": "bf6edc7ea37ce5fec2392d9fb10e576133e3d4a9b53bf8a8d839c1550eafc7ae"
+    },
+    "gpu-results.zip": {
+      "bytes": 11957203,
+      "sha256": "7c23ff365bf2837236f6c89343a8f845768cb11f3422a51c45af37959c7a5299"
+    },
+    "scored.json": {
+      "bytes": 152091,
+      "sha256": "2e1bc37bb6ef6b5425c08e86c2ec1996428d43b17a196742b8c87e9ee4c82a3a"
+    },
+    "successful-inputs.zip": {
+      "bytes": 58122,
+      "sha256": "32e22d8c8b3496ed80f0a0ce6e9435db16789b21028c2a3f21e1b062216c79c6"
+    }
+  },
+  "independently_tokenized_inputs": 550,
+  "license_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/LICENSE",
+  "model": "Qwen/Qwen3.5-4B",
+  "protocol_sha256": "3ce03507be694bff55ca6b01ca80d4cbbd3e808d6f5f9b3127a3400ee7ce3a17",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "schema": "social-learning-publication-v1",
+  "study": "2026-11-10",
+  "successful_worker_sha256": "a5826cefb78ee86f102b283240487d1136df53586f3eb093ce775342283bf9eb"
+}

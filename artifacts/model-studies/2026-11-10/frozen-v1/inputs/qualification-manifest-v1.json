@@ -1,0 +1,19 @@
+{
+  "schema": "sla-frozen-qualification-manifest-v1",
+  "model_runs": 0,
+  "gpu_allocated": false,
+  "case_count": 48,
+  "independent_problem_units": 24,
+  "category_counts": {
+    "format": 6,
+    "concept": 12,
+    "transition": 12,
+    "delayed_choice": 12,
+    "history": 6
+  },
+  "oracle_crosschecks": 12,
+  "files": {
+    "qualification-cases-v1.json": "e592cf1b6134a5402daf6ba9745bf5320d8ff2d8019598cb7baa4a9a357504b7",
+    "qualification-answer-key-v1.json": "e9f9ffbe98b3453693495b07673c14e4cc9c9aece919cfe4d54689f8682139b3"
+  }
+}

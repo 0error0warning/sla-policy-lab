@@ -1,0 +1,32 @@
+{
+  "first_attempt_generations": [
+    {
+      "model_index": 1,
+      "cases": 48,
+      "differences": {
+        "messages": [],
+        "prompt_sha256": [],
+        "output_token_ids": [],
+        "canonical_generated_text": []
+      },
+      "same_generated_text": 48
+    },
+    {
+      "model_index": 0,
+      "cases": 48,
+      "differences": {
+        "messages": [],
+        "prompt_sha256": [],
+        "output_token_ids": [],
+        "canonical_generated_text": []
+      },
+      "same_generated_text": 48
+    }
+  ],
+  "thinking_partial_comparison": {
+    "preserved_first_attempt_cases": 2,
+    "same_generated_token_ids": 2
+  },
+  "independent_samples_added": 0,
+  "scoring_source": "only complete recovery attempt; first attempt retained separately"
+}

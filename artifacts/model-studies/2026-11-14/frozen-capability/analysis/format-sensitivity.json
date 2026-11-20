@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "id": "h90-favhelp-order0-given_outcomes",
+      "model": "4B",
+      "strict_failure": "invalid_final_json",
+      "thinking": false,
+      "without_markdown_fence": {
+        "actual_death_probability": 0.0,
+        "answering": false,
+        "calculation_correct": true,
+        "choice_correct": false,
+        "choice_valid": true,
+        "death_probability_regret": 0.0,
+        "max_health_error": 0.0,
+        "max_risk_error": 0.0,
+        "schema": true,
+        "survival_classification_correct": true,
+        "task_answer_correct": true
+      }
+    },
+    {
+      "id": "h12-favtrade-order0-given_outcomes",
+      "model": "4B",
+      "strict_failure": "invalid_final_json",
+      "thinking": false,
+      "without_markdown_fence": {
+        "actual_death_probability": 0.0,
+        "answering": true,
+        "calculation_correct": true,
+        "choice_correct": true,
+        "choice_valid": true,
+        "death_probability_regret": 0.0,
+        "max_health_error": 0.0,
+        "max_risk_error": 0.0,
+        "schema": true,
+        "survival_classification_correct": true,
+        "task_answer_correct": true
+      }
+    }
+  ],
+  "rule": "Only an entire single json fence in the verified final channel; strict JSON still required.",
+  "status": "Post-hoc format-only sensitivity; primary counts and gates unchanged."
+}

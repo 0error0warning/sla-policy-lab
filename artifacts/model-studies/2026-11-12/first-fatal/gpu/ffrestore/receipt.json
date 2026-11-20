@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 8,
+  "bytes": 41434,
+  "sha256": "be79f6c786d7a79b12c862e14b9e7d3eeb54525f31285df8a14c51242026c56d",
+  "study_stage": "ffrestore",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 41434,
+      "sha256": "be79f6c786d7a79b12c862e14b9e7d3eeb54525f31285df8a14c51242026c56d"
+    }
+  ]
+}

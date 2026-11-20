@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 22,
+  "bytes": 1275675,
+  "sha256": "d315e5a79775418deb365f87fadcd9a3d4fd2c3814d99a5ae9c2f8edb587d78c",
+  "study_stage": "socialcheck",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 1275675,
+      "sha256": "d315e5a79775418deb365f87fadcd9a3d4fd2c3814d99a5ae9c2f8edb587d78c"
+    }
+  ]
+}

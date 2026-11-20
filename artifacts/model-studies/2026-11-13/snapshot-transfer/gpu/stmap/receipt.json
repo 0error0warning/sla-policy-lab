@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 9,
+  "bytes": 43046,
+  "sha256": "a8152b5e1ccd768d3a2dfb9dc972e184afc305051233d7443797ad16ed24d033",
+  "study_stage": "stmap",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 43046,
+      "sha256": "a8152b5e1ccd768d3a2dfb9dc972e184afc305051233d7443797ad16ed24d033"
+    }
+  ]
+}

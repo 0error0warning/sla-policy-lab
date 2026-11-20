@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {
+      "name": "v2",
+      "inputs": "gpu/v2/inputs.zip",
+      "archive": "gpu/v2/results.zip",
+      "input_sha256": "ea7ff5bce441a7bf7d157effecccc150f3e1da46389b650d38c38c665787a1fb",
+      "archive_sha256": "07276f3173123600cf2ba4506f88ea2d7e24a0842133a5653f3c461ca9d6670f",
+      "worker_returncode": 0,
+      "partial_backup": false,
+      "termination": "see worker receipt"
+    }
+  ]
+}

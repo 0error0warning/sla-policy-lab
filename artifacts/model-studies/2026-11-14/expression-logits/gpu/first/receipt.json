@@ -1,0 +1,19 @@
+{
+  "worker_returncode": 0,
+  "files": 16,
+  "bytes": 7700719,
+  "sha256": "37c808e637ba4a40d510c834317d1720e73ef160d6dd9b959d84f006399d98e2",
+  "study_stage": "expressionlogits",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "d5d32f091c741f32020f5c469ed6b1687abba7174475f3f27d7bd734d780eb73"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 2457839,
+      "sha256": "0985b6d7512a1138d12b07c21d0e7ba76c41c1c14d8bcd55c74944dacc759277"
+    }
+  ]
+}

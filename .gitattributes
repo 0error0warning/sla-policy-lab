@@ -1,0 +1,18 @@
+# Preserve measured bytes, including CRLF/whitespace, and their SHA-256 values.
+artifacts/model-studies/** -text -whitespace
+artifacts/model-studies/**/*.json linguist-generated=true
+artifacts/model-studies/**/*.jsonl linguist-generated=true
+artifacts/model-studies/**/*.csv linguist-generated=true
+# These files are compared byte-for-byte with the archived GPU run sources.
+experiments/social_closed_loop/** text eol=lf
+experiments/direct_policy/** text eol=lf
+experiments/consequence_policy/** text eol=lf
+experiments/internal_body/** text eol=lf
+experiments/lethal_boundary/** text eol=lf
+experiments/individual_life/** text eol=lf
+experiments/first_fatal/** text eol=lf
+# Retain the archived source's terminal blank line without suppressing other checks.
+experiments/social_closed_loop/core.py whitespace=-blank-at-eof
+experiments/health_baseline/** text eol=lf
+experiments/damage_penalty/** text eol=lf
+experiments/conditional_penalty/** text eol=lf

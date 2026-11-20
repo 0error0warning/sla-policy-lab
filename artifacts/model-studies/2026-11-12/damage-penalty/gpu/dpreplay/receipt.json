@@ -1,0 +1,29 @@
+{
+  "worker_returncode": 0,
+  "files": 152,
+  "bytes": 17707006,
+  "sha256": "b014ce4798a90c33797eb74a9f42bc54b4741aa776885e0c65072fcf8a46c4c6",
+  "study_stage": "dpreplay",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 5242880,
+      "sha256": "4b2d77388a98ffc6cb262706bd417b4cce7d702a1566c8761a4907ae81e47cbc"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 5242880,
+      "sha256": "b42f8b53f65c5be8c51576bc55ff393062fa2367b155dea706644e9347fdc025"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 5242880,
+      "sha256": "da49d8097bc45e4339803c94bf71e76072c0710de02ab0f96685153505efc76f"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 1978366,
+      "sha256": "e6ae89f2e406ead00f675483116820fde055d69ce46e41e86d707438b826a4c9"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "gpu": "NVIDIA L4",
+  "allocations": 1,
+  "high_memory": false,
+  "cap_minutes": 45,
+  "supervised_seconds": 645.63,
+  "within_cap": true,
+  "approx_consumed_cu": 0.21389779011661858,
+  "active_assignments_after": 0,
+  "consumption_rate_after": 0.0,
+  "scope": "Includes setup, weights, generation, result retrieval and release; excludes offline CPU analysis."
+}

@@ -1,0 +1,23 @@
+{
+  "allocation_utc": "2026-11-12T12:22:36.453524+00:00",
+  "attempt": 1,
+  "confirmed_unassigned_utc": "2026-11-12T20:35:58.889523+08:00",
+  "included_in_final_analyses": false,
+  "last_observed_worker_status": {
+    "arm": "local_wrong",
+    "birth": "blank",
+    "completed": 15,
+    "seed": 70202,
+    "stage": "living"
+  },
+  "new_independent_seeds_counted": 0,
+  "pinned_input_sha256": "b26ce84474b224527b16e7eaa838ad54f7bcb4feb4e0e6f060a8f97807237522",
+  "stage": "hbrepa",
+  "verified_partial_seed_backups": {
+    "s70201.zip": {
+      "bytes": 2667333,
+      "files": 40,
+      "sha256": "a6fc4b4c346b7e52a79a34517a8e8fc7209b18063e416837a8dc0e30d78e9881"
+    }
+  }
+}

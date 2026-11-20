@@ -1,0 +1,80 @@
+{
+  "seed_entities": 72,
+  "source_studies": {
+    "population": [
+      4,
+      20
+    ],
+    "wide_coverage": [
+      4,
+      20
+    ],
+    "split_coverage": [
+      4,
+      20
+    ]
+  },
+  "seed_sets_disjoint_across_three_studies": true,
+  "result_gates": {
+    "population": true,
+    "wide_coverage": false,
+    "split_coverage": true,
+    "singleton_deployments_confirm": true,
+    "lifetime_personalization": true,
+    "static_cross_shape_numeric_tolerance": false
+  },
+  "raw_replayed_acquisition": {
+    "choices": 3538944,
+    "individually_replayed": 6912,
+    "physical_settlements": 14155776
+  },
+  "original_lives_replayed": 1152,
+  "original_turns_replayed": 82745,
+  "native_full_gpu_lives": 6,
+  "native_full_gpu_turns": 476,
+  "same_singleton_replay_choices_and_health": "exact across all six live deployments",
+  "maximum_singleton_replay_probability_error": 6.977633463245425e-07,
+  "cpu_refits_from_unpacked_artifacts": [
+    {
+      "seed": 63001,
+      "mapping": 0,
+      "equal_arrays": [
+        "real.npz",
+        "shuffle.npz",
+        "blind.npz",
+        "frozen.npz",
+        "outcomes.npz",
+        "probe-probabilities.npz"
+      ],
+      "all_loss_steps_equal": true
+    },
+    {
+      "seed": 63120,
+      "mapping": 1,
+      "equal_arrays": [
+        "real.npz",
+        "shuffle.npz",
+        "blind.npz",
+        "frozen.npz",
+        "outcomes.npz",
+        "probe-probabilities.npz"
+      ],
+      "all_loss_steps_equal": true
+    }
+  ],
+  "regenerated_summaries_sha256": {
+    "replay-audit.json": "26b8b7421e28cdcf893c9302ee8fab830e0218032105de6545915a63f0b9f6bb",
+    "fresh-audit.json": "a61641b18430a5d679c1f469d4c528937582f9dc1762c8c3e365304643a7da12",
+    "fresh-checkpoints.json": "ba9d8b0399dd3456630e4ea0bc73f3aefb60686ee59eeeaa82d8669a74a90b43",
+    "numerical-factors.json": "b54e484c5b055dcc31f70fccac7f8602b5f0369bc93386641f6cfa2e163018f2"
+  },
+  "local_pytest": {
+    "passed": 88,
+    "subtests_passed": 11
+  },
+  "ruff": "passed (new research package and tests)",
+  "documentation_local_links": "verified",
+  "gpu_result_archives_verified": 4,
+  "note": "Seed counts are independent per study; mirrored ecologies, replicas, turns and hardware replays remain paired.",
+  "study_files_excluding_manifest": 107
+}

@@ -1,0 +1,52 @@
+{
+  "fixed_feedback": {
+    "reference_shape": [
+      144,
+      4
+    ],
+    "candidate_shape": [
+      144,
+      4
+    ],
+    "same_shape": true,
+    "finite": true,
+    "logits_exact": true,
+    "semantic_probabilities_exact": true,
+    "max_raw_logit_difference": 0.0,
+    "mean_raw_logit_difference": 0.0,
+    "max_centered_logit_difference": 0.0,
+    "max_semantic_probability_difference": 0.0,
+    "mean_semantic_probability_difference": 0.0,
+    "max_semantic_probability_difference_pp": 0.0,
+    "mean_semantic_probability_difference_pp": 0.0,
+    "mean_semantic_total_variation": 0.0,
+    "max_semantic_total_variation": 0.0,
+    "changed_greedy_semantic_actions": 0,
+    "n_rows": 144
+  },
+  "baseline_layer3": {
+    "reference_shape": [
+      144,
+      4
+    ],
+    "candidate_shape": [
+      144,
+      4
+    ],
+    "same_shape": true,
+    "finite": true,
+    "logits_exact": false,
+    "semantic_probabilities_exact": false,
+    "max_raw_logit_difference": 0.22934913635253906,
+    "mean_raw_logit_difference": 0.057708919048309326,
+    "max_centered_logit_difference": 0.13877296447753906,
+    "max_semantic_probability_difference": 0.014672503503017575,
+    "mean_semantic_probability_difference": 0.00291497440660721,
+    "max_semantic_probability_difference_pp": 1.4672503503017575,
+    "mean_semantic_probability_difference_pp": 0.291497440660721,
+    "mean_semantic_total_variation": 0.00582994881321442,
+    "max_semantic_total_variation": 0.014790365420535953,
+    "changed_greedy_semantic_actions": 1,
+    "n_rows": 144
+  }
+}

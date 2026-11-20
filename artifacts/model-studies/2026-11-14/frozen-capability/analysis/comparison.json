@@ -1,0 +1,130 @@
+{
+  "direct/given_outcomes": {
+    "9B_minus_4B_healthy_task": 0,
+    "9B_minus_4B_paired_calculation": 2,
+    "9B_minus_4B_paired_choice": -1,
+    "both_executed_presentations": 32,
+    "both_valid_action_presentations": 30,
+    "caution": "Completed-case comparison is conditional on both outputs being usable; unrun and unfinished cases are not computational errors.",
+    "common_valid_4B_better": 1,
+    "common_valid_4B_correct": 22,
+    "common_valid_9B_better": 1,
+    "common_valid_9B_correct": 22,
+    "on_common_executed": {
+      "4B": {
+        "calculation_correct": 30,
+        "choice_correct": 22,
+        "choice_valid": 30,
+        "healthy_task_complete": 2,
+        "invalid_final_json": 2,
+        "no_final_channel": 0,
+        "schema": 30
+      },
+      "9B": {
+        "calculation_correct": 32,
+        "choice_correct": 22,
+        "choice_valid": 32,
+        "healthy_task_complete": 2,
+        "invalid_final_json": 0,
+        "no_final_channel": 0,
+        "schema": 32
+      }
+    }
+  },
+  "direct/known_rules": {
+    "9B_minus_4B_healthy_task": -1,
+    "9B_minus_4B_paired_calculation": 0,
+    "9B_minus_4B_paired_choice": -3,
+    "both_executed_presentations": 32,
+    "both_valid_action_presentations": 32,
+    "caution": "Completed-case comparison is conditional on both outputs being usable; unrun and unfinished cases are not computational errors.",
+    "common_valid_4B_better": 8,
+    "common_valid_4B_correct": 13,
+    "common_valid_9B_better": 4,
+    "common_valid_9B_correct": 9,
+    "on_common_executed": {
+      "4B": {
+        "calculation_correct": 0,
+        "choice_correct": 13,
+        "choice_valid": 32,
+        "healthy_task_complete": 4,
+        "invalid_final_json": 0,
+        "no_final_channel": 0,
+        "schema": 21
+      },
+      "9B": {
+        "calculation_correct": 0,
+        "choice_correct": 9,
+        "choice_valid": 32,
+        "healthy_task_complete": 3,
+        "invalid_final_json": 0,
+        "no_final_channel": 0,
+        "schema": 32
+      }
+    }
+  },
+  "thinking/given_outcomes": {
+    "9B_minus_4B_healthy_task": 0,
+    "9B_minus_4B_paired_calculation": 0,
+    "9B_minus_4B_paired_choice": 0,
+    "both_executed_presentations": 4,
+    "both_valid_action_presentations": 0,
+    "caution": "Completed-case comparison is conditional on both outputs being usable; unrun and unfinished cases are not computational errors.",
+    "common_valid_4B_better": 0,
+    "common_valid_4B_correct": 0,
+    "common_valid_9B_better": 0,
+    "common_valid_9B_correct": 0,
+    "on_common_executed": {
+      "4B": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "healthy_task_complete": 0,
+        "invalid_final_json": 0,
+        "no_final_channel": 4,
+        "schema": 0
+      },
+      "9B": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "healthy_task_complete": 0,
+        "invalid_final_json": 0,
+        "no_final_channel": 4,
+        "schema": 0
+      }
+    }
+  },
+  "thinking/known_rules": {
+    "9B_minus_4B_healthy_task": 0,
+    "9B_minus_4B_paired_calculation": 0,
+    "9B_minus_4B_paired_choice": 0,
+    "both_executed_presentations": 4,
+    "both_valid_action_presentations": 0,
+    "caution": "Completed-case comparison is conditional on both outputs being usable; unrun and unfinished cases are not computational errors.",
+    "common_valid_4B_better": 0,
+    "common_valid_4B_correct": 0,
+    "common_valid_9B_better": 0,
+    "common_valid_9B_correct": 0,
+    "on_common_executed": {
+      "4B": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "healthy_task_complete": 0,
+        "invalid_final_json": 0,
+        "no_final_channel": 4,
+        "schema": 0
+      },
+      "9B": {
+        "calculation_correct": 0,
+        "choice_correct": 0,
+        "choice_valid": 0,
+        "healthy_task_complete": 0,
+        "invalid_final_json": 0,
+        "no_final_channel": 4,
+        "schema": 0
+      }
+    }
+  }
+}

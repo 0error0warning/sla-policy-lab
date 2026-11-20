@@ -1,0 +1,559 @@
+{
+  "body-h2-favhelp": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "actions": {
+      "ask": {
+        "after_action": 1.5014285714285713,
+        "after_maintenance": 1.5014285714285713,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_action": 0.0,
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "trade": {
+        "after_action": 0.0,
+        "after_maintenance": 0.0,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      },
+      "wait": {
+        "after_action": 2.0,
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "arm": "body",
+    "favorite": "help",
+    "form": "sets",
+    "health": 2.0,
+    "independent_max_error": 0.0,
+    "min_risk_actions": [
+      "ask"
+    ],
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 1.0,
+      "trade": 1.0,
+      "wait": 1.0
+    },
+    "state": "h2",
+    "task_actions_at_min_risk": []
+  },
+  "body-h6-favtrade": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_action": 5.5042857142857144,
+        "after_maintenance": 5.5042857142857144,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_action": 2.53,
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "trade": {
+        "after_action": 2.53,
+        "after_maintenance": 2.53,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "wait": {
+        "after_action": 6.0,
+        "after_maintenance": null,
+        "after_no_maintenance": 0.0,
+        "p_death": 1.0
+      }
+    },
+    "arm": "body",
+    "favorite": "trade",
+    "form": "sets",
+    "health": 6.0,
+    "independent_max_error": 0.0,
+    "min_risk_actions": [
+      "trade"
+    ],
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.09999999999999998,
+      "wait": 1.0
+    },
+    "state": "h6",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "body-h8.25-favhelp": {
+    "accepted_choices": [
+      "wait"
+    ],
+    "actions": {
+      "ask": {
+        "after_action": 7.755892857142857,
+        "after_maintenance": 7.755892857142857,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.85
+      },
+      "help": {
+        "after_action": 4.79125,
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.09999999999999998
+      },
+      "trade": {
+        "after_action": 4.79125,
+        "after_maintenance": 4.79125,
+        "after_no_maintenance": 0.0,
+        "p_death": 0.9
+      },
+      "wait": {
+        "after_action": 8.25,
+        "after_maintenance": null,
+        "after_no_maintenance": 0.31033949909204517,
+        "p_death": 0.0
+      }
+    },
+    "arm": "body",
+    "favorite": "help",
+    "form": "sets",
+    "health": 8.25,
+    "independent_max_error": 1.6653345369377348e-16,
+    "min_risk_actions": [
+      "wait"
+    ],
+    "rates": [
+      0.0,
+      0.15,
+      0.9,
+      0.1
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.09999999999999998,
+      "trade": 0.9,
+      "wait": 0.0
+    },
+    "state": "h8.25",
+    "task_actions_at_min_risk": []
+  },
+  "body-h90-favtrade": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "actions": {
+      "ask": {
+        "after_action": 89.56428571428572,
+        "after_maintenance": 89.56428571428572,
+        "after_no_maintenance": 82.55792166794265,
+        "p_death": 0.0
+      },
+      "help": {
+        "after_action": 86.95,
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "trade": {
+        "after_action": 86.95,
+        "after_maintenance": 86.95,
+        "after_no_maintenance": 79.91363011191672,
+        "p_death": 0.0
+      },
+      "wait": {
+        "after_action": 90.0,
+        "after_maintenance": null,
+        "after_no_maintenance": 82.99863692728029,
+        "p_death": 0.0
+      }
+    },
+    "arm": "body",
+    "favorite": "trade",
+    "form": "sets",
+    "health": 90.0,
+    "independent_max_error": 1.4210854715202004e-14,
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "rates": [
+      0.0,
+      0.15,
+      0.1,
+      0.9
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "h90",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-all_zero-order0-choice_only": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-all_zero-order0-sets": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-all_zero-order1-choice_only": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-all_zero-order1-sets": {
+    "accepted_choices": [
+      "help",
+      "trade"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "wait",
+      "ask",
+      "help",
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.0,
+      "help": 0.0,
+      "trade": 0.0,
+      "wait": 0.0
+    },
+    "state": "all_zero",
+    "task_actions_at_min_risk": [
+      "help",
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order0-choice_only": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order0-sets": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order1-choice_only": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_answer-order1-sets": {
+    "accepted_choices": [
+      "trade"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "trade"
+    ],
+    "risks": {
+      "ask": 0.85,
+      "help": 0.9,
+      "trade": 0.1,
+      "wait": 1.0
+    },
+    "state": "lowest_answer",
+    "task_actions_at_min_risk": [
+      "trade"
+    ]
+  },
+  "table-lowest_nonanswer-order0-choice_only": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-lowest_nonanswer-order0-sets": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-lowest_nonanswer-order1-choice_only": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-lowest_nonanswer-order1-sets": {
+    "accepted_choices": [
+      "ask"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "ask"
+    ],
+    "risks": {
+      "ask": 0.1,
+      "help": 0.2,
+      "trade": 0.2,
+      "wait": 0.4
+    },
+    "state": "lowest_nonanswer",
+    "task_actions_at_min_risk": []
+  },
+  "table-partial_zero_tie-order0-choice_only": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  },
+  "table-partial_zero_tie-order0-sets": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  },
+  "table-partial_zero_tie-order1-choice_only": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "choice_only",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  },
+  "table-partial_zero_tie-order1-sets": {
+    "accepted_choices": [
+      "help"
+    ],
+    "arm": "table",
+    "form": "sets",
+    "min_risk_actions": [
+      "wait",
+      "help"
+    ],
+    "risks": {
+      "ask": 0.4,
+      "help": 0.0,
+      "trade": 0.4,
+      "wait": 0.0
+    },
+    "state": "partial_zero_tie",
+    "task_actions_at_min_risk": [
+      "help"
+    ]
+  }
+}

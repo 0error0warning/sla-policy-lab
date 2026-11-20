@@ -1,0 +1,7 @@
+prompt,view,source_policy_matches,source_q_max_error,parent_entry_max_vs_old_pp,restored_full_max_vs_old_pp,parent_vs_restored_score_max,parent_help,parent_trade,restored_help,restored_trade,archive_choice,parent_choice,restored_choice,archive_boundary,restored_boundary,u
+369,learned,True,0.0,0.0,0.0,0.0,17.625,24.25,17.625,24.25,trade,trade,trade,0.11964636482298374,0.11964636482298374,0.120926736858605
+369,oracle,True,0.0,0.0,0.0,0.0,17.625,24.25,17.625,24.25,trade,trade,trade,0.11964636482298374,0.11964636482298374,0.120926736858605
+369,neutral,True,0.0,0.0,0.0,0.0,17.75,24.25,17.75,24.25,help,help,help,0.1244593895971775,0.1244593895971775,0.120926736858605
+345,learned,True,0.0,0.0,0.0,0.0,16.875,22.75,16.875,22.75,help,help,help,0.1655700020492077,0.1655700020492077,0.120926736858605
+345,oracle,True,0.0,0.0,0.0,0.0,16.75,22.75,16.75,22.75,help,help,help,0.163064481690526,0.163064481690526,0.120926736858605
+345,neutral,True,0.0,0.0,0.0,0.0,17.0,22.625,17.0,22.625,help,help,help,0.17565705627202988,0.17565705627202988,0.120926736858605

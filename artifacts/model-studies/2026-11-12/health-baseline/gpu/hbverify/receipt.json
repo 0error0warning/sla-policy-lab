@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 8,
+  "bytes": 65577,
+  "sha256": "023ce5a3f0607ed9fe379137287f368d33dd4e8c8b1b5a0480ee8f1dc0e04098",
+  "study_stage": "hbverify",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 65577,
+      "sha256": "023ce5a3f0607ed9fe379137287f368d33dd4e8c8b1b5a0480ee8f1dc0e04098"
+    }
+  ]
+}

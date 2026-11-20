@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "condition": "v1",
+      "archived_records": 21,
+      "second_replay_matches": {
+        "cases.csv": true,
+        "summary.json": true,
+        "audit.json": true,
+        "parsed-cases.jsonl": true
+      },
+      "archive_manifest_sha256": "7a71c224addf26cb1aba7588bd7d3ad6ce4faf694de8adaedb60fcf3d1060876"
+    },
+    {
+      "condition": "v2",
+      "archived_records": 48,
+      "second_replay_matches": {
+        "cases.csv": true,
+        "summary.json": true,
+        "audit.json": true,
+        "parsed-cases.jsonl": true
+      },
+      "archive_manifest_sha256": "4a33931fe88a5f9a402a765fd10aff6673a5880d9195a668b0b18d4113116c89"
+    }
+  ],
+  "method": "Fresh extraction and full official-template/token CPU replay; compare deterministic files byte-for-byte and gzip payload after decompression."
+}

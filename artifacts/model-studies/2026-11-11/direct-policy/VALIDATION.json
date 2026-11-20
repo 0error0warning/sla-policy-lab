@@ -1,0 +1,149 @@
+{
+  "verified_utc": "2026-11-11T13:40:16.724059+00:00",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "recorded_inference_scope": "CPU reconstruction of recorded GPU inference; no fresh Qwen forward",
+  "lives": 48,
+  "rounds": 3168,
+  "optimizer_steps": 2964,
+  "maximum_body_replay_error": 1.1368683772161603e-13,
+  "same_initial_logits_and_adapter_hashes_between_waves": true,
+  "main_stages": {
+    "confirm": {
+      "adapter_initial_sha256": {
+        "early": "5feec0b0f320967ae3c460d72c316d6f24b5a107d3c38a01ec43c089f3bb5f82",
+        "tail": "d56a515a541c51fe886f064f9d8cb2c8029793f3ef7f30b0f094e2f855338b53"
+      },
+      "base_tensor_sha256": "a224739a8642c372edb53f78be655eb4fe07b528df200babf358898babed73f3",
+      "base_unchanged": true,
+      "completed_jobs": 16,
+      "elapsed_seconds": 1125.0579626780004,
+      "gpu": "NVIDIA L4",
+      "gpu_total_bytes": 23659151360,
+      "job": "confirm-s61154-m1-body_blind",
+      "letter_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "optimizer_steps": 820,
+      "peak_allocated_bytes": 15966818304,
+      "peak_reserved_bytes": 16888365056,
+      "policy_version": 9,
+      "protocol_sha256": "fbfd68c9624b530e5ec31e41478493530679679b4caa4607c2eeec41fe002e43",
+      "stage": "complete",
+      "study_stage": "confirm",
+      "total_jobs": 16,
+      "trainable_parameters": 188416,
+      "turn": 70,
+      "versions": {
+        "accelerate": "1.15.0",
+        "fla-core": "0.6.0",
+        "flash-linear-attention": "0.6.0",
+        "numpy": "2.4.6",
+        "peft": "0.21.0",
+        "safetensors": "0.8.0",
+        "torch": "2.14.1+cu130",
+        "transformers": "5.22.2"
+      }
+    },
+    "pilot": {
+      "adapter_initial_sha256": {
+        "early": "5feec0b0f320967ae3c460d72c316d6f24b5a107d3c38a01ec43c089f3bb5f82",
+        "tail": "d56a515a541c51fe886f064f9d8cb2c8029793f3ef7f30b0f094e2f855338b53"
+      },
+      "base_tensor_sha256": "a224739a8642c372edb53f78be655eb4fe07b528df200babf358898babed73f3",
+      "base_unchanged": true,
+      "completed_jobs": 32,
+      "elapsed_seconds": 2387.45589871,
+      "gpu": "NVIDIA L4",
+      "gpu_total_bytes": 23659151360,
+      "job": "pilot-s61152-m1-more_steps",
+      "letter_token_ids": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "optimizer_steps": 2144,
+      "peak_allocated_bytes": 15966818304,
+      "peak_reserved_bytes": 17156800512,
+      "policy_version": 8,
+      "protocol_sha256": "fbfd68c9624b530e5ec31e41478493530679679b4caa4607c2eeec41fe002e43",
+      "stage": "complete",
+      "study_stage": "pilot",
+      "total_jobs": 32,
+      "trainable_parameters": 188416,
+      "turn": 58,
+      "versions": {
+        "accelerate": "1.15.0",
+        "fla-core": "0.6.0",
+        "flash-linear-attention": "0.6.0",
+        "numpy": "2.4.6",
+        "peft": "0.21.0",
+        "safetensors": "0.8.0",
+        "torch": "2.14.1+cu130",
+        "transformers": "5.22.2"
+      }
+    }
+  },
+  "verified_archives": {
+    "confirm-v2": {
+      "worker_returncode": 0,
+      "files": 133,
+      "bytes": 18809212,
+      "sha256": "45e4424bd0cc0e67b12deb9b8d288f2c05a1d8ca30dbe55011a4df6adfa610d5",
+      "study_stage": "confirm"
+    },
+    "numerics-v2": {
+      "worker_returncode": 0,
+      "files": 20,
+      "bytes": 731942,
+      "sha256": "bd59e338eda4ece3eb352840e50f6c2bea953281ed90bd7f808a2c78bf47e051",
+      "study_stage": "numerics"
+    },
+    "pilot-v2": {
+      "worker_returncode": 0,
+      "files": 247,
+      "bytes": 42786810,
+      "sha256": "2ebf56ab167e9a32e23083fc00865db88c1f1dceb269af4e2bd259ad157e37c8",
+      "study_stage": "pilot"
+    },
+    "smoke-v1-failed": {
+      "worker_returncode": 1,
+      "files": 27,
+      "bytes": 6346418,
+      "sha256": "23ba5fadda495118725976ea2969910c8c695b26df6aba389a7e659154d6b3db",
+      "study_stage": "smoke"
+    },
+    "smoke-v2": {
+      "worker_returncode": 0,
+      "files": 39,
+      "bytes": 6345556,
+      "sha256": "c796ddefee2cd628c0bc8253d34d67a1409ce984e1b4562d0487d52928c697c8",
+      "study_stage": "smoke"
+    }
+  },
+  "verified_archive_members": 466,
+  "pytest": {
+    "passed": 84,
+    "subtests_passed": 11,
+    "seconds": 23.28
+  },
+  "ruff": {
+    "rule_selection": "F,E9",
+    "passed": true
+  },
+  "numerical_followup_cpu_verified": true,
+  "l4_release": {
+    "confirmed_utc": "2026-11-11T13:36:28.312041+00:00",
+    "active_assignments": 0,
+    "consumption_rate_cu_per_hour": 0,
+    "observed_account_balance_change_cu": 2.792930844027751
+  },
+  "early_failure": "Initial smoke repetition mismatch; archive retained. Initial instance later disappeared, cause unknown.",
+  "connection_recovery": "The existing runtime proxy credential was refreshed during confirmation. The same running worker completed.",
+  "data_scope": "Synthetic environment and fixed prompts. No participant data.",
+  "language_model": "Qwen/Qwen3.5-4B",
+  "gpu_model": "NVIDIA L4"
+}

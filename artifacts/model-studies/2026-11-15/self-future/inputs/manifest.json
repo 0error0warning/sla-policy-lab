@@ -1,0 +1,31 @@
+{
+  "status": "prepared_not_run",
+  "model_calls": 0,
+  "gpu_allocations": 0,
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_parameters_updated": false,
+  "proposed_max_calls": 30,
+  "proposed_max_new_tokens_per_call": 1024,
+  "proposed_total_output_token_ceiling": 30720,
+  "thinking": false,
+  "generation": "greedy",
+  "proposed_wall_minutes": 30,
+  "development_inputs": 14,
+  "confirmation_inputs": 14,
+  "startup_calls": 2,
+  "paired_families": 3,
+  "unpaired_terminal_controls": 2,
+  "model_execution_authorized_by_this_delivery": false,
+  "history_source": "synthetic_contiguous_nonterminal_observations",
+  "protocol_sha256": "6a0a1ea432f2b9e36dd722ee4e019ae52bfd090a2526cbd2238de2fe07d0f7f1",
+  "implementation_sha256": {
+    "design.py": "fb144e9a1d3ce95f7ffbefef352353c5234e91c6c736b19c080fa6e046e8229c",
+    "score.py": "42860cb5f9cec9a7d284714050867f6f3c22f5233c8dc6f227a2cb12163c4c97"
+  },
+  "files": {
+    "prompts.jsonl": "7f4b9b793d1b98189aa1f884587e795daac2a06841121872be689f419b5cbb93",
+    "startup-prompts.jsonl": "a758cab97a6678a3e770f5c2c989d3a504658292453954434fa191cd6671386c",
+    "evaluator-only-key.json": "04519de0cf1da96f7048360ddb1d513d33b85836a582256a59729c11e3fc58ac"
+  }
+}

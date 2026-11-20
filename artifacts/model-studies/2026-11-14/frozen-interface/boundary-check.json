@@ -1,0 +1,115 @@
+{
+  "method": "Compare literal decoded official closing markers with their token-ID counts; no reasoning-text scoring.",
+  "rows": [
+    {
+      "condition": "v1",
+      "model": "4B",
+      "id": "body-h2-favhelp",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v1",
+      "model": "4B",
+      "id": "body-h6-favtrade",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "4B",
+      "id": "body-h2-favhelp",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "4B",
+      "id": "body-h6-favtrade",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "4B",
+      "id": "body-h8.25-favhelp",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "4B",
+      "id": "body-h90-favtrade",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "9B",
+      "id": "body-h2-favhelp",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "9B",
+      "id": "body-h6-favtrade",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "9B",
+      "id": "body-h8.25-favhelp",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    },
+    {
+      "condition": "v2",
+      "model": "9B",
+      "id": "body-h90-favtrade",
+      "finish_reason": "length_limit",
+      "final_channel_present": false,
+      "close_thinking_markers": 0,
+      "message_end_markers": 0,
+      "decoded_markers_match_ids": true,
+      "generated_tokens": 8192
+    }
+  ]
+}

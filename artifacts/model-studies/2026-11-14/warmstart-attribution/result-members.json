@@ -1,0 +1,154 @@
+{
+  "audit.json": {
+    "bytes": 381,
+    "sha256": "3c403f6c05d8ddf18664c6a7ed2e9a81d2e11fd74061ccd3ef9837527007a8f1"
+  },
+  "cases.json": {
+    "bytes": 412927,
+    "sha256": "a2e621648bbc020c9a49fa7565c8350f591f3abf825af7984d5c1466bf3b0d88"
+  },
+  "events.csv": {
+    "bytes": 3148861,
+    "sha256": "f2180e71d51e8ed7e9e6a26198831370e162ff299f801c6ee792d8066906f104"
+  },
+  "events.json": {
+    "bytes": 7284645,
+    "sha256": "ab5bd1780752ca57d71d9a431a38c52b3be234178e126d532fb49f9015b22373"
+  },
+  "execution.json": {
+    "bytes": 7020,
+    "sha256": "1ecdac7502a61f4d4544da932e26e78613e215e702e570a5380c7aea7d4a29eb"
+  },
+  "s78201-legacy-w00-recipient-weights.npz": {
+    "bytes": 356664,
+    "sha256": "b2b048e5f0a0a36292f094c1324c9696495e2d1edceb33dec46562c1be2cda2a"
+  },
+  "s78201-legacy-w01-recipient-weights.npz": {
+    "bytes": 351105,
+    "sha256": "e96586bb243f0a6ab68facf321b02ee9fe7865d3f295fd0674a3773441cd9363"
+  },
+  "s78201-legacy-w10-recipient-weights.npz": {
+    "bytes": 360757,
+    "sha256": "0c93d355bedb1f152503844082191da3ff38028c67a0942f2ea91d4e5f3063ec"
+  },
+  "s78201-legacy-w11-recipient-weights.npz": {
+    "bytes": 351503,
+    "sha256": "4eaaaadb4471a8bbbff0f9071e4a7029461c7b6f0d5977526a2cc7977145797f"
+  },
+  "s78201-wording-w00-recipient-weights.npz": {
+    "bytes": 360557,
+    "sha256": "d377962a16b3109bb4a4547aa054b5a0c68460027cd88d94a90e560342a39e75"
+  },
+  "s78201-wording-w01-recipient-weights.npz": {
+    "bytes": 351265,
+    "sha256": "0f6ea987068fadab77e8dc9cee54cddf6230edf95239afc9cd837cc6b3c7aebf"
+  },
+  "s78201-wording-w10-recipient-weights.npz": {
+    "bytes": 356393,
+    "sha256": "78a5da66e31d3a1e8f1cc0f26ac90dbbbe6c0c4af9aa8b197ff2e610af83c795"
+  },
+  "s78201-wording-w11-recipient-weights.npz": {
+    "bytes": 351100,
+    "sha256": "e1df6c82bd5ee658eebf1a94946446b3a3b1221f1395181ac4eade11a3a16345"
+  },
+  "s78202-legacy-w00-recipient-weights.npz": {
+    "bytes": 360492,
+    "sha256": "b17f982e5a5ab9b2f1aa420070fea0165f25fe8159ecddf305a01d85552abbb3"
+  },
+  "s78202-legacy-w01-recipient-weights.npz": {
+    "bytes": 356430,
+    "sha256": "624e5cdcc62021483a95484573aadc09d0a43814c683cb2b4bce9992a7df5421"
+  },
+  "s78202-legacy-w10-recipient-weights.npz": {
+    "bytes": 356471,
+    "sha256": "a056ad1f3acc87fe5748eb8e1d698b7f01d6a2239d8af6560738b08373b5971d"
+  },
+  "s78202-legacy-w11-recipient-weights.npz": {
+    "bytes": 351081,
+    "sha256": "b1a71f4e344b89ce7614e61606d5955f999bbb65063fbba7db3b8b3756fd409a"
+  },
+  "s78202-wording-w00-recipient-weights.npz": {
+    "bytes": 351320,
+    "sha256": "f75af23078f7c5fea0ba3562f03f4240809209138e4c305cc31ad36c96d29d26"
+  },
+  "s78202-wording-w01-recipient-weights.npz": {
+    "bytes": 351107,
+    "sha256": "07db9c70b5708ae0b83e1f835319c56a5b5c51b672fae5a4f344dcc10f594705"
+  },
+  "s78202-wording-w10-recipient-weights.npz": {
+    "bytes": 356240,
+    "sha256": "cc869ee60d2862f2c30a595e4102c383ab7a70b8152abf6ed0dbcd3033fee6d1"
+  },
+  "s78202-wording-w11-recipient-weights.npz": {
+    "bytes": 356260,
+    "sha256": "3b6a838cdbf3b2105dbfdc46b563ee667baf37382af46e7e5079c6a56308eedf"
+  },
+  "s78203-legacy-w00-recipient-weights.npz": {
+    "bytes": 351070,
+    "sha256": "93d286d088c26e93a5e3ab2b6d6050d4c29d9ddaa3348efbaa1eb39e7b79e69a"
+  },
+  "s78203-legacy-w01-recipient-weights.npz": {
+    "bytes": 356565,
+    "sha256": "2ede2c6ec87546462d005500796c17b460b1184380fc6392c1ad77ca8d8004ba"
+  },
+  "s78203-legacy-w10-recipient-weights.npz": {
+    "bytes": 356383,
+    "sha256": "a7b622bb8faf39178253aa0af500163cc333dd9f119e15f832aee9979b38a9ee"
+  },
+  "s78203-legacy-w11-recipient-weights.npz": {
+    "bytes": 356384,
+    "sha256": "23dad8d6749d7c70a3dbf43f0b46c7e20afc675f2a21be27f5204561baaafde0"
+  },
+  "s78203-wording-w00-recipient-weights.npz": {
+    "bytes": 356531,
+    "sha256": "f91b06d021a271185642de9ec195be784a52d439b11afadb14292797a963c8b3"
+  },
+  "s78203-wording-w01-recipient-weights.npz": {
+    "bytes": 356345,
+    "sha256": "f8bdf18ec0dffd10f2bc88f6d6bf069e8716e923fdaf725e6586f01a8822dc8d"
+  },
+  "s78203-wording-w10-recipient-weights.npz": {
+    "bytes": 360741,
+    "sha256": "9e03ba8f367b84cf3815d1c2e2b858b794679072b501147c6356388922dc5dfa"
+  },
+  "s78203-wording-w11-recipient-weights.npz": {
+    "bytes": 351364,
+    "sha256": "ed5b51476bf04ce3724516bd86d668ea637fdfb32b460ae421852c175f7cf0ef"
+  },
+  "s78204-legacy-w00-recipient-weights.npz": {
+    "bytes": 351250,
+    "sha256": "fc1cce8e8f470b9e277224cf8020b28f33bf02a363d6aa7be23879cb0910b3ab"
+  },
+  "s78204-legacy-w01-recipient-weights.npz": {
+    "bytes": 351144,
+    "sha256": "fa31c00a513fdc37a5f775cda4b9eaa36064dc0e75dea072090d8077224a6405"
+  },
+  "s78204-legacy-w10-recipient-weights.npz": {
+    "bytes": 351305,
+    "sha256": "a574d3cd15702f9017f3b05b2a8444efc03c6e6b0aaf07860f70e87fe223380e"
+  },
+  "s78204-legacy-w11-recipient-weights.npz": {
+    "bytes": 351124,
+    "sha256": "87b4d44179f2d36cccc0bac5358960b1788456f7994fa64cada171ab8ba202e3"
+  },
+  "s78204-wording-w00-recipient-weights.npz": {
+    "bytes": 351171,
+    "sha256": "e242f73ca1b5badc860aa1fbc1ffa98de58a07721f050c6140f3fbb66789b525"
+  },
+  "s78204-wording-w01-recipient-weights.npz": {
+    "bytes": 360372,
+    "sha256": "93e8720f22752e1640fa9f6ec1fdab2d037a8d6035e0cb7d285f25c6b028050c"
+  },
+  "s78204-wording-w10-recipient-weights.npz": {
+    "bytes": 351102,
+    "sha256": "b7c3bedea95e803a38299c9c5da581c36c5f4592050995b59a67d65b448bebef"
+  },
+  "s78204-wording-w11-recipient-weights.npz": {
+    "bytes": 350988,
+    "sha256": "457f9ae7593a32939f2357a9c14167ef269174aabd7da43c2e5b85cfa8be1360"
+  },
+  "summary.json": {
+    "bytes": 56970,
+    "sha256": "eb7ccf297562749091f0f97c2e6e589ad1fc185ba2151904f72b5a01f6317680"
+  }
+}

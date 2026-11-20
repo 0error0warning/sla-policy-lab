@@ -1,0 +1,15 @@
+{
+  "schema": "sla-colab-resource-receipt-v1",
+  "account_slot": "secondary",
+  "session_name": "sla-open-rl-20261117",
+  "endpoint": "gpu-l4-s-ft-ass1b0-3ofmt8egvdcun",
+  "gpu": "NVIDIA L4",
+  "cu_before": 357.63,
+  "cu_after": 355.59,
+  "cu_spent": 2.04,
+  "active_assignments_after": 0,
+  "usage_rate_after": "0.00/hr",
+  "smoke_started_utc": "2026-11-17T08:44:38Z",
+  "pilot_started_utc": "2026-11-17T08:56:38Z",
+  "unassigned_utc": "2026-11-17T09:45:49Z"
+}

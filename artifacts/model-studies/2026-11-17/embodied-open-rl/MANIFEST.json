@@ -1,0 +1,65 @@
+{
+  "files": {
+    "REPORT.md": {
+      "bytes": 16359,
+      "sha256": "ed04c154736a6b6ca53a71bab179879e05504b98dd4ed4fa64d7c7ed7061ba01"
+    },
+    "RESOURCES.json": {
+      "bytes": 462,
+      "sha256": "6eba5679d4134b0bbfe36228f53d762f78264064766f0576047452e7d61db2fa"
+    },
+    "analysis/audit.json": {
+      "bytes": 485,
+      "sha256": "cb188844a6e0bb276e134361630e447433b2cf4e13e055f0d3fb7ba097d61d35"
+    },
+    "analysis/summary.json": {
+      "bytes": 182154,
+      "sha256": "9238d33d1a15dac85304029b6a0b5b76719130c9ded3b6c1e7ee3479b30f72be"
+    },
+    "run/pilot/export-receipt.json": {
+      "bytes": 414,
+      "sha256": "79a8f8e564bb48c754a56e1e3f5c98f29aab19b8b1099f19c7147ebbed28c9cf"
+    },
+    "run/pilot/inputs.zip": {
+      "bytes": 24069,
+      "sha256": "078bfb8ca3fa6ae0ea6d70a493add98f9e20a0f8d372cd8bba28f9ce1665e312"
+    },
+    "run/pilot/launch.py": {
+      "bytes": 5604,
+      "sha256": "83fcea5f8a13d2e33da2ff61fb167f8425524645c92919f414ad219e63f37463"
+    },
+    "run/pilot/results.zip": {
+      "bytes": 7784686,
+      "sha256": "da6671a1454906ff20f304cb438520aecc05c4108d9efea29f6622e8a4ac4045"
+    },
+    "run/smoke/export-receipt.json": {
+      "bytes": 289,
+      "sha256": "913b41043806050cbcb0c1482d743330446d902f36367538661f12f9486900f5"
+    },
+    "run/smoke/inputs.zip": {
+      "bytes": 24069,
+      "sha256": "078bfb8ca3fa6ae0ea6d70a493add98f9e20a0f8d372cd8bba28f9ce1665e312"
+    },
+    "run/smoke/launch.py": {
+      "bytes": 5056,
+      "sha256": "00e5e075c1b129904026982c6363e231799c5c75d2538f6a0c6d57b8512e4d2f"
+    },
+    "run/smoke/results.zip": {
+      "bytes": 124052,
+      "sha256": "1063197a882baf2115b59498b88233e6f7e572c1770f7bafbab4e030d89b1118"
+    }
+  },
+  "schema": "sla-embodied-open-rl-manifest-v1",
+  "source_sha256_normalized_lf": {
+    "experiments/embodied_open_rl/PROTOCOL.md": "24d1b6c74cfb4d6894e65a2bc80197ca17f73274b91d2de92742d6f67a3ed8ba",
+    "experiments/embodied_open_rl/README.md": "418f72fcc2c7c97e9eb77661222eac98a463020bf702cbf11f564a61a0f7861b",
+    "experiments/embodied_open_rl/__init__.py": "544994a1dd250b05a968d73bb5a654179144ae90a8b25b5cdcca90b2578b1676",
+    "experiments/embodied_open_rl/analyze.py": "37ee040a098961813740ca61b06af4c1f865162e381f5ad3160283e4a66709ba",
+    "experiments/embodied_open_rl/audit.py": "6cd711aedcd6bf645808407654db9b7461b63b14e6303e9ad431f6c20316a21e",
+    "experiments/embodied_open_rl/calibrate_cpu.py": "b953a66957c68c17c87f5e1836cf6af889528c09dd7f7d360b8fe90e5269c0bc",
+    "experiments/embodied_open_rl/gpu.py": "e7dadc22801c5c3248455d98a70f3e74f42a5cd6aa0aa80ea953f4c654c606f1",
+    "experiments/embodied_open_rl/prepare.py": "8ed6e34059dc37973ebfde9edaf60ed869d52d720d7ad39b299bef173952d08b",
+    "experiments/embodied_open_rl/protocol.py": "63fd716354b9e297bd7adebf6467d13885df02aab27483d664e82f677ca54263",
+    "tests/test_embodied_open_rl.py": "4b96e85c477d093188602e3359af70052bf8e674ebdb945c9427c426f270c0ea"
+  }
+}

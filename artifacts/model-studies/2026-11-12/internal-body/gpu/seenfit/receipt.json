@@ -1,0 +1,14 @@
+{
+  "worker_returncode": 0,
+  "files": 23,
+  "bytes": 157953,
+  "sha256": "c2612085eae8676d6f7c129ce494f37238e0ed4d63cdb920a556e444a3fa11e8",
+  "study_stage": "seenfit",
+  "chunks": [
+    {
+      "name": "part-000.bin",
+      "bytes": 157953,
+      "sha256": "c2612085eae8676d6f7c129ce494f37238e0ed4d63cdb920a556e444a3fa11e8"
+    }
+  ]
+}

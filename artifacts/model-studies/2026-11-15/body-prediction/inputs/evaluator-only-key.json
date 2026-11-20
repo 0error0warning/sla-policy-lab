@@ -1,0 +1,2714 @@
+{
+  "plans": {
+    "d01-rules": {
+      "case": {
+        "id": "d01",
+        "split": "development",
+        "family": "health",
+        "pair_id": "d-health",
+        "variant": 1,
+        "current": 4,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "B",
+            "A",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d01-history": {
+      "case": {
+        "id": "d01",
+        "split": "development",
+        "family": "health",
+        "pair_id": "d-health",
+        "variant": 1,
+        "current": 4,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "B",
+            "A",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d02-rules": {
+      "case": {
+        "id": "d02",
+        "split": "development",
+        "family": "health",
+        "pair_id": "d-health",
+        "variant": 2,
+        "current": 8,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "B",
+            "A",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d02-history": {
+      "case": {
+        "id": "d02",
+        "split": "development",
+        "family": "health",
+        "pair_id": "d-health",
+        "variant": 2,
+        "current": 8,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "B",
+            "A",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d03-rules": {
+      "case": {
+        "id": "d03",
+        "split": "development",
+        "family": "repair",
+        "pair_id": "d-repair",
+        "variant": 1,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 1,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d03-history": {
+      "case": {
+        "id": "d03",
+        "split": "development",
+        "family": "repair",
+        "pair_id": "d-repair",
+        "variant": 1,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 1,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d04-rules": {
+      "case": {
+        "id": "d04",
+        "split": "development",
+        "family": "repair",
+        "pair_id": "d-repair",
+        "variant": 2,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 2
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            5,
+            7,
+            9,
+            11
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d04-history": {
+      "case": {
+        "id": "d04",
+        "split": "development",
+        "family": "repair",
+        "pair_id": "d-repair",
+        "variant": 2,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 2
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            5,
+            7,
+            9,
+            11
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            4,
+            2,
+            4,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d05-rules": {
+      "case": {
+        "id": "d05",
+        "split": "development",
+        "family": "composition",
+        "pair_id": "d-composition",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d05-history": {
+      "case": {
+        "id": "d05",
+        "split": "development",
+        "family": "composition",
+        "pair_id": "d-composition",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d06-rules": {
+      "case": {
+        "id": "d06",
+        "split": "development",
+        "family": "composition",
+        "pair_id": "d-composition",
+        "variant": 2,
+        "current": 5,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d06-history": {
+      "case": {
+        "id": "d06",
+        "split": "development",
+        "family": "composition",
+        "pair_id": "d-composition",
+        "variant": 2,
+        "current": 5,
+        "effects": {
+          "A": -1,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            3,
+            1,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "d07-rules": {
+      "case": {
+        "id": "d07",
+        "split": "development",
+        "family": "absorbing_repair",
+        "pair_id": null,
+        "variant": null,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 2
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 2,
+          "tasks": 1,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            3,
+            5,
+            7,
+            9
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "d07-history": {
+      "case": {
+        "id": "d07",
+        "split": "development",
+        "family": "absorbing_repair",
+        "pair_id": null,
+        "variant": null,
+        "current": 4,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 2
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 2,
+          "tasks": 1,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            3,
+            5,
+            7,
+            9
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c01-rules": {
+      "case": {
+        "id": "c01",
+        "split": "confirmation",
+        "family": "health",
+        "pair_id": "c-health",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "A",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            4,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c01-history": {
+      "case": {
+        "id": "c01",
+        "split": "confirmation",
+        "family": "health",
+        "pair_id": "c-health",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "A",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            4,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c02-rules": {
+      "case": {
+        "id": "c02",
+        "split": "confirmation",
+        "family": "health",
+        "pair_id": "c-health",
+        "variant": 2,
+        "current": 9,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "A",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            7,
+            7,
+            7,
+            7
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            8,
+            6,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c02-history": {
+      "case": {
+        "id": "c02",
+        "split": "confirmation",
+        "family": "health",
+        "pair_id": "c-health",
+        "variant": 2,
+        "current": 9,
+        "effects": {
+          "A": -2,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "A",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            7,
+            7,
+            7,
+            7
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            8,
+            6,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c03-rules": {
+      "case": {
+        "id": "c03",
+        "split": "confirmation",
+        "family": "repair",
+        "pair_id": "c-repair",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 1,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c03-history": {
+      "case": {
+        "id": "c03",
+        "split": "confirmation",
+        "family": "repair",
+        "pair_id": "c-repair",
+        "variant": 1,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 1,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c04-rules": {
+      "case": {
+        "id": "c04",
+        "split": "confirmation",
+        "family": "repair",
+        "pair_id": "c-repair",
+        "variant": 2,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 3
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            5,
+            2,
+            5,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            4,
+            7,
+            10,
+            13,
+            16
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c04-history": {
+      "case": {
+        "id": "c04",
+        "split": "confirmation",
+        "family": "repair",
+        "pair_id": "c-repair",
+        "variant": 2,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 3
+        },
+        "plans": {
+          "P": [
+            "A",
+            "R",
+            "A",
+            "R",
+            "B"
+          ],
+          "Q": [
+            "B",
+            "R",
+            "R",
+            "R",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            2,
+            5,
+            2,
+            5,
+            4
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            4,
+            7,
+            10,
+            13,
+            16
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c05-rules": {
+      "case": {
+        "id": "c05",
+        "split": "confirmation",
+        "family": "composition",
+        "pair_id": "c-composition",
+        "variant": 1,
+        "current": 8,
+        "effects": {
+          "A": -3,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            5,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c05-history": {
+      "case": {
+        "id": "c05",
+        "split": "confirmation",
+        "family": "composition",
+        "pair_id": "c-composition",
+        "variant": 1,
+        "current": 8,
+        "effects": {
+          "A": -3,
+          "B": -2,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            5,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        },
+        "Q": {
+          "health": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        }
+      },
+      "accepted_choices": [
+        "Q"
+      ]
+    },
+    "c06-rules": {
+      "case": {
+        "id": "c06",
+        "split": "confirmation",
+        "family": "composition",
+        "pair_id": "c-composition",
+        "variant": 2,
+        "current": 8,
+        "effects": {
+          "A": -2,
+          "B": -3,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            5,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c06-history": {
+      "case": {
+        "id": "c06",
+        "split": "confirmation",
+        "family": "composition",
+        "pair_id": "c-composition",
+        "variant": 2,
+        "current": 8,
+        "effects": {
+          "A": -2,
+          "B": -3,
+          "R": 0
+        },
+        "plans": {
+          "P": [
+            "A",
+            "A",
+            "B",
+            "R"
+          ],
+          "Q": [
+            "B",
+            "B",
+            "A",
+            "R"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "terminal_step": null,
+          "tasks": 3,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            5,
+            2,
+            0,
+            null
+          ],
+          "terminal_step": 3,
+          "tasks": 2,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c07-rules": {
+      "case": {
+        "id": "c07",
+        "split": "confirmation",
+        "family": "absorbing_repair",
+        "pair_id": null,
+        "variant": null,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 3
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "rules",
+      "plans": {
+        "P": {
+          "health": [
+            4,
+            7,
+            10,
+            13
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 2,
+          "tasks": 1,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    },
+    "c07-history": {
+      "case": {
+        "id": "c07",
+        "split": "confirmation",
+        "family": "absorbing_repair",
+        "pair_id": null,
+        "variant": null,
+        "current": 5,
+        "effects": {
+          "A": -3,
+          "B": -1,
+          "R": 3
+        },
+        "plans": {
+          "P": [
+            "B",
+            "R",
+            "R",
+            "R"
+          ],
+          "Q": [
+            "A",
+            "A",
+            "R",
+            "B"
+          ]
+        }
+      },
+      "information": "history",
+      "plans": {
+        "P": {
+          "health": [
+            4,
+            7,
+            10,
+            13
+          ],
+          "terminal_step": null,
+          "tasks": 1,
+          "can_act_after_plan": true
+        },
+        "Q": {
+          "health": [
+            2,
+            0,
+            null,
+            null
+          ],
+          "terminal_step": 2,
+          "tasks": 1,
+          "can_act_after_plan": false
+        }
+      },
+      "accepted_choices": [
+        "P"
+      ]
+    }
+  },
+  "steps": {
+    "w0-h0-A-rules": {
+      "world": 0,
+      "health": 0,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h0-A-history": {
+      "world": 0,
+      "health": 0,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h0-B-rules": {
+      "world": 0,
+      "health": 0,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h0-B-history": {
+      "world": 0,
+      "health": 0,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h0-R-rules": {
+      "world": 0,
+      "health": 0,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h0-R-history": {
+      "world": 0,
+      "health": 0,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h1-A-rules": {
+      "world": 0,
+      "health": 1,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h1-A-history": {
+      "world": 0,
+      "health": 1,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h1-B-rules": {
+      "world": 0,
+      "health": 1,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h1-B-history": {
+      "world": 0,
+      "health": 1,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w0-h1-R-rules": {
+      "world": 0,
+      "health": 1,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w0-h1-R-history": {
+      "world": 0,
+      "health": 1,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-A-rules": {
+      "world": 0,
+      "health": 3,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-A-history": {
+      "world": 0,
+      "health": 3,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-B-rules": {
+      "world": 0,
+      "health": 3,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-B-history": {
+      "world": 0,
+      "health": 3,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-R-rules": {
+      "world": 0,
+      "health": 3,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w0-h3-R-history": {
+      "world": 0,
+      "health": 3,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-A-rules": {
+      "world": 0,
+      "health": 8,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-A-history": {
+      "world": 0,
+      "health": 8,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-B-rules": {
+      "world": 0,
+      "health": 8,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-B-history": {
+      "world": 0,
+      "health": 8,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-R-rules": {
+      "world": 0,
+      "health": 8,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 8,
+        "can_act_next": true
+      }
+    },
+    "w0-h8-R-history": {
+      "world": 0,
+      "health": 8,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -1,
+        "B": -2,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 8,
+        "can_act_next": true
+      }
+    },
+    "w1-h0-A-rules": {
+      "world": 1,
+      "health": 0,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h0-A-history": {
+      "world": 1,
+      "health": 0,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h0-B-rules": {
+      "world": 1,
+      "health": 0,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h0-B-history": {
+      "world": 1,
+      "health": 0,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h0-R-rules": {
+      "world": 1,
+      "health": 0,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h0-R-history": {
+      "world": 1,
+      "health": 0,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h1-A-rules": {
+      "world": 1,
+      "health": 1,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h1-A-history": {
+      "world": 1,
+      "health": 1,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h1-B-rules": {
+      "world": 1,
+      "health": 1,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h1-B-history": {
+      "world": 1,
+      "health": 1,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w1-h1-R-rules": {
+      "world": 1,
+      "health": 1,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w1-h1-R-history": {
+      "world": 1,
+      "health": 1,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-A-rules": {
+      "world": 1,
+      "health": 3,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-A-history": {
+      "world": 1,
+      "health": 3,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-B-rules": {
+      "world": 1,
+      "health": 3,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-B-history": {
+      "world": 1,
+      "health": 3,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-R-rules": {
+      "world": 1,
+      "health": 3,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w1-h3-R-history": {
+      "world": 1,
+      "health": 3,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-A-rules": {
+      "world": 1,
+      "health": 8,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-A-history": {
+      "world": 1,
+      "health": 8,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-B-rules": {
+      "world": 1,
+      "health": 8,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-B-history": {
+      "world": 1,
+      "health": 8,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-R-rules": {
+      "world": 1,
+      "health": 8,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 8,
+        "can_act_next": true
+      }
+    },
+    "w1-h8-R-history": {
+      "world": 1,
+      "health": 8,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 0
+      },
+      "answer": {
+        "next_health": 8,
+        "can_act_next": true
+      }
+    },
+    "w2-h0-A-rules": {
+      "world": 2,
+      "health": 0,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h0-A-history": {
+      "world": 2,
+      "health": 0,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h0-B-rules": {
+      "world": 2,
+      "health": 0,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h0-B-history": {
+      "world": 2,
+      "health": 0,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h0-R-rules": {
+      "world": 2,
+      "health": 0,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h0-R-history": {
+      "world": 2,
+      "health": 0,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h1-A-rules": {
+      "world": 2,
+      "health": 1,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h1-A-history": {
+      "world": 2,
+      "health": 1,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h1-B-rules": {
+      "world": 2,
+      "health": 1,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h1-B-history": {
+      "world": 2,
+      "health": 1,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 0,
+        "can_act_next": false
+      }
+    },
+    "w2-h1-R-rules": {
+      "world": 2,
+      "health": 1,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w2-h1-R-history": {
+      "world": 2,
+      "health": 1,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 3,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-A-rules": {
+      "world": 2,
+      "health": 3,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-A-history": {
+      "world": 2,
+      "health": 3,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 1,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-B-rules": {
+      "world": 2,
+      "health": 3,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-B-history": {
+      "world": 2,
+      "health": 3,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 2,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-R-rules": {
+      "world": 2,
+      "health": 3,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 5,
+        "can_act_next": true
+      }
+    },
+    "w2-h3-R-history": {
+      "world": 2,
+      "health": 3,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 5,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-A-rules": {
+      "world": 2,
+      "health": 8,
+      "action": "A",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-A-history": {
+      "world": 2,
+      "health": 8,
+      "action": "A",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 6,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-B-rules": {
+      "world": 2,
+      "health": 8,
+      "action": "B",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-B-history": {
+      "world": 2,
+      "health": 8,
+      "action": "B",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 7,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-R-rules": {
+      "world": 2,
+      "health": 8,
+      "action": "R",
+      "information": "rules",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 10,
+        "can_act_next": true
+      }
+    },
+    "w2-h8-R-history": {
+      "world": 2,
+      "health": 8,
+      "action": "R",
+      "information": "history",
+      "effects": {
+        "A": -2,
+        "B": -1,
+        "R": 2
+      },
+      "answer": {
+        "next_health": 10,
+        "can_act_next": true
+      }
+    }
+  }
+}
